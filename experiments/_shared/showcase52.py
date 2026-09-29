@@ -212,6 +212,19 @@ def shader_scene_time():
     }, preview_frame=11)
 
 
+def make_compositor_tree(scene, name):
+    scene.render.use_compositing = True
+    tree = bpy.data.node_groups.new(name=name, type="CompositorNodeTree")
+    tree.interface.new_socket(
+        name="Image",
+        in_out="OUTPUT",
+        socket_type="NodeSocketColor",
+    )
+    group_output = tree.nodes.new("NodeGroupOutput")
+    scene.compositing_node_group = tree
+    return tree, group_output
+
+
 def compositor_blank_image():
     experiment = "feature52-compositor-blank-image"
     scene = configure_scene(transparent=True)
@@ -233,19 +246,17 @@ def compositor_blank_image():
     point_at(cam, (0, 0, 1.4))
     scene.camera = cam
 
-    scene.use_nodes = True
-    nodes = scene.node_tree.nodes
-    nodes.clear()
+    tree, group_output = make_compositor_tree(scene, "Feature52 Blank Image Compositor")
+    nodes = tree.nodes
     render = nodes.new("CompositorNodeRLayers")
     blank = nodes.new("CompositorNodeBlankImage")
     over = nodes.new("CompositorNodeAlphaOver")
-    comp = nodes.new("CompositorNodeComposite")
     blank.inputs["Color"].default_value = (0.015, 0.09, 0.19, 1.0)
     if blank.inputs.get("Size") is not None:
         blank.inputs["Size"].default_value = (480, 360)
-    scene.node_tree.links.new(blank.outputs["Image"], over.inputs[1])
-    scene.node_tree.links.new(render.outputs["Image"], over.inputs[2])
-    scene.node_tree.links.new(over.outputs["Image"], comp.inputs["Image"])
+    tree.links.new(blank.outputs["Image"], over.inputs[1])
+    tree.links.new(render.outputs["Image"], over.inputs[2])
+    tree.links.new(over.outputs["Image"], group_output.inputs["Image"])
 
     def per_frame(frame):
         hero.rotation_euler.z = (frame - 1) / (FRAME_END - 1) * math.tau
@@ -277,18 +288,16 @@ def compositor_string_to_image():
     point_at(cam, (0, 0, 1.4))
     scene.camera = cam
 
-    scene.use_nodes = True
-    nodes = scene.node_tree.nodes
-    nodes.clear()
+    tree, group_output = make_compositor_tree(scene, "Feature52 String to Image Compositor")
+    nodes = tree.nodes
     render = nodes.new("CompositorNodeRLayers")
     text = nodes.new("CompositorNodeStringToImage")
     over = nodes.new("CompositorNodeAlphaOver")
-    comp = nodes.new("CompositorNodeComposite")
     text.inputs["String"].default_value = "BLENDER 5.2"
     text.inputs["Size"].default_value = 64.0
-    scene.node_tree.links.new(render.outputs["Image"], over.inputs[1])
-    scene.node_tree.links.new(text.outputs["Image"], over.inputs[2])
-    scene.node_tree.links.new(over.outputs["Image"], comp.inputs["Image"])
+    tree.links.new(render.outputs["Image"], over.inputs[1])
+    tree.links.new(text.outputs["Image"], over.inputs[2])
+    tree.links.new(over.outputs["Image"], group_output.inputs["Image"])
 
     def per_frame(frame):
         hero.rotation_euler.z = (frame - 1) / (FRAME_END - 1) * math.tau
