@@ -73,7 +73,7 @@ jobs:
       - name: Configure Blender runtime
         run: |
           echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
-          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE:$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
           echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
 
       - name: Verify Blender 5.2.2
