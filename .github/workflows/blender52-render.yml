@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'experiments/**'
+      - 'experiments/hello-blender52/**'
       - '.github/workflows/blender52-render.yml'
       - 'tools/build_pages.py'
   workflow_dispatch:
