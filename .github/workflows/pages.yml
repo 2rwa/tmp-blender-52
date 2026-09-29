@@ -7,6 +7,10 @@ on:
       - 'results/**'
       - 'tools/build_pages.py'
       - '.github/workflows/pages.yml'
+  workflow_run:
+    workflows: ["Blender 5.2 feature showcase"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -20,6 +24,7 @@ concurrency:
 
 jobs:
   build-deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:
