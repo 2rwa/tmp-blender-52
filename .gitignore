@@ -1,0 +1,4 @@
+output52/
+.cache/
+__pycache__/
+*.pyc

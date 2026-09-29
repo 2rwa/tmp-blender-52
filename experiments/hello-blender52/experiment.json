@@ -1,0 +1,5 @@
+{
+  "id": "hello-blender52",
+  "title": "Blender 5.2 Headless Render Baseline",
+  "description": "Minimal Blender 5.2.2 headless render used to verify the GitHub Actions runtime, MP4 creation, and output validation."
+}
