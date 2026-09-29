@@ -37,7 +37,20 @@
     <input id="search" type="search" placeholder="Filter experiments…" autocomplete="off">
   </header>
   <main id="grid">
-    <p class='empty-state'>No rendered results yet.</p>
+    
+    <article class="card" data-search="blender 5.2 headless render baseline minimal blender 5.2.2 headless render used to verify the github actions runtime, mp4 creation, and output validation. hello-blender52">
+      <button class='media play' data-video='assets/hello-blender52/media.mp4' aria-label='Play Blender 5.2 Headless Render Baseline'><img src='assets/hello-blender52/preview.png' alt='Blender 5.2 Headless Render Baseline preview' loading='lazy'><span>▶ Play</span></button>
+      <div class="body">
+        <h2>Blender 5.2 Headless Render Baseline</h2>
+        <p>Minimal Blender 5.2.2 headless render used to verify the GitHub Actions runtime, MP4 creation, and output validation.</p>
+        <dl>
+          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
+          <div><dt>Frames</dt><dd>48</dd></div>
+        </dl>
+        <code>hello-blender52</code>
+      </div>
+    </article>
+    
   </main>
   <script>
     const search = document.querySelector('#search');

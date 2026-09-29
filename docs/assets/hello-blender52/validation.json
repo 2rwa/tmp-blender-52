@@ -1,0 +1,10 @@
+{
+  "experiment": "hello-blender52",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 48,
+  "preview_sha256": "588122cd958be7615d857dc8480378fcdd1e776091e12530f8b10404409072f6",
+  "video_size_bytes": 32383,
+  "blend_size_bytes": 128947,
+  "preview_stddev": 57.864
+}
