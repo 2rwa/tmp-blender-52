@@ -1,0 +1,72 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'results/**'
+      - 'tools/build_pages.py'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Build Pages gallery
+        run: |
+          python3 -m py_compile tools/build_pages.py
+          python3 tools/build_pages.py
+
+      - name: Persist generated docs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "Pages output is already current."
+          else
+            git commit -m "chore: rebuild Pages gallery [skip ci]"
+            if ! git push origin HEAD:main; then
+              git fetch origin main
+              git reset --hard origin/main
+              python3 tools/build_pages.py
+              git add docs/
+              if ! git diff --cached --quiet; then
+                git commit -m "chore: rebuild Pages gallery [skip ci]"
+                git push origin HEAD:main
+              fi
+            fi
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
