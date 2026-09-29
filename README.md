@@ -28,6 +28,10 @@ The runtime/bootstrap flow is adapted from the known-good Blender 5.2.2 path in 
 
 Push changes under `experiments/**` or run the workflow manually with an experiment folder name.
 
+## Standalone continuation prompt
+
+For an AI or another developer starting from a clean clone/fork, read [`PROMPT.md`](./PROMPT.md). It is intentionally self-contained and does not require the original workspace, prior chat history, or another repository.
+
 ## Pages
 
 https://2rwa.github.io/tmp-blender-52/
