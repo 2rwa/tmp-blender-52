@@ -1,0 +1,5 @@
+{
+  "id": "feature52-shader-scene-time",
+  "title": "Blender 5.2 Shader Scene Time",
+  "description": "Blender 5.2 Scene Time node drives an emissive material directly in the shader graph."
+}

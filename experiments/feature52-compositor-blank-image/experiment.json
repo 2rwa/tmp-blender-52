@@ -1,0 +1,5 @@
+{
+  "id": "feature52-compositor-blank-image",
+  "title": "Blender 5.2 Compositor Blank Image",
+  "description": "Blender 5.2 Blank Image compositor node supplies a procedural background behind a transparent render."
+}
