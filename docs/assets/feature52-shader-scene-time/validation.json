@@ -1,0 +1,27 @@
+{
+  "experiment": "feature52-shader-scene-time",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 36,
+  "preview_sha256": "6fed326535393d4180d43d8e34cb577e951ca9412678d99da782091a03564e1b",
+  "preview_stddev": 51.069,
+  "video_size_bytes": 16685,
+  "blend_size_bytes": 148049,
+  "sample_luma": [
+    86.096,
+    85.406,
+    77.937,
+    87.516,
+    74.204,
+    86.171,
+    86.5
+  ],
+  "feature": {
+    "name": "Shader Scene Time Node",
+    "node_idname": "GeometryNodeInputSceneTime",
+    "outputs": [
+      "Seconds",
+      "Frame"
+    ]
+  }
+}

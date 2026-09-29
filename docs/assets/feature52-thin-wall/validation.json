@@ -1,0 +1,17 @@
+{
+  "experiment": "feature52-thin-wall",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 36,
+  "preview_sha256": "9b8a710bc319fc46e839443ac40950621fa2698e44f2106a47f3385fc7737561",
+  "preview_stddev": 46.364,
+  "video_size_bytes": 20001,
+  "blend_size_bytes": 129231,
+  "feature": {
+    "name": "Principled BSDF Thin Wall",
+    "node_idname": "ShaderNodeBsdfPrincipled",
+    "thin_wall_input_present": true,
+    "thin_wall_enabled": true,
+    "transmission_weight": 0.9200000166893005
+  }
+}

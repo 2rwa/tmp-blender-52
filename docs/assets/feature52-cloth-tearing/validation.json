@@ -1,0 +1,13 @@
+{
+  "experiment": "feature52-cloth-tearing",
+  "blender_version": "5.2.2 LTS",
+  "asset_source": "direct:/home/runner/work/tmp-blender-52/tmp-blender-52/.cache/blender52-runtime/blender/5.2/datafiles/assets/nodes/geometry_nodes_dynamics_assets.blend",
+  "first_tear_frame": 2,
+  "base_vertices": 1073,
+  "max_vertices": 2561,
+  "max_components": 491,
+  "preview_frame": 8,
+  "preview_sha256": "531fa368e6447898a4ed4a39747742e68495195e95fde25cc08439a6e091ca22",
+  "video_size_bytes": 18553,
+  "blend_size_bytes": 288343
+}
