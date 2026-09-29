@@ -1,0 +1,19 @@
+{
+  "experiment": "feature52-compositor-blank-image",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 36,
+  "preview_sha256": "76bedcb7de144f42f810c8655ef51f85d0a564a208e6bab361a2b183c5078731",
+  "preview_stddev": 16.168,
+  "video_size_bytes": 10145,
+  "blend_size_bytes": 132119,
+  "feature": {
+    "name": "Compositor Blank Image",
+    "node_idname": "CompositorNodeBlankImage",
+    "inputs": [
+      "Color",
+      "Size"
+    ],
+    "size_socket_present": true
+  }
+}

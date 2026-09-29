@@ -1,0 +1,21 @@
+{
+  "feature": {
+    "name": "Shader Scene Time Node",
+    "node_idname": "GeometryNodeInputSceneTime",
+    "outputs": [
+      "Seconds",
+      "Frame"
+    ]
+  },
+  "experiment": "feature52-shader-scene-time",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 36,
+  "fps": 24,
+  "resolution": [
+    480,
+    360
+  ],
+  "preview_frame": 11,
+  "samples": []
+}

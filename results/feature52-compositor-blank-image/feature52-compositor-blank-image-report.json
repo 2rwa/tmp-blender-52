@@ -1,0 +1,167 @@
+{
+  "feature": {
+    "name": "Compositor Blank Image",
+    "node_idname": "CompositorNodeBlankImage",
+    "inputs": [
+      "Color",
+      "Size"
+    ],
+    "size_socket_present": true
+  },
+  "experiment": "feature52-compositor-blank-image",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 36,
+  "fps": 24,
+  "resolution": [
+    480,
+    360
+  ],
+  "preview_frame": 18,
+  "samples": [
+    {
+      "frame": 1,
+      "rotation_z": 0.0
+    },
+    {
+      "frame": 2,
+      "rotation_z": 0.17951957881450653
+    },
+    {
+      "frame": 3,
+      "rotation_z": 0.35903915762901306
+    },
+    {
+      "frame": 4,
+      "rotation_z": 0.5385587215423584
+    },
+    {
+      "frame": 5,
+      "rotation_z": 0.7180783152580261
+    },
+    {
+      "frame": 6,
+      "rotation_z": 0.8975979089736938
+    },
+    {
+      "frame": 7,
+      "rotation_z": 1.0771174430847168
+    },
+    {
+      "frame": 8,
+      "rotation_z": 1.2566370964050293
+    },
+    {
+      "frame": 9,
+      "rotation_z": 1.4361566305160522
+    },
+    {
+      "frame": 10,
+      "rotation_z": 1.6156761646270752
+    },
+    {
+      "frame": 11,
+      "rotation_z": 1.7951958179473877
+    },
+    {
+      "frame": 12,
+      "rotation_z": 1.9747153520584106
+    },
+    {
+      "frame": 13,
+      "rotation_z": 2.1542348861694336
+    },
+    {
+      "frame": 14,
+      "rotation_z": 2.333754539489746
+    },
+    {
+      "frame": 15,
+      "rotation_z": 2.5132741928100586
+    },
+    {
+      "frame": 16,
+      "rotation_z": 2.692793607711792
+    },
+    {
+      "frame": 17,
+      "rotation_z": 2.8723132610321045
+    },
+    {
+      "frame": 18,
+      "rotation_z": 3.051832914352417
+    },
+    {
+      "frame": 19,
+      "rotation_z": 3.2313523292541504
+    },
+    {
+      "frame": 20,
+      "rotation_z": 3.410871982574463
+    },
+    {
+      "frame": 21,
+      "rotation_z": 3.5903916358947754
+    },
+    {
+      "frame": 22,
+      "rotation_z": 3.769911289215088
+    },
+    {
+      "frame": 23,
+      "rotation_z": 3.9494307041168213
+    },
+    {
+      "frame": 24,
+      "rotation_z": 4.128950119018555
+    },
+    {
+      "frame": 25,
+      "rotation_z": 4.308469772338867
+    },
+    {
+      "frame": 26,
+      "rotation_z": 4.48798942565918
+    },
+    {
+      "frame": 27,
+      "rotation_z": 4.667509078979492
+    },
+    {
+      "frame": 28,
+      "rotation_z": 4.847028732299805
+    },
+    {
+      "frame": 29,
+      "rotation_z": 5.026548385620117
+    },
+    {
+      "frame": 30,
+      "rotation_z": 5.20606803894043
+    },
+    {
+      "frame": 31,
+      "rotation_z": 5.385587215423584
+    },
+    {
+      "frame": 32,
+      "rotation_z": 5.5651068687438965
+    },
+    {
+      "frame": 33,
+      "rotation_z": 5.744626522064209
+    },
+    {
+      "frame": 34,
+      "rotation_z": 5.9241461753845215
+    },
+    {
+      "frame": 35,
+      "rotation_z": 6.103665828704834
+    },
+    {
+      "frame": 36,
+      "rotation_z": 6.2831854820251465
+    }
+  ]
+}

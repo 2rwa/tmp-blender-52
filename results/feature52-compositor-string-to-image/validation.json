@@ -1,0 +1,19 @@
+{
+  "experiment": "feature52-compositor-string-to-image",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "frame_count": 36,
+  "preview_sha256": "5bc8ab32eb0541c3b1f599f35315d0c70835af4cff41d9c8a2a207190e1b7fe6",
+  "preview_stddev": 27.695,
+  "video_size_bytes": 11186,
+  "blend_size_bytes": 99201,
+  "feature": {
+    "name": "Compositor String to Image",
+    "node_idname": "CompositorNodeStringToImage",
+    "string": "BLENDER 5.2",
+    "size": 64.0,
+    "outputs": [
+      "Image"
+    ]
+  }
+}
