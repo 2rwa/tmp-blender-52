@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: blender52-feature-showcase-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   render:
