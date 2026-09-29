@@ -5,20 +5,58 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>tmp-blender-52</title>
   <style>
-    :root{color-scheme:dark;font-family:system-ui,sans-serif}
-    body{margin:0;background:#0c0f14;color:#e9eef7}
-    main{width:min(900px,calc(100% - 32px));margin:64px auto}
-    section{padding:28px;border:1px solid #252c38;border-radius:16px;background:#121720}
-    h1{margin-top:0} p{color:#b8c2d0;line-height:1.6} code{color:#9cc7ff}
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0c0f14; color: #e9eef7; }
+    header { position: sticky; top: 0; z-index: 2; padding: 20px; background: #0c0f14e8; backdrop-filter: blur(10px); border-bottom: 1px solid #252b36; }
+    h1 { margin: 0 0 12px; font-size: clamp(1.4rem, 4vw, 2.2rem); }
+    header p { margin: 0 0 14px; color: #aeb8c8; }
+    input { width: min(700px, 100%); padding: 12px 14px; border: 1px solid #303746; border-radius: 10px; background: #151a22; color: inherit; font: inherit; }
+    main { width: min(1200px, calc(100% - 28px)); margin: 24px auto 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+    .card { overflow: hidden; border: 1px solid #252c38; border-radius: 16px; background: #121720; box-shadow: 0 12px 32px #0005; }
+    .media { width: 100%; aspect-ratio: 4/3; border: 0; padding: 0; background: #07090d; position: relative; display: grid; place-items: center; overflow: hidden; color: inherit; }
+    .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .play { cursor: pointer; }
+    .play span { position: absolute; bottom: 12px; right: 12px; padding: 8px 10px; border-radius: 9px; background: #000b; font-weight: 700; }
+    video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+    .body { padding: 16px; }
+    h2 { margin: 0 0 8px; font-size: 1.1rem; }
+    .body p { min-height: 3em; color: #b8c2d0; line-height: 1.5; }
+    dl { display: flex; gap: 18px; margin: 14px 0; }
+    dl div { display: grid; gap: 2px; }
+    dt { color: #7e8b9e; font-size: .75rem; text-transform: uppercase; }
+    dd { margin: 0; }
+    code { color: #9cc7ff; font-size: .8rem; overflow-wrap: anywhere; }
+    .empty-state { color: #aeb8c8; }
   </style>
 </head>
 <body>
-  <main>
-    <section>
-      <h1>tmp-blender-52</h1>
-      <p>Blender 5.2 GitHub Actions render gallery.</p>
-      <p>No validated render results have been published yet. The gallery will populate automatically from <code>results/</code>.</p>
-    </section>
+  <header>
+    <h1>tmp-blender-52</h1>
+    <p>Blender 5.2 GitHub Actions render gallery — snapshot first, click to play.</p>
+    <input id="search" type="search" placeholder="Filter experiments…" autocomplete="off">
+  </header>
+  <main id="grid">
+    <p class='empty-state'>No rendered results yet.</p>
   </main>
+  <script>
+    const search = document.querySelector('#search');
+    search?.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      document.querySelectorAll('.card').forEach(card => {
+        card.hidden = q && !card.dataset.search.includes(q);
+      });
+    });
+    document.addEventListener('click', event => {
+      const button = event.target.closest('button[data-video]');
+      if (!button) return;
+      const video = document.createElement('video');
+      video.src = button.dataset.video;
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      button.replaceWith(video);
+    });
+  </script>
 </body>
 </html>
