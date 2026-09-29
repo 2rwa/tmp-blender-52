@@ -13,12 +13,23 @@ The runtime/bootstrap flow is adapted from the known-good Blender 5.2.2 path in 
 - PNG frame sequence -> ffmpeg H.264 MP4
 - output validation beyond process exit status
 - 120 minute render-job timeout
+- persistent validated results under `results/`
+- GitHub Pages gallery generated from `results/`
 
 ## Layout
 
-- `.github/workflows/blender52-render.yml` — render/validate/artifact workflow
+- `.github/workflows/blender52-render.yml` — render, validate, persist, build Pages, deploy
 - `experiments/hello-blender52/scene.py` — minimal Blender 5.2 render scene
 - `experiments/hello-blender52/validate.py` — validates the produced media and Blender version
 - `experiments/hello-blender52/experiment.json` — experiment metadata
+- `results/` — validated persistent render outputs
+- `tools/build_pages.py` — rebuilds the static gallery from `results/`
+- `docs/` — generated GitHub Pages site
 
 Push changes under `experiments/**` or run the workflow manually with an experiment folder name.
+
+## Pages
+
+https://2rwa.github.io/tmp-blender-52/
+
+The gallery uses preview-first cards; clicking a preview loads and plays the MP4. New experiments appear automatically after their validated result is committed.
