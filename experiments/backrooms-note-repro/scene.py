@@ -175,6 +175,206 @@ def variant_config() -> dict:
             "camera": (-19.5, 1.0, 1.48),
             "target": (-7.9, -2.1, 1.72),
         },
+        11: {
+            "name": "v8-warm-balanced",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 125.0,
+            "exposure": -0.12,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.10,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.82, 0.19),
+            "area_size": (1.75, 0.52),
+            "emission_strength": 1.15,
+        },
+        12: {
+            "name": "v8-sickly-green",
+            "wall_dark": (0.285, 0.255, 0.058, 1.0),
+            "wall_light": (0.68, 0.64, 0.18, 1.0),
+            "floor_dark": (0.095, 0.083, 0.032, 1.0),
+            "floor_light": (0.28, 0.245, 0.082, 1.0),
+            "light_color": (0.90, 1.00, 0.74),
+            "light_power": 130.0,
+            "exposure": -0.14,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.10,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.82, 0.19),
+            "area_size": (1.75, 0.52),
+            "emission_strength": 1.15,
+        },
+        13: {
+            "name": "v8-deep-mustard",
+            "wall_dark": (0.335, 0.245, 0.052, 1.0),
+            "wall_light": (0.77, 0.57, 0.15, 1.0),
+            "floor_dark": (0.11, 0.075, 0.030, 1.0),
+            "floor_light": (0.33, 0.225, 0.075, 1.0),
+            "light_color": (0.98, 0.96, 0.70),
+            "light_power": 122.0,
+            "exposure": -0.14,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.11,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.82, 0.19),
+            "area_size": (1.75, 0.52),
+            "emission_strength": 1.15,
+        },
+        14: {
+            "name": "v8-big-fluorescents",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 138.0,
+            "exposure": -0.18,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.10,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.96, 0.22),
+            "area_size": (2.05, 0.60),
+            "emission_strength": 1.40,
+        },
+        15: {
+            "name": "v8-ceiling-heavy",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 130.0,
+            "exposure": -0.13,
+            "camera": (-19.8, 1.65, 1.46),
+            "target": (-8.2, -1.65, 1.72),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.10,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.90, 0.21),
+            "area_size": (1.90, 0.56),
+            "emission_strength": 1.30,
+        },
+        16: {
+            "name": "coarse-wallpaper",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 125.0,
+            "exposure": -0.12,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 3.9,
+            "wall_detail": 1.6,
+            "wall_bump": 0.075,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.82, 0.19),
+            "area_size": (1.75, 0.52),
+            "emission_strength": 1.15,
+        },
+        17: {
+            "name": "fine-wallpaper",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 125.0,
+            "exposure": -0.12,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 10.0,
+            "wall_detail": 3.2,
+            "wall_bump": 0.075,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (0.82, 0.19),
+            "area_size": (1.75, 0.52),
+            "emission_strength": 1.15,
+        },
+        18: {
+            "name": "strong-carpet",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.095, 0.070, 0.028, 1.0),
+            "floor_light": (0.34, 0.25, 0.090, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 125.0,
+            "exposure": -0.12,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.10,
+            "floor_scale": 65.0,
+            "floor_bump": 0.68,
+            "panel_scale": (0.82, 0.19),
+            "area_size": (1.75, 0.52),
+            "emission_strength": 1.15,
+        },
+        19: {
+            "name": "overhead-glow",
+            "wall_dark": (0.30, 0.25, 0.060, 1.0),
+            "wall_light": (0.71, 0.61, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (0.92, 1.00, 0.72),
+            "light_power": 155.0,
+            "exposure": -0.28,
+            "camera": (-19.8, 1.65, 1.53),
+            "target": (-8.2, -1.65, 1.62),
+            "wall_scale": 5.8,
+            "wall_detail": 2.2,
+            "wall_bump": 0.10,
+            "floor_scale": 48.0,
+            "floor_bump": 0.48,
+            "panel_scale": (1.00, 0.23),
+            "area_size": (2.15, 0.64),
+            "emission_strength": 1.55,
+        },
+        20: {
+            "name": "yellow-green-balanced",
+            "wall_dark": (0.305, 0.265, 0.058, 1.0),
+            "wall_light": (0.735, 0.665, 0.19, 1.0),
+            "floor_dark": (0.10, 0.082, 0.030, 1.0),
+            "floor_light": (0.30, 0.25, 0.082, 1.0),
+            "light_color": (0.93, 1.00, 0.73),
+            "light_power": 132.0,
+            "exposure": -0.15,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+            "wall_scale": 5.2,
+            "wall_detail": 2.0,
+            "wall_bump": 0.09,
+            "floor_scale": 52.0,
+            "floor_bump": 0.52,
+            "panel_scale": (0.88, 0.20),
+            "area_size": (1.88, 0.55),
+            "emission_strength": 1.25,
+        },
     }
     return variants.get(VARIANT_ID, {
         "name": "baseline",
@@ -205,15 +405,15 @@ def make_wall_material():
     ramp = nodes.new("ShaderNodeValToRGB")
     bump = nodes.new("ShaderNodeBump")
 
-    tex.inputs["Scale"].default_value = 7.5
-    tex.inputs["Detail"].default_value = 3.0
+    tex.inputs["Scale"].default_value = VARIANT.get("wall_scale", 7.5)
+    tex.inputs["Detail"].default_value = VARIANT.get("wall_detail", 3.0)
     tex.inputs["Roughness"].default_value = 0.7
     ramp.color_ramp.elements[0].position = 0.27
     ramp.color_ramp.elements[0].color = VARIANT["wall_dark"]
     ramp.color_ramp.elements[1].position = 0.73
     ramp.color_ramp.elements[1].color = VARIANT["wall_light"]
     set_input(bsdf, "Roughness", 0.72)
-    bump.inputs["Strength"].default_value = 0.16
+    bump.inputs["Strength"].default_value = VARIANT.get("wall_bump", 0.16)
     bump.inputs["Distance"].default_value = 0.045
 
     links.new(tex.outputs["Fac"], ramp.inputs["Fac"])
@@ -237,13 +437,13 @@ def make_floor_material():
     ramp = nodes.new("ShaderNodeValToRGB")
     bump = nodes.new("ShaderNodeBump")
 
-    tex.inputs["Scale"].default_value = 38.0
+    tex.inputs["Scale"].default_value = VARIANT.get("floor_scale", 38.0)
     tex.inputs["Detail"].default_value = 4.5
     tex.inputs["Roughness"].default_value = 0.78
     ramp.color_ramp.elements[0].color = VARIANT["floor_dark"]
     ramp.color_ramp.elements[1].color = VARIANT["floor_light"]
     set_input(bsdf, "Roughness", 0.92)
-    bump.inputs["Strength"].default_value = 0.38
+    bump.inputs["Strength"].default_value = VARIANT.get("floor_bump", 0.38)
     bump.inputs["Distance"].default_value = 0.065
 
     links.new(tex.outputs["Fac"], ramp.inputs["Fac"])
@@ -272,7 +472,7 @@ def make_emission_material():
     out = nodes.new("ShaderNodeOutputMaterial")
     emission = nodes.new("ShaderNodeEmission")
     emission.inputs["Color"].default_value = (0.86, 0.90, 0.66, 1.0)
-    emission.inputs["Strength"].default_value = EMISSION_STRENGTH
+    emission.inputs["Strength"].default_value = VARIANT.get("emission_strength", EMISSION_STRENGTH)
     links.new(emission.outputs["Emission"], out.inputs["Surface"])
     return mat
 
@@ -437,7 +637,8 @@ def setup_scene():
         bpy.ops.mesh.primitive_plane_add(size=2.0, location=(x, y, CEILING_Z - 0.075))
         panel = bpy.context.object
         panel.name = f"FluorescentPanel_{idx:02d}"
-        panel.scale = (0.72, 0.16, 1.0)
+        panel_scale = VARIANT.get("panel_scale", (0.72, 0.16))
+        panel.scale = (panel_scale[0], panel_scale[1], 1.0)
         bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
         panel.data.materials.append(emit_mat)
 
@@ -446,8 +647,9 @@ def setup_scene():
         light.name = f"AreaLight_{idx:02d}"
         light.data.energy = VARIANT["light_power"]
         light.data.shape = "RECTANGLE"
-        light.data.size = 1.55
-        light.data.size_y = 0.45
+        area_size = VARIANT.get("area_size", (1.55, 0.45))
+        light.data.size = area_size[0]
+        light.data.size_y = area_size[1]
         light.data.color = VARIANT["light_color"]
         light["base_energy"] = VARIANT["light_power"]
         area_lights.append(light)
@@ -542,6 +744,16 @@ def main() -> None:
         "variant_sweep": VARIANT_SWEEP,
         "variant_id": VARIANT_ID,
         "variant_name": VARIANT["name"],
+        "variant_parameters": {
+            "wall_scale": VARIANT.get("wall_scale", 7.5),
+            "wall_detail": VARIANT.get("wall_detail", 3.0),
+            "wall_bump": VARIANT.get("wall_bump", 0.16),
+            "floor_scale": VARIANT.get("floor_scale", 38.0),
+            "floor_bump": VARIANT.get("floor_bump", 0.38),
+            "panel_scale": list(VARIANT.get("panel_scale", (0.72, 0.16))),
+            "area_size": list(VARIANT.get("area_size", (1.55, 0.45))),
+            "emission_strength": VARIANT.get("emission_strength", EMISSION_STRENGTH),
+        },
         "source_article": "https://note.com/kitaniosam/n/ne760c5e78985",
         "blender_version": bpy.app.version_string,
         "engine": scene.render.engine,
