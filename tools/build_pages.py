@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import shutil
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +28,40 @@ def copy_if_exists(src: Path, dst: Path) -> bool:
     return True
 
 
+def git_first_commit_at(path: Path) -> str:
+    """Return the oldest commit timestamp touching path, or an empty string."""
+    try:
+        relative = path.resolve().relative_to(ROOT.resolve())
+        result = subprocess.run(
+            [
+                "git",
+                "-C",
+                str(ROOT),
+                "log",
+                "--reverse",
+                "--format=%cI",
+                "--",
+                relative.as_posix(),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        return ""
+
+    lines = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    return lines[0] if lines else ""
+
+
+def created_at_for(exp: str, result_dir: Path, manifest: dict, validation: dict) -> str:
+    for source in (manifest, validation):
+        value = source.get("created_at")
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return git_first_commit_at(result_dir)
+
+
 def collect():
     items = []
     if not RESULTS.exists():
@@ -36,6 +71,7 @@ def collect():
         exp = result_dir.name
         manifest = load_json(EXPERIMENTS / exp / "experiment.json", {})
         validation = load_json(result_dir / "validation.json", {})
+        created_at = created_at_for(exp, result_dir, manifest, validation)
 
         asset_dir = ASSETS / exp
         asset_dir.mkdir(parents=True, exist_ok=True)
@@ -60,11 +96,13 @@ def collect():
             "id": exp,
             "title": manifest.get("title", exp),
             "description": manifest.get("description", ""),
+            "created_at": created_at,
             "preview": preview,
             "video": video,
             "validation": validation,
         })
 
+    items.sort(key=lambda item: (item["created_at"], item["id"]), reverse=True)
     return items
 
 
@@ -72,6 +110,8 @@ def card(item):
     exp = html.escape(item["id"])
     title = html.escape(str(item["title"]))
     desc = html.escape(str(item["description"]))
+    created_at = html.escape(str(item.get("created_at", "")), quote=True)
+    sort_title = html.escape(str(item["title"]).casefold(), quote=True)
     version = html.escape(str(item["validation"].get("blender_version", "unknown")))
     frame_count = html.escape(str(item["validation"].get("frame_count", "—")))
 
@@ -93,7 +133,10 @@ def card(item):
             )
 
     return f"""
-    <article class="card" data-search="{html.escape((title + ' ' + desc + ' ' + exp).lower(), quote=True)}">
+    <article class="card"
+      data-created-at="{created_at}"
+      data-title="{sort_title}"
+      data-search="{html.escape((title + ' ' + desc + ' ' + exp).lower(), quote=True)}">
       {media}
       <div class="body">
         <h2>{title}</h2>
@@ -132,7 +175,11 @@ def main():
     header {{ position: sticky; top: 0; z-index: 2; padding: 20px; background: #0c0f14e8; backdrop-filter: blur(10px); border-bottom: 1px solid #252b36; }}
     h1 {{ margin: 0 0 12px; font-size: clamp(1.4rem, 4vw, 2.2rem); }}
     header p {{ margin: 0 0 14px; color: #aeb8c8; }}
-    input {{ width: min(700px, 100%); padding: 12px 14px; border: 1px solid #303746; border-radius: 10px; background: #151a22; color: inherit; font: inherit; }}
+    .toolbar {{ display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }}
+    input {{ flex: 1 1 360px; min-width: min(100%, 260px); padding: 12px 14px; border: 1px solid #303746; border-radius: 10px; background: #151a22; color: inherit; font: inherit; }}
+    .sort-controls {{ display: flex; flex-wrap: wrap; gap: 6px; }}
+    .sort-controls button {{ padding: 10px 12px; border: 1px solid #303746; border-radius: 9px; background: #151a22; color: inherit; font: inherit; cursor: pointer; }}
+    .sort-controls button[aria-pressed="true"] {{ background: #263449; border-color: #5877a8; }}
     main {{ width: min(1200px, calc(100% - 28px)); margin: 24px auto 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }}
     .card {{ overflow: hidden; border: 1px solid #252c38; border-radius: 16px; background: #121720; box-shadow: 0 12px 32px #0005; }}
     .media {{ width: 100%; aspect-ratio: 4/3; border: 0; padding: 0; background: #07090d; position: relative; display: grid; place-items: center; overflow: hidden; color: inherit; }}
@@ -155,19 +202,52 @@ def main():
   <header>
     <h1>tmp-blender-52</h1>
     <p>Blender 5.2 GitHub Actions render gallery — snapshot first, click to play.</p>
-    <input id="search" type="search" placeholder="Filter experiments…" autocomplete="off">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Filter experiments…" autocomplete="off">
+      <div class="sort-controls" aria-label="Sort experiments">
+        <button type="button" data-sort="newest" aria-pressed="true">Newest</button>
+        <button type="button" data-sort="oldest" aria-pressed="false">Oldest</button>
+        <button type="button" data-sort="name" aria-pressed="false">Name</button>
+      </div>
+    </div>
   </header>
   <main id="grid">
     {cards}
   </main>
   <script>
     const search = document.querySelector('#search');
+    const grid = document.querySelector('#grid');
+    const sortButtons = [...document.querySelectorAll('[data-sort]')];
+
+    const compareCards = (mode) => (a, b) => {{
+      if (mode === 'name') {{
+        return a.dataset.title.localeCompare(b.dataset.title);
+      }}
+      const aTime = Date.parse(a.dataset.createdAt || '') || 0;
+      const bTime = Date.parse(b.dataset.createdAt || '') || 0;
+      return mode === 'oldest' ? aTime - bTime : bTime - aTime;
+    }};
+
+    const sortCards = (mode) => {{
+      const cards = [...grid.querySelectorAll('.card')];
+      cards.sort(compareCards(mode));
+      cards.forEach(card => grid.appendChild(card));
+      sortButtons.forEach(button => {{
+        button.setAttribute('aria-pressed', String(button.dataset.sort === mode));
+      }});
+    }};
+
     search?.addEventListener('input', () => {{
       const q = search.value.trim().toLowerCase();
       document.querySelectorAll('.card').forEach(card => {{
         card.hidden = q && !card.dataset.search.includes(q);
       }});
     }});
+
+    sortButtons.forEach(button => {{
+      button.addEventListener('click', () => sortCards(button.dataset.sort));
+    }});
+
     document.addEventListener('click', event => {{
       const button = event.target.closest('button[data-video]');
       if (!button) return;
@@ -178,6 +258,8 @@ def main():
       video.playsInline = true;
       button.replaceWith(video);
     }});
+
+    sortCards('newest');
   </script>
 </body>
 </html>
