@@ -15,6 +15,6 @@ permissions:
 
 jobs:
   reproduce:
-    uses: ./.github/workflows/blender52-render.yml
+    uses: 2rwa/tmp-blender-52/.github/workflows/blender52-render.yml@main
     with:
       experiment: backrooms-note-repro
