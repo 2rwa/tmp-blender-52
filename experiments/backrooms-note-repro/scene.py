@@ -289,31 +289,51 @@ def setup_scene():
         light["base_energy"] = AREA_POWER
         area_lights.append(light)
 
-    bpy.ops.object.light_add(type="AREA", location=(-28.0, -5.0, 2.75))
+    bpy.ops.object.light_add(type="AREA", location=(-29.0, -0.8, 2.75))
     front_fill = bpy.context.object
     front_fill.name = "FrontFill_Area80"
     front_fill.data.energy = AREA_POWER
     front_fill.data.shape = "DISK"
     front_fill.data.size = 2.5
-    point_camera(front_fill, (-21.0, -3.0, 1.0))
+    point_camera(front_fill, (-20.0, -1.0, 1.0))
     area_lights.append(front_fill)
 
-    bpy.ops.object.camera_add(location=(-28.6, -5.2, 1.58))
+    # Place the camera inside the long western corridor rather than behind the
+    # vertical partition at x=-26.  The earlier position saw only a wall 2.6 m
+    # away and could still pass a luminance-only image check.
+    bpy.ops.object.camera_add(location=(-30.0, -1.0, 1.58))
     camera = bpy.context.object
     camera.name = "Camera_30mm"
     camera.data.lens = 30.0
     camera.data.sensor_width = 36.0
-    point_camera(camera, (-2.0, -1.1, 1.46))
+    point_camera(camera, (-18.5, -0.95, 1.46))
     scene.camera = camera
 
+    bpy.context.view_layer.update()
+
+    # Geometry-level visibility diagnostic: a Backrooms view should have some
+    # depth.  A center ray that hits a wall only a couple of metres away means
+    # the camera is effectively plastered against a partition.
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    forward = camera.matrix_world.to_quaternion() @ Vector((0.0, 0.0, -1.0))
+    hit, location, _normal, _face, _obj, _matrix = scene.ray_cast(
+        depsgraph,
+        camera.location,
+        forward.normalized(),
+    )
+    center_ray_distance = (
+        float((location - camera.location).length) if hit else float("inf")
+    )
+    print(f"BACKROOMS_CENTER_RAY_M={center_ray_distance:.3f}")
+
     compositor_grade = setup_color_grade(scene)
-    return scene, camera, area_lights, walls, compositor_grade
+    return scene, camera, area_lights, walls, compositor_grade, center_ray_distance
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     FRAMES.mkdir(parents=True, exist_ok=True)
-    scene, camera, area_lights, walls, compositor_grade = setup_scene()
+    scene, camera, area_lights, walls, compositor_grade, center_ray_distance = setup_scene()
     base_camera = camera.location.copy()
 
     frame_stats = []
@@ -321,12 +341,12 @@ def main() -> None:
         t = (frame - FRAME_START) / max(1, FRAME_END - FRAME_START)
         camera.location = (
             base_camera.x + 0.72 * t,
-            base_camera.y + 0.08 * math.sin(t * math.tau),
+            base_camera.y + 0.05 * math.sin(t * math.tau),
             base_camera.z + 0.015 * math.sin(t * math.tau * 0.5),
         )
         point_camera(
             camera,
-            (-2.0 + 0.5 * t, -1.1 + 0.06 * math.sin(t * math.tau), 1.46),
+            (-18.5 + 0.4 * t, -0.95 + 0.04 * math.sin(t * math.tau), 1.46),
         )
 
         for idx, light in enumerate(area_lights):
@@ -364,6 +384,7 @@ def main() -> None:
         "preview_frame": preview_frame,
         "room_size_m": [ROOM_LENGTH, ROOM_WIDTH],
         "camera_lens_mm": float(camera.data.lens),
+        "center_ray_distance_m": round(center_ray_distance, 4),
         "wall_bevel_m": WALL_BEVEL,
         "wall_count": len(walls),
         "emission_strength": EMISSION_STRENGTH,

@@ -52,6 +52,11 @@ def main() -> None:
     require_equal(report.get("resolution"), list(EXPECTED_SIZE), "resolution")
     require_equal(report.get("room_size_m"), [65.0, 15.0], "room size")
     require_equal(report.get("camera_lens_mm"), 30.0, "camera lens")
+    center_ray_distance = float(report.get("center_ray_distance_m", 0.0))
+    if center_ray_distance < 5.0:
+        raise SystemExit(
+            f"camera is too close to the first wall: {center_ray_distance:.3f} m"
+        )
     require_equal(report.get("area_light_power_w"), 80.0, "area light power")
     require_equal(report.get("emission_strength"), 1.0, "emission strength")
 
@@ -120,6 +125,7 @@ def main() -> None:
             "floor_bump": True,
             "low_saturation_grade": True,
             "motion_present": True,
+            "camera_has_depth": center_ray_distance >= 5.0,
         },
     }
     (OUT / "validation.json").write_text(
