@@ -1,0 +1,33 @@
+name: Import Sail ship.blend from Dropbox
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-sail-ship-from-dropbox.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download blend from Dropbox
+        env:
+          DOWNLOAD_URL: 'https://ucdba92ac41b1fba2efa7ea93946.dl.dropboxusercontent.com/cd/0/get/DJFUmjaDFm1oFW1Sv3fZ-a-PeY8Vx39DLo-xk3GegRGGaEDcRClDLIEdVJb8u4oFLjFkRv4lY1aviNDrxlWDNIwTawx3W8FFKp6u3SMYT7xpeRKM8rejxXnVE1r5gb7weCwFHd_n1ZWGeQwwIPBBNFAYg1YvlmYgf8JD4s_E4WjNQg/file?c_luid=bcd75cc1'
+        run: |
+          curl -fL "$DOWNLOAD_URL" -o "Sail ship.blend"
+          ls -l "Sail ship.blend"
+
+      - name: Commit blend file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Sail ship.blend"
+          git commit -m "Add Sail ship.blend from Dropbox"
+          git push
