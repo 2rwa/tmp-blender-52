@@ -1,0 +1,71 @@
+name: Backrooms 10-variant preview sweep
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/backrooms-note-repro/scene.py'
+      - '.github/workflows/backrooms-variant-sweep.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    name: variant-${{ matrix.variant }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [1,2,3,4,5,6,7,8,9,10]
+    env:
+      BLENDER_VERSION: "5.2.2"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Restore Blender runtime
+        id: blender-runtime-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-${{ runner.os }}-x64-${{ env.BLENDER_VERSION }}-v1
+
+      - name: Configure runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit == 'true'
+        run: |
+          echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Require cached runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit != 'true'
+        run: |
+          echo "Blender 5.2 runtime cache is required for sweep."
+          exit 1
+
+      - name: Render 320x180 one-frame variant
+        env:
+          BACKROOMS_VARIANT: ${{ matrix.variant }}
+        run: |
+          set -o pipefail
+          out="output52-variant-${BACKROOMS_VARIANT}"
+          rm -rf "$out"
+          mkdir -p "$out/frames"
+          BACKROOMS_VARIANT_SWEEP=1           BACKROOMS_OUTPUT="$out"           LIBGL_ALWAYS_SOFTWARE=1           SDL_AUDIODRIVER=dummy             xvfb-run -a -s "-screen 0 640x360x24"             blender --background               --python experiments/backrooms-note-repro/scene.py               2>&1 | tee "$out/blender.log"
+          if grep -Fq "Traceback (most recent call last):" "$out/blender.log"; then
+            exit 1
+          fi
+          test -s "$out/preview.png"
+          cat "$out/backrooms-note-repro-report.json"
+
+      - name: Upload preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: backrooms-variant-${{ matrix.variant }}
+          path: output52-variant-${{ matrix.variant }}/
+          retention-days: 7
+          if-no-files-found: error

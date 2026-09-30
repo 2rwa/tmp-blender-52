@@ -10,16 +10,18 @@ import bpy
 from mathutils import Vector
 
 FAST_PREVIEW = os.environ.get("BACKROOMS_FAST_PREVIEW", "0") == "1"
+VARIANT_SWEEP = os.environ.get("BACKROOMS_VARIANT_SWEEP", "0") == "1"
+VARIANT_ID = int(os.environ.get("BACKROOMS_VARIANT", "0"))
 OUT = Path(os.environ.get("BACKROOMS_OUTPUT", "output52"))
 FRAMES = OUT / "frames"
 EXPERIMENT = "backrooms-note-repro"
 
 FRAME_START = 1
-FRAME_END = 3 if FAST_PREVIEW else 24
+FRAME_END = 1 if VARIANT_SWEEP else (3 if FAST_PREVIEW else 24)
 FPS = 24
-RES_X = 320 if FAST_PREVIEW else 640
-RES_Y = 180 if FAST_PREVIEW else 360
-SAMPLES = 8 if FAST_PREVIEW else 24
+RES_X = 320 if (FAST_PREVIEW or VARIANT_SWEEP) else 640
+RES_Y = 180 if (FAST_PREVIEW or VARIANT_SWEEP) else 360
+SAMPLES = 8 if (FAST_PREVIEW or VARIANT_SWEEP) else 24
 ROOM_LENGTH = 65.0
 ROOM_WIDTH = 15.0
 CEILING_Z = 3.10
@@ -51,6 +53,145 @@ def set_input(node, name: str, value) -> None:
         sock.default_value = value
 
 
+def variant_config() -> dict:
+    variants = {
+        1: {
+            "name": "clean-yellow",
+            "wall_dark": (0.30, 0.255, 0.070, 1.0),
+            "wall_light": (0.74, 0.65, 0.22, 1.0),
+            "floor_dark": (0.10, 0.085, 0.035, 1.0),
+            "floor_light": (0.30, 0.255, 0.10, 1.0),
+            "light_color": (0.97, 1.00, 0.78),
+            "light_power": 95.0,
+            "exposure": -0.05,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        2: {
+            "name": "sickly-green",
+            "wall_dark": (0.25, 0.255, 0.065, 1.0),
+            "wall_light": (0.62, 0.65, 0.19, 1.0),
+            "floor_dark": (0.075, 0.080, 0.035, 1.0),
+            "floor_light": (0.24, 0.245, 0.09, 1.0),
+            "light_color": (0.86, 1.00, 0.70),
+            "light_power": 100.0,
+            "exposure": -0.10,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        3: {
+            "name": "deep-mustard",
+            "wall_dark": (0.34, 0.25, 0.055, 1.0),
+            "wall_light": (0.78, 0.56, 0.14, 1.0),
+            "floor_dark": (0.11, 0.075, 0.028, 1.0),
+            "floor_light": (0.32, 0.22, 0.075, 1.0),
+            "light_color": (1.00, 0.93, 0.68),
+            "light_power": 90.0,
+            "exposure": -0.12,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        4: {
+            "name": "fluorescent-boost",
+            "wall_dark": (0.29, 0.245, 0.070, 1.0),
+            "wall_light": (0.70, 0.61, 0.20, 1.0),
+            "floor_dark": (0.10, 0.085, 0.035, 1.0),
+            "floor_light": (0.30, 0.255, 0.10, 1.0),
+            "light_color": (0.94, 1.00, 0.76),
+            "light_power": 135.0,
+            "exposure": -0.20,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        5: {
+            "name": "warm-fluorescent",
+            "wall_dark": (0.31, 0.245, 0.060, 1.0),
+            "wall_light": (0.73, 0.59, 0.18, 1.0),
+            "floor_dark": (0.105, 0.078, 0.032, 1.0),
+            "floor_light": (0.31, 0.235, 0.085, 1.0),
+            "light_color": (1.00, 0.88, 0.60),
+            "light_power": 110.0,
+            "exposure": -0.10,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        6: {
+            "name": "dim-liminal",
+            "wall_dark": (0.26, 0.22, 0.060, 1.0),
+            "wall_light": (0.62, 0.52, 0.16, 1.0),
+            "floor_dark": (0.075, 0.063, 0.026, 1.0),
+            "floor_light": (0.24, 0.20, 0.070, 1.0),
+            "light_color": (0.91, 0.95, 0.70),
+            "light_power": 72.0,
+            "exposure": -0.45,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        7: {
+            "name": "bright-liminal",
+            "wall_dark": (0.33, 0.29, 0.085, 1.0),
+            "wall_light": (0.82, 0.75, 0.28, 1.0),
+            "floor_dark": (0.12, 0.105, 0.045, 1.0),
+            "floor_light": (0.36, 0.32, 0.13, 1.0),
+            "light_color": (1.00, 1.00, 0.82),
+            "light_power": 145.0,
+            "exposure": 0.05,
+            "camera": (-19.5, 1.0, 1.58),
+            "target": (-7.9, -2.1, 1.46),
+        },
+        8: {
+            "name": "left-wall-composition",
+            "wall_dark": (0.30, 0.255, 0.070, 1.0),
+            "wall_light": (0.74, 0.65, 0.22, 1.0),
+            "floor_dark": (0.10, 0.085, 0.035, 1.0),
+            "floor_light": (0.30, 0.255, 0.10, 1.0),
+            "light_color": (0.97, 1.00, 0.78),
+            "light_power": 105.0,
+            "exposure": -0.08,
+            "camera": (-19.8, 1.65, 1.58),
+            "target": (-8.2, -1.65, 1.43),
+        },
+        9: {
+            "name": "lower-eye-composition",
+            "wall_dark": (0.30, 0.255, 0.070, 1.0),
+            "wall_light": (0.74, 0.65, 0.22, 1.0),
+            "floor_dark": (0.10, 0.085, 0.035, 1.0),
+            "floor_light": (0.30, 0.255, 0.10, 1.0),
+            "light_color": (0.97, 1.00, 0.78),
+            "light_power": 110.0,
+            "exposure": -0.08,
+            "camera": (-19.5, 0.8, 1.35),
+            "target": (-7.7, -2.15, 1.40),
+        },
+        10: {
+            "name": "ceiling-emphasis",
+            "wall_dark": (0.30, 0.255, 0.070, 1.0),
+            "wall_light": (0.74, 0.65, 0.22, 1.0),
+            "floor_dark": (0.10, 0.085, 0.035, 1.0),
+            "floor_light": (0.30, 0.255, 0.10, 1.0),
+            "light_color": (0.97, 1.00, 0.78),
+            "light_power": 120.0,
+            "exposure": -0.10,
+            "camera": (-19.5, 1.0, 1.48),
+            "target": (-7.9, -2.1, 1.72),
+        },
+    }
+    return variants.get(VARIANT_ID, {
+        "name": "baseline",
+        "wall_dark": (0.24, 0.20, 0.075, 1.0),
+        "wall_light": (0.58, 0.49, 0.20, 1.0),
+        "floor_dark": (0.11, 0.095, 0.045, 1.0),
+        "floor_light": (0.36, 0.30, 0.12, 1.0),
+        "light_color": (0.94, 0.97, 0.72),
+        "light_power": AREA_POWER,
+        "exposure": -0.15,
+        "camera": (-19.5, 1.0, 1.58),
+        "target": (-7.9, -2.1, 1.46),
+    })
+
+
+VARIANT = variant_config()
+
 def make_wall_material():
     mat = bpy.data.materials.new("Procedural yellow wallpaper")
     mat.use_nodes = True
@@ -68,9 +209,9 @@ def make_wall_material():
     tex.inputs["Detail"].default_value = 3.0
     tex.inputs["Roughness"].default_value = 0.7
     ramp.color_ramp.elements[0].position = 0.27
-    ramp.color_ramp.elements[0].color = (0.24, 0.20, 0.075, 1.0)
+    ramp.color_ramp.elements[0].color = VARIANT["wall_dark"]
     ramp.color_ramp.elements[1].position = 0.73
-    ramp.color_ramp.elements[1].color = (0.58, 0.49, 0.20, 1.0)
+    ramp.color_ramp.elements[1].color = VARIANT["wall_light"]
     set_input(bsdf, "Roughness", 0.72)
     bump.inputs["Strength"].default_value = 0.16
     bump.inputs["Distance"].default_value = 0.045
@@ -99,8 +240,8 @@ def make_floor_material():
     tex.inputs["Scale"].default_value = 38.0
     tex.inputs["Detail"].default_value = 4.5
     tex.inputs["Roughness"].default_value = 0.78
-    ramp.color_ramp.elements[0].color = (0.11, 0.095, 0.045, 1.0)
-    ramp.color_ramp.elements[1].color = (0.36, 0.30, 0.12, 1.0)
+    ramp.color_ramp.elements[0].color = VARIANT["floor_dark"]
+    ramp.color_ramp.elements[1].color = VARIANT["floor_light"]
     set_input(bsdf, "Roughness", 0.92)
     bump.inputs["Strength"].default_value = 0.38
     bump.inputs["Distance"].default_value = 0.065
@@ -230,7 +371,7 @@ def setup_scene():
         scene.view_settings.look = "AgX - Medium Low Contrast"
     except Exception as exc:
         print(f"COLOR_MANAGEMENT_FALLBACK={exc!r}")
-    scene.view_settings.exposure = -0.15
+    scene.view_settings.exposure = VARIANT["exposure"]
 
     scene.world.use_nodes = True
     bg = scene.world.node_tree.nodes.get("Background")
@@ -303,18 +444,18 @@ def setup_scene():
         bpy.ops.object.light_add(type="AREA", location=(x, y, CEILING_Z - 0.11))
         light = bpy.context.object
         light.name = f"AreaLight_{idx:02d}"
-        light.data.energy = AREA_POWER
+        light.data.energy = VARIANT["light_power"]
         light.data.shape = "RECTANGLE"
         light.data.size = 1.55
         light.data.size_y = 0.45
-        light.data.color = (0.94, 0.97, 0.72)
-        light["base_energy"] = AREA_POWER
+        light.data.color = VARIANT["light_color"]
+        light["base_energy"] = VARIANT["light_power"]
         area_lights.append(light)
 
     bpy.ops.object.light_add(type="AREA", location=(-19.0, 1.3, 2.75))
     front_fill = bpy.context.object
     front_fill.name = "FrontFill_Area80"
-    front_fill.data.energy = AREA_POWER
+    front_fill.data.energy = VARIANT["light_power"]
     front_fill.data.shape = "DISK"
     front_fill.data.size = 2.5
     point_camera(front_fill, (-10.0, -1.2, 1.0))
@@ -322,12 +463,12 @@ def setup_scene():
 
     # Aim diagonally down a long open sight line.  A 2D floor-plan probe gives
     # this pose ~31 m of center-ray depth while still keeping side walls in view.
-    bpy.ops.object.camera_add(location=(-19.5, 1.0, 1.58))
+    bpy.ops.object.camera_add(location=VARIANT["camera"])
     camera = bpy.context.object
     camera.name = "Camera_30mm"
     camera.data.lens = 30.0
     camera.data.sensor_width = 36.0
-    point_camera(camera, (-7.9, -2.1, 1.46))
+    point_camera(camera, VARIANT["target"])
     scene.camera = camera
 
     bpy.context.view_layer.update()
@@ -365,9 +506,14 @@ def main() -> None:
             base_camera.y + 0.05 * math.sin(t * math.tau),
             base_camera.z + 0.015 * math.sin(t * math.tau * 0.5),
         )
+        target = VARIANT["target"]
         point_camera(
             camera,
-            (-7.9 + 0.4 * t, -2.1 + 0.04 * math.sin(t * math.tau), 1.46),
+            (
+                target[0] + 0.4 * t,
+                target[1] + 0.04 * math.sin(t * math.tau),
+                target[2],
+            ),
         )
 
         for idx, light in enumerate(area_lights):
@@ -375,7 +521,7 @@ def main() -> None:
             flicker = 0.97 + 0.03 * math.sin(t * math.tau * 2.0 + phase)
             if idx == 5:
                 flicker *= 0.86 + 0.14 * abs(math.sin(t * math.tau * 3.0))
-            light.data.energy = AREA_POWER * flicker
+            light.data.energy = VARIANT["light_power"] * flicker
 
         scene.frame_set(frame)
         bpy.context.view_layer.update()
@@ -387,12 +533,15 @@ def main() -> None:
             "flicker_light_w": round(float(area_lights[5].data.energy), 4),
         })
 
-    preview_frame = 2 if FAST_PREVIEW else 12
+    preview_frame = 1 if VARIANT_SWEEP else (2 if FAST_PREVIEW else 12)
     shutil.copy2(FRAMES / f"frame_{preview_frame:04d}.png", OUT / "preview.png")
 
     report = {
         "experiment": EXPERIMENT,
         "fast_preview": FAST_PREVIEW,
+        "variant_sweep": VARIANT_SWEEP,
+        "variant_id": VARIANT_ID,
+        "variant_name": VARIANT["name"],
         "source_article": "https://note.com/kitaniosam/n/ne760c5e78985",
         "blender_version": bpy.app.version_string,
         "engine": scene.render.engine,
@@ -427,6 +576,7 @@ def main() -> None:
         bpy.ops.wm.save_as_mainfile(filepath=str(OUT / f"{EXPERIMENT}.blend"))
 
     print(f"BACKROOMS_FAST_PREVIEW={int(FAST_PREVIEW)}")
+    print(f"BACKROOMS_VARIANT={VARIANT_ID}:{VARIANT['name']}")
     print(f"BLENDER52_VERSION={bpy.app.version_string}")
     print(f"BLENDER52_ENGINE={scene.render.engine}")
     print(f"BLENDER52_FRAMES={report['frame_count']}")
