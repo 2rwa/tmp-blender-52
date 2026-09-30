@@ -6,6 +6,7 @@ on:
     paths:
       - 'experiments/backrooms-note-repro/**'
       - '.github/workflows/backrooms-note-repro.yml'
+      - '.github/workflows/blender52-render.yml'
   workflow_dispatch:
 
 permissions:
