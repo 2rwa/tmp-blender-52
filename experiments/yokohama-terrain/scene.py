@@ -3,12 +3,13 @@ from __future__ import annotations
 import json
 import math
 import shutil
+import struct
 import urllib.request
+import zlib
 from pathlib import Path
 
 import bpy
 from mathutils import Vector
-from PIL import Image
 
 OUT = Path("output52")
 FRAMES = OUT / "frames"
@@ -79,13 +80,115 @@ def decode_dem(rgb: tuple[int, int, int]) -> float | None:
     return (x - (1 << 24)) * 0.01
 
 
-def download_tile(tx: int, ty: int, cache: dict[tuple[int, int], Image.Image]) -> Image.Image:
+def paeth(a: int, b: int, c: int) -> int:
+    p = a + b - c
+    pa = abs(p - a)
+    pb = abs(p - b)
+    pc = abs(p - c)
+    if pa <= pb and pa <= pc:
+        return a
+    if pb <= pc:
+        return b
+    return c
+
+
+def decode_png_rgb(data: bytes) -> tuple[int, int, int, bytes]:
+    signature = b"\x89PNG\r\n\x1a\n"
+    if not data.startswith(signature):
+        raise RuntimeError("DEM tile is not a PNG")
+
+    pos = len(signature)
+    width = height = bit_depth = color_type = interlace = None
+    idat = bytearray()
+
+    while pos + 12 <= len(data):
+        length = struct.unpack(">I", data[pos:pos + 4])[0]
+        chunk_type = data[pos + 4:pos + 8]
+        chunk_data = data[pos + 8:pos + 8 + length]
+        pos += 12 + length
+        if chunk_type == b"IHDR":
+            width, height, bit_depth, color_type, compression, filter_method, interlace = struct.unpack(
+                ">IIBBBBB", chunk_data
+            )
+            if compression != 0 or filter_method != 0:
+                raise RuntimeError("unsupported PNG compression/filter method")
+        elif chunk_type == b"IDAT":
+            idat.extend(chunk_data)
+        elif chunk_type == b"IEND":
+            break
+
+    if width is None or height is None:
+        raise RuntimeError("PNG missing IHDR")
+    if bit_depth != 8 or color_type not in (2, 6) or interlace != 0:
+        raise RuntimeError(
+            f"unsupported PNG format: bit_depth={bit_depth}, color_type={color_type}, interlace={interlace}"
+        )
+
+    channels = 3 if color_type == 2 else 4
+    stride = width * channels
+    raw = zlib.decompress(bytes(idat))
+    expected = height * (stride + 1)
+    if len(raw) != expected:
+        raise RuntimeError(f"unexpected PNG payload length: {len(raw)} != {expected}")
+
+    pixels = bytearray(height * stride)
+    previous = bytearray(stride)
+    src = 0
+    dst = 0
+
+    for _ in range(height):
+        filter_type = raw[src]
+        src += 1
+        scan = bytearray(raw[src:src + stride])
+        src += stride
+
+        for i in range(stride):
+            left = scan[i - channels] if i >= channels else 0
+            up = previous[i]
+            up_left = previous[i - channels] if i >= channels else 0
+            if filter_type == 0:
+                value = scan[i]
+            elif filter_type == 1:
+                value = (scan[i] + left) & 0xFF
+            elif filter_type == 2:
+                value = (scan[i] + up) & 0xFF
+            elif filter_type == 3:
+                value = (scan[i] + ((left + up) >> 1)) & 0xFF
+            elif filter_type == 4:
+                value = (scan[i] + paeth(left, up, up_left)) & 0xFF
+            else:
+                raise RuntimeError(f"unsupported PNG filter type: {filter_type}")
+            scan[i] = value
+
+        pixels[dst:dst + stride] = scan
+        previous = scan
+        dst += stride
+
+    return width, height, channels, bytes(pixels)
+
+
+def tile_rgb(tile: tuple[int, int, int, bytes], px: int, py: int) -> tuple[int, int, int]:
+    width, height, channels, pixels = tile
+    if not (0 <= px < width and 0 <= py < height):
+        raise IndexError((px, py))
+    offset = (py * width + px) * channels
+    return pixels[offset], pixels[offset + 1], pixels[offset + 2]
+
+
+def download_tile(
+    tx: int,
+    ty: int,
+    cache: dict[tuple[int, int], tuple[int, int, int, bytes]],
+) -> tuple[int, int, int, bytes]:
     key = (tx, ty)
     if key in cache:
         return cache[key]
 
     url = GSI_URL.format(z=DEM_ZOOM, x=tx, y=ty)
-    request = urllib.request.Request(url, headers={"User-Agent": "tmp-blender-52-yokohama-terrain/1.0"})
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "tmp-blender-52-yokohama-terrain/1.0"},
+    )
     with urllib.request.urlopen(request, timeout=30) as response:
         data = response.read()
 
@@ -93,17 +196,15 @@ def download_tile(tx: int, ty: int, cache: dict[tuple[int, int], Image.Image]) -
     tile_path.parent.mkdir(parents=True, exist_ok=True)
     tile_path.write_bytes(data)
 
-    image = Image.open(tile_path).convert("RGB")
-    image.load()
-    if image.size != (256, 256):
-        raise RuntimeError(f"unexpected DEM tile size for {url}: {image.size}")
-    cache[key] = image
+    tile = decode_png_rgb(data)
+    if tile[0:2] != (256, 256):
+        raise RuntimeError(f"unexpected DEM tile size for {url}: {tile[0:2]}")
+    cache[key] = tile
     print(f"GSI_DEM_TILE={url}")
-    return image
-
+    return tile
 
 def sample_dem() -> tuple[list[list[float | None]], dict]:
-    cache: dict[tuple[int, int], Image.Image] = {}
+    cache: dict[tuple[int, int], tuple[int, int, int, bytes]] = {}
     heights: list[list[float | None]] = []
     valid: list[float] = []
 
@@ -116,7 +217,7 @@ def sample_dem() -> tuple[list[list[float | None]], dict]:
             lon = LON_MIN + (LON_MAX - LON_MIN) * fx
             tx, ty, px, py = lonlat_to_tile_pixel(lon, lat, DEM_ZOOM)
             image = download_tile(tx, ty, cache)
-            value = decode_dem(image.getpixel((px, py)))
+            value = decode_dem(tile_rgb(image, px, py))
             row.append(value)
             if value is not None:
                 valid.append(value)
