@@ -1,5 +1,6 @@
 {
   "experiment": "backrooms-note-repro",
+  "fast_preview": false,
   "source_article": "https://note.com/kitaniosam/n/ne760c5e78985",
   "blender_version": "5.2.2 LTS",
   "engine": "CYCLES",
