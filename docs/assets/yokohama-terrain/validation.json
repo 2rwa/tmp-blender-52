@@ -1,0 +1,19 @@
+{
+  "experiment": "yokohama-terrain",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "resolution": [
+    320,
+    180
+  ],
+  "frame_count": 24,
+  "dem_zoom": 11,
+  "dem_tile_count": 9,
+  "dem_valid_ratio": 0.7446,
+  "elevation_min_m": -0.1,
+  "elevation_max_m": 140.57,
+  "preview_sha256": "b320c742db01467ad934001ba483098a76d3bed5132394ce20dbe76cf957b31b",
+  "video_size_bytes": 6535,
+  "blend_size_bytes": 374976,
+  "preview_stddev": 41.578
+}
