@@ -168,21 +168,41 @@ def point_camera(camera: bpy.types.Object, target) -> None:
 
 def setup_color_grade(scene: bpy.types.Scene) -> bool:
     try:
-        scene.use_nodes = True
-        nodes = scene.node_tree.nodes
-        links = scene.node_tree.links
-        nodes.clear()
-        render_layers = nodes.new("CompositorNodeRLayers")
-        hue_sat = nodes.new("CompositorNodeHueSat")
-        bright_contrast = nodes.new("CompositorNodeBrightContrast")
-        composite = nodes.new("CompositorNodeComposite")
+        scene.render.use_compositing = True
+
+        if bpy.app.version >= (5, 0, 0):
+            # Blender 5.x moved the compositor out of scene.node_tree.
+            tree = bpy.data.node_groups.new(
+                "Backrooms Compositor",
+                "CompositorNodeTree",
+            )
+            scene.compositing_node_group = tree
+            render_layers = tree.nodes.new("CompositorNodeRLayers")
+            hue_sat = tree.nodes.new("CompositorNodeHueSat")
+            bright_contrast = tree.nodes.new("CompositorNodeBrightContrast")
+            output = tree.nodes.new("NodeGroupOutput")
+            tree.interface.new_socket(
+                name="Image",
+                in_out="OUTPUT",
+                socket_type="NodeSocketColor",
+            )
+        else:
+            scene.use_nodes = True
+            tree = scene.node_tree
+            tree.nodes.clear()
+            render_layers = tree.nodes.new("CompositorNodeRLayers")
+            hue_sat = tree.nodes.new("CompositorNodeHueSat")
+            bright_contrast = tree.nodes.new("CompositorNodeBrightContrast")
+            output = tree.nodes.new("CompositorNodeComposite")
+
         hue_sat.inputs["Saturation"].default_value = 0.68
         hue_sat.inputs["Value"].default_value = 0.92
         bright_contrast.inputs["Bright"].default_value = -1.5
         bright_contrast.inputs["Contrast"].default_value = -4.0
-        links.new(render_layers.outputs["Image"], hue_sat.inputs["Image"])
-        links.new(hue_sat.outputs["Image"], bright_contrast.inputs["Image"])
-        links.new(bright_contrast.outputs["Image"], composite.inputs["Image"])
+
+        tree.links.new(render_layers.outputs["Image"], hue_sat.inputs["Image"])
+        tree.links.new(hue_sat.outputs["Image"], bright_contrast.inputs["Image"])
+        tree.links.new(bright_contrast.outputs["Image"], output.inputs["Image"])
         return True
     except Exception as exc:
         print(f"COLOR_GRADE_FALLBACK={exc!r}")
@@ -291,24 +311,23 @@ def setup_scene():
         light["base_energy"] = AREA_POWER
         area_lights.append(light)
 
-    bpy.ops.object.light_add(type="AREA", location=(-29.0, -0.8, 2.75))
+    bpy.ops.object.light_add(type="AREA", location=(-19.0, 1.3, 2.75))
     front_fill = bpy.context.object
     front_fill.name = "FrontFill_Area80"
     front_fill.data.energy = AREA_POWER
     front_fill.data.shape = "DISK"
     front_fill.data.size = 2.5
-    point_camera(front_fill, (-20.0, -1.0, 1.0))
+    point_camera(front_fill, (-10.0, -1.2, 1.0))
     area_lights.append(front_fill)
 
-    # Place the camera inside the long western corridor rather than behind the
-    # vertical partition at x=-26.  The earlier position saw only a wall 2.6 m
-    # away and could still pass a luminance-only image check.
-    bpy.ops.object.camera_add(location=(-30.0, -1.0, 1.58))
+    # Aim diagonally down a long open sight line.  A 2D floor-plan probe gives
+    # this pose ~31 m of center-ray depth while still keeping side walls in view.
+    bpy.ops.object.camera_add(location=(-19.5, 1.0, 1.58))
     camera = bpy.context.object
     camera.name = "Camera_30mm"
     camera.data.lens = 30.0
     camera.data.sensor_width = 36.0
-    point_camera(camera, (-18.5, -0.95, 1.46))
+    point_camera(camera, (-7.9, -2.1, 1.46))
     scene.camera = camera
 
     bpy.context.view_layer.update()
@@ -348,7 +367,7 @@ def main() -> None:
         )
         point_camera(
             camera,
-            (-18.5 + 0.4 * t, -0.95 + 0.04 * math.sin(t * math.tau), 1.46),
+            (-7.9 + 0.4 * t, -2.1 + 0.04 * math.sin(t * math.tau), 1.46),
         )
 
         for idx, light in enumerate(area_lights):

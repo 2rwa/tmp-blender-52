@@ -8,6 +8,12 @@ on:
       - '.github/workflows/backrooms-note-repro.yml'
       - '.github/workflows/blender52-render.yml'
   workflow_dispatch:
+    inputs:
+      full_render:
+        description: Run 640x360 full render after the 320x180 preview gate
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -105,6 +111,9 @@ jobs:
 
   reproduce:
     needs: preview
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.full_render) ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[full]'))
     uses: 2rwa/tmp-blender-52/.github/workflows/blender52-render.yml@main
     with:
       experiment: backrooms-note-repro
