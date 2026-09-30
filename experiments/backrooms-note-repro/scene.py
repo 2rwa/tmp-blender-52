@@ -2,22 +2,24 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import shutil
 from pathlib import Path
 
 import bpy
 from mathutils import Vector
 
-OUT = Path("output52")
+FAST_PREVIEW = os.environ.get("BACKROOMS_FAST_PREVIEW", "0") == "1"
+OUT = Path(os.environ.get("BACKROOMS_OUTPUT", "output52"))
 FRAMES = OUT / "frames"
 EXPERIMENT = "backrooms-note-repro"
 
 FRAME_START = 1
-FRAME_END = 24
+FRAME_END = 3 if FAST_PREVIEW else 24
 FPS = 24
-RES_X = 640
-RES_Y = 360
-SAMPLES = 24
+RES_X = 320 if FAST_PREVIEW else 640
+RES_Y = 180 if FAST_PREVIEW else 360
+SAMPLES = 8 if FAST_PREVIEW else 24
 ROOM_LENGTH = 65.0
 ROOM_WIDTH = 15.0
 CEILING_Z = 3.10
@@ -366,11 +368,12 @@ def main() -> None:
             "flicker_light_w": round(float(area_lights[5].data.energy), 4),
         })
 
-    preview_frame = 12
+    preview_frame = 2 if FAST_PREVIEW else 12
     shutil.copy2(FRAMES / f"frame_{preview_frame:04d}.png", OUT / "preview.png")
 
     report = {
         "experiment": EXPERIMENT,
+        "fast_preview": FAST_PREVIEW,
         "source_article": "https://note.com/kitaniosam/n/ne760c5e78985",
         "blender_version": bpy.app.version_string,
         "engine": scene.render.engine,
@@ -401,8 +404,10 @@ def main() -> None:
         json.dumps(report, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    bpy.ops.wm.save_as_mainfile(filepath=str(OUT / f"{EXPERIMENT}.blend"))
+    if not FAST_PREVIEW:
+        bpy.ops.wm.save_as_mainfile(filepath=str(OUT / f"{EXPERIMENT}.blend"))
 
+    print(f"BACKROOMS_FAST_PREVIEW={int(FAST_PREVIEW)}")
     print(f"BLENDER52_VERSION={bpy.app.version_string}")
     print(f"BLENDER52_ENGINE={scene.render.engine}")
     print(f"BLENDER52_FRAMES={report['frame_count']}")

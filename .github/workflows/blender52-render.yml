@@ -55,6 +55,7 @@ jobs:
           content_hash="$(
             find "experiments/$EXPERIMENT" -type f \
               ! -name 'validate.py' \
+              ! -name 'preview_validate.py' \
               ! -name 'README.md' \
               ! -name 'experiment.json' \
               ! -name '*.pyc' \
