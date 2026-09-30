@@ -8,7 +8,6 @@ from pathlib import Path
 
 import bpy
 from mathutils import Vector
-from PIL import Image
 
 EXPERIMENT = "ocean-wave-bake"
 SWEEP = os.environ.get("OCEAN_VARIANT_SWEEP", "0") == "1"
@@ -111,6 +110,24 @@ def wave_height(x: float, y: float, t: float) -> float:
     return a * h / 2.2
 
 
+def save_blender_image(name: str, path: Path, width: int, height: int, pixels) -> bpy.types.Image:
+    image = bpy.data.images.get(name)
+    if image is not None:
+        bpy.data.images.remove(image)
+    image = bpy.data.images.new(
+        name,
+        width=width,
+        height=height,
+        alpha=False,
+        float_buffer=False,
+    )
+    image.pixels.foreach_set(pixels)
+    image.filepath_raw = str(path.resolve())
+    image.file_format = "PNG"
+    image.save()
+    return image
+
+
 def generate_bake(frame: int) -> tuple[Path, Path]:
     bake_dir = OUT / "bake"
     bake_dir.mkdir(parents=True, exist_ok=True)
@@ -129,34 +146,52 @@ def generate_bake(frame: int) -> tuple[Path, Path]:
             x = (px / (n - 1) - 0.5) * extent
             row[px] = wave_height(x, y, t)
 
-    height_img = Image.new("L", (n, n))
-    hp = height_img.load()
-    for py in range(n):
-        for px in range(n):
-            v = 0.5 + 0.5 * max(-1.0, min(1.0, heights[py][px] / maximum))
-            hp[px, py] = int(round(v * 255))
-    height_img.save(height_path)
+    height_pixels = [0.0] * (n * n * 4)
+    normal_pixels = [0.0] * (n * n * 4)
+    normal_strength = 3.0 + V["normal_strength"] * 3.0
 
-    normal_img = Image.new("RGB", (n, n))
-    npix = normal_img.load()
-    strength = 3.0 + V["normal_strength"] * 3.0
     for py in range(n):
         ym = max(0, py - 1)
         yp = min(n - 1, py + 1)
         for px in range(n):
             xm = max(0, px - 1)
             xp = min(n - 1, px + 1)
+            idx = (py * n + px) * 4
+
+            h = heights[py][px]
+            gray = 0.5 + 0.5 * max(-1.0, min(1.0, h / maximum))
+            height_pixels[idx:idx + 4] = (gray, gray, gray, 1.0)
+
             dx = heights[py][xp] - heights[py][xm]
             dy = heights[yp][px] - heights[ym][px]
-            nx, ny, nz = -dx * strength, -dy * strength, 1.0
+            nx, ny, nz = -dx * normal_strength, -dy * normal_strength, 1.0
             length = math.sqrt(nx * nx + ny * ny + nz * nz)
             nx, ny, nz = nx / length, ny / length, nz / length
-            npix[px, py] = (
-                int(round((nx * 0.5 + 0.5) * 255)),
-                int(round((ny * 0.5 + 0.5) * 255)),
-                int(round((nz * 0.5 + 0.5) * 255)),
+            normal_pixels[idx:idx + 4] = (
+                nx * 0.5 + 0.5,
+                ny * 0.5 + 0.5,
+                nz * 0.5 + 0.5,
+                1.0,
             )
-    normal_img.save(normal_path)
+
+    save_blender_image(
+        f"WaveHeight_{frame:04d}",
+        height_path,
+        n,
+        n,
+        height_pixels,
+    )
+    normal_image = save_blender_image(
+        f"WaveNormal_{frame:04d}",
+        normal_path,
+        n,
+        n,
+        normal_pixels,
+    )
+    try:
+        normal_image.colorspace_settings.name = "Non-Color"
+    except Exception:
+        pass
     return height_path, normal_path
 
 
@@ -203,6 +238,8 @@ def make_water_material(normal_path: Path):
 
     out = nodes.new("ShaderNodeOutputMaterial")
     bsdf = nodes.new("ShaderNodeBsdfPrincipled")
+    coord = nodes.new("ShaderNodeTexCoord")
+    mapping = nodes.new("ShaderNodeMapping")
     tex = nodes.new("ShaderNodeTexImage")
     normal = nodes.new("ShaderNodeNormalMap")
 
@@ -214,6 +251,7 @@ def make_water_material(normal_path: Path):
     tex.image = image
     tex.extension = "REPEAT"
     tex.interpolation = "Linear"
+    mapping.inputs["Scale"].default_value = (8.0, 8.0, 8.0)
     normal.inputs["Strength"].default_value = V["normal_strength"]
 
     set_principled_input(bsdf, "Base Color", V["water_color"])
@@ -222,6 +260,8 @@ def make_water_material(normal_path: Path):
     set_principled_input(bsdf, "Transmission Weight", 0.22)
     set_principled_input(bsdf, "Metallic", 0.0)
 
+    links.new(coord.outputs["Generated"], mapping.inputs["Vector"])
+    links.new(mapping.outputs["Vector"], tex.inputs["Vector"])
     links.new(tex.outputs["Color"], normal.inputs["Color"])
     links.new(normal.outputs["Normal"], bsdf.inputs["Normal"])
     links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
