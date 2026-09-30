@@ -1,0 +1,65 @@
+name: Ocean ship motion preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ocean-ship-motion-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BLENDER_VERSION: "5.2.2"
+      SHIP_VARIANT: "5"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Python preflight
+        run: python3 -m py_compile experiments/ocean-ship-float/scene.py
+
+      - name: Restore Blender runtime
+        id: blender-runtime-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-${{ runner.os }}-x64-${{ env.BLENDER_VERSION }}-v1
+
+      - name: Configure runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit == 'true'
+        run: |
+          echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Require cached runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit != 'true'
+        run: exit 1
+
+      - name: Render three-frame ship motion preview
+        run: |
+          set -o pipefail
+          rm -rf output52-ship-motion
+          mkdir -p output52-ship-motion/frames
+          SHIP_OUTPUT=output52-ship-motion           LIBGL_ALWAYS_SOFTWARE=1           SDL_AUDIODRIVER=dummy             xvfb-run -a -s "-screen 0 640x360x24"             blender --background               --python experiments/ocean-ship-float/scene.py               2>&1 | tee output52-ship-motion/blender.log
+          if grep -Fq "Traceback (most recent call last):" output52-ship-motion/blender.log; then
+            exit 1
+          fi
+          test "$(find output52-ship-motion/frames -name 'frame_*.png' | wc -l)" -eq 3
+          sha256sum output52-ship-motion/frames/frame_0001.png                     output52-ship-motion/frames/frame_0002.png                     output52-ship-motion/frames/frame_0003.png
+          cat output52-ship-motion/ocean-ship-float-report.json
+
+      - name: Upload motion preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocean-ship-motion-v5
+          path: output52-ship-motion/
+          retention-days: 7
+          if-no-files-found: error
