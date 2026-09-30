@@ -3,16 +3,16 @@
   "blender_version": "5.2.2 LTS",
   "engine": "CYCLES",
   "frame_count": 24,
-  "preview_sha256": "9816729beef912dcc68f587d20666411f9bc64d964ffc204ff65bf259784b358",
-  "video_size_bytes": 9118,
-  "blend_size_bytes": 133878,
-  "preview_stddev": 15.703,
-  "preview_mean_luma": 161.939,
-  "preview_mean_saturation": 74.69,
+  "preview_sha256": "1cc9e21eca0eac8a046275b57627fb5a54e57399f6e142bacfb42799acd89a3e",
+  "video_size_bytes": 8320,
+  "blend_size_bytes": 133882,
+  "preview_stddev": 24.659,
+  "preview_mean_luma": 65.994,
+  "preview_mean_saturation": 144.586,
   "preview_mean_rgb": [
-    174.292,
-    162.942,
-    123.763
+    76.497,
+    66.834,
+    34.275
   ],
   "semantic_checks": {
     "cycles": true,
@@ -23,6 +23,7 @@
     "procedural_wallpaper": true,
     "floor_bump": true,
     "low_saturation_grade": true,
-    "motion_present": true
+    "motion_present": true,
+    "camera_has_depth": true
   }
 }
