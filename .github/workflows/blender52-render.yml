@@ -47,7 +47,6 @@ jobs:
     env:
       EXPERIMENT: ${{ inputs.experiment || 'hello-blender52' }}
       EXPERIMENT_VARIANT: ${{ inputs.variant || '0' }}
-      EXPERIMENT_VARIANT: ${{ inputs.variant || '0' }}
       BACKROOMS_VARIANT: ${{ inputs.variant || '0' }}
       BLENDER_VERSION: "5.2.2"
 
@@ -228,6 +227,7 @@ jobs:
     timeout-minutes: 10
     env:
       EXPERIMENT: ${{ inputs.experiment || 'hello-blender52' }}
+      EXPERIMENT_VARIANT: ${{ inputs.variant || '0' }}
 
     steps:
       - name: Checkout latest main
