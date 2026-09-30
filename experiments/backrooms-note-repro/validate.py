@@ -35,7 +35,9 @@ def main() -> None:
     require_file(version_path)
     require_file(report_path, 500)
     require_file(preview_path, 5_000)
-    require_file(video_path, 12_000)
+    # A 1-second 640x360 H.264 clip with subtle motion can legitimately be very small.
+    # Keep this as a corruption/truncation guard, not a proxy for visual complexity.
+    require_file(video_path, 5_000)
     require_file(blend_path, 80_000)
 
     version_text = version_path.read_text(encoding="utf-8", errors="replace")
