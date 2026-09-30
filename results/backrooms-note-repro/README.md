@@ -1,8 +1,9 @@
 # backrooms-note-repro
 
-- source commit: `e69417d323e55d50163e0d3d2d8a8534fdd5e468`
-- Actions run: `7` (`36657266820`)
+- source commit: `49b2a605190796fc0e6c14934944226248fa4dbd`
+- Actions run: `12` (`36659897818`)
 - Blender: 5.2.2
+- variant: 
 
 ![preview](./preview.png)
 

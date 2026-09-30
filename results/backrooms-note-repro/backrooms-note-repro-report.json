@@ -1,6 +1,25 @@
 {
   "experiment": "backrooms-note-repro",
   "fast_preview": false,
+  "variant_sweep": false,
+  "variant_id": 20,
+  "variant_name": "yellow-green-balanced",
+  "variant_parameters": {
+    "wall_scale": 5.2,
+    "wall_detail": 2.0,
+    "wall_bump": 0.09,
+    "floor_scale": 52.0,
+    "floor_bump": 0.52,
+    "panel_scale": [
+      0.88,
+      0.2
+    ],
+    "area_size": [
+      1.88,
+      0.55
+    ],
+    "emission_strength": 1.25
+  },
   "source_article": "https://note.com/kitaniosam/n/ne760c5e78985",
   "blender_version": "5.2.2 LTS",
   "engine": "CYCLES",
@@ -20,7 +39,7 @@
     15.0
   ],
   "camera_lens_mm": 30.0,
-  "center_ray_distance_m": 9.9106,
+  "center_ray_distance_m": 31.4111,
   "wall_bevel_m": 0.045,
   "wall_count": 25,
   "emission_strength": 1.0,
@@ -29,224 +48,224 @@
   "area_light_count": 22,
   "procedural_materials_only": true,
   "external_texture_files": 0,
-  "compositor_grade": false,
+  "compositor_grade": true,
   "grade_intent": "reduced saturation and slightly softened contrast",
   "frame_stats": [
     {
       "frame": 1,
       "camera": [
-        -30.0,
-        -1.0,
+        -19.8,
+        1.65,
         1.58
       ],
-      "flicker_light_w": 68.2045
+      "flicker_light_w": 112.5374
     },
     {
       "frame": 2,
       "camera": [
-        -29.9687,
-        -0.98651,
+        -19.7687,
+        1.66349,
         1.58204
       ],
-      "flicker_light_w": 75.2365
+      "flicker_light_w": 124.1402
     },
     {
       "frame": 3,
       "camera": [
-        -29.93739,
-        -0.97402,
+        -19.73739,
+        1.67598,
         1.58405
       ],
-      "flicker_light_w": 76.8631
+      "flicker_light_w": 126.824
     },
     {
       "frame": 4,
       "camera": [
-        -29.90609,
-        -0.96346,
+        -19.70609,
+        1.68654,
         1.58598
       ],
-      "flicker_light_w": 71.886
+      "flicker_light_w": 118.6118
     },
     {
       "frame": 5,
       "camera": [
-        -29.87478,
-        -0.95561,
+        -19.67478,
+        1.69439,
         1.58779
       ],
-      "flicker_light_w": 66.1385
+      "flicker_light_w": 109.1285
     },
     {
       "frame": 6,
       "camera": [
-        -29.84348,
-        -0.95105,
+        -19.64348,
+        1.69895,
         1.58947
       ],
-      "flicker_light_w": 73.4308
+      "flicker_light_w": 121.1609
     },
     {
       "frame": 7,
       "camera": [
-        -29.81217,
-        -0.95012,
+        -19.61217,
+        1.69988,
         1.59096
       ],
-      "flicker_light_w": 75.9151
+      "flicker_light_w": 125.2599
     },
     {
       "frame": 8,
       "camera": [
-        -29.78087,
-        -0.95289,
+        -19.58087,
+        1.69711,
         1.59225
       ],
-      "flicker_light_w": 72.138
+      "flicker_light_w": 119.0278
     },
     {
       "frame": 9,
       "camera": [
-        -29.74957,
-        -0.95915,
+        -19.54956,
+        1.69085,
         1.59332
       ],
-      "flicker_light_w": 70.5804
+      "flicker_light_w": 116.4576
     },
     {
       "frame": 10,
       "camera": [
-        -29.71826,
-        -0.96845,
+        -19.51826,
+        1.68155,
         1.59413
       ],
-      "flicker_light_w": 78.3493
+      "flicker_light_w": 129.2763
     },
     {
       "frame": 11,
       "camera": [
-        -29.68696,
-        -0.98008,
+        -19.48696,
+        1.66992,
         1.59469
       ],
-      "flicker_light_w": 79.3514
+      "flicker_light_w": 130.9298
     },
     {
       "frame": 12,
       "camera": [
-        -29.65565,
-        -0.99319,
+        -19.45565,
+        1.65681,
         1.59497
       ],
-      "flicker_light_w": 72.9867
+      "flicker_light_w": 120.428
     },
     {
       "frame": 13,
       "camera": [
-        -29.62435,
-        -1.00681,
+        -19.42435,
+        1.64319,
         1.59497
       ],
-      "flicker_light_w": 72.1533
+      "flicker_light_w": 119.0529
     },
     {
       "frame": 14,
       "camera": [
-        -29.59304,
-        -1.01992,
+        -19.39304,
+        1.63008,
         1.59469
       ],
-      "flicker_light_w": 76.9062
+      "flicker_light_w": 126.8952
     },
     {
       "frame": 15,
       "camera": [
-        -29.56174,
-        -1.03155,
+        -19.36174,
+        1.61845,
         1.59413
       ],
-      "flicker_light_w": 75.0986
+      "flicker_light_w": 123.9127
     },
     {
       "frame": 16,
       "camera": [
-        -29.53044,
-        -1.04085,
+        -19.33043,
+        1.60915,
         1.59332
       ],
-      "flicker_light_w": 67.727
+      "flicker_light_w": 111.7496
     },
     {
       "frame": 17,
       "camera": [
-        -29.49913,
-        -1.04711,
+        -19.29913,
+        1.60289,
         1.59225
       ],
-      "flicker_light_w": 70.1525
+      "flicker_light_w": 115.7517
     },
     {
       "frame": 18,
       "camera": [
-        -29.46783,
-        -1.04988,
+        -19.26783,
+        1.60012,
         1.59096
       ],
-      "flicker_light_w": 75.4571
+      "flicker_light_w": 124.5042
     },
     {
       "frame": 19,
       "camera": [
-        -29.43652,
-        -1.04895,
+        -19.23652,
+        1.60105,
         1.58947
       ],
-      "flicker_light_w": 74.7402
+      "flicker_light_w": 123.3214
     },
     {
       "frame": 20,
       "camera": [
-        -29.40522,
-        -1.04439,
+        -19.20522,
+        1.60561,
         1.58779
       ],
-      "flicker_light_w": 68.5609
+      "flicker_light_w": 113.1255
     },
     {
       "frame": 21,
       "camera": [
-        -29.37391,
-        -1.03654,
+        -19.17391,
+        1.61346,
         1.58598
       ],
-      "flicker_light_w": 75.0773
+      "flicker_light_w": 123.8776
     },
     {
       "frame": 22,
       "camera": [
-        -29.34261,
-        -1.02598,
+        -19.14261,
+        1.62402,
         1.58405
       ],
-      "flicker_light_w": 79.8569
+      "flicker_light_w": 131.7639
     },
     {
       "frame": 23,
       "camera": [
-        -29.3113,
-        -1.01349,
+        -19.1113,
+        1.63651,
         1.58204
       ],
-      "flicker_light_w": 76.923
+      "flicker_light_w": 126.923
     },
     {
       "frame": 24,
       "camera": [
-        -29.28,
-        -1.0,
+        -19.08,
+        1.65,
         1.58
       ],
-      "flicker_light_w": 68.2045
+      "flicker_light_w": 112.5374
     }
   ]
 }
