@@ -10,16 +10,16 @@
       "blender_version": "5.2.2 LTS",
       "engine": "CYCLES",
       "frame_count": 24,
-      "preview_sha256": "155b40fb4dcac5903f2a61b026a705d57d5d928a017cf9ba136198e19b78c452",
-      "video_size_bytes": 8349,
-      "blend_size_bytes": 133880,
-      "preview_stddev": 24.659,
-      "preview_mean_luma": 65.994,
-      "preview_mean_saturation": 144.586,
+      "preview_sha256": "b686e268fd28682460e12cfa6e0e21c486fbe35559570e07dbe9b11f798e2d99",
+      "video_size_bytes": 10124,
+      "blend_size_bytes": 135871,
+      "preview_stddev": 20.432,
+      "preview_mean_luma": 95.247,
+      "preview_mean_saturation": 78.947,
       "preview_mean_rgb": [
-        76.497,
-        66.834,
-        34.275
+        102.343,
+        96.45,
+        70.78
       ],
       "semantic_checks": {
         "cycles": true,
