@@ -1,0 +1,5 @@
+{
+  "id": "yokohama-terrain",
+  "title": "Yokohama City Terrain — Low Resolution",
+  "description": "320×180 first-pass terrain render of Yokohama using GSI DEM10B PNG elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration."
+}

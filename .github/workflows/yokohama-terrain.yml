@@ -1,0 +1,22 @@
+name: Yokohama terrain low-res
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/yokohama-terrain/**'
+      - '.github/workflows/yokohama-terrain.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  yokohama:
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: yokohama-terrain
+      variant: lowres-z11
+    secrets: inherit
