@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
-      EXPERIMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.experiment || 'hello-blender52' }}
+      EXPERIMENT: ${{ inputs.experiment || 'hello-blender52' }}
       BLENDER_VERSION: "5.2.2"
 
     steps:
@@ -207,7 +207,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      EXPERIMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.experiment || 'hello-blender52' }}
+      EXPERIMENT: ${{ inputs.experiment || 'hello-blender52' }}
 
     steps:
       - name: Checkout latest main

@@ -1,0 +1,21 @@
+name: Backrooms note reproduction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/backrooms-note-repro/**'
+      - '.github/workflows/backrooms-note-repro.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  reproduce:
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: backrooms-note-repro
+    secrets: inherit
