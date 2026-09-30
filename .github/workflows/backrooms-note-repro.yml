@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 15
     env:
       BLENDER_VERSION: "5.2.2"
+      BACKROOMS_VARIANT: "20"
 
     steps:
       - name: Checkout
@@ -117,3 +118,4 @@ jobs:
     uses: 2rwa/tmp-blender-52/.github/workflows/blender52-render.yml@main
     with:
       experiment: backrooms-note-repro
+      variant: "20"

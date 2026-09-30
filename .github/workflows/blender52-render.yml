@@ -13,12 +13,22 @@ on:
         description: Experiment folder name under experiments/
         required: true
         type: string
+      variant:
+        description: Optional experiment variant id
+        required: false
+        default: "0"
+        type: string
   workflow_dispatch:
     inputs:
       experiment:
         description: Experiment folder name under experiments/
         required: true
         default: hello-blender52
+        type: string
+      variant:
+        description: Optional experiment variant id
+        required: false
+        default: "0"
         type: string
 
 permissions:
@@ -36,6 +46,9 @@ jobs:
     timeout-minutes: 120
     env:
       EXPERIMENT: ${{ inputs.experiment || 'hello-blender52' }}
+      EXPERIMENT_VARIANT: ${{ inputs.variant || '0' }}
+      EXPERIMENT_VARIANT: ${{ inputs.variant || '0' }}
+      BACKROOMS_VARIANT: ${{ inputs.variant || '0' }}
       BLENDER_VERSION: "5.2.2"
 
     steps:
@@ -66,7 +79,7 @@ jobs:
             | sha256sum \
             | cut -d' ' -f1
           )"
-          echo "key=blender52-render-${RUNNER_OS}-${BLENDER_VERSION}-${EXPERIMENT}-${content_hash}" >> "$GITHUB_OUTPUT"
+          echo "key=blender52-render-${RUNNER_OS}-${BLENDER_VERSION}-${EXPERIMENT}-variant-${EXPERIMENT_VARIANT}-${content_hash}" >> "$GITHUB_OUTPUT"
 
       - name: Restore render checkpoint
         id: render-cache
@@ -252,6 +265,7 @@ jobs:
           - source commit: \`$SOURCE_COMMIT\`
           - Actions run: \`$RUN_NUMBER\` (\`$RUN_ID\`)
           - Blender: 5.2.2
+          - variant: `$EXPERIMENT_VARIANT`
 
           ![preview](./preview.png)
 
