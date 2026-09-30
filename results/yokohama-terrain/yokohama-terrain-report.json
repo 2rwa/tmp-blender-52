@@ -1,0 +1,239 @@
+{
+  "experiment": "yokohama-terrain",
+  "title": "Yokohama City terrain low-resolution test",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "data_source": "Geospatial Information Authority of Japan (GSI) DEM10B PNG elevation tiles",
+  "data_source_url_template": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/{z}/{x}/{y}.png",
+  "bbox_lonlat": [
+    139.47,
+    35.3,
+    139.78,
+    35.6
+  ],
+  "dem_zoom": 11,
+  "grid": [
+    96,
+    112
+  ],
+  "vertical_exaggeration": 8.0,
+  "frame_start": 1,
+  "frame_end": 24,
+  "frame_count": 24,
+  "fps": 24,
+  "resolution": [
+    320,
+    180
+  ],
+  "preview_frame": 12,
+  "dem": {
+    "tile_count": 9,
+    "sample_count": 10752,
+    "valid_sample_count": 8006,
+    "valid_ratio": 0.7446056547619048,
+    "elevation_min_m": -0.1,
+    "elevation_max_m": 140.57,
+    "elevation_mean_m": 30.790996752435674
+  },
+  "terrain": {
+    "width_m": 28111.952391446386,
+    "height_m": 33396.00000000047,
+    "terrain_width_bu": 12.0,
+    "terrain_depth_bu": 14.255573373905627,
+    "zmax_bu": 0.48003496207207697
+  },
+  "frame_stats": [
+    {
+      "frame": 1,
+      "camera": [
+        9.43966,
+        -15.46424,
+        11.0
+      ]
+    },
+    {
+      "frame": 2,
+      "camera": [
+        9.62672,
+        -15.3485,
+        11.04766
+      ]
+    },
+    {
+      "frame": 3,
+      "camera": [
+        9.81236,
+        -15.23048,
+        11.09443
+      ]
+    },
+    {
+      "frame": 4,
+      "camera": [
+        9.99655,
+        -15.11023,
+        11.13944
+      ]
+    },
+    {
+      "frame": 5,
+      "camera": [
+        10.17927,
+        -14.98775,
+        11.18185
+      ]
+    },
+    {
+      "frame": 6,
+      "camera": [
+        10.36048,
+        -14.86305,
+        11.22088
+      ]
+    },
+    {
+      "frame": 7,
+      "camera": [
+        10.54017,
+        -14.73617,
+        11.25579
+      ]
+    },
+    {
+      "frame": 8,
+      "camera": [
+        10.71831,
+        -14.60711,
+        11.28594
+      ]
+    },
+    {
+      "frame": 9,
+      "camera": [
+        10.89487,
+        -14.47591,
+        11.31076
+      ]
+    },
+    {
+      "frame": 10,
+      "camera": [
+        11.06982,
+        -14.34256,
+        11.32979
+      ]
+    },
+    {
+      "frame": 11,
+      "camera": [
+        11.24314,
+        -14.20711,
+        11.34268
+      ]
+    },
+    {
+      "frame": 12,
+      "camera": [
+        11.4148,
+        -14.06955,
+        11.34918
+      ]
+    },
+    {
+      "frame": 13,
+      "camera": [
+        11.58478,
+        -13.92993,
+        11.34918
+      ]
+    },
+    {
+      "frame": 14,
+      "camera": [
+        11.75305,
+        -13.78825,
+        11.34268
+      ]
+    },
+    {
+      "frame": 15,
+      "camera": [
+        11.91959,
+        -13.64454,
+        11.32979
+      ]
+    },
+    {
+      "frame": 16,
+      "camera": [
+        12.08437,
+        -13.49882,
+        11.31076
+      ]
+    },
+    {
+      "frame": 17,
+      "camera": [
+        12.24737,
+        -13.3511,
+        11.28594
+      ]
+    },
+    {
+      "frame": 18,
+      "camera": [
+        12.40856,
+        -13.20142,
+        11.25579
+      ]
+    },
+    {
+      "frame": 19,
+      "camera": [
+        12.56793,
+        -13.0498,
+        11.22088
+      ]
+    },
+    {
+      "frame": 20,
+      "camera": [
+        12.72544,
+        -12.89625,
+        11.18185
+      ]
+    },
+    {
+      "frame": 21,
+      "camera": [
+        12.88108,
+        -12.74079,
+        11.13944
+      ]
+    },
+    {
+      "frame": 22,
+      "camera": [
+        13.03482,
+        -12.58346,
+        11.09443
+      ]
+    },
+    {
+      "frame": 23,
+      "camera": [
+        13.18663,
+        -12.42428,
+        11.04766
+      ]
+    },
+    {
+      "frame": 24,
+      "camera": [
+        13.33651,
+        -12.26326,
+        11.0
+      ]
+    }
+  ]
+}
