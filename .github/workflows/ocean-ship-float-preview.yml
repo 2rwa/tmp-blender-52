@@ -1,0 +1,74 @@
+name: Ocean ship float preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/ships/quaternius-sail-ship/**'
+      - 'experiments/ocean-ship-float/**'
+      - '.github/workflows/ocean-ship-float-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    name: ship-${{ matrix.variant }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [1,2,3,4,5,6]
+    env:
+      BLENDER_VERSION: "5.2.2"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Python preflight
+        run: python3 -m py_compile experiments/ocean-ship-float/scene.py
+
+      - name: Restore Blender runtime
+        id: blender-runtime-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-${{ runner.os }}-x64-${{ env.BLENDER_VERSION }}-v1
+
+      - name: Configure runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit == 'true'
+        run: |
+          echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Require cached runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit != 'true'
+        run: exit 1
+
+      - name: Render ship preview
+        env:
+          SHIP_VARIANT: ${{ matrix.variant }}
+        run: |
+          set -o pipefail
+          out="output52-ship-${SHIP_VARIANT}"
+          rm -rf "$out"
+          mkdir -p "$out/frames"
+          SHIP_VARIANT_SWEEP=1           SHIP_OUTPUT="$out"           LIBGL_ALWAYS_SOFTWARE=1           SDL_AUDIODRIVER=dummy             xvfb-run -a -s "-screen 0 640x360x24"             blender --background               --python experiments/ocean-ship-float/scene.py               2>&1 | tee "$out/blender.log"
+          if grep -Fq "Traceback (most recent call last):" "$out/blender.log"; then
+            exit 1
+          fi
+          test -s "$out/preview.png"
+          cat "$out/ocean-ship-float-report.json"
+
+      - name: Upload preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocean-ship-variant-${{ matrix.variant }}
+          path: output52-ship-${{ matrix.variant }}/
+          retention-days: 7
+          if-no-files-found: warn
