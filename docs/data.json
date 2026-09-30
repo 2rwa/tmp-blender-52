@@ -1,8 +1,36 @@
 [
   {
+    "id": "yokohama-terrain",
+    "title": "Yokohama City Terrain — Low Resolution",
+    "description": "320×180 first-pass terrain render of Yokohama using GSI DEM10B PNG elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration.",
+    "created_at": "2026-09-30T23:17:22Z",
+    "preview": "assets/yokohama-terrain/preview.png",
+    "video": "assets/yokohama-terrain/media.mp4",
+    "validation": {
+      "experiment": "yokohama-terrain",
+      "blender_version": "5.2.2 LTS",
+      "engine": "BLENDER_EEVEE",
+      "resolution": [
+        320,
+        180
+      ],
+      "frame_count": 24,
+      "dem_zoom": 11,
+      "dem_tile_count": 9,
+      "dem_valid_ratio": 0.7446,
+      "elevation_min_m": -0.1,
+      "elevation_max_m": 140.57,
+      "preview_sha256": "b320c742db01467ad934001ba483098a76d3bed5132394ce20dbe76cf957b31b",
+      "video_size_bytes": 6535,
+      "blend_size_bytes": 374976,
+      "preview_stddev": 41.578
+    }
+  },
+  {
     "id": "backrooms-note-repro",
     "title": "Backrooms — note.com technique reproduction",
     "description": "Blender 5.2.2 / Cycles recreation of the note.com Backrooms workflow: 65m x 15m maze, beveled walls, emissive fluorescent panels plus 80 W area lights, 30 mm camera, noisy carpet, and a low-saturation grade. Wallpaper is procedural rather than copied.",
+    "created_at": "2026-09-30T01:44:57Z",
     "preview": "assets/backrooms-note-repro/preview.png",
     "video": "assets/backrooms-note-repro/media.mp4",
     "validation": {
@@ -36,74 +64,27 @@
     }
   },
   {
-    "id": "feature52-cloth-tearing",
-    "title": "Blender 5.2 Geometry Nodes Cloth Tearing",
-    "description": "Blender 5.2 experimental node-powered Cloth Dynamics / XPBD tearing. A pinned cloth is pulled by gravity and validation requires an actual topology split.",
-    "preview": "assets/feature52-cloth-tearing/preview.png",
-    "video": "assets/feature52-cloth-tearing/media.mp4",
+    "id": "feature52-thin-wall",
+    "title": "Blender 5.2 Principled Thin Wall",
+    "description": "Blender 5.2 Principled BSDF Thin Wall mode with transmissive zero-thickness panels.",
+    "created_at": "2026-09-29T01:51:35Z",
+    "preview": "assets/feature52-thin-wall/preview.png",
+    "video": "assets/feature52-thin-wall/media.mp4",
     "validation": {
-      "experiment": "feature52-cloth-tearing",
-      "blender_version": "5.2.2 LTS",
-      "asset_source": "direct:/home/runner/work/tmp-blender-52/tmp-blender-52/.cache/blender52-runtime/blender/5.2/datafiles/assets/nodes/geometry_nodes_dynamics_assets.blend",
-      "first_tear_frame": 2,
-      "base_vertices": 1073,
-      "max_vertices": 2561,
-      "max_components": 491,
-      "preview_frame": 8,
-      "preview_sha256": "531fa368e6447898a4ed4a39747742e68495195e95fde25cc08439a6e091ca22",
-      "video_size_bytes": 18553,
-      "blend_size_bytes": 288343
-    }
-  },
-  {
-    "id": "feature52-compositor-blank-image",
-    "title": "Blender 5.2 Compositor Blank Image",
-    "description": "Blender 5.2 Blank Image compositor node supplies a procedural background behind a transparent render.",
-    "preview": "assets/feature52-compositor-blank-image/preview.png",
-    "video": "assets/feature52-compositor-blank-image/media.mp4",
-    "validation": {
-      "experiment": "feature52-compositor-blank-image",
+      "experiment": "feature52-thin-wall",
       "blender_version": "5.2.2 LTS",
       "engine": "BLENDER_EEVEE",
       "frame_count": 36,
-      "preview_sha256": "76bedcb7de144f42f810c8655ef51f85d0a564a208e6bab361a2b183c5078731",
-      "preview_stddev": 16.168,
-      "video_size_bytes": 10145,
-      "blend_size_bytes": 132119,
+      "preview_sha256": "9b8a710bc319fc46e839443ac40950621fa2698e44f2106a47f3385fc7737561",
+      "preview_stddev": 46.364,
+      "video_size_bytes": 20001,
+      "blend_size_bytes": 129231,
       "feature": {
-        "name": "Compositor Blank Image",
-        "node_idname": "CompositorNodeBlankImage",
-        "inputs": [
-          "Color",
-          "Size"
-        ],
-        "size_socket_present": true
-      }
-    }
-  },
-  {
-    "id": "feature52-compositor-string-to-image",
-    "title": "Blender 5.2 Compositor String to Image",
-    "description": "Blender 5.2 String to Image compositor node generates a BLENDER 5.2 text overlay.",
-    "preview": "assets/feature52-compositor-string-to-image/preview.png",
-    "video": "assets/feature52-compositor-string-to-image/media.mp4",
-    "validation": {
-      "experiment": "feature52-compositor-string-to-image",
-      "blender_version": "5.2.2 LTS",
-      "engine": "BLENDER_EEVEE",
-      "frame_count": 36,
-      "preview_sha256": "5bc8ab32eb0541c3b1f599f35315d0c70835af4cff41d9c8a2a207190e1b7fe6",
-      "preview_stddev": 27.695,
-      "video_size_bytes": 11186,
-      "blend_size_bytes": 99201,
-      "feature": {
-        "name": "Compositor String to Image",
-        "node_idname": "CompositorNodeStringToImage",
-        "string": "BLENDER 5.2",
-        "size": 64.0,
-        "outputs": [
-          "Image"
-        ]
+        "name": "Principled BSDF Thin Wall",
+        "node_idname": "ShaderNodeBsdfPrincipled",
+        "thin_wall_input_present": true,
+        "thin_wall_enabled": true,
+        "transmission_weight": 0.9200000166893005
       }
     }
   },
@@ -111,6 +92,7 @@
     "id": "feature52-shader-scene-time",
     "title": "Blender 5.2 Shader Scene Time",
     "description": "Blender 5.2 Scene Time node drives an emissive material directly in the shader graph.",
+    "created_at": "2026-09-29T01:51:35Z",
     "preview": "assets/feature52-shader-scene-time/preview.png",
     "video": "assets/feature52-shader-scene-time/media.mp4",
     "validation": {
@@ -142,33 +124,85 @@
     }
   },
   {
-    "id": "feature52-thin-wall",
-    "title": "Blender 5.2 Principled Thin Wall",
-    "description": "Blender 5.2 Principled BSDF Thin Wall mode with transmissive zero-thickness panels.",
-    "preview": "assets/feature52-thin-wall/preview.png",
-    "video": "assets/feature52-thin-wall/media.mp4",
+    "id": "feature52-compositor-string-to-image",
+    "title": "Blender 5.2 Compositor String to Image",
+    "description": "Blender 5.2 String to Image compositor node generates a BLENDER 5.2 text overlay.",
+    "created_at": "2026-09-29T01:51:35Z",
+    "preview": "assets/feature52-compositor-string-to-image/preview.png",
+    "video": "assets/feature52-compositor-string-to-image/media.mp4",
     "validation": {
-      "experiment": "feature52-thin-wall",
+      "experiment": "feature52-compositor-string-to-image",
       "blender_version": "5.2.2 LTS",
       "engine": "BLENDER_EEVEE",
       "frame_count": 36,
-      "preview_sha256": "9b8a710bc319fc46e839443ac40950621fa2698e44f2106a47f3385fc7737561",
-      "preview_stddev": 46.364,
-      "video_size_bytes": 20001,
-      "blend_size_bytes": 129231,
+      "preview_sha256": "5bc8ab32eb0541c3b1f599f35315d0c70835af4cff41d9c8a2a207190e1b7fe6",
+      "preview_stddev": 27.695,
+      "video_size_bytes": 11186,
+      "blend_size_bytes": 99201,
       "feature": {
-        "name": "Principled BSDF Thin Wall",
-        "node_idname": "ShaderNodeBsdfPrincipled",
-        "thin_wall_input_present": true,
-        "thin_wall_enabled": true,
-        "transmission_weight": 0.9200000166893005
+        "name": "Compositor String to Image",
+        "node_idname": "CompositorNodeStringToImage",
+        "string": "BLENDER 5.2",
+        "size": 64.0,
+        "outputs": [
+          "Image"
+        ]
       }
+    }
+  },
+  {
+    "id": "feature52-compositor-blank-image",
+    "title": "Blender 5.2 Compositor Blank Image",
+    "description": "Blender 5.2 Blank Image compositor node supplies a procedural background behind a transparent render.",
+    "created_at": "2026-09-29T01:51:35Z",
+    "preview": "assets/feature52-compositor-blank-image/preview.png",
+    "video": "assets/feature52-compositor-blank-image/media.mp4",
+    "validation": {
+      "experiment": "feature52-compositor-blank-image",
+      "blender_version": "5.2.2 LTS",
+      "engine": "BLENDER_EEVEE",
+      "frame_count": 36,
+      "preview_sha256": "76bedcb7de144f42f810c8655ef51f85d0a564a208e6bab361a2b183c5078731",
+      "preview_stddev": 16.168,
+      "video_size_bytes": 10145,
+      "blend_size_bytes": 132119,
+      "feature": {
+        "name": "Compositor Blank Image",
+        "node_idname": "CompositorNodeBlankImage",
+        "inputs": [
+          "Color",
+          "Size"
+        ],
+        "size_socket_present": true
+      }
+    }
+  },
+  {
+    "id": "feature52-cloth-tearing",
+    "title": "Blender 5.2 Geometry Nodes Cloth Tearing",
+    "description": "Blender 5.2 experimental node-powered Cloth Dynamics / XPBD tearing. A pinned cloth is pulled by gravity and validation requires an actual topology split.",
+    "created_at": "2026-09-29T01:51:35Z",
+    "preview": "assets/feature52-cloth-tearing/preview.png",
+    "video": "assets/feature52-cloth-tearing/media.mp4",
+    "validation": {
+      "experiment": "feature52-cloth-tearing",
+      "blender_version": "5.2.2 LTS",
+      "asset_source": "direct:/home/runner/work/tmp-blender-52/tmp-blender-52/.cache/blender52-runtime/blender/5.2/datafiles/assets/nodes/geometry_nodes_dynamics_assets.blend",
+      "first_tear_frame": 2,
+      "base_vertices": 1073,
+      "max_vertices": 2561,
+      "max_components": 491,
+      "preview_frame": 8,
+      "preview_sha256": "531fa368e6447898a4ed4a39747742e68495195e95fde25cc08439a6e091ca22",
+      "video_size_bytes": 18553,
+      "blend_size_bytes": 288343
     }
   },
   {
     "id": "hello-blender52",
     "title": "Blender 5.2 Headless Render Baseline",
     "description": "Minimal Blender 5.2.2 headless render used to verify the GitHub Actions runtime, MP4 creation, and output validation.",
+    "created_at": "2026-09-29T00:52:59Z",
     "preview": "assets/hello-blender52/preview.png",
     "video": "assets/hello-blender52/media.mp4",
     "validation": {
@@ -180,32 +214,6 @@
       "video_size_bytes": 32383,
       "blend_size_bytes": 128947,
       "preview_stddev": 57.864
-    }
-  },
-  {
-    "id": "yokohama-terrain",
-    "title": "Yokohama City Terrain — Low Resolution",
-    "description": "320×180 first-pass terrain render of Yokohama using GSI DEM10B PNG elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration.",
-    "preview": "assets/yokohama-terrain/preview.png",
-    "video": "assets/yokohama-terrain/media.mp4",
-    "validation": {
-      "experiment": "yokohama-terrain",
-      "blender_version": "5.2.2 LTS",
-      "engine": "BLENDER_EEVEE",
-      "resolution": [
-        320,
-        180
-      ],
-      "frame_count": 24,
-      "dem_zoom": 11,
-      "dem_tile_count": 9,
-      "dem_valid_ratio": 0.7446,
-      "elevation_min_m": -0.1,
-      "elevation_max_m": 140.57,
-      "preview_sha256": "b320c742db01467ad934001ba483098a76d3bed5132394ce20dbe76cf957b31b",
-      "video_size_bytes": 6535,
-      "blend_size_bytes": 374976,
-      "preview_stddev": 41.578
     }
   }
 ]

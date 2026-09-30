@@ -11,7 +11,11 @@
     header { position: sticky; top: 0; z-index: 2; padding: 20px; background: #0c0f14e8; backdrop-filter: blur(10px); border-bottom: 1px solid #252b36; }
     h1 { margin: 0 0 12px; font-size: clamp(1.4rem, 4vw, 2.2rem); }
     header p { margin: 0 0 14px; color: #aeb8c8; }
-    input { width: min(700px, 100%); padding: 12px 14px; border: 1px solid #303746; border-radius: 10px; background: #151a22; color: inherit; font: inherit; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    input { flex: 1 1 360px; min-width: min(100%, 260px); padding: 12px 14px; border: 1px solid #303746; border-radius: 10px; background: #151a22; color: inherit; font: inherit; }
+    .sort-controls { display: flex; flex-wrap: wrap; gap: 6px; }
+    .sort-controls button { padding: 10px 12px; border: 1px solid #303746; border-radius: 9px; background: #151a22; color: inherit; font: inherit; cursor: pointer; }
+    .sort-controls button[aria-pressed="true"] { background: #263449; border-color: #5877a8; }
     main { width: min(1200px, calc(100% - 28px)); margin: 24px auto 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
     .card { overflow: hidden; border: 1px solid #252c38; border-radius: 16px; background: #121720; box-shadow: 0 12px 32px #0005; }
     .media { width: 100%; aspect-ratio: 4/3; border: 0; padding: 0; background: #07090d; position: relative; display: grid; place-items: center; overflow: hidden; color: inherit; }
@@ -34,11 +38,38 @@
   <header>
     <h1>tmp-blender-52</h1>
     <p>Blender 5.2 GitHub Actions render gallery — snapshot first, click to play.</p>
-    <input id="search" type="search" placeholder="Filter experiments…" autocomplete="off">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Filter experiments…" autocomplete="off">
+      <div class="sort-controls" aria-label="Sort experiments">
+        <button type="button" data-sort="newest" aria-pressed="true">Newest</button>
+        <button type="button" data-sort="oldest" aria-pressed="false">Oldest</button>
+        <button type="button" data-sort="name" aria-pressed="false">Name</button>
+      </div>
+    </div>
   </header>
   <main id="grid">
     
-    <article class="card" data-search="backrooms — note.com technique reproduction blender 5.2.2 / cycles recreation of the note.com backrooms workflow: 65m x 15m maze, beveled walls, emissive fluorescent panels plus 80 w area lights, 30 mm camera, noisy carpet, and a low-saturation grade. wallpaper is procedural rather than copied. backrooms-note-repro">
+    <article class="card"
+      data-created-at="2026-09-30T23:17:22Z"
+      data-title="yokohama city terrain — low resolution"
+      data-search="yokohama city terrain — low resolution 320×180 first-pass terrain render of yokohama using gsi dem10b png elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration. yokohama-terrain">
+      <button class='media play' data-video='assets/yokohama-terrain/media.mp4' aria-label='Play Yokohama City Terrain — Low Resolution'><img src='assets/yokohama-terrain/preview.png' alt='Yokohama City Terrain — Low Resolution preview' loading='lazy'><span>▶ Play</span></button>
+      <div class="body">
+        <h2>Yokohama City Terrain — Low Resolution</h2>
+        <p>320×180 first-pass terrain render of Yokohama using GSI DEM10B PNG elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration.</p>
+        <dl>
+          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
+          <div><dt>Frames</dt><dd>24</dd></div>
+        </dl>
+        <code>yokohama-terrain</code>
+      </div>
+    </article>
+    
+
+    <article class="card"
+      data-created-at="2026-09-30T01:44:57Z"
+      data-title="backrooms — note.com technique reproduction"
+      data-search="backrooms — note.com technique reproduction blender 5.2.2 / cycles recreation of the note.com backrooms workflow: 65m x 15m maze, beveled walls, emissive fluorescent panels plus 80 w area lights, 30 mm camera, noisy carpet, and a low-saturation grade. wallpaper is procedural rather than copied. backrooms-note-repro">
       <button class='media play' data-video='assets/backrooms-note-repro/media.mp4' aria-label='Play Backrooms — note.com technique reproduction'><img src='assets/backrooms-note-repro/preview.png' alt='Backrooms — note.com technique reproduction preview' loading='lazy'><span>▶ Play</span></button>
       <div class="body">
         <h2>Backrooms — note.com technique reproduction</h2>
@@ -52,63 +83,10 @@
     </article>
     
 
-    <article class="card" data-search="blender 5.2 geometry nodes cloth tearing blender 5.2 experimental node-powered cloth dynamics / xpbd tearing. a pinned cloth is pulled by gravity and validation requires an actual topology split. feature52-cloth-tearing">
-      <button class='media play' data-video='assets/feature52-cloth-tearing/media.mp4' aria-label='Play Blender 5.2 Geometry Nodes Cloth Tearing'><img src='assets/feature52-cloth-tearing/preview.png' alt='Blender 5.2 Geometry Nodes Cloth Tearing preview' loading='lazy'><span>▶ Play</span></button>
-      <div class="body">
-        <h2>Blender 5.2 Geometry Nodes Cloth Tearing</h2>
-        <p>Blender 5.2 experimental node-powered Cloth Dynamics / XPBD tearing. A pinned cloth is pulled by gravity and validation requires an actual topology split.</p>
-        <dl>
-          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
-          <div><dt>Frames</dt><dd>—</dd></div>
-        </dl>
-        <code>feature52-cloth-tearing</code>
-      </div>
-    </article>
-    
-
-    <article class="card" data-search="blender 5.2 compositor blank image blender 5.2 blank image compositor node supplies a procedural background behind a transparent render. feature52-compositor-blank-image">
-      <button class='media play' data-video='assets/feature52-compositor-blank-image/media.mp4' aria-label='Play Blender 5.2 Compositor Blank Image'><img src='assets/feature52-compositor-blank-image/preview.png' alt='Blender 5.2 Compositor Blank Image preview' loading='lazy'><span>▶ Play</span></button>
-      <div class="body">
-        <h2>Blender 5.2 Compositor Blank Image</h2>
-        <p>Blender 5.2 Blank Image compositor node supplies a procedural background behind a transparent render.</p>
-        <dl>
-          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
-          <div><dt>Frames</dt><dd>36</dd></div>
-        </dl>
-        <code>feature52-compositor-blank-image</code>
-      </div>
-    </article>
-    
-
-    <article class="card" data-search="blender 5.2 compositor string to image blender 5.2 string to image compositor node generates a blender 5.2 text overlay. feature52-compositor-string-to-image">
-      <button class='media play' data-video='assets/feature52-compositor-string-to-image/media.mp4' aria-label='Play Blender 5.2 Compositor String to Image'><img src='assets/feature52-compositor-string-to-image/preview.png' alt='Blender 5.2 Compositor String to Image preview' loading='lazy'><span>▶ Play</span></button>
-      <div class="body">
-        <h2>Blender 5.2 Compositor String to Image</h2>
-        <p>Blender 5.2 String to Image compositor node generates a BLENDER 5.2 text overlay.</p>
-        <dl>
-          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
-          <div><dt>Frames</dt><dd>36</dd></div>
-        </dl>
-        <code>feature52-compositor-string-to-image</code>
-      </div>
-    </article>
-    
-
-    <article class="card" data-search="blender 5.2 shader scene time blender 5.2 scene time node drives an emissive material directly in the shader graph. feature52-shader-scene-time">
-      <button class='media play' data-video='assets/feature52-shader-scene-time/media.mp4' aria-label='Play Blender 5.2 Shader Scene Time'><img src='assets/feature52-shader-scene-time/preview.png' alt='Blender 5.2 Shader Scene Time preview' loading='lazy'><span>▶ Play</span></button>
-      <div class="body">
-        <h2>Blender 5.2 Shader Scene Time</h2>
-        <p>Blender 5.2 Scene Time node drives an emissive material directly in the shader graph.</p>
-        <dl>
-          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
-          <div><dt>Frames</dt><dd>36</dd></div>
-        </dl>
-        <code>feature52-shader-scene-time</code>
-      </div>
-    </article>
-    
-
-    <article class="card" data-search="blender 5.2 principled thin wall blender 5.2 principled bsdf thin wall mode with transmissive zero-thickness panels. feature52-thin-wall">
+    <article class="card"
+      data-created-at="2026-09-29T01:51:35Z"
+      data-title="blender 5.2 principled thin wall"
+      data-search="blender 5.2 principled thin wall blender 5.2 principled bsdf thin wall mode with transmissive zero-thickness panels. feature52-thin-wall">
       <button class='media play' data-video='assets/feature52-thin-wall/media.mp4' aria-label='Play Blender 5.2 Principled Thin Wall'><img src='assets/feature52-thin-wall/preview.png' alt='Blender 5.2 Principled Thin Wall preview' loading='lazy'><span>▶ Play</span></button>
       <div class="body">
         <h2>Blender 5.2 Principled Thin Wall</h2>
@@ -122,7 +100,78 @@
     </article>
     
 
-    <article class="card" data-search="blender 5.2 headless render baseline minimal blender 5.2.2 headless render used to verify the github actions runtime, mp4 creation, and output validation. hello-blender52">
+    <article class="card"
+      data-created-at="2026-09-29T01:51:35Z"
+      data-title="blender 5.2 shader scene time"
+      data-search="blender 5.2 shader scene time blender 5.2 scene time node drives an emissive material directly in the shader graph. feature52-shader-scene-time">
+      <button class='media play' data-video='assets/feature52-shader-scene-time/media.mp4' aria-label='Play Blender 5.2 Shader Scene Time'><img src='assets/feature52-shader-scene-time/preview.png' alt='Blender 5.2 Shader Scene Time preview' loading='lazy'><span>▶ Play</span></button>
+      <div class="body">
+        <h2>Blender 5.2 Shader Scene Time</h2>
+        <p>Blender 5.2 Scene Time node drives an emissive material directly in the shader graph.</p>
+        <dl>
+          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
+          <div><dt>Frames</dt><dd>36</dd></div>
+        </dl>
+        <code>feature52-shader-scene-time</code>
+      </div>
+    </article>
+    
+
+    <article class="card"
+      data-created-at="2026-09-29T01:51:35Z"
+      data-title="blender 5.2 compositor string to image"
+      data-search="blender 5.2 compositor string to image blender 5.2 string to image compositor node generates a blender 5.2 text overlay. feature52-compositor-string-to-image">
+      <button class='media play' data-video='assets/feature52-compositor-string-to-image/media.mp4' aria-label='Play Blender 5.2 Compositor String to Image'><img src='assets/feature52-compositor-string-to-image/preview.png' alt='Blender 5.2 Compositor String to Image preview' loading='lazy'><span>▶ Play</span></button>
+      <div class="body">
+        <h2>Blender 5.2 Compositor String to Image</h2>
+        <p>Blender 5.2 String to Image compositor node generates a BLENDER 5.2 text overlay.</p>
+        <dl>
+          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
+          <div><dt>Frames</dt><dd>36</dd></div>
+        </dl>
+        <code>feature52-compositor-string-to-image</code>
+      </div>
+    </article>
+    
+
+    <article class="card"
+      data-created-at="2026-09-29T01:51:35Z"
+      data-title="blender 5.2 compositor blank image"
+      data-search="blender 5.2 compositor blank image blender 5.2 blank image compositor node supplies a procedural background behind a transparent render. feature52-compositor-blank-image">
+      <button class='media play' data-video='assets/feature52-compositor-blank-image/media.mp4' aria-label='Play Blender 5.2 Compositor Blank Image'><img src='assets/feature52-compositor-blank-image/preview.png' alt='Blender 5.2 Compositor Blank Image preview' loading='lazy'><span>▶ Play</span></button>
+      <div class="body">
+        <h2>Blender 5.2 Compositor Blank Image</h2>
+        <p>Blender 5.2 Blank Image compositor node supplies a procedural background behind a transparent render.</p>
+        <dl>
+          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
+          <div><dt>Frames</dt><dd>36</dd></div>
+        </dl>
+        <code>feature52-compositor-blank-image</code>
+      </div>
+    </article>
+    
+
+    <article class="card"
+      data-created-at="2026-09-29T01:51:35Z"
+      data-title="blender 5.2 geometry nodes cloth tearing"
+      data-search="blender 5.2 geometry nodes cloth tearing blender 5.2 experimental node-powered cloth dynamics / xpbd tearing. a pinned cloth is pulled by gravity and validation requires an actual topology split. feature52-cloth-tearing">
+      <button class='media play' data-video='assets/feature52-cloth-tearing/media.mp4' aria-label='Play Blender 5.2 Geometry Nodes Cloth Tearing'><img src='assets/feature52-cloth-tearing/preview.png' alt='Blender 5.2 Geometry Nodes Cloth Tearing preview' loading='lazy'><span>▶ Play</span></button>
+      <div class="body">
+        <h2>Blender 5.2 Geometry Nodes Cloth Tearing</h2>
+        <p>Blender 5.2 experimental node-powered Cloth Dynamics / XPBD tearing. A pinned cloth is pulled by gravity and validation requires an actual topology split.</p>
+        <dl>
+          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
+          <div><dt>Frames</dt><dd>—</dd></div>
+        </dl>
+        <code>feature52-cloth-tearing</code>
+      </div>
+    </article>
+    
+
+    <article class="card"
+      data-created-at="2026-09-29T00:52:59Z"
+      data-title="blender 5.2 headless render baseline"
+      data-search="blender 5.2 headless render baseline minimal blender 5.2.2 headless render used to verify the github actions runtime, mp4 creation, and output validation. hello-blender52">
       <button class='media play' data-video='assets/hello-blender52/media.mp4' aria-label='Play Blender 5.2 Headless Render Baseline'><img src='assets/hello-blender52/preview.png' alt='Blender 5.2 Headless Render Baseline preview' loading='lazy'><span>▶ Play</span></button>
       <div class="body">
         <h2>Blender 5.2 Headless Render Baseline</h2>
@@ -135,29 +184,41 @@
       </div>
     </article>
     
-
-    <article class="card" data-search="yokohama city terrain — low resolution 320×180 first-pass terrain render of yokohama using gsi dem10b png elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration. yokohama-terrain">
-      <button class='media play' data-video='assets/yokohama-terrain/media.mp4' aria-label='Play Yokohama City Terrain — Low Resolution'><img src='assets/yokohama-terrain/preview.png' alt='Yokohama City Terrain — Low Resolution preview' loading='lazy'><span>▶ Play</span></button>
-      <div class="body">
-        <h2>Yokohama City Terrain — Low Resolution</h2>
-        <p>320×180 first-pass terrain render of Yokohama using GSI DEM10B PNG elevation tiles (zoom 11), a 96×112 mesh, water plane, and 8× vertical exaggeration.</p>
-        <dl>
-          <div><dt>Blender</dt><dd>5.2.2 LTS</dd></div>
-          <div><dt>Frames</dt><dd>24</dd></div>
-        </dl>
-        <code>yokohama-terrain</code>
-      </div>
-    </article>
-    
   </main>
   <script>
     const search = document.querySelector('#search');
+    const grid = document.querySelector('#grid');
+    const sortButtons = [...document.querySelectorAll('[data-sort]')];
+
+    const compareCards = (mode) => (a, b) => {
+      if (mode === 'name') {
+        return a.dataset.title.localeCompare(b.dataset.title);
+      }
+      const aTime = Date.parse(a.dataset.createdAt || '') || 0;
+      const bTime = Date.parse(b.dataset.createdAt || '') || 0;
+      return mode === 'oldest' ? aTime - bTime : bTime - aTime;
+    };
+
+    const sortCards = (mode) => {
+      const cards = [...grid.querySelectorAll('.card')];
+      cards.sort(compareCards(mode));
+      cards.forEach(card => grid.appendChild(card));
+      sortButtons.forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.sort === mode));
+      });
+    };
+
     search?.addEventListener('input', () => {
       const q = search.value.trim().toLowerCase();
       document.querySelectorAll('.card').forEach(card => {
         card.hidden = q && !card.dataset.search.includes(q);
       });
     });
+
+    sortButtons.forEach(button => {
+      button.addEventListener('click', () => sortCards(button.dataset.sort));
+    });
+
     document.addEventListener('click', event => {
       const button = event.target.closest('button[data-video]');
       if (!button) return;
@@ -168,6 +229,8 @@
       video.playsInline = true;
       button.replaceWith(video);
     });
+
+    sortCards('newest');
   </script>
 </body>
 </html>
