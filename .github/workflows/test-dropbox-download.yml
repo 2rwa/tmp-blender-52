@@ -6,24 +6,33 @@ on:
       - '.github/workflows/test-dropbox-download.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   download:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Download binary from Dropbox
         env:
-          DOWNLOAD_URL: 'https://ucdd40d7d23d9aac56f38e985fec.dl.dropboxusercontent.com/cd/0/get/DJEKmkixBhTyxvf41kwhcpIzLHcav0B4HZ66OR87MpIURbp5fYABzqHLkbV54tExFkjXjl62jl-k-2bEa7zbXfMsUiLKp2dIsXncGnU1ewQYgJ4yVoR9usZ2SoV-J3Wjfu9n1FFwdEjiOi5Cn9sUpG_Ef0eiqzQnni13YlW4knDQtw/file?c_luid=bcd75cc1'
+          DOWNLOAD_URL: 'https://uc5741ec425699cb583aba4aa67f.dl.dropboxusercontent.com/cd/0/get/DJED447lWiLTWzs3OHA9gOivqe_yYOwtWGgOzeMjgIBpUTPh6_PbQkaOFcUBl_S-iSERZ2wkRahIZkNSoITdx7IOK6WdpleNvUCml18Dw0BA6f5VIRZTnrfoAlFrBMKXuNcoylv5sJHdXUp-NQBBG_WHCbsW4UF75P_yhHiqboAe2Q/file?c_luid=bcd75cc1'
         run: |
           set -euo pipefail
-          mkdir -p out
-          curl --fail --location --silent --show-error "$DOWNLOAD_URL" -o 'out/Sail ship.binary.blend'
-          bytes=$(wc -c < 'out/Sail ship.binary.blend')
+          curl --fail --location --silent --show-error "$DOWNLOAD_URL" -o 'Sail ship.blend'
+          bytes=$(wc -c < 'Sail ship.blend')
           echo "downloaded_bytes=$bytes"
           test "$bytes" -eq 645876
-      - name: Upload downloaded file as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: sail-ship-binary-blend
-          path: out/Sail ship.binary.blend
-          retention-days: 1
+
+      - name: Commit downloaded blend
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 'Sail ship.blend'
+          git commit -m 'Add Sail ship.blend from Dropbox'
+          git push
