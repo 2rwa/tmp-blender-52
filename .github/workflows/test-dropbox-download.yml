@@ -1,0 +1,29 @@
+name: Test Dropbox binary download
+
+on:
+  push:
+    paths:
+      - '.github/workflows/test-dropbox-download.yml'
+  workflow_dispatch:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Download binary from Dropbox
+        env:
+          DOWNLOAD_URL: 'https://ucdd40d7d23d9aac56f38e985fec.dl.dropboxusercontent.com/cd/0/get/DJEKmkixBhTyxvf41kwhcpIzLHcav0B4HZ66OR87MpIURbp5fYABzqHLkbV54tExFkjXjl62jl-k-2bEa7zbXfMsUiLKp2dIsXncGnU1ewQYgJ4yVoR9usZ2SoV-J3Wjfu9n1FFwdEjiOi5Cn9sUpG_Ef0eiqzQnni13YlW4knDQtw/file?c_luid=bcd75cc1'
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          curl --fail --location --silent --show-error "$DOWNLOAD_URL" -o 'out/Sail ship.binary.blend'
+          bytes=$(wc -c < 'out/Sail ship.binary.blend')
+          echo "downloaded_bytes=$bytes"
+          test "$bytes" -eq 645876
+      - name: Upload downloaded file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sail-ship-binary-blend
+          path: out/Sail ship.binary.blend
+          retention-days: 1
