@@ -1,0 +1,21 @@
+{
+  "experiment": "sail-ship-wire-hd",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "display_mode": "wireframe",
+  "resolution": [
+    1280,
+    720
+  ],
+  "frame_count": 240,
+  "source_sha256": "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78",
+  "preview_sha256": "f90bdb2c175c5629656bcf117989015ef11a08e831f1eff44e9db765cfa1e7d6",
+  "preview_size_bytes": 140089,
+  "video_size_bytes": 1514344,
+  "video_codec": "h264",
+  "video_duration_seconds": 10.0,
+  "video_decoded_frames": 240,
+  "ffmpeg_full_decode_ok": true,
+  "blend_size_bytes": 645876,
+  "preview_stddev": 27.069
+}
