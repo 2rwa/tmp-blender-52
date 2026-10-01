@@ -1,6 +1,6 @@
 {
   "experiment": "sail-ship-wire-hd",
-  "title": "Sail Ship — Workbench Wireframe HD",
+  "title": "Sail Ship — Workbench Wireframe HD Turntable",
   "blender_version": "5.2.2 LTS",
   "engine": "BLENDER_WORKBENCH",
   "display_mode": "wireframe",
@@ -10,8 +10,14 @@
     1280,
     720
   ],
-  "frame_count": 24,
+  "frame_start": 1,
+  "frame_end": 240,
+  "frame_count": 240,
   "fps": 24,
+  "duration_seconds": 10,
+  "orbit_degrees": 360,
+  "orbit_radius": 19.126282,
+  "orbit_height": 7.01297,
   "source": "Sail ship.blend",
   "source_size_bytes": 645876,
   "source_sha256": "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78",
@@ -33,12 +39,8 @@
     6.375427,
     3.849679
   ],
-  "camera_location": [
-    10.951406,
-    -14.373886,
-    9.276068
-  ],
-  "camera_ortho_scale": 11.082157,
-  "render_seconds": 9.77308,
-  "note": "One actual Workbench HD still using real wireframe geometry; frames 2-24 duplicate frame 1 for pipeline compatibility."
+  "camera_ortho_scale": 11.475769,
+  "render_seconds": 92.621446,
+  "seconds_per_frame": 0.385923,
+  "note": "240 actual Blender Workbench wireframe renders; camera orbits the ship once over 10 seconds."
 }
