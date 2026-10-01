@@ -321,12 +321,15 @@ def build_terrain(heights: list[list[float | None]]) -> tuple[bpy.types.Object, 
 
     terrain = bpy.data.objects.new("YokohamaTerrain", mesh)
     bpy.context.collection.objects.link(terrain)
-    terrain.data.materials.append(make_terrain_material(zmax))
-    terrain.display_type = "WIRE"
-    terrain.show_wire = True
-    terrain.show_all_edges = True
+    terrain.data.materials.append(make_simple_material(
+        "WireframeMaterial", (0.34, 0.82, 1.0, 1.0), 0.75
+    ))
+    wire = terrain.modifiers.new(name="WireframeGeometry", type="WIREFRAME")
+    wire.thickness = 0.02
+    wire.use_even_offset = True
+    wire.use_replace = True
     for poly in mesh.polygons:
-        poly.use_smooth = True
+        poly.use_smooth = False
 
     return terrain, {
         "width_m": width_m,
@@ -356,13 +359,11 @@ def setup_scene(heights: list[list[float | None]]) -> tuple[bpy.types.Scene, bpy
     engine = choose_engine(scene)
     shading = scene.display.shading
     if hasattr(shading, "type"):
-        shading.type = "WIREFRAME"
+        shading.type = "SOLID"
     if hasattr(shading, "light"):
         shading.light = "FLAT"
     if hasattr(shading, "color_type"):
-        shading.color_type = "SINGLE"
-    if hasattr(shading, "single_color"):
-        shading.single_color = (0.72, 0.88, 1.0)
+        shading.color_type = "MATERIAL"
     if hasattr(shading, "show_shadows"):
         shading.show_shadows = False
     if hasattr(shading, "show_cavity"):
@@ -370,7 +371,7 @@ def setup_scene(heights: list[list[float | None]]) -> tuple[bpy.types.Scene, bpy
     if hasattr(shading, "show_specular_highlight"):
         shading.show_specular_highlight = False
     if hasattr(shading, "show_wireframes"):
-        shading.show_wireframes = True
+        shading.show_wireframes = False
     if hasattr(shading, "background_type"):
         shading.background_type = "VIEWPORT"
     if hasattr(shading, "background_color"):
@@ -433,6 +434,7 @@ def main() -> None:
     heights, dem_report = sample_dem()
     scene, camera, terrain, terrain_metrics = setup_scene(heights)
     engine = scene.render.engine
+    base_vertex_z = [float(vertex.co.z) for vertex in terrain.data.vertices]
 
     frame_stats = []
     render_loop_started = time.perf_counter()
@@ -443,7 +445,9 @@ def main() -> None:
     for frame in range(FRAME_START, FRAME_END + 1):
         t = (frame - FRAME_START) / max(1, FRAME_END - FRAME_START)
         exaggeration = EXAGGERATION_START * ((EXAGGERATION_END / EXAGGERATION_START) ** t)
-        terrain.scale.z = exaggeration / EXAGGERATION_START
+        for vertex, base_z in zip(terrain.data.vertices, base_vertex_z):
+            vertex.co.z = base_z * exaggeration
+        terrain.data.update()
         angle = base_angle + math.radians(16.0) * (t - 0.5)
         camera.location.x = radius * math.cos(angle)
         camera.location.y = radius * math.sin(angle)
@@ -472,6 +476,7 @@ def main() -> None:
         "experiment": EXPERIMENT,
         "title": "Yokohama City terrain Workbench wireframe, 1x to 32x",
         "display_mode": "wireframe",
+        "wireframe_method": "geometry_modifier",
         "blender_version": bpy.app.version_string,
         "engine": engine,
         "data_source": "Geospatial Information Authority of Japan (GSI) DEM10B PNG elevation tiles",
@@ -511,6 +516,7 @@ def main() -> None:
     print(f"WORKBENCH_RENDER_LOOP_SECONDS={render_loop_seconds:.6f}")
     print(f"WORKBENCH_SECONDS_PER_FRAME={render_loop_seconds / report_frame_count:.6f}")
     print("WORKBENCH_DISPLAY_MODE=wireframe")
+    print("WORKBENCH_WIREFRAME_METHOD=geometry_modifier")
 
 
 if __name__ == "__main__":
