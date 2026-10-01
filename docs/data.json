@@ -1,5 +1,31 @@
 [
   {
+    "id": "yokohama-terrain-workbench-speed",
+    "title": "Yokohama City Terrain — Workbench speed test",
+    "description": "144-frame, 320×180 Workbench render speed test of the Yokohama 1×→32× vertical exaggeration animation.",
+    "created_at": "2026-10-01T03:01:41Z",
+    "preview": "assets/yokohama-terrain-workbench-speed/preview.png",
+    "video": "assets/yokohama-terrain-workbench-speed/media.mp4",
+    "validation": {
+      "experiment": "yokohama-terrain-workbench-speed",
+      "blender_version": "5.2.2 LTS",
+      "engine": "BLENDER_WORKBENCH",
+      "resolution": [
+        320,
+        180
+      ],
+      "frame_count": 144,
+      "dem_zoom": 11,
+      "exaggeration_start": 1.0,
+      "exaggeration_end": 32.0,
+      "render_loop_seconds": 33.803797,
+      "seconds_per_frame": 0.234749,
+      "preview_bytes": 87741,
+      "video_size_bytes": 17523,
+      "blend_size_bytes": 371500
+    }
+  },
+  {
     "id": "yokohama-terrain-rise32",
     "title": "Yokohama City Terrain — 1× to 32×",
     "description": "320×180, 144-frame Yokohama terrain animation using GSI DEM10B data, with vertical exaggeration increasing exponentially from 1× to 32×.",
