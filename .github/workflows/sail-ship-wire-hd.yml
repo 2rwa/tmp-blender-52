@@ -10,12 +10,111 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
-  render:
-    uses: ./.github/workflows/blender52-render.yml
-    with:
-      experiment: sail-ship-wire-hd
-      variant: "0"
+  render-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BLENDER_VERSION: "5.2.2"
+      EXPERIMENT: sail-ship-wire-hd
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Cheap Python preflight
+        run: python3 -m py_compile experiments/sail-ship-wire-hd/scene.py
+
+      - name: Restore Blender runtime cache
+        id: blender-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-${{ runner.os }}-x64-${{ env.BLENDER_VERSION }}-v1
+
+      - name: Require cached Blender runtime
+        if: steps.blender-cache.outputs.cache-hit != 'true'
+        run: |
+          echo "Blender runtime cache missing; run the main Blender 5.2 workflow once."
+          exit 1
+
+      - name: Configure Blender runtime
+        run: |
+          echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Render actual HD wireframe still
+        run: |
+          set -euo pipefail
+          rm -rf output52
+          mkdir -p output52/frames
+          .cache/blender52-runtime/blender/blender --version | tee output52/blender-version.txt
+          LIBGL_ALWAYS_SOFTWARE=1 SDL_AUDIODRIVER=dummy             xvfb-run -a -s "-screen 0 1280x720x24"             .cache/blender52-runtime/blender/blender --background               --python "experiments/$EXPERIMENT/scene.py"               2>&1 | tee output52/blender-scene.log
+          if grep -Fq "Traceback (most recent call last):" output52/blender-scene.log; then
+            exit 1
+          fi
+
+      - name: Validate PNG and source identity
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, struct
+          from pathlib import Path
+          out = Path("output52")
+          png = out / "preview.png"
+          data = png.read_bytes()
+          assert data.startswith(b"\x89PNG\r\n\x1a\n")
+          width, height = struct.unpack(">II", data[16:24])
+          assert (width, height) == (1280, 720), (width, height)
+          assert len(data) > 5000, len(data)
+          report = json.loads((out / "sail-ship-wire-hd-report.json").read_text())
+          assert report["source_sha256"] == "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78"
+          print("preview_bytes", len(data))
+          print("preview_sha256", hashlib.sha256(data).hexdigest())
+          print("render_seconds", report["render_seconds"])
+          print("renderable_object_count", report["renderable_object_count"])
+          PY
+
+      - name: Publish static result
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+
+          mkdir -p "results/$EXPERIMENT"
+          cp output52/preview.png "results/$EXPERIMENT/preview.png"
+          cp "output52/$EXPERIMENT-report.json" "results/$EXPERIMENT/$EXPERIMENT-report.json"
+          cp output52/blender-version.txt "results/$EXPERIMENT/blender-version.txt"
+          cat > "results/$EXPERIMENT/README.md" <<'EOF'
+          # Sail Ship — Workbench Wireframe HD
+
+          Actual 1280×720 Blender 5.2 Workbench wireframe still rendered from the bridged `Sail ship.blend`.
+
+          ![preview](./preview.png)
+          EOF
+
+          git add "results/$EXPERIMENT/"
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore: publish sail ship wireframe HD still"
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sail-ship-wire-hd-preview
+          path: |
+            output52/preview.png
+            output52/sail-ship-wire-hd-report.json
+          if-no-files-found: error
+          retention-days: 7
+          overwrite: true
