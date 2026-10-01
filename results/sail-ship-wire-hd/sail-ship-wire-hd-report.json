@@ -4,6 +4,8 @@
   "blender_version": "5.2.2 LTS",
   "engine": "BLENDER_WORKBENCH",
   "display_mode": "wireframe",
+  "wireframe_method": "geometry_modifier",
+  "wireframe_world_thickness": 0.00796928,
   "resolution": [
     1280,
     720
@@ -14,6 +16,8 @@
   "source_size_bytes": 645876,
   "source_sha256": "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78",
   "renderable_object_count": 5,
+  "mesh_object_count": 5,
+  "source_edge_count": 3763,
   "bounds_min": [
     -0.847529,
     -3.77094,
@@ -35,6 +39,6 @@
     9.276068
   ],
   "camera_ortho_scale": 6.464592,
-  "render_seconds": 9.88207,
-  "note": "One actual Workbench HD still; frames 2-24 duplicate frame 1 for the existing MP4 pipeline."
+  "render_seconds": 2.882809,
+  "note": "One actual Workbench HD still using real wireframe geometry; frames 2-24 duplicate frame 1 for pipeline compatibility."
 }
