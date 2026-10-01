@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import shutil
 import time
 from pathlib import Path
@@ -17,8 +18,9 @@ EXPECTED_SOURCE_SHA256 = "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2
 RES_X = 1280
 RES_Y = 720
 FRAME_START = 1
-FRAME_END = 24
+FRAME_END = 240
 FPS = 24
+DURATION_SECONDS = 10
 
 
 def sha256(path: Path) -> str:
@@ -69,27 +71,24 @@ def point_camera(camera: bpy.types.Object, target: Vector) -> None:
     camera.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
 
 
-def make_camera(points: list[Vector], center: Vector, span: Vector) -> bpy.types.Object:
+def make_orbit_camera(center: Vector, span: Vector) -> tuple[bpy.types.Object, float, float]:
     max_dim = max(span.x, span.y, span.z, 1.0e-4)
-    direction = Vector((1.35, -1.7, 0.92)).normalized()
+    orbit_radius = max_dim * 3.0
+    orbit_height = max_dim * 1.1
 
     camera_data = bpy.data.cameras.new("SailShipWireCamera")
     camera = bpy.data.objects.new("SailShipWireCamera", camera_data)
     bpy.context.scene.collection.objects.link(camera)
-    camera.data.type = "ORTHO"
-    camera.location = center + direction * max_dim * 3.0
-    point_camera(camera, center)
-    bpy.context.view_layer.update()
 
-    inv = camera.matrix_world.inverted()
-    projected = [inv @ p for p in points]
-    width = max(p.x for p in projected) - min(p.x for p in projected)
-    height = max(p.y for p in projected) - min(p.y for p in projected)
-    aspect = RES_X / RES_Y
-    camera.data.ortho_scale = max(width, height * aspect) * 1.08
+    camera.data.type = "ORTHO"
+    camera.data.ortho_scale = max_dim * 1.80
     camera.data.clip_start = max(max_dim * 0.001, 0.001)
     camera.data.clip_end = max_dim * 20.0
-    return camera
+
+    camera.location = center + Vector((orbit_radius, 0.0, orbit_height))
+    point_camera(camera, center)
+    bpy.context.view_layer.update()
+    return camera, orbit_radius, orbit_height
 
 
 def add_wireframe_geometry(span: Vector) -> tuple[int, int, float]:
@@ -172,40 +171,55 @@ def main() -> None:
     mesh_count, edge_count, wire_thickness = add_wireframe_geometry(span)
     engine = configure_workbench(scene)
 
-    camera = make_camera(points, center, span)
+    camera, orbit_radius, orbit_height = make_orbit_camera(center, span)
     scene.camera = camera
     bpy.context.view_layer.update()
 
-    scene.frame_set(1)
-    first_frame = FRAMES / "frame_0001.png"
-    scene.render.filepath = str(first_frame)
+    frame_count = FRAME_END - FRAME_START + 1
     started = time.perf_counter()
-    bpy.ops.render.render(write_still=True)
+
+    for frame in range(FRAME_START, FRAME_END + 1):
+        phase = (frame - FRAME_START) / frame_count
+        angle = math.tau * phase
+        camera.location = center + Vector((
+            math.cos(angle) * orbit_radius,
+            math.sin(angle) * orbit_radius,
+            orbit_height,
+        ))
+        point_camera(camera, center)
+        scene.frame_set(frame)
+        scene.render.filepath = str(FRAMES / f"frame_{frame:04d}.png")
+        bpy.context.view_layer.update()
+        bpy.ops.render.render(write_still=True)
+
     render_seconds = time.perf_counter() - started
 
+    first_frame = FRAMES / "frame_0001.png"
     if not first_frame.is_file() or first_frame.stat().st_size < 2_000:
         raise RuntimeError("Workbench render did not create a usable PNG")
 
     shutil.copy2(first_frame, OUT / "preview.png")
-    for frame in range(2, FRAME_END + 1):
-        shutil.copy2(first_frame, FRAMES / f"frame_{frame:04d}.png")
 
-    # Exact source bytes: already transferred via Dropbox -> bridge.
-    # Referencing identical bytes avoids a second large binary upload.
     output_blend = OUT / f"{EXPERIMENT}.blend"
     shutil.copy2(SOURCE, output_blend)
 
     report = {
         "experiment": EXPERIMENT,
-        "title": "Sail Ship — Workbench Wireframe HD",
+        "title": "Sail Ship — Workbench Wireframe HD Turntable",
         "blender_version": bpy.app.version_string,
         "engine": engine,
         "display_mode": "wireframe",
         "wireframe_method": "geometry_modifier",
         "wireframe_world_thickness": round(wire_thickness, 8),
         "resolution": [RES_X, RES_Y],
-        "frame_count": FRAME_END - FRAME_START + 1,
+        "frame_start": FRAME_START,
+        "frame_end": FRAME_END,
+        "frame_count": frame_count,
         "fps": FPS,
+        "duration_seconds": DURATION_SECONDS,
+        "orbit_degrees": 360,
+        "orbit_radius": round(float(orbit_radius), 6),
+        "orbit_height": round(float(orbit_height), 6),
         "source": "Sail ship.blend",
         "source_size_bytes": SOURCE.stat().st_size,
         "source_sha256": source_hash,
@@ -215,10 +229,10 @@ def main() -> None:
         "bounds_min": [round(float(v), 6) for v in minimum],
         "bounds_max": [round(float(v), 6) for v in maximum],
         "bounds_span": [round(float(v), 6) for v in span],
-        "camera_location": [round(float(v), 6) for v in camera.location],
         "camera_ortho_scale": round(float(camera.data.ortho_scale), 6),
         "render_seconds": round(render_seconds, 6),
-        "note": "One actual Workbench HD still using real wireframe geometry; frames 2-24 duplicate frame 1 for pipeline compatibility.",
+        "seconds_per_frame": round(render_seconds / frame_count, 6),
+        "note": "240 actual Blender Workbench wireframe renders; camera orbits the ship once over 10 seconds.",
     }
     (OUT / f"{EXPERIMENT}-report.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False) + "\n",
@@ -233,6 +247,7 @@ def main() -> None:
     print(f"SAIL_SHIP_EDGES={edge_count}")
     print(f"WIRE_THICKNESS={wire_thickness:.8f}")
     print(f"WORKBENCH_RENDER_SECONDS={render_seconds:.6f}")
+    print(f"WORKBENCH_SECONDS_PER_FRAME={render_seconds / frame_count:.6f}")
 
 
 if __name__ == "__main__":

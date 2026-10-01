@@ -12,9 +12,9 @@ permissions:
   contents: write
 
 jobs:
-  render-static:
+  render-turntable:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 120
     env:
       BLENDER_VERSION: "5.2.2"
       EXPERIMENT: sail-ship-wire-hd
@@ -26,7 +26,10 @@ jobs:
           fetch-depth: 0
 
       - name: Cheap Python preflight
-        run: python3 -m py_compile experiments/sail-ship-wire-hd/scene.py
+        run: |
+          python3 -m py_compile \
+            experiments/sail-ship-wire-hd/scene.py \
+            experiments/sail-ship-wire-hd/validate.py
 
       - name: Restore Blender runtime cache
         id: blender-cache
@@ -47,87 +50,88 @@ jobs:
           echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
           echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
 
-      - name: Render actual HD wireframe still
+      - name: Render 10 second HD wireframe turntable
         run: |
           set -euo pipefail
           rm -rf output52
           mkdir -p output52/frames
           .cache/blender52-runtime/blender/blender --version | tee output52/blender-version.txt
-          LIBGL_ALWAYS_SOFTWARE=1 SDL_AUDIODRIVER=dummy             xvfb-run -a -s "-screen 0 1280x720x24"             .cache/blender52-runtime/blender/blender --background               --python "experiments/$EXPERIMENT/scene.py"               2>&1 | tee output52/blender-scene.log
+          LIBGL_ALWAYS_SOFTWARE=1 SDL_AUDIODRIVER=dummy \
+            xvfb-run -a -s "-screen 0 1280x720x24" \
+            .cache/blender52-runtime/blender/blender --background \
+              --python "experiments/$EXPERIMENT/scene.py" \
+              2>&1 | tee output52/blender-scene.log
           if grep -Fq "Traceback (most recent call last):" output52/blender-scene.log; then
             exit 1
           fi
 
-      - name: Validate visible PNG and source identity
+      - name: Build MP4
         run: |
-          python3 - <<'PY'
-          import hashlib, json
-          from pathlib import Path
-          from PIL import Image, ImageStat
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -y \
+            -framerate 24 \
+            -start_number 1 \
+            -i output52/frames/frame_%04d.png \
+            -c:v libx264 \
+            -preset veryfast \
+            -crf 29 \
+            -pix_fmt yuv420p \
+            "output52/$EXPERIMENT.mp4"
+          ffprobe -v error -show_entries format=format_name,duration -of json "output52/$EXPERIMENT.mp4"
 
-          out = Path("output52")
-          png = out / "preview.png"
-          report = json.loads((out / "sail-ship-wire-hd-report.json").read_text())
+      - name: Validate PNG, MP4 and source identity
+        run: |
+          python3 "experiments/$EXPERIMENT/validate.py"
+          cat output52/validation.json
 
-          with Image.open(png) as image:
-              image.load()
-              assert image.size == (1280, 720), image.size
-              gray = image.convert("L")
-              extrema = gray.getextrema()
-              stddev = float(ImageStat.Stat(gray).stddev[0])
+      - name: Upload full turntable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sail-ship-wire-hd-turntable
+          path: output52/
+          if-no-files-found: error
+          retention-days: 7
+          overwrite: true
 
-          assert png.stat().st_size > 5000, png.stat().st_size
-          assert extrema[1] - extrema[0] >= 35, extrema
-          assert stddev >= 3.0, stddev
-          assert report["wireframe_method"] == "geometry_modifier"
-          assert report["source_sha256"] == "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78"
-
-          print("preview_bytes", png.stat().st_size)
-          print("preview_sha256", hashlib.sha256(png.read_bytes()).hexdigest())
-          print("preview_extrema", extrema)
-          print("preview_stddev", round(stddev, 3))
-          print("render_seconds", report["render_seconds"])
-          print("source_edge_count", report["source_edge_count"])
-          PY
-
-      - name: Publish static result
+      - name: Publish result
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main
 
+          rm -rf "results/$EXPERIMENT"
           mkdir -p "results/$EXPERIMENT"
           cp output52/preview.png "results/$EXPERIMENT/preview.png"
+          cp "output52/$EXPERIMENT.mp4" "results/$EXPERIMENT/media.mp4"
           cp "output52/$EXPERIMENT-report.json" "results/$EXPERIMENT/$EXPERIMENT-report.json"
+          cp output52/validation.json "results/$EXPERIMENT/validation.json"
           cp output52/blender-version.txt "results/$EXPERIMENT/blender-version.txt"
           cat > "results/$EXPERIMENT/README.md" <<'EOF'
-          # Sail Ship — Workbench Wireframe HD
+          # Sail Ship — Workbench Wireframe HD Turntable
 
-          Actual 1280×720 Blender 5.2 Workbench render from the bridged `Sail ship.blend`. Mesh edges are converted to real geometry with a Wireframe modifier for reliable headless output.
+          Actual 1280×720 Blender 5.2 Workbench wireframe render from the bridged `Sail ship.blend`.
+          The camera makes one full orbit over 10 seconds at 24 fps (240 actual rendered frames).
+
+          Validation uses `ffprobe` for the MP4 stream/container metadata and `ffmpeg -xerror` for a full decode check.
 
           ![preview](./preview.png)
+
+          [Play MP4](./media.mp4)
           EOF
 
           git add "results/$EXPERIMENT/"
           if git diff --cached --quiet; then
             exit 0
           fi
-          git commit -m "fix: publish visible sail ship wireframe HD still"
+          git commit -m "chore: publish sail ship wireframe turntable"
           if git push origin HEAD:main; then
             exit 0
           fi
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
-
-      - name: Upload preview artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: sail-ship-wire-hd-preview
-          path: |
-            output52/preview.png
-            output52/sail-ship-wire-hd-report.json
-          if-no-files-found: error
-          retention-days: 7
-          overwrite: true

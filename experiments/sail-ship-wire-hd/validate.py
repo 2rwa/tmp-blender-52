@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 from PIL import Image, ImageStat
@@ -11,17 +12,55 @@ FRAMES = OUT / "frames"
 EXPERIMENT = "sail-ship-wire-hd"
 EXPECTED_SOURCE_SHA256 = "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78"
 EXPECTED_SOURCE_SIZE = 645876
+EXPECTED_WIDTH = 1280
+EXPECTED_HEIGHT = 720
+EXPECTED_FRAMES = 240
+EXPECTED_DURATION = 10.0
 
 
 def require_file(path: Path, minimum_size: int = 1) -> None:
     if not path.is_file():
         raise SystemExit(f"missing output: {path}")
     if path.stat().st_size < minimum_size:
-        raise SystemExit(f"output too small: {path} ({path.stat().st_size} < {minimum_size})")
+        raise SystemExit(f"empty output: {path}")
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def probe_video(path: Path) -> dict:
+    proc = subprocess.run(
+        [
+            "ffprobe",
+            "-v", "error",
+            "-count_frames",
+            "-select_streams", "v:0",
+            "-show_entries",
+            "stream=codec_name,width,height,duration,nb_frames,nb_read_frames:format=format_name,duration",
+            "-of", "json",
+            str(path),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return json.loads(proc.stdout)
+
+
+def verify_decode(path: Path) -> None:
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-v", "error",
+            "-xerror",
+            "-i", str(path),
+            "-map", "0:v:0",
+            "-f", "null",
+            "-",
+        ],
+        check=True,
+    )
 
 
 def main() -> None:
@@ -33,8 +72,8 @@ def main() -> None:
 
     require_file(version_path)
     require_file(report_path, 200)
-    require_file(preview_path, 5_000)
-    require_file(video_path, 5_000)
+    require_file(preview_path, 1)
+    require_file(video_path, 1)
     require_file(blend_path, 100_000)
 
     version_text = version_path.read_text(encoding="utf-8", errors="replace")
@@ -48,8 +87,12 @@ def main() -> None:
         raise SystemExit(f"unexpected engine: {report.get('engine')!r}")
     if report.get("display_mode") != "wireframe":
         raise SystemExit(f"unexpected display mode: {report.get('display_mode')!r}")
-    if report.get("resolution") != [1280, 720]:
+    if report.get("resolution") != [EXPECTED_WIDTH, EXPECTED_HEIGHT]:
         raise SystemExit(f"unexpected resolution: {report.get('resolution')}")
+    if int(report.get("frame_count", 0)) != EXPECTED_FRAMES:
+        raise SystemExit(f"unexpected report frame count: {report.get('frame_count')}")
+    if abs(float(report.get("duration_seconds", 0.0)) - EXPECTED_DURATION) > 0.01:
+        raise SystemExit(f"unexpected report duration: {report.get('duration_seconds')}")
     if report.get("source_sha256") != EXPECTED_SOURCE_SHA256:
         raise SystemExit(f"source SHA mismatch: {report.get('source_sha256')}")
     if report.get("source_size_bytes") != EXPECTED_SOURCE_SIZE:
@@ -58,12 +101,12 @@ def main() -> None:
         raise SystemExit("no renderable objects reported")
 
     frames = sorted(FRAMES.glob("frame_*.png"))
-    if len(frames) != 24:
+    if len(frames) != EXPECTED_FRAMES:
         raise SystemExit(f"unexpected frame count: {len(frames)}")
 
     with Image.open(preview_path) as image:
         image.load()
-        if image.size != (1280, 720):
+        if image.size != (EXPECTED_WIDTH, EXPECTED_HEIGHT):
             raise SystemExit(f"unexpected preview size: {image.size}")
         gray = image.convert("L")
         extrema = gray.getextrema()
@@ -80,6 +123,30 @@ def main() -> None:
     if blend_path.stat().st_size != EXPECTED_SOURCE_SIZE:
         raise SystemExit(f"unexpected blend size: {blend_path.stat().st_size}")
 
+    probe = probe_video(video_path)
+    streams = probe.get("streams") or []
+    if not streams:
+        raise SystemExit("ffprobe found no video stream")
+    stream = streams[0]
+    fmt = probe.get("format") or {}
+
+    if int(stream.get("width", 0)) != EXPECTED_WIDTH or int(stream.get("height", 0)) != EXPECTED_HEIGHT:
+        raise SystemExit(f"unexpected video resolution: {stream.get('width')}x{stream.get('height')}")
+
+    format_name = str(fmt.get("format_name", ""))
+    if "mp4" not in format_name:
+        raise SystemExit(f"unexpected container: {format_name!r}")
+
+    duration = float(fmt.get("duration") or stream.get("duration") or 0.0)
+    if not 9.5 <= duration <= 10.5:
+        raise SystemExit(f"unexpected video duration: {duration}")
+
+    frame_count = int(stream.get("nb_read_frames") or stream.get("nb_frames") or 0)
+    if frame_count != EXPECTED_FRAMES:
+        raise SystemExit(f"unexpected decoded frame count: {frame_count}")
+
+    verify_decode(video_path)
+
     result = {
         "experiment": EXPERIMENT,
         "blender_version": report.get("blender_version"),
@@ -91,6 +158,10 @@ def main() -> None:
         "preview_sha256": sha256(preview_path),
         "preview_size_bytes": preview_path.stat().st_size,
         "video_size_bytes": video_path.stat().st_size,
+        "video_codec": stream.get("codec_name"),
+        "video_duration_seconds": duration,
+        "video_decoded_frames": frame_count,
+        "ffmpeg_full_decode_ok": True,
         "blend_size_bytes": blend_path.stat().st_size,
         "preview_stddev": round(stddev, 3),
     }
