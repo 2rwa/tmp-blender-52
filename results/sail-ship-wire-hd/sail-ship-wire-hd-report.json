@@ -1,0 +1,40 @@
+{
+  "experiment": "sail-ship-wire-hd",
+  "title": "Sail Ship — Workbench Wireframe HD",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "display_mode": "wireframe",
+  "resolution": [
+    1280,
+    720
+  ],
+  "frame_count": 24,
+  "fps": 24,
+  "source": "Sail ship.blend",
+  "source_size_bytes": 645876,
+  "source_sha256": "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78",
+  "renderable_object_count": 5,
+  "bounds_min": [
+    -0.847529,
+    -3.77094,
+    -0.111952
+  ],
+  "bounds_max": [
+    0.847529,
+    2.604487,
+    3.737727
+  ],
+  "bounds_span": [
+    1.695059,
+    6.375427,
+    3.849679
+  ],
+  "camera_location": [
+    10.951406,
+    -14.373886,
+    9.276068
+  ],
+  "camera_ortho_scale": 6.464592,
+  "render_seconds": 9.88207,
+  "note": "One actual Workbench HD still; frames 2-24 duplicate frame 1 for the existing MP4 pipeline."
+}
