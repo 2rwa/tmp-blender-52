@@ -1,0 +1,21 @@
+name: Sail Ship Wireframe HD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/sail-ship-wire-hd/**'
+      - '.github/workflows/sail-ship-wire-hd.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  render:
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: sail-ship-wire-hd
+      variant: "0"
