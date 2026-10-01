@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   speed-test:
@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Cheap Python preflight
         run: python3 -m py_compile "experiments/$EXPERIMENT/scene.py"
@@ -58,6 +60,20 @@ jobs:
           end_epoch="$(date +%s)"
           echo "WORKFLOW_BLENDER_SECONDS=$((end_epoch-start_epoch))" | tee output52/workflow-timing.txt
 
+      - name: Build MP4
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffmpeg -y \
+            -framerate 24 \
+            -start_number 1 \
+            -i output52/frames/frame_%04d.png \
+            -c:v libx264 \
+            -preset veryfast \
+            -crf 29 \
+            -pix_fmt yuv420p \
+            "output52/$EXPERIMENT.mp4"
+
       - name: Validate speed-test output
         run: |
           python3 - <<'PY'
@@ -65,10 +81,12 @@ jobs:
           from pathlib import Path
 
           out = Path("output52")
-          report = json.loads((out / "yokohama-terrain-workbench-speed-report.json").read_text())
+          exp = "yokohama-terrain-workbench-speed"
+          report = json.loads((out / f"{exp}-report.json").read_text())
           frames = sorted((out / "frames").glob("frame_*.png"))
           preview = out / "preview.png"
-          blend = out / "yokohama-terrain-workbench-speed.blend"
+          blend = out / f"{exp}.blend"
+          video = out / f"{exp}.mp4"
 
           assert report["frame_count"] == 144, report["frame_count"]
           assert len(frames) == 144, len(frames)
@@ -77,15 +95,73 @@ jobs:
           assert abs(report["vertical_exaggeration"]["end"] - 32.0) < 1e-6
           assert preview.stat().st_size > 1000, preview.stat().st_size
           assert blend.stat().st_size > 100000, blend.stat().st_size
-          print(json.dumps({
+          assert video.stat().st_size > 5000, video.stat().st_size
+
+          validation = {
+              "experiment": exp,
+              "blender_version": report["blender_version"],
               "engine": report["engine"],
+              "resolution": report["resolution"],
               "frame_count": report["frame_count"],
-              "render_loop_seconds": report["render_loop_seconds"],
-              "seconds_per_frame": report["seconds_per_frame"],
+              "dem_zoom": report["dem_zoom"],
+              "exaggeration_start": report["vertical_exaggeration"]["start"],
+              "exaggeration_end": report["vertical_exaggeration"]["end"],
+              "render_loop_seconds": round(report["render_loop_seconds"], 6),
+              "seconds_per_frame": round(report["seconds_per_frame"], 6),
               "preview_bytes": preview.stat().st_size,
-              "blend_bytes": blend.stat().st_size,
-          }, indent=2))
+              "video_size_bytes": video.stat().st_size,
+              "blend_size_bytes": blend.stat().st_size,
+          }
+          (out / "validation.json").write_text(
+              json.dumps(validation, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(validation, indent=2, ensure_ascii=False))
           PY
+
+      - name: Persist result
+        run: |
+          set -euxo pipefail
+          rm -rf "results/$EXPERIMENT"
+          mkdir -p "results/$EXPERIMENT"
+          cp output52/preview.png "results/$EXPERIMENT/preview.png"
+          cp "output52/$EXPERIMENT.mp4" "results/$EXPERIMENT/media.mp4"
+          cp "output52/$EXPERIMENT.blend" "results/$EXPERIMENT/$EXPERIMENT.blend"
+          cp "output52/$EXPERIMENT-report.json" "results/$EXPERIMENT/$EXPERIMENT-report.json"
+          cp output52/validation.json "results/$EXPERIMENT/validation.json"
+          cp output52/blender-version.txt "results/$EXPERIMENT/blender-version.txt"
+          cp output52/workflow-timing.txt "results/$EXPERIMENT/workflow-timing.txt"
+          cat > "results/$EXPERIMENT/README.md" <<EOF
+          # $EXPERIMENT
+
+          Workbench preview benchmark for Yokohama terrain.
+
+          - 320×180
+          - 144 frames / 24 fps
+          - vertical exaggeration 1× → 32×
+          - engine: BLENDER_WORKBENCH
+
+          ![preview](./preview.png)
+
+          [Play MP4](./media.mp4)
+          EOF
+
+      - name: Commit and push result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "results/$EXPERIMENT/"
+          if git diff --cached --quiet; then
+            echo "Result is already current."
+            exit 0
+          fi
+          git commit -m "chore: publish $EXPERIMENT result"
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
 
       - name: Upload preview and timing artifact
         uses: actions/upload-artifact@v4
@@ -93,8 +169,10 @@ jobs:
           name: yokohama-workbench-speed
           path: |
             output52/preview.png
+            output52/yokohama-terrain-workbench-speed.mp4
             output52/yokohama-terrain-workbench-speed.blend
             output52/yokohama-terrain-workbench-speed-report.json
+            output52/validation.json
             output52/blender-scene.log
             output52/workflow-timing.txt
           if-no-files-found: error
