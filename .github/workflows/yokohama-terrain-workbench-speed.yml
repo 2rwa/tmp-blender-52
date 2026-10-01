@@ -1,0 +1,101 @@
+name: Yokohama Workbench speed test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/yokohama-terrain-workbench-speed/**'
+      - '.github/workflows/yokohama-terrain-workbench-speed.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: yokohama-workbench-speed-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  speed-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BLENDER_VERSION: "5.2.2"
+      EXPERIMENT: yokohama-terrain-workbench-speed
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Cheap Python preflight
+        run: python3 -m py_compile "experiments/$EXPERIMENT/scene.py"
+
+      - name: Restore Blender 5.2 runtime cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-${{ runner.os }}-x64-${{ env.BLENDER_VERSION }}-v1
+          fail-on-cache-miss: true
+
+      - name: Configure Blender 5.2 runtime
+        run: |
+          echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Render 144 Workbench frames
+        run: |
+          set -o pipefail
+          rm -rf output52
+          mkdir -p output52/frames
+          blender --version | tee output52/blender-version.txt
+          start_epoch="$(date +%s)"
+          LIBGL_ALWAYS_SOFTWARE=1 SDL_AUDIODRIVER=dummy \
+            xvfb-run -a -s "-screen 0 1280x720x24" \
+            blender --background \
+              --python "experiments/$EXPERIMENT/scene.py" \
+              2>&1 | tee output52/blender-scene.log
+          end_epoch="$(date +%s)"
+          echo "WORKFLOW_BLENDER_SECONDS=$((end_epoch-start_epoch))" | tee output52/workflow-timing.txt
+
+      - name: Validate speed-test output
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          out = Path("output52")
+          report = json.loads((out / "yokohama-terrain-workbench-speed-report.json").read_text())
+          frames = sorted((out / "frames").glob("frame_*.png"))
+          preview = out / "preview.png"
+          blend = out / "yokohama-terrain-workbench-speed.blend"
+
+          assert report["frame_count"] == 144, report["frame_count"]
+          assert len(frames) == 144, len(frames)
+          assert "WORKBENCH" in report["engine"], report["engine"]
+          assert abs(report["vertical_exaggeration"]["start"] - 1.0) < 1e-6
+          assert abs(report["vertical_exaggeration"]["end"] - 32.0) < 1e-6
+          assert preview.stat().st_size > 1000, preview.stat().st_size
+          assert blend.stat().st_size > 100000, blend.stat().st_size
+          print(json.dumps({
+              "engine": report["engine"],
+              "frame_count": report["frame_count"],
+              "render_loop_seconds": report["render_loop_seconds"],
+              "seconds_per_frame": report["seconds_per_frame"],
+              "preview_bytes": preview.stat().st_size,
+              "blend_bytes": blend.stat().st_size,
+          }, indent=2))
+          PY
+
+      - name: Upload preview and timing artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: yokohama-workbench-speed
+          path: |
+            output52/preview.png
+            output52/yokohama-terrain-workbench-speed.blend
+            output52/yokohama-terrain-workbench-speed-report.json
+            output52/blender-scene.log
+            output52/workflow-timing.txt
+          if-no-files-found: error
+          retention-days: 7
