@@ -38,7 +38,7 @@
     -14.373886,
     9.276068
   ],
-  "camera_ortho_scale": 6.464592,
-  "render_seconds": 2.882809,
+  "camera_ortho_scale": 11.082157,
+  "render_seconds": 9.77308,
   "note": "One actual Workbench HD still using real wireframe geometry; frames 2-24 duplicate frame 1 for pipeline compatibility."
 }
