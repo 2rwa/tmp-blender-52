@@ -86,7 +86,7 @@ def make_camera(points: list[Vector], center: Vector, span: Vector) -> bpy.types
     width = max(p.x for p in projected) - min(p.x for p in projected)
     height = max(p.y for p in projected) - min(p.y for p in projected)
     aspect = RES_X / RES_Y
-    camera.data.ortho_scale = max(height, width / aspect) * 1.12
+    camera.data.ortho_scale = max(width, height * aspect) * 1.08
     camera.data.clip_start = max(max_dim * 0.001, 0.001)
     camera.data.clip_end = max_dim * 20.0
     return camera
