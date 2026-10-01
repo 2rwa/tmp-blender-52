@@ -44,6 +44,7 @@ jobs:
       - name: Configure Blender runtime
         run: |
           echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
           echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
 
       - name: Render actual HD wireframe still
@@ -57,24 +58,36 @@ jobs:
             exit 1
           fi
 
-      - name: Validate PNG and source identity
+      - name: Validate visible PNG and source identity
         run: |
           python3 - <<'PY'
-          import hashlib, json, struct
+          import hashlib, json
           from pathlib import Path
+          from PIL import Image, ImageStat
+
           out = Path("output52")
           png = out / "preview.png"
-          data = png.read_bytes()
-          assert data.startswith(b"\x89PNG\r\n\x1a\n")
-          width, height = struct.unpack(">II", data[16:24])
-          assert (width, height) == (1280, 720), (width, height)
-          assert len(data) > 5000, len(data)
           report = json.loads((out / "sail-ship-wire-hd-report.json").read_text())
+
+          with Image.open(png) as image:
+              image.load()
+              assert image.size == (1280, 720), image.size
+              gray = image.convert("L")
+              extrema = gray.getextrema()
+              stddev = float(ImageStat.Stat(gray).stddev[0])
+
+          assert png.stat().st_size > 5000, png.stat().st_size
+          assert extrema[1] - extrema[0] >= 35, extrema
+          assert stddev >= 3.0, stddev
+          assert report["wireframe_method"] == "geometry_modifier"
           assert report["source_sha256"] == "f9cf8bb0fc345b3851e9fd596fc75edf236b32309e1a6ce193e8c2a9b25aff78"
-          print("preview_bytes", len(data))
-          print("preview_sha256", hashlib.sha256(data).hexdigest())
+
+          print("preview_bytes", png.stat().st_size)
+          print("preview_sha256", hashlib.sha256(png.read_bytes()).hexdigest())
+          print("preview_extrema", extrema)
+          print("preview_stddev", round(stddev, 3))
           print("render_seconds", report["render_seconds"])
-          print("renderable_object_count", report["renderable_object_count"])
+          print("source_edge_count", report["source_edge_count"])
           PY
 
       - name: Publish static result
@@ -91,7 +104,7 @@ jobs:
           cat > "results/$EXPERIMENT/README.md" <<'EOF'
           # Sail Ship — Workbench Wireframe HD
 
-          Actual 1280×720 Blender 5.2 Workbench wireframe still rendered from the bridged `Sail ship.blend`.
+          Actual 1280×720 Blender 5.2 Workbench render from the bridged `Sail ship.blend`. Mesh edges are converted to real geometry with a Wireframe modifier for reliable headless output.
 
           ![preview](./preview.png)
           EOF
@@ -100,7 +113,7 @@ jobs:
           if git diff --cached --quiet; then
             exit 0
           fi
-          git commit -m "chore: publish sail ship wireframe HD still"
+          git commit -m "fix: publish visible sail ship wireframe HD still"
           if git push origin HEAD:main; then
             exit 0
           fi

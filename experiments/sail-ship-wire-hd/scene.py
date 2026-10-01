@@ -92,6 +92,32 @@ def make_camera(points: list[Vector], center: Vector, span: Vector) -> bpy.types
     return camera
 
 
+def add_wireframe_geometry(span: Vector) -> tuple[int, int, float]:
+    max_dim = max(span.x, span.y, span.z, 1.0e-4)
+    world_thickness = max_dim * 0.00125
+    mesh_count = 0
+    edge_count = 0
+
+    for obj in bpy.context.scene.objects:
+        if obj.type != "MESH" or obj.hide_render:
+            continue
+        mesh_count += 1
+        edge_count += len(obj.data.edges)
+
+        scale_values = [abs(float(v)) for v in obj.scale if abs(float(v)) > 1.0e-6]
+        object_scale = sum(scale_values) / len(scale_values) if scale_values else 1.0
+
+        wire = obj.modifiers.new(name="HDWireframeGeometry", type="WIREFRAME")
+        wire.thickness = world_thickness / object_scale
+        wire.use_replace = True
+        wire.use_boundary = True
+        wire.use_even_offset = True
+
+    if mesh_count == 0:
+        raise RuntimeError("No mesh objects available for wireframe geometry")
+    return mesh_count, edge_count, world_thickness
+
+
 def configure_workbench(scene: bpy.types.Scene) -> str:
     engine = choose_engine(scene)
     scene.render.resolution_x = RES_X
@@ -104,25 +130,25 @@ def configure_workbench(scene: bpy.types.Scene) -> str:
     scene.frame_end = FRAME_END
 
     shading = scene.display.shading
-    shading.type = "WIREFRAME"
+    shading.type = "SOLID"
     if hasattr(shading, "light"):
         shading.light = "FLAT"
     if hasattr(shading, "color_type"):
         shading.color_type = "SINGLE"
     if hasattr(shading, "single_color"):
-        shading.single_color = (0.88, 0.92, 1.0)
+        shading.single_color = (0.86, 0.91, 1.0)
     if hasattr(shading, "show_shadows"):
         shading.show_shadows = False
     if hasattr(shading, "show_cavity"):
         shading.show_cavity = False
     if hasattr(shading, "show_specular_highlight"):
         shading.show_specular_highlight = False
+    if hasattr(shading, "show_wireframes"):
+        shading.show_wireframes = False
     if hasattr(shading, "background_type"):
         shading.background_type = "VIEWPORT"
     if hasattr(shading, "background_color"):
         shading.background_color = (0.018, 0.024, 0.038)
-    if hasattr(shading, "wireframe_threshold"):
-        shading.wireframe_threshold = 1.0
 
     scene.world.color = (0.018, 0.024, 0.038)
     return engine
@@ -140,10 +166,12 @@ def main() -> None:
 
     bpy.ops.wm.open_mainfile(filepath=str(SOURCE))
     scene = bpy.context.scene
-    engine = configure_workbench(scene)
 
     points, minimum, maximum, center, object_count = world_bounds()
     span = maximum - minimum
+    mesh_count, edge_count, wire_thickness = add_wireframe_geometry(span)
+    engine = configure_workbench(scene)
+
     camera = make_camera(points, center, span)
     scene.camera = camera
     bpy.context.view_layer.update()
@@ -162,9 +190,8 @@ def main() -> None:
     for frame in range(2, FRAME_END + 1):
         shutil.copy2(first_frame, FRAMES / f"frame_{frame:04d}.png")
 
-    # The source binary was already transferred through Dropbox -> bridge.
-    # Reuse its exact bytes so Git can reference the existing blob instead of
-    # creating/uploading another large binary object.
+    # Exact source bytes: already transferred via Dropbox -> bridge.
+    # Referencing identical bytes avoids a second large binary upload.
     output_blend = OUT / f"{EXPERIMENT}.blend"
     shutil.copy2(SOURCE, output_blend)
 
@@ -174,6 +201,8 @@ def main() -> None:
         "blender_version": bpy.app.version_string,
         "engine": engine,
         "display_mode": "wireframe",
+        "wireframe_method": "geometry_modifier",
+        "wireframe_world_thickness": round(wire_thickness, 8),
         "resolution": [RES_X, RES_Y],
         "frame_count": FRAME_END - FRAME_START + 1,
         "fps": FPS,
@@ -181,13 +210,15 @@ def main() -> None:
         "source_size_bytes": SOURCE.stat().st_size,
         "source_sha256": source_hash,
         "renderable_object_count": object_count,
+        "mesh_object_count": mesh_count,
+        "source_edge_count": edge_count,
         "bounds_min": [round(float(v), 6) for v in minimum],
         "bounds_max": [round(float(v), 6) for v in maximum],
         "bounds_span": [round(float(v), 6) for v in span],
         "camera_location": [round(float(v), 6) for v in camera.location],
         "camera_ortho_scale": round(float(camera.data.ortho_scale), 6),
         "render_seconds": round(render_seconds, 6),
-        "note": "One actual Workbench HD still; frames 2-24 duplicate frame 1 for the existing MP4 pipeline.",
+        "note": "One actual Workbench HD still using real wireframe geometry; frames 2-24 duplicate frame 1 for pipeline compatibility.",
     }
     (OUT / f"{EXPERIMENT}-report.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False) + "\n",
@@ -198,8 +229,10 @@ def main() -> None:
     print(f"BLENDER52_ENGINE={engine}")
     print(f"SAIL_SHIP_SOURCE_SHA256={source_hash}")
     print(f"SAIL_SHIP_OBJECTS={object_count}")
+    print(f"SAIL_SHIP_MESHES={mesh_count}")
+    print(f"SAIL_SHIP_EDGES={edge_count}")
+    print(f"WIRE_THICKNESS={wire_thickness:.8f}")
     print(f"WORKBENCH_RENDER_SECONDS={render_seconds:.6f}")
-    print(f"WORKBENCH_CAMERA_ORTHO_SCALE={camera.data.ortho_scale:.6f}")
 
 
 if __name__ == "__main__":
