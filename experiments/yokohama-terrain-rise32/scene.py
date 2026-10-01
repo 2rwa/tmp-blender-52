@@ -28,7 +28,8 @@ FRAME_END = 144
 FPS = 24
 RES_X = 320
 RES_Y = 180
-EXAGGERATION_START = 1.0\nEXAGGERATION_END = 32.0
+EXAGGERATION_START = 1.0
+EXAGGERATION_END = 32.0
 TERRAIN_WIDTH_BU = 12.0
 GSI_URL = "https://cyberjapandata.gsi.go.jp/xyz/dem_png/{z}/{x}/{y}.png"
 
@@ -410,7 +411,9 @@ def main() -> None:
 
     for frame in range(FRAME_START, FRAME_END + 1):
         t = (frame - FRAME_START) / max(1, FRAME_END - FRAME_START)
-        exaggeration = EXAGGERATION_START * ((EXAGGERATION_END / EXAGGERATION_START) ** t)\n        terrain.scale.z = exaggeration / EXAGGERATION_START\n        angle = base_angle + math.radians(16.0) * (t - 0.5)
+        exaggeration = EXAGGERATION_START * ((EXAGGERATION_END / EXAGGERATION_START) ** t)
+        terrain.scale.z = exaggeration / EXAGGERATION_START
+        angle = base_angle + math.radians(16.0) * (t - 0.5)
         camera.location.x = radius * math.cos(angle)
         camera.location.y = radius * math.sin(angle)
         camera.location.z = initial.z + 0.35 * math.sin(t * math.pi)
@@ -420,7 +423,11 @@ def main() -> None:
 
         scene.render.filepath = str(FRAMES / f"frame_{frame:04d}.png")
         bpy.ops.render.render(write_still=True)
-        frame_stats.append({\n            "frame": frame,\n            "exaggeration": round(exaggeration, 6),\n            "camera": [round(float(v), 5) for v in camera.location],\n        })
+        frame_stats.append({
+            "frame": frame,
+            "exaggeration": round(exaggeration, 6),
+            "camera": [round(float(v), 5) for v in camera.location],
+        })
 
     preview_frame = FRAME_END
     shutil.copy2(FRAMES / f"frame_{preview_frame:04d}.png", OUT / "preview.png")
@@ -435,7 +442,11 @@ def main() -> None:
         "bbox_lonlat": [LON_MIN, LAT_MIN, LON_MAX, LAT_MAX],
         "dem_zoom": DEM_ZOOM,
         "grid": [GRID_X, GRID_Y],
-        "vertical_exaggeration": {\n            "start": EXAGGERATION_START,\n            "end": EXAGGERATION_END,\n            "progression": "exponential",\n        },
+        "vertical_exaggeration": {
+            "start": EXAGGERATION_START,
+            "end": EXAGGERATION_END,
+            "progression": "exponential",
+        },
         "frame_start": FRAME_START,
         "frame_end": FRAME_END,
         "frame_count": FRAME_END - FRAME_START + 1,
