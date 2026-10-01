@@ -1,0 +1,5 @@
+{
+  "id": "yokohama-terrain-rise32",
+  "title": "Yokohama City Terrain — 1× to 32×",
+  "description": "320×180, 144-frame Yokohama terrain animation using GSI DEM10B data, with vertical exaggeration increasing exponentially from 1× to 32×."
+}

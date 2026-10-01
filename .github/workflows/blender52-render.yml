@@ -43,7 +43,7 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     env:
       EXPERIMENT: ${{ inputs.experiment || 'hello-blender52' }}
       EXPERIMENT_VARIANT: ${{ inputs.variant || '0' }}

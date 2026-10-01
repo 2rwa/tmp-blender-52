@@ -1,0 +1,22 @@
+name: Yokohama terrain rise32
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/yokohama-terrain-rise32/**'
+      - '.github/workflows/yokohama-terrain-rise32.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  yokohama:
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: yokohama-terrain-rise32
+      variant: rise32-144f
+    secrets: inherit
