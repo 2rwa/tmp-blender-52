@@ -1,0 +1,21 @@
+{
+  "experiment": "yokohama-terrain-rise32",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "resolution": [
+    320,
+    180
+  ],
+  "frame_count": 144,
+  "dem_zoom": 11,
+  "exaggeration_start": 1.0,
+  "exaggeration_end": 32.0,
+  "dem_tile_count": 9,
+  "dem_valid_ratio": 0.7446,
+  "elevation_min_m": -0.1,
+  "elevation_max_m": 140.57,
+  "preview_sha256": "7a42a5def36e2faaf204cc963ae217c8383cff47170e5cb4fb5cd685ecea90c5",
+  "video_size_bytes": 20564,
+  "blend_size_bytes": 374395,
+  "preview_stddev": 38.523
+}
