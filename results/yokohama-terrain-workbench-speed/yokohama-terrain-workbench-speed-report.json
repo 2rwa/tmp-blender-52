@@ -1,0 +1,1493 @@
+{
+  "experiment": "yokohama-terrain-workbench-speed",
+  "title": "Yokohama City terrain Workbench speed test, 1x to 32x",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "data_source": "Geospatial Information Authority of Japan (GSI) DEM10B PNG elevation tiles",
+  "data_source_url_template": "https://cyberjapandata.gsi.go.jp/xyz/dem_png/{z}/{x}/{y}.png",
+  "bbox_lonlat": [
+    139.47,
+    35.3,
+    139.78,
+    35.6
+  ],
+  "dem_zoom": 11,
+  "grid": [
+    96,
+    112
+  ],
+  "vertical_exaggeration": {
+    "start": 1.0,
+    "end": 32.0,
+    "progression": "exponential"
+  },
+  "frame_start": 1,
+  "frame_end": 144,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    320,
+    180
+  ],
+  "preview_frame": 144,
+  "render_loop_seconds": 33.80379687499999,
+  "seconds_per_frame": 0.23474858940972215,
+  "dem": {
+    "tile_count": 9,
+    "sample_count": 10752,
+    "valid_sample_count": 8006,
+    "valid_ratio": 0.7446056547619048,
+    "elevation_min_m": -0.1,
+    "elevation_max_m": 140.57,
+    "elevation_mean_m": 30.790996752435674
+  },
+  "terrain": {
+    "width_m": 28111.952391446386,
+    "height_m": 33396.00000000047,
+    "terrain_width_bu": 12.0,
+    "terrain_depth_bu": 14.255573373905627,
+    "zmax_bu": 1.9201398482883079
+  },
+  "frame_stats": [
+    {
+      "frame": 1,
+      "exaggeration": 1.0,
+      "render_seconds": 7.531283,
+      "camera": [
+        9.43966,
+        -15.46424,
+        11.0
+      ]
+    },
+    {
+      "frame": 2,
+      "exaggeration": 1.024532,
+      "render_seconds": 0.178573,
+      "camera": [
+        9.46984,
+        -15.44578,
+        11.00769
+      ]
+    },
+    {
+      "frame": 3,
+      "exaggeration": 1.049666,
+      "render_seconds": 0.176913,
+      "camera": [
+        9.49998,
+        -15.42726,
+        11.01537
+      ]
+    },
+    {
+      "frame": 4,
+      "exaggeration": 1.075416,
+      "render_seconds": 0.176146,
+      "camera": [
+        9.53009,
+        -15.40868,
+        11.02305
+      ]
+    },
+    {
+      "frame": 5,
+      "exaggeration": 1.101798,
+      "render_seconds": 0.178176,
+      "camera": [
+        9.56017,
+        -15.39004,
+        11.03072
+      ]
+    },
+    {
+      "frame": 6,
+      "exaggeration": 1.128828,
+      "render_seconds": 0.176178,
+      "camera": [
+        9.5902,
+        -15.37134,
+        11.03837
+      ]
+    },
+    {
+      "frame": 7,
+      "exaggeration": 1.15652,
+      "render_seconds": 0.176703,
+      "camera": [
+        9.6202,
+        -15.35258,
+        11.046
+      ]
+    },
+    {
+      "frame": 8,
+      "exaggeration": 1.184892,
+      "render_seconds": 0.1766,
+      "camera": [
+        9.65016,
+        -15.33377,
+        11.05361
+      ]
+    },
+    {
+      "frame": 9,
+      "exaggeration": 1.213959,
+      "render_seconds": 0.175937,
+      "camera": [
+        9.68009,
+        -15.31489,
+        11.0612
+      ]
+    },
+    {
+      "frame": 10,
+      "exaggeration": 1.24374,
+      "render_seconds": 0.176855,
+      "camera": [
+        9.70998,
+        -15.29596,
+        11.06875
+      ]
+    },
+    {
+      "frame": 11,
+      "exaggeration": 1.274252,
+      "render_seconds": 0.176461,
+      "camera": [
+        9.73983,
+        -15.27697,
+        11.07627
+      ]
+    },
+    {
+      "frame": 12,
+      "exaggeration": 1.305512,
+      "render_seconds": 0.182708,
+      "camera": [
+        9.76964,
+        -15.25792,
+        11.08376
+      ]
+    },
+    {
+      "frame": 13,
+      "exaggeration": 1.337539,
+      "render_seconds": 0.177629,
+      "camera": [
+        9.79942,
+        -15.23881,
+        11.09121
+      ]
+    },
+    {
+      "frame": 14,
+      "exaggeration": 1.370351,
+      "render_seconds": 0.189275,
+      "camera": [
+        9.82916,
+        -15.21965,
+        11.09861
+      ]
+    },
+    {
+      "frame": 15,
+      "exaggeration": 1.403968,
+      "render_seconds": 0.198607,
+      "camera": [
+        9.85886,
+        -15.20042,
+        11.10596
+      ]
+    },
+    {
+      "frame": 16,
+      "exaggeration": 1.438411,
+      "render_seconds": 0.197059,
+      "camera": [
+        9.88853,
+        -15.18114,
+        11.11326
+      ]
+    },
+    {
+      "frame": 17,
+      "exaggeration": 1.473698,
+      "render_seconds": 0.205601,
+      "camera": [
+        9.91815,
+        -15.1618,
+        11.12051
+      ]
+    },
+    {
+      "frame": 18,
+      "exaggeration": 1.50985,
+      "render_seconds": 0.193328,
+      "camera": [
+        9.94774,
+        -15.1424,
+        11.1277
+      ]
+    },
+    {
+      "frame": 19,
+      "exaggeration": 1.54689,
+      "render_seconds": 0.213127,
+      "camera": [
+        9.97729,
+        -15.12295,
+        11.13483
+      ]
+    },
+    {
+      "frame": 20,
+      "exaggeration": 1.584838,
+      "render_seconds": 0.196954,
+      "camera": [
+        10.00681,
+        -15.10344,
+        11.14189
+      ]
+    },
+    {
+      "frame": 21,
+      "exaggeration": 1.623718,
+      "render_seconds": 0.220728,
+      "camera": [
+        10.03628,
+        -15.08387,
+        11.14888
+      ]
+    },
+    {
+      "frame": 22,
+      "exaggeration": 1.663551,
+      "render_seconds": 0.197534,
+      "camera": [
+        10.06572,
+        -15.06424,
+        11.15581
+      ]
+    },
+    {
+      "frame": 23,
+      "exaggeration": 1.704361,
+      "render_seconds": 0.202762,
+      "camera": [
+        10.09512,
+        -15.04455,
+        11.16265
+      ]
+    },
+    {
+      "frame": 24,
+      "exaggeration": 1.746172,
+      "render_seconds": 0.189098,
+      "camera": [
+        10.12448,
+        -15.02481,
+        11.16942
+      ]
+    },
+    {
+      "frame": 25,
+      "exaggeration": 1.789009,
+      "render_seconds": 0.198583,
+      "camera": [
+        10.1538,
+        -15.00501,
+        11.17611
+      ]
+    },
+    {
+      "frame": 26,
+      "exaggeration": 1.832897,
+      "render_seconds": 0.212672,
+      "camera": [
+        10.18308,
+        -14.98515,
+        11.18271
+      ]
+    },
+    {
+      "frame": 27,
+      "exaggeration": 1.877862,
+      "render_seconds": 0.203627,
+      "camera": [
+        10.21233,
+        -14.96524,
+        11.18922
+      ]
+    },
+    {
+      "frame": 28,
+      "exaggeration": 1.92393,
+      "render_seconds": 0.198312,
+      "camera": [
+        10.24153,
+        -14.94527,
+        11.19565
+      ]
+    },
+    {
+      "frame": 29,
+      "exaggeration": 1.971127,
+      "render_seconds": 0.208329,
+      "camera": [
+        10.2707,
+        -14.92524,
+        11.20197
+      ]
+    },
+    {
+      "frame": 30,
+      "exaggeration": 2.019483,
+      "render_seconds": 0.200552,
+      "camera": [
+        10.29982,
+        -14.90515,
+        11.20821
+      ]
+    },
+    {
+      "frame": 31,
+      "exaggeration": 2.069025,
+      "render_seconds": 0.187674,
+      "camera": [
+        10.32891,
+        -14.88501,
+        11.21434
+      ]
+    },
+    {
+      "frame": 32,
+      "exaggeration": 2.119782,
+      "render_seconds": 0.204817,
+      "camera": [
+        10.35796,
+        -14.86481,
+        11.22036
+      ]
+    },
+    {
+      "frame": 33,
+      "exaggeration": 2.171785,
+      "render_seconds": 0.191995,
+      "camera": [
+        10.38697,
+        -14.84456,
+        11.22628
+      ]
+    },
+    {
+      "frame": 34,
+      "exaggeration": 2.225063,
+      "render_seconds": 0.220002,
+      "camera": [
+        10.41594,
+        -14.82425,
+        11.23209
+      ]
+    },
+    {
+      "frame": 35,
+      "exaggeration": 2.279648,
+      "render_seconds": 0.187968,
+      "camera": [
+        10.44487,
+        -14.80388,
+        11.23779
+      ]
+    },
+    {
+      "frame": 36,
+      "exaggeration": 2.335572,
+      "render_seconds": 0.193862,
+      "camera": [
+        10.47375,
+        -14.78345,
+        11.24338
+      ]
+    },
+    {
+      "frame": 37,
+      "exaggeration": 2.392869,
+      "render_seconds": 0.197345,
+      "camera": [
+        10.5026,
+        -14.76297,
+        11.24884
+      ]
+    },
+    {
+      "frame": 38,
+      "exaggeration": 2.451571,
+      "render_seconds": 0.199869,
+      "camera": [
+        10.53141,
+        -14.74243,
+        11.25419
+      ]
+    },
+    {
+      "frame": 39,
+      "exaggeration": 2.511712,
+      "render_seconds": 0.205889,
+      "camera": [
+        10.56018,
+        -14.72184,
+        11.25941
+      ]
+    },
+    {
+      "frame": 40,
+      "exaggeration": 2.57333,
+      "render_seconds": 0.19322,
+      "camera": [
+        10.58891,
+        -14.70119,
+        11.26451
+      ]
+    },
+    {
+      "frame": 41,
+      "exaggeration": 2.636459,
+      "render_seconds": 0.207017,
+      "camera": [
+        10.6176,
+        -14.68048,
+        11.26948
+      ]
+    },
+    {
+      "frame": 42,
+      "exaggeration": 2.701136,
+      "render_seconds": 0.207929,
+      "camera": [
+        10.64625,
+        -14.65972,
+        11.27432
+      ]
+    },
+    {
+      "frame": 43,
+      "exaggeration": 2.767401,
+      "render_seconds": 0.189431,
+      "camera": [
+        10.67486,
+        -14.6389,
+        11.27903
+      ]
+    },
+    {
+      "frame": 44,
+      "exaggeration": 2.83529,
+      "render_seconds": 0.176622,
+      "camera": [
+        10.70342,
+        -14.61803,
+        11.28361
+      ]
+    },
+    {
+      "frame": 45,
+      "exaggeration": 2.904846,
+      "render_seconds": 0.177894,
+      "camera": [
+        10.73195,
+        -14.5971,
+        11.28804
+      ]
+    },
+    {
+      "frame": 46,
+      "exaggeration": 2.976107,
+      "render_seconds": 0.186736,
+      "camera": [
+        10.76043,
+        -14.57611,
+        11.29234
+      ]
+    },
+    {
+      "frame": 47,
+      "exaggeration": 3.049117,
+      "render_seconds": 0.178891,
+      "camera": [
+        10.78888,
+        -14.55507,
+        11.2965
+      ]
+    },
+    {
+      "frame": 48,
+      "exaggeration": 3.123918,
+      "render_seconds": 0.177764,
+      "camera": [
+        10.81728,
+        -14.53398,
+        11.30051
+      ]
+    },
+    {
+      "frame": 49,
+      "exaggeration": 3.200554,
+      "render_seconds": 0.17672,
+      "camera": [
+        10.84564,
+        -14.51282,
+        11.30438
+      ]
+    },
+    {
+      "frame": 50,
+      "exaggeration": 3.27907,
+      "render_seconds": 0.176695,
+      "camera": [
+        10.87396,
+        -14.49162,
+        11.3081
+      ]
+    },
+    {
+      "frame": 51,
+      "exaggeration": 3.359512,
+      "render_seconds": 0.176805,
+      "camera": [
+        10.90224,
+        -14.47035,
+        11.31168
+      ]
+    },
+    {
+      "frame": 52,
+      "exaggeration": 3.441928,
+      "render_seconds": 0.177785,
+      "camera": [
+        10.93048,
+        -14.44904,
+        11.3151
+      ]
+    },
+    {
+      "frame": 53,
+      "exaggeration": 3.526365,
+      "render_seconds": 0.176537,
+      "camera": [
+        10.95867,
+        -14.42766,
+        11.31837
+      ]
+    },
+    {
+      "frame": 54,
+      "exaggeration": 3.612874,
+      "render_seconds": 0.175519,
+      "camera": [
+        10.98683,
+        -14.40624,
+        11.32149
+      ]
+    },
+    {
+      "frame": 55,
+      "exaggeration": 3.701505,
+      "render_seconds": 0.175825,
+      "camera": [
+        11.01494,
+        -14.38475,
+        11.32445
+      ]
+    },
+    {
+      "frame": 56,
+      "exaggeration": 3.79231,
+      "render_seconds": 0.178488,
+      "camera": [
+        11.04301,
+        -14.36322,
+        11.32726
+      ]
+    },
+    {
+      "frame": 57,
+      "exaggeration": 3.885343,
+      "render_seconds": 0.177486,
+      "camera": [
+        11.07104,
+        -14.34162,
+        11.3299
+      ]
+    },
+    {
+      "frame": 58,
+      "exaggeration": 3.980658,
+      "render_seconds": 0.175654,
+      "camera": [
+        11.09902,
+        -14.31998,
+        11.33239
+      ]
+    },
+    {
+      "frame": 59,
+      "exaggeration": 4.078312,
+      "render_seconds": 0.176705,
+      "camera": [
+        11.12696,
+        -14.29827,
+        11.33472
+      ]
+    },
+    {
+      "frame": 60,
+      "exaggeration": 4.178361,
+      "render_seconds": 0.176425,
+      "camera": [
+        11.15487,
+        -14.27652,
+        11.33689
+      ]
+    },
+    {
+      "frame": 61,
+      "exaggeration": 4.280864,
+      "render_seconds": 0.17473,
+      "camera": [
+        11.18272,
+        -14.25471,
+        11.33889
+      ]
+    },
+    {
+      "frame": 62,
+      "exaggeration": 4.385882,
+      "render_seconds": 0.17822,
+      "camera": [
+        11.21054,
+        -14.23284,
+        11.34073
+      ]
+    },
+    {
+      "frame": 63,
+      "exaggeration": 4.493477,
+      "render_seconds": 0.175972,
+      "camera": [
+        11.23831,
+        -14.21092,
+        11.34241
+      ]
+    },
+    {
+      "frame": 64,
+      "exaggeration": 4.603711,
+      "render_seconds": 0.176334,
+      "camera": [
+        11.26604,
+        -14.18895,
+        11.34391
+      ]
+    },
+    {
+      "frame": 65,
+      "exaggeration": 4.716649,
+      "render_seconds": 0.177711,
+      "camera": [
+        11.29373,
+        -14.16692,
+        11.34526
+      ]
+    },
+    {
+      "frame": 66,
+      "exaggeration": 4.832358,
+      "render_seconds": 0.176662,
+      "camera": [
+        11.32137,
+        -14.14484,
+        11.34644
+      ]
+    },
+    {
+      "frame": 67,
+      "exaggeration": 4.950905,
+      "render_seconds": 0.176435,
+      "camera": [
+        11.34897,
+        -14.12271,
+        11.34745
+      ]
+    },
+    {
+      "frame": 68,
+      "exaggeration": 5.072361,
+      "render_seconds": 0.177257,
+      "camera": [
+        11.37653,
+        -14.10052,
+        11.34829
+      ]
+    },
+    {
+      "frame": 69,
+      "exaggeration": 5.196796,
+      "render_seconds": 0.179548,
+      "camera": [
+        11.40404,
+        -14.07827,
+        11.34897
+      ]
+    },
+    {
+      "frame": 70,
+      "exaggeration": 5.324284,
+      "render_seconds": 0.180779,
+      "camera": [
+        11.43151,
+        -14.05598,
+        11.34947
+      ]
+    },
+    {
+      "frame": 71,
+      "exaggeration": 5.454899,
+      "render_seconds": 0.181591,
+      "camera": [
+        11.45894,
+        -14.03363,
+        11.34981
+      ]
+    },
+    {
+      "frame": 72,
+      "exaggeration": 5.588718,
+      "render_seconds": 0.17746,
+      "camera": [
+        11.48633,
+        -14.01122,
+        11.34998
+      ]
+    },
+    {
+      "frame": 73,
+      "exaggeration": 5.725821,
+      "render_seconds": 0.176069,
+      "camera": [
+        11.51366,
+        -13.98876,
+        11.34998
+      ]
+    },
+    {
+      "frame": 74,
+      "exaggeration": 5.866287,
+      "render_seconds": 0.176958,
+      "camera": [
+        11.54096,
+        -13.96625,
+        11.34981
+      ]
+    },
+    {
+      "frame": 75,
+      "exaggeration": 6.010198,
+      "render_seconds": 0.177148,
+      "camera": [
+        11.56821,
+        -13.94369,
+        11.34947
+      ]
+    },
+    {
+      "frame": 76,
+      "exaggeration": 6.15764,
+      "render_seconds": 0.179984,
+      "camera": [
+        11.59542,
+        -13.92107,
+        11.34897
+      ]
+    },
+    {
+      "frame": 77,
+      "exaggeration": 6.3087,
+      "render_seconds": 0.177452,
+      "camera": [
+        11.62258,
+        -13.8984,
+        11.34829
+      ]
+    },
+    {
+      "frame": 78,
+      "exaggeration": 6.463465,
+      "render_seconds": 0.176964,
+      "camera": [
+        11.6497,
+        -13.87568,
+        11.34745
+      ]
+    },
+    {
+      "frame": 79,
+      "exaggeration": 6.622026,
+      "render_seconds": 0.178359,
+      "camera": [
+        11.67677,
+        -13.8529,
+        11.34644
+      ]
+    },
+    {
+      "frame": 80,
+      "exaggeration": 6.784478,
+      "render_seconds": 0.186686,
+      "camera": [
+        11.7038,
+        -13.83007,
+        11.34526
+      ]
+    },
+    {
+      "frame": 81,
+      "exaggeration": 6.950914,
+      "render_seconds": 0.176849,
+      "camera": [
+        11.73079,
+        -13.80719,
+        11.34391
+      ]
+    },
+    {
+      "frame": 82,
+      "exaggeration": 7.121434,
+      "render_seconds": 0.176246,
+      "camera": [
+        11.75773,
+        -13.78426,
+        11.34241
+      ]
+    },
+    {
+      "frame": 83,
+      "exaggeration": 7.296137,
+      "render_seconds": 0.177019,
+      "camera": [
+        11.78463,
+        -13.76127,
+        11.34073
+      ]
+    },
+    {
+      "frame": 84,
+      "exaggeration": 7.475126,
+      "render_seconds": 0.177208,
+      "camera": [
+        11.81148,
+        -13.73823,
+        11.33889
+      ]
+    },
+    {
+      "frame": 85,
+      "exaggeration": 7.658506,
+      "render_seconds": 0.176121,
+      "camera": [
+        11.83828,
+        -13.71514,
+        11.33689
+      ]
+    },
+    {
+      "frame": 86,
+      "exaggeration": 7.846384,
+      "render_seconds": 0.177736,
+      "camera": [
+        11.86504,
+        -13.692,
+        11.33472
+      ]
+    },
+    {
+      "frame": 87,
+      "exaggeration": 8.038872,
+      "render_seconds": 0.178278,
+      "camera": [
+        11.89176,
+        -13.6688,
+        11.33239
+      ]
+    },
+    {
+      "frame": 88,
+      "exaggeration": 8.236081,
+      "render_seconds": 0.179207,
+      "camera": [
+        11.91843,
+        -13.64555,
+        11.3299
+      ]
+    },
+    {
+      "frame": 89,
+      "exaggeration": 8.438129,
+      "render_seconds": 0.178568,
+      "camera": [
+        11.94505,
+        -13.62225,
+        11.32726
+      ]
+    },
+    {
+      "frame": 90,
+      "exaggeration": 8.645133,
+      "render_seconds": 0.177169,
+      "camera": [
+        11.97163,
+        -13.5989,
+        11.32445
+      ]
+    },
+    {
+      "frame": 91,
+      "exaggeration": 8.857215,
+      "render_seconds": 0.178087,
+      "camera": [
+        11.99817,
+        -13.57549,
+        11.32149
+      ]
+    },
+    {
+      "frame": 92,
+      "exaggeration": 9.0745,
+      "render_seconds": 0.17858,
+      "camera": [
+        12.02465,
+        -13.55204,
+        11.31837
+      ]
+    },
+    {
+      "frame": 93,
+      "exaggeration": 9.297116,
+      "render_seconds": 0.178953,
+      "camera": [
+        12.0511,
+        -13.52853,
+        11.3151
+      ]
+    },
+    {
+      "frame": 94,
+      "exaggeration": 9.525193,
+      "render_seconds": 0.178032,
+      "camera": [
+        12.07749,
+        -13.50497,
+        11.31168
+      ]
+    },
+    {
+      "frame": 95,
+      "exaggeration": 9.758864,
+      "render_seconds": 0.181161,
+      "camera": [
+        12.10384,
+        -13.48136,
+        11.3081
+      ]
+    },
+    {
+      "frame": 96,
+      "exaggeration": 9.998269,
+      "render_seconds": 0.177402,
+      "camera": [
+        12.13014,
+        -13.4577,
+        11.30438
+      ]
+    },
+    {
+      "frame": 97,
+      "exaggeration": 10.243546,
+      "render_seconds": 0.177293,
+      "camera": [
+        12.1564,
+        -13.43398,
+        11.30051
+      ]
+    },
+    {
+      "frame": 98,
+      "exaggeration": 10.494841,
+      "render_seconds": 0.177342,
+      "camera": [
+        12.18261,
+        -13.41022,
+        11.2965
+      ]
+    },
+    {
+      "frame": 99,
+      "exaggeration": 10.7523,
+      "render_seconds": 0.180436,
+      "camera": [
+        12.20878,
+        -13.3864,
+        11.29234
+      ]
+    },
+    {
+      "frame": 100,
+      "exaggeration": 11.016076,
+      "render_seconds": 0.177653,
+      "camera": [
+        12.23489,
+        -13.36254,
+        11.28804
+      ]
+    },
+    {
+      "frame": 101,
+      "exaggeration": 11.286322,
+      "render_seconds": 0.17851,
+      "camera": [
+        12.26097,
+        -13.33862,
+        11.28361
+      ]
+    },
+    {
+      "frame": 102,
+      "exaggeration": 11.563198,
+      "render_seconds": 0.177651,
+      "camera": [
+        12.28699,
+        -13.31465,
+        11.27903
+      ]
+    },
+    {
+      "frame": 103,
+      "exaggeration": 11.846866,
+      "render_seconds": 0.178594,
+      "camera": [
+        12.31297,
+        -13.29063,
+        11.27432
+      ]
+    },
+    {
+      "frame": 104,
+      "exaggeration": 12.137493,
+      "render_seconds": 0.177088,
+      "camera": [
+        12.3389,
+        -13.26656,
+        11.26948
+      ]
+    },
+    {
+      "frame": 105,
+      "exaggeration": 12.43525,
+      "render_seconds": 0.176946,
+      "camera": [
+        12.36478,
+        -13.24244,
+        11.26451
+      ]
+    },
+    {
+      "frame": 106,
+      "exaggeration": 12.740312,
+      "render_seconds": 0.177021,
+      "camera": [
+        12.39062,
+        -13.21827,
+        11.25941
+      ]
+    },
+    {
+      "frame": 107,
+      "exaggeration": 13.052857,
+      "render_seconds": 0.180096,
+      "camera": [
+        12.41641,
+        -13.19405,
+        11.25419
+      ]
+    },
+    {
+      "frame": 108,
+      "exaggeration": 13.37307,
+      "render_seconds": 0.179856,
+      "camera": [
+        12.44215,
+        -13.16977,
+        11.24884
+      ]
+    },
+    {
+      "frame": 109,
+      "exaggeration": 13.701138,
+      "render_seconds": 0.179125,
+      "camera": [
+        12.46784,
+        -13.14545,
+        11.24338
+      ]
+    },
+    {
+      "frame": 110,
+      "exaggeration": 14.037254,
+      "render_seconds": 0.178647,
+      "camera": [
+        12.49349,
+        -13.12108,
+        11.23779
+      ]
+    },
+    {
+      "frame": 111,
+      "exaggeration": 14.381616,
+      "render_seconds": 0.177995,
+      "camera": [
+        12.51909,
+        -13.09666,
+        11.23209
+      ]
+    },
+    {
+      "frame": 112,
+      "exaggeration": 14.734425,
+      "render_seconds": 0.178602,
+      "camera": [
+        12.54464,
+        -13.07218,
+        11.22628
+      ]
+    },
+    {
+      "frame": 113,
+      "exaggeration": 15.09589,
+      "render_seconds": 0.176978,
+      "camera": [
+        12.57014,
+        -13.04766,
+        11.22036
+      ]
+    },
+    {
+      "frame": 114,
+      "exaggeration": 15.466222,
+      "render_seconds": 0.177721,
+      "camera": [
+        12.5956,
+        -13.02309,
+        11.21434
+      ]
+    },
+    {
+      "frame": 115,
+      "exaggeration": 15.84564,
+      "render_seconds": 0.176581,
+      "camera": [
+        12.62101,
+        -12.99847,
+        11.20821
+      ]
+    },
+    {
+      "frame": 116,
+      "exaggeration": 16.234365,
+      "render_seconds": 0.178587,
+      "camera": [
+        12.64637,
+        -12.9738,
+        11.20197
+      ]
+    },
+    {
+      "frame": 117,
+      "exaggeration": 16.632626,
+      "render_seconds": 0.200485,
+      "camera": [
+        12.67168,
+        -12.94908,
+        11.19565
+      ]
+    },
+    {
+      "frame": 118,
+      "exaggeration": 17.040657,
+      "render_seconds": 0.189429,
+      "camera": [
+        12.69694,
+        -12.9243,
+        11.18922
+      ]
+    },
+    {
+      "frame": 119,
+      "exaggeration": 17.458699,
+      "render_seconds": 0.179193,
+      "camera": [
+        12.72216,
+        -12.89949,
+        11.18271
+      ]
+    },
+    {
+      "frame": 120,
+      "exaggeration": 17.886995,
+      "render_seconds": 0.178703,
+      "camera": [
+        12.74732,
+        -12.87462,
+        11.17611
+      ]
+    },
+    {
+      "frame": 121,
+      "exaggeration": 18.325799,
+      "render_seconds": 0.176086,
+      "camera": [
+        12.77244,
+        -12.8497,
+        11.16942
+      ]
+    },
+    {
+      "frame": 122,
+      "exaggeration": 18.775367,
+      "render_seconds": 0.175679,
+      "camera": [
+        12.79751,
+        -12.82473,
+        11.16265
+      ]
+    },
+    {
+      "frame": 123,
+      "exaggeration": 19.235965,
+      "render_seconds": 0.175862,
+      "camera": [
+        12.82253,
+        -12.79972,
+        11.15581
+      ]
+    },
+    {
+      "frame": 124,
+      "exaggeration": 19.707861,
+      "render_seconds": 0.176333,
+      "camera": [
+        12.8475,
+        -12.77465,
+        11.14888
+      ]
+    },
+    {
+      "frame": 125,
+      "exaggeration": 20.191334,
+      "render_seconds": 0.176701,
+      "camera": [
+        12.87242,
+        -12.74954,
+        11.14189
+      ]
+    },
+    {
+      "frame": 126,
+      "exaggeration": 20.686668,
+      "render_seconds": 0.177217,
+      "camera": [
+        12.89729,
+        -12.72438,
+        11.13483
+      ]
+    },
+    {
+      "frame": 127,
+      "exaggeration": 21.194153,
+      "render_seconds": 0.177101,
+      "camera": [
+        12.92212,
+        -12.69917,
+        11.1277
+      ]
+    },
+    {
+      "frame": 128,
+      "exaggeration": 21.714088,
+      "render_seconds": 0.176719,
+      "camera": [
+        12.94689,
+        -12.67391,
+        11.12051
+      ]
+    },
+    {
+      "frame": 129,
+      "exaggeration": 22.246778,
+      "render_seconds": 0.180295,
+      "camera": [
+        12.97162,
+        -12.6486,
+        11.11326
+      ]
+    },
+    {
+      "frame": 130,
+      "exaggeration": 22.792535,
+      "render_seconds": 0.233221,
+      "camera": [
+        12.99629,
+        -12.62325,
+        11.10596
+      ]
+    },
+    {
+      "frame": 131,
+      "exaggeration": 23.351682,
+      "render_seconds": 0.177816,
+      "camera": [
+        13.02092,
+        -12.59784,
+        11.09861
+      ]
+    },
+    {
+      "frame": 132,
+      "exaggeration": 23.924545,
+      "render_seconds": 0.177933,
+      "camera": [
+        13.0455,
+        -12.57239,
+        11.09121
+      ]
+    },
+    {
+      "frame": 133,
+      "exaggeration": 24.511462,
+      "render_seconds": 0.178923,
+      "camera": [
+        13.07002,
+        -12.54689,
+        11.08376
+      ]
+    },
+    {
+      "frame": 134,
+      "exaggeration": 25.112777,
+      "render_seconds": 0.179282,
+      "camera": [
+        13.0945,
+        -12.52135,
+        11.07627
+      ]
+    },
+    {
+      "frame": 135,
+      "exaggeration": 25.728843,
+      "render_seconds": 0.184037,
+      "camera": [
+        13.11893,
+        -12.49575,
+        11.06875
+      ]
+    },
+    {
+      "frame": 136,
+      "exaggeration": 26.360023,
+      "render_seconds": 0.179454,
+      "camera": [
+        13.1433,
+        -12.47011,
+        11.0612
+      ]
+    },
+    {
+      "frame": 137,
+      "exaggeration": 27.006687,
+      "render_seconds": 0.181,
+      "camera": [
+        13.16763,
+        -12.44442,
+        11.05361
+      ]
+    },
+    {
+      "frame": 138,
+      "exaggeration": 27.669215,
+      "render_seconds": 0.179686,
+      "camera": [
+        13.19191,
+        -12.41868,
+        11.046
+      ]
+    },
+    {
+      "frame": 139,
+      "exaggeration": 28.347996,
+      "render_seconds": 0.179035,
+      "camera": [
+        13.21613,
+        -12.39289,
+        11.03837
+      ]
+    },
+    {
+      "frame": 140,
+      "exaggeration": 29.043428,
+      "render_seconds": 0.180426,
+      "camera": [
+        13.24031,
+        -12.36706,
+        11.03072
+      ]
+    },
+    {
+      "frame": 141,
+      "exaggeration": 29.755922,
+      "render_seconds": 0.181366,
+      "camera": [
+        13.26443,
+        -12.34118,
+        11.02305
+      ]
+    },
+    {
+      "frame": 142,
+      "exaggeration": 30.485894,
+      "render_seconds": 0.179215,
+      "camera": [
+        13.28851,
+        -12.31526,
+        11.01537
+      ]
+    },
+    {
+      "frame": 143,
+      "exaggeration": 31.233773,
+      "render_seconds": 0.183868,
+      "camera": [
+        13.31253,
+        -12.28928,
+        11.00769
+      ]
+    },
+    {
+      "frame": 144,
+      "exaggeration": 32.0,
+      "render_seconds": 0.184754,
+      "camera": [
+        13.33651,
+        -12.26326,
+        11.0
+      ]
+    }
+  ]
+}

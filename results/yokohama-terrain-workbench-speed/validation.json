@@ -1,0 +1,18 @@
+{
+  "experiment": "yokohama-terrain-workbench-speed",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    320,
+    180
+  ],
+  "frame_count": 144,
+  "dem_zoom": 11,
+  "exaggeration_start": 1.0,
+  "exaggeration_end": 32.0,
+  "render_loop_seconds": 33.803797,
+  "seconds_per_frame": 0.234749,
+  "preview_bytes": 87741,
+  "video_size_bytes": 17523,
+  "blend_size_bytes": 371500
+}
