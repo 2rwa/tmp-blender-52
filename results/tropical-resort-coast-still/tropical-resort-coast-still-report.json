@@ -14,7 +14,7 @@
     "location": [
       58.0,
       -120.0,
-      22.0
+      18.0
     ],
     "lens_mm": 50.0
   },
@@ -22,13 +22,17 @@
     "spectrum": "SHORELINE_GERSTNER_PROXY",
     "shoreline_following": true,
     "grid": [
-      168,
-      220
+      180,
+      260
     ],
-    "far_y_m": 1800.0,
-    "max_wave_amplitude_m": 0.103,
+    "far_y_m": 1450.0,
+    "max_wave_amplitude_m": 0.145,
     "ior": 1.333,
-    "depth_tint": "generated-Y shallow-to-deep"
+    "depth_tint": "three-stop generated-Y lagoon gradient",
+    "transmission_range": [
+      0.985,
+      0.82
+    ]
   },
   "water_model": {
     "surface": "Principled transmission, IOR 1.333, two-scale procedural normals",
@@ -36,8 +40,8 @@
   },
   "shore": {
     "wet_sand_material": true,
-    "foam_patch_count": 24,
-    "reef_patch_count": 25
+    "foam_patch_count": 58,
+    "reef_patch_count": 41
   },
   "objects": {
     "beach": "BeachAndSeabed",
