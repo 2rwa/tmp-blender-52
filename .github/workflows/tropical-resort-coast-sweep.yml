@@ -1,0 +1,111 @@
+name: Tropical coast 10-way diagnostic sweep
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/tropical-resort-coast-sweep/**'
+      - '.github/workflows/tropical-resort-coast-sweep.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    name: variant-${{ matrix.variant }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        variant: [1,2,3,4,5,6,7,8,9,10]
+    env:
+      BLENDER_VERSION: "5.2.2"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Python preflight
+        run: |
+          python3 -m py_compile \
+            experiments/tropical-resort-coast-still/scene.py \
+            experiments/tropical-resort-coast-sweep/sweep.py
+
+      - name: Restore Blender 5.2 runtime
+        id: blender-runtime-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-${{ runner.os }}-x64-${{ env.BLENDER_VERSION }}-v1
+
+      - name: Require cached Blender runtime
+        if: steps.blender-runtime-cache.outputs.cache-hit != 'true'
+        run: |
+          echo "Blender 5.2 runtime cache is required."
+          exit 1
+
+      - name: Configure runtime
+        run: |
+          echo "$GITHUB_WORKSPACE/.cache/blender52-runtime/blender" >> "$GITHUB_PATH"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/python" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$GITHUB_WORKSPACE/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Render diagnostic variant
+        env:
+          TROPICAL_VARIANT: ${{ matrix.variant }}
+        run: |
+          set -euxo pipefail
+          variant="$(printf '%02d' "$TROPICAL_VARIANT")"
+          out="sweep-output/v${variant}"
+          mkdir -p "$out"
+          TROPICAL_OUTPUT="$out" \
+          LIBGL_ALWAYS_SOFTWARE=1 \
+          SDL_AUDIODRIVER=dummy \
+            xvfb-run -a -s "-screen 0 640x360x24" \
+            blender --background \
+              --python experiments/tropical-resort-coast-sweep/sweep.py \
+              2>&1 | tee "$out/blender.log"
+          if grep -Fq "Traceback (most recent call last):" "$out/blender.log"; then exit 1; fi
+          test -s "$out/preview.png"
+          test -s "$out/variant.json"
+
+      - name: Upload variant
+        uses: actions/upload-artifact@v4
+        with:
+          name: tropical-sweep-v${{ matrix.variant }}
+          path: sweep-output/v*/
+          if-no-files-found: error
+          retention-days: 7
+
+  compare:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download all variants
+        uses: actions/download-artifact@v4
+        with:
+          pattern: tropical-sweep-v*
+          path: sweep-results
+
+      - name: Install Pillow
+        run: python3 -m pip install --disable-pip-version-check "Pillow==10.2.0"
+
+      - name: Build contact sheet and metrics
+        run: |
+          python3 experiments/tropical-resort-coast-sweep/compare.py \
+            sweep-results sweep-comparison
+
+      - name: Upload comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: tropical-sweep-comparison
+          path: sweep-comparison/
+          if-no-files-found: error
+          retention-days: 7
