@@ -12,11 +12,11 @@
   "still_only": true,
   "camera": {
     "location": [
-      22.0,
-      -55.0,
-      8.6
+      58.0,
+      -120.0,
+      22.0
     ],
-    "lens_mm": 39.0
+    "lens_mm": 50.0
   },
   "ocean": {
     "spectrum": "TEXEL_MARSEN_ARSLOE",
@@ -38,7 +38,7 @@
   },
   "shore": {
     "wet_sand_material": true,
-    "foam_patch_count": 114,
+    "foam_patch_count": 0,
     "reef_patch_count": 25
   },
   "objects": {
