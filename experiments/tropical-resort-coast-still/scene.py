@@ -45,7 +45,8 @@ def point_camera(camera: bpy.types.Object, target) -> None:
 
 
 def shoreline_y(x: float) -> float:
-    return 0.025 * x + 4.0 * math.sin(x * 0.018) + 1.3 * math.sin(x * 0.061)
+    # A diagonal, gently irregular shoreline reads as a coast rather than stacked bands.
+    return -10.0 + 0.22 * x + 7.0 * math.sin(x * 0.014) + 2.2 * math.sin(x * 0.051)
 
 
 def seabed_z(x: float, y: float) -> float:
@@ -142,9 +143,9 @@ def create_beach() -> bpy.types.Object:
     beach = bpy.data.objects.new("BeachAndSeabed", mesh)
     bpy.context.collection.objects.link(beach)
 
-    dry = make_sand_material("Dry white coral sand", (0.77, 0.69, 0.53, 1.0), 0.82, 0.17)
-    wet = make_sand_material("Wet compact sand", (0.34, 0.29, 0.20, 1.0), 0.26, 0.10, coat=0.10)
-    underwater = make_sand_material("Underwater pale sand", (0.69, 0.62, 0.45, 1.0), 0.68, 0.12)
+    dry = make_sand_material("Dry white coral sand", (0.68, 0.62, 0.50, 1.0), 0.78, 0.14)
+    wet = make_sand_material("Wet compact sand", (0.28, 0.24, 0.18, 1.0), 0.22, 0.08, coat=0.14)
+    underwater = make_sand_material("Underwater pale sand", (0.60, 0.57, 0.44, 1.0), 0.62, 0.10)
     beach.data.materials.append(dry)
     beach.data.materials.append(wet)
     beach.data.materials.append(underwater)
@@ -221,13 +222,13 @@ def make_water_surface_material():
     set_input(noise_b, "Detail", 2.4)
     set_input(noise_b, "Roughness", 0.58)
 
-    set_input(bump_a, "Strength", 0.18)
-    set_input(bump_a, "Distance", 0.20)
-    set_input(bump_b, "Strength", 0.10)
-    set_input(bump_b, "Distance", 0.055)
+    set_input(bump_a, "Strength", 0.24)
+    set_input(bump_a, "Distance", 0.18)
+    set_input(bump_b, "Strength", 0.14)
+    set_input(bump_b, "Distance", 0.040)
 
-    set_input(bsdf, "Base Color", (0.80, 0.93, 0.97, 1.0))
-    set_input(bsdf, "Roughness", 0.035)
+    set_input(bsdf, "Base Color", (0.86, 0.96, 0.985, 1.0))
+    set_input(bsdf, "Roughness", 0.028)
     set_input(bsdf, "IOR", 1.333)
     set_input(bsdf, "Transmission Weight", 1.0)
     set_input(bsdf, "Metallic", 0.0)
@@ -300,11 +301,11 @@ def make_water_volume_material():
     scatter = nodes.new("ShaderNodeVolumeScatter")
     add = nodes.new("ShaderNodeAddShader")
 
-    absorption.inputs["Color"].default_value = (0.055, 0.48, 0.60, 1.0)
-    absorption.inputs["Density"].default_value = 0.050
-    scatter.inputs["Color"].default_value = (0.17, 0.54, 0.59, 1.0)
-    scatter.inputs["Density"].default_value = 0.006
-    scatter.inputs["Anisotropy"].default_value = 0.20
+    absorption.inputs["Color"].default_value = (0.08, 0.55, 0.62, 1.0)
+    absorption.inputs["Density"].default_value = 0.012
+    scatter.inputs["Color"].default_value = (0.20, 0.62, 0.66, 1.0)
+    scatter.inputs["Density"].default_value = 0.0015
+    scatter.inputs["Anisotropy"].default_value = 0.35
 
     links.new(absorption.outputs["Volume"], add.inputs[0])
     links.new(scatter.outputs["Volume"], add.inputs[1])
@@ -313,56 +314,45 @@ def make_water_volume_material():
 
 
 def create_water_volume() -> bpy.types.Object:
-    bpy.ops.mesh.primitive_cube_add(location=(0.0, 325.0, -4.0))
-    volume = bpy.context.object
-    volume.name = "LagoonWaterOpticalVolume"
-    volume.dimensions = (700.0, 650.0, 8.0)
-    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    # Follow the shoreline instead of using a rectangular aquarium box.
+    # The front boundary is buried just landward of mean sea level, so no
+    # vertical volume wall can appear as a horizontal band in the camera.
+    samples = 81
+    xmin, xmax = -220.0, 220.0
+    far_y = 520.0
+    top_z = 0.0
+    bottom_z = -12.0
+
+    front = []
+    for i in range(samples):
+        x = xmin + (xmax - xmin) * i / (samples - 1)
+        front.append((x, shoreline_y(x) - 1.0))
+
+    footprint = front + [(xmax, far_y), (xmin, far_y)]
+    n = len(footprint)
+    verts = [(x, y, top_z) for x, y in footprint]
+    verts += [(x, y, bottom_z) for x, y in footprint]
+
+    faces = []
+    faces.append(tuple(range(n)))
+    faces.append(tuple(range(2 * n - 1, n - 1, -1)))
+    for i in range(n):
+        j = (i + 1) % n
+        faces.append((i, j, n + j, n + i))
+
+    mesh = bpy.data.meshes.new("LagoonWaterVolumeMesh")
+    mesh.from_pydata(verts, [], faces)
+    mesh.update()
+    volume = bpy.data.objects.new("LagoonWaterOpticalVolume", mesh)
+    bpy.context.collection.objects.link(volume)
     volume.data.materials.append(make_water_volume_material())
     return volume
 
 
 def create_foam() -> int:
-    rng = random.Random(23)
-    verts = []
-    faces = []
-
-    for band, offset in enumerate((0.7, 3.1, 6.6, 11.0)):
-        x = -150.0 + rng.uniform(0.0, 4.0)
-        while x < 150.0:
-            length = rng.uniform(2.2, 8.5) * (1.0 - band * 0.10)
-            if rng.random() < 0.82 - band * 0.08:
-                x0 = x
-                x1 = min(150.0, x + length)
-                mid = (x0 + x1) * 0.5
-                base_y = shoreline_y(mid) + offset
-                base_y += 0.75 * math.sin(mid * 0.115 + band * 1.7)
-                width = rng.uniform(0.10, 0.55) * (1.0 - band * 0.12)
-                z = 0.085 + band * 0.005
-                i = len(verts)
-                verts.extend([
-                    (x0, base_y - width, z),
-                    (x1, base_y - width * 0.7, z),
-                    (x1, base_y + width * 0.7, z),
-                    (x0, base_y + width, z),
-                ])
-                faces.append((i, i + 1, i + 2, i + 3))
-            x += length + rng.uniform(0.8, 4.5)
-
-    mesh = bpy.data.meshes.new("FoamPatchMesh")
-    mesh.from_pydata(verts, [], faces)
-    mesh.update()
-    foam = bpy.data.objects.new("ShorelineFoam", mesh)
-    bpy.context.collection.objects.link(foam)
-
-    mat = bpy.data.materials.new("Aerated white foam")
-    mat.use_nodes = True
-    bsdf = mat.node_tree.nodes.get("Principled BSDF")
-    set_input(bsdf, "Base Color", (0.96, 0.985, 0.98, 1.0))
-    set_input(bsdf, "Roughness", 0.44)
-    set_input(bsdf, "Transmission Weight", 0.06)
-    foam.data.materials.append(mat)
-    return len(faces)
+    # Pass 2 intentionally removes the old quad-strip foam. It read as white
+    # floating boards; foam returns after the coastline/water optics are stable.
+    return 0
 
 
 def setup_world_and_light(scene: bpy.types.Scene) -> str:
@@ -410,14 +400,14 @@ def setup_world_and_light(scene: bpy.types.Scene) -> str:
 
 
 def setup_camera(scene: bpy.types.Scene) -> bpy.types.Object:
-    bpy.ops.object.camera_add(location=(22.0, -55.0, 8.6))
+    bpy.ops.object.camera_add(location=(58.0, -120.0, 22.0))
     camera = bpy.context.object
     camera.name = "ResortCoastCamera"
-    camera.data.lens = 39.0
+    camera.data.lens = 50.0
     camera.data.sensor_width = 36.0
     camera.data.clip_start = 0.1
     camera.data.clip_end = 2500.0
-    point_camera(camera, (-12.0, 105.0, -0.35))
+    point_camera(camera, (-18.0, 95.0, -1.5))
     scene.camera = camera
     return camera
 
