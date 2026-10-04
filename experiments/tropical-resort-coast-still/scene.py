@@ -396,14 +396,14 @@ def setup_world_and_light(scene: bpy.types.Scene) -> str:
         if hasattr(sky, attr):
             setattr(sky, attr, value)
 
-    bg.inputs["Strength"].default_value = 0.38
+    bg.inputs["Strength"].default_value = 0.20
     links.new(sky.outputs["Color"], bg.inputs["Color"])
     links.new(bg.outputs["Background"], out.inputs["Surface"])
 
     bpy.ops.object.light_add(type="SUN", location=(0.0, 0.0, 40.0))
     sun = bpy.context.object
     sun.name = "TropicalNoonSun"
-    sun.data.energy = 3.2
+    sun.data.energy = 1.65
     sun.data.angle = math.radians(0.75)
     sun.rotation_euler = (math.radians(28.0), math.radians(-12.0), math.radians(-38.0))
     return sky_model
@@ -445,7 +445,7 @@ def configure_render(scene: bpy.types.Scene) -> None:
         scene.view_settings.look = "AgX - Medium High Contrast"
     except Exception as exc:
         print(f"COLOR_MANAGEMENT_FALLBACK={exc!r}")
-    scene.view_settings.exposure = 0.15
+    scene.view_settings.exposure = -1.10
 
 
 def main() -> None:
