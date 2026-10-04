@@ -19,27 +19,28 @@
       ],
       "samples": 32,
       "spectrum": "SHORELINE_GERSTNER_PROXY",
-      "mean_luma": 203.721,
-      "stddev_luma": 40.606,
-      "tonal_span": 224,
+      "mean_luma": 208.636,
+      "stddev_luma": 34.007,
+      "tonal_span": 219,
+      "dark_band_ratio": 0.9094,
       "sky_rgb_mean": [
-        189.23,
-        197.02,
-        202.24
+        207.53,
+        215.43,
+        219.65
       ],
       "lagoon_rgb_mean": [
-        183.36,
-        201.27,
-        205.96
+        183.28,
+        195.67,
+        199.58
       ],
       "foreground_rgb_mean": [
-        235.12,
-        230.36,
-        223.67
+        235.0,
+        230.24,
+        223.57
       ],
-      "preview_sha256": "ca84b82c4abe886a06a3c3a9e4eadeaa640290acc33bb57525c81502817e0f0d",
-      "preview_size_bytes": 418813,
-      "blend_size_bytes": 2389320
+      "preview_sha256": "47a5ca5de242ec4344ecf6dce5ca31604c3189d70afb3bbf0f19498429909a39",
+      "preview_size_bytes": 424159,
+      "blend_size_bytes": 2664764
     }
   },
   {
