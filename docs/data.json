@@ -18,28 +18,28 @@
         540
       ],
       "samples": 32,
-      "spectrum": "TEXEL_MARSEN_ARSLOE",
-      "mean_luma": 204.558,
-      "stddev_luma": 48.705,
-      "tonal_span": 225,
+      "spectrum": "SHORELINE_GERSTNER_PROXY",
+      "mean_luma": 203.721,
+      "stddev_luma": 40.606,
+      "tonal_span": 224,
       "sky_rgb_mean": [
-        186.95,
-        194.87,
-        200.3
+        189.23,
+        197.02,
+        202.24
       ],
       "lagoon_rgb_mean": [
-        200.33,
-        204.3,
-        201.49
+        183.36,
+        201.27,
+        205.96
       ],
       "foreground_rgb_mean": [
-        235.22,
-        230.46,
-        223.79
+        235.12,
+        230.36,
+        223.67
       ],
-      "preview_sha256": "96395c8720289e06f04ca6a60d578c22e6dc0de9a524999531f8e27b714066d4",
-      "preview_size_bytes": 420476,
-      "blend_size_bytes": 766898
+      "preview_sha256": "ca84b82c4abe886a06a3c3a9e4eadeaa640290acc33bb57525c81502817e0f0d",
+      "preview_size_bytes": 418813,
+      "blend_size_bytes": 2389320
     }
   },
   {
