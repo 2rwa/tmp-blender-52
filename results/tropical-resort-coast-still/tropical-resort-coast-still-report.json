@@ -1,0 +1,51 @@
+{
+  "experiment": "tropical-resort-coast-still",
+  "blender_version": "5.2.2 LTS",
+  "engine": "CYCLES",
+  "device": "CPU",
+  "frame_count": 1,
+  "resolution": [
+    960,
+    540
+  ],
+  "samples": 32,
+  "still_only": true,
+  "camera": {
+    "location": [
+      22.0,
+      -55.0,
+      8.6
+    ],
+    "lens_mm": 39.0
+  },
+  "ocean": {
+    "spectrum": "TEXEL_MARSEN_ARSLOE",
+    "depth_m": 4.0,
+    "wind_velocity_m_s": 3.799999952316284,
+    "wave_scale": 0.2199999988079071,
+    "choppiness": 0.33000001311302185,
+    "alignment": 0.8199999928474426,
+    "spatial_size_m": 350,
+    "repeat": [
+      2,
+      4
+    ],
+    "resolution": 8
+  },
+  "water_model": {
+    "surface": "Principled transmission, IOR 1.333, two-scale procedural normals",
+    "volume": "separate closed absorption + scattering volume below surface"
+  },
+  "shore": {
+    "wet_sand_material": true,
+    "foam_patch_count": 114,
+    "reef_patch_count": 25
+  },
+  "objects": {
+    "beach": "BeachAndSeabed",
+    "ocean": "TMA_Shallow_Lagoon",
+    "water_volume": "LagoonWaterOpticalVolume"
+  },
+  "sky_model": "MULTIPLE_SCATTERING",
+  "color_management": "AgX"
+}
