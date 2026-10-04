@@ -119,10 +119,10 @@ def make_sand_material(
 
 
 def create_beach() -> bpy.types.Object:
-    nx = 128
-    ny = 196
-    xmin, xmax = -170.0, 170.0
-    ymin, ymax = -90.0, 360.0
+    nx = 156
+    ny = 300
+    xmin, xmax = -240.0, 240.0
+    ymin, ymax = -110.0, 700.0
 
     verts = []
     faces = []
@@ -145,7 +145,7 @@ def create_beach() -> bpy.types.Object:
 
     dry = make_sand_material("Dry white coral sand", (0.68, 0.62, 0.50, 1.0), 0.78, 0.14)
     wet = make_sand_material("Wet compact sand", (0.28, 0.24, 0.18, 1.0), 0.22, 0.08, coat=0.14)
-    underwater = make_sand_material("Underwater pale sand", (0.60, 0.57, 0.44, 1.0), 0.62, 0.10)
+    underwater = make_sand_material("Underwater pale sand", (0.52, 0.49, 0.36, 1.0), 0.58, 0.13)
     beach.data.materials.append(dry)
     beach.data.materials.append(wet)
     beach.data.materials.append(underwater)
@@ -207,35 +207,53 @@ def make_water_surface_material():
 
     out = nodes.new("ShaderNodeOutputMaterial")
     bsdf = nodes.new("ShaderNodeBsdfPrincipled")
+    coord = nodes.new("ShaderNodeTexCoord")
+    separate = nodes.new("ShaderNodeSeparateXYZ")
+    depth_ramp = nodes.new("ShaderNodeValToRGB")
+    transmission = nodes.new("ShaderNodeMapRange")
     noise_a = nodes.new("ShaderNodeTexNoise")
     noise_b = nodes.new("ShaderNodeTexNoise")
     bump_a = nodes.new("ShaderNodeBump")
     bump_b = nodes.new("ShaderNodeBump")
-    coord = nodes.new("ShaderNodeTexCoord")
-    mapping = nodes.new("ShaderNodeMapping")
 
-    mapping.inputs["Scale"].default_value = (0.24, 0.24, 0.24)
-    set_input(noise_a, "Scale", 3.2)
-    set_input(noise_a, "Detail", 4.0)
-    set_input(noise_a, "Roughness", 0.62)
-    set_input(noise_b, "Scale", 14.0)
-    set_input(noise_b, "Detail", 2.4)
+    depth_ramp.color_ramp.elements[0].position = 0.02
+    depth_ramp.color_ramp.elements[0].color = (0.16, 0.62, 0.64, 1.0)
+    depth_ramp.color_ramp.elements[1].position = 0.94
+    depth_ramp.color_ramp.elements[1].color = (0.008, 0.095, 0.24, 1.0)
+
+    transmission.inputs["From Min"].default_value = 0.0
+    transmission.inputs["From Max"].default_value = 1.0
+    transmission.inputs["To Min"].default_value = 0.94
+    transmission.inputs["To Max"].default_value = 0.38
+    transmission.clamp = True
+
+    noise_a.noise_dimensions = "3D"
+    set_input(noise_a, "Scale", 8.0)
+    set_input(noise_a, "Detail", 5.0)
+    set_input(noise_a, "Roughness", 0.63)
+
+    noise_b.noise_dimensions = "3D"
+    set_input(noise_b, "Scale", 34.0)
+    set_input(noise_b, "Detail", 3.0)
     set_input(noise_b, "Roughness", 0.58)
 
-    set_input(bump_a, "Strength", 0.24)
-    set_input(bump_a, "Distance", 0.18)
-    set_input(bump_b, "Strength", 0.14)
-    set_input(bump_b, "Distance", 0.040)
+    set_input(bump_a, "Strength", 0.16)
+    set_input(bump_a, "Distance", 0.10)
+    set_input(bump_b, "Strength", 0.08)
+    set_input(bump_b, "Distance", 0.025)
 
-    set_input(bsdf, "Base Color", (0.86, 0.96, 0.985, 1.0))
-    set_input(bsdf, "Roughness", 0.028)
+    set_input(bsdf, "Roughness", 0.045)
     set_input(bsdf, "IOR", 1.333)
-    set_input(bsdf, "Transmission Weight", 1.0)
     set_input(bsdf, "Metallic", 0.0)
 
-    links.new(coord.outputs["Generated"], mapping.inputs["Vector"])
-    links.new(mapping.outputs["Vector"], noise_a.inputs["Vector"])
-    links.new(mapping.outputs["Vector"], noise_b.inputs["Vector"])
+    links.new(coord.outputs["Generated"], separate.inputs["Vector"])
+    links.new(separate.outputs["Y"], depth_ramp.inputs["Fac"])
+    links.new(separate.outputs["Y"], transmission.inputs["Value"])
+    links.new(depth_ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    links.new(transmission.outputs["Result"], bsdf.inputs["Transmission Weight"])
+
+    links.new(coord.outputs["Generated"], noise_a.inputs["Vector"])
+    links.new(coord.outputs["Generated"], noise_b.inputs["Vector"])
     links.new(noise_a.outputs["Fac"], bump_a.inputs["Height"])
     links.new(noise_b.outputs["Fac"], bump_b.inputs["Height"])
     links.new(bump_a.outputs["Normal"], bump_b.inputs["Normal"])
@@ -245,114 +263,111 @@ def make_water_surface_material():
 
 
 def create_ocean() -> tuple[bpy.types.Object, dict]:
-    bpy.ops.mesh.primitive_plane_add(size=2.0, location=(0.0, 280.0, 0.0))
-    ocean = bpy.context.object
-    ocean.name = "TMA_Shallow_Lagoon"
-    ocean.data.materials.append(make_water_surface_material())
+    # Static shoreline-following water mesh. The previous Ocean Modifier
+    # generated an ocean patch whose boundary became a huge dark wedge in this
+    # low-angle beach composition. For a still image, explicit geometry gives
+    # predictable contact with the shore while preserving several wave scales.
+    nx = 168
+    ny = 220
+    xmin, xmax = -260.0, 260.0
+    far_y = 1800.0
 
-    mod = ocean.modifiers.new("TMA shallow-water spectrum", "OCEAN")
-    if hasattr(mod, "geometry_mode"):
-        mod.geometry_mode = "GENERATE"
-    mod.spectrum = "TEXEL_MARSEN_ARSLOE"
-    mod.resolution = 8
-    mod.viewport_resolution = 6
-    mod.spatial_size = 350
-    mod.repeat_x = 2
-    mod.repeat_y = 4
-    mod.depth = 4.0
-    mod.wave_scale = 0.22
-    mod.wave_scale_min = 0.22
-    mod.choppiness = 0.33
-    mod.wind_velocity = 3.8
-    mod.wave_alignment = 0.82
-    mod.wave_direction = math.radians(86.0)
-    mod.damping = 0.82
-    mod.random_seed = 17
-    mod.time = 1.15
-    mod.use_normals = True
-    if hasattr(mod, "sharpen_peak_jonswap"):
-        mod.sharpen_peak_jonswap = 0.12
-    if hasattr(mod, "fetch_jonswap"):
-        mod.fetch_jonswap = 48.0
+    verts = []
+    faces = []
+    for iy in range(ny):
+        t = iy / (ny - 1)
+        t_space = t ** 1.22
+        for ix in range(nx):
+            x = xmin + (xmax - xmin) * ix / (nx - 1)
+            shore = shoreline_y(x) + 0.55
+            y = shore + (far_y - shore) * t_space
+
+            offshore = min(1.0, t * 1.8)
+            amp = 0.008 + 0.095 * offshore
+            long_wave = math.sin(x * 0.055 + y * 0.030)
+            cross_wave = math.sin(-x * 0.028 + y * 0.052 + 1.7)
+            detail = math.sin(x * 0.18 + y * 0.135 + 0.8)
+            z = amp * (0.55 * long_wave + 0.30 * cross_wave + 0.15 * detail)
+            verts.append((x, y, z))
+
+    for iy in range(ny - 1):
+        for ix in range(nx - 1):
+            a = iy * nx + ix
+            faces.append((a, a + 1, a + nx + 1, a + nx))
+
+    mesh = bpy.data.meshes.new("ShorelineFollowingWaterMesh")
+    mesh.from_pydata(verts, [], faces)
+    mesh.update()
+    ocean = bpy.data.objects.new("ShorelineFollowingWater", mesh)
+    bpy.context.collection.objects.link(ocean)
+    ocean.data.materials.append(make_water_surface_material())
+    for poly in mesh.polygons:
+        poly.use_smooth = True
 
     settings = {
-        "spectrum": mod.spectrum,
-        "depth_m": float(mod.depth),
-        "wind_velocity_m_s": float(mod.wind_velocity),
-        "wave_scale": float(mod.wave_scale),
-        "choppiness": float(mod.choppiness),
-        "alignment": float(mod.wave_alignment),
-        "spatial_size_m": int(mod.spatial_size),
-        "repeat": [int(mod.repeat_x), int(mod.repeat_y)],
-        "resolution": int(mod.resolution),
+        "spectrum": "SHORELINE_GERSTNER_PROXY",
+        "shoreline_following": True,
+        "grid": [nx, ny],
+        "far_y_m": far_y,
+        "max_wave_amplitude_m": 0.103,
+        "ior": 1.333,
+        "depth_tint": "generated-Y shallow-to-deep",
     }
     return ocean, settings
 
 
 def make_water_volume_material():
-    mat = bpy.data.materials.new("LagoonWaterVolume")
-    mat.use_nodes = True
-    nodes = mat.node_tree.nodes
-    links = mat.node_tree.links
-    nodes.clear()
-
-    out = nodes.new("ShaderNodeOutputMaterial")
-    absorption = nodes.new("ShaderNodeVolumeAbsorption")
-    scatter = nodes.new("ShaderNodeVolumeScatter")
-    add = nodes.new("ShaderNodeAddShader")
-
-    absorption.inputs["Color"].default_value = (0.08, 0.55, 0.62, 1.0)
-    absorption.inputs["Density"].default_value = 0.012
-    scatter.inputs["Color"].default_value = (0.20, 0.62, 0.66, 1.0)
-    scatter.inputs["Density"].default_value = 0.0015
-    scatter.inputs["Anisotropy"].default_value = 0.35
-
-    links.new(absorption.outputs["Volume"], add.inputs[0])
-    links.new(scatter.outputs["Volume"], add.inputs[1])
-    links.new(add.outputs["Shader"], out.inputs["Volume"])
-    return mat
+    return None
 
 
-def create_water_volume() -> bpy.types.Object:
-    # Follow the shoreline instead of using a rectangular aquarium box.
-    # The front boundary is buried just landward of mean sea level, so no
-    # vertical volume wall can appear as a horizontal band in the camera.
-    samples = 81
-    xmin, xmax = -220.0, 220.0
-    far_y = 520.0
-    top_z = 0.0
-    bottom_z = -12.0
-
-    front = []
-    for i in range(samples):
-        x = xmin + (xmax - xmin) * i / (samples - 1)
-        front.append((x, shoreline_y(x) - 1.0))
-
-    footprint = front + [(xmax, far_y), (xmin, far_y)]
-    n = len(footprint)
-    verts = [(x, y, top_z) for x, y in footprint]
-    verts += [(x, y, bottom_z) for x, y in footprint]
-
-    faces = []
-    faces.append(tuple(range(n)))
-    faces.append(tuple(range(2 * n - 1, n - 1, -1)))
-    for i in range(n):
-        j = (i + 1) % n
-        faces.append((i, j, n + j, n + i))
-
-    mesh = bpy.data.meshes.new("LagoonWaterVolumeMesh")
-    mesh.from_pydata(verts, [], faces)
-    mesh.update()
-    volume = bpy.data.objects.new("LagoonWaterOpticalVolume", mesh)
-    bpy.context.collection.objects.link(volume)
-    volume.data.materials.append(make_water_volume_material())
-    return volume
+def create_water_volume():
+    return None
 
 
 def create_foam() -> int:
-    # Pass 2 intentionally removes the old quad-strip foam. It read as white
-    # floating boards; foam returns after the coastline/water optics are stable.
-    return 0
+    rng = random.Random(29)
+    verts = []
+    faces = []
+    fragment_count = 0
+
+    x = -190.0
+    while x < 190.0:
+        seg_len = rng.uniform(2.0, 6.0)
+        gap = rng.uniform(1.5, 5.5)
+        if rng.random() < 0.58:
+            steps = 7
+            start = x
+            width0 = rng.uniform(0.045, 0.13)
+            base = len(verts)
+            for i in range(steps):
+                u = i / (steps - 1)
+                px = start + seg_len * u
+                py = shoreline_y(px) + 0.7
+                py += 0.18 * math.sin(px * 0.19 + fragment_count * 0.7)
+                width = width0 * (0.65 + 0.35 * math.sin(math.pi * u))
+                z = 0.035
+                verts.append((px, py - width, z))
+                verts.append((px, py + width, z))
+            for i in range(steps - 1):
+                a = base + i * 2
+                faces.append((a, a + 2, a + 3, a + 1))
+            fragment_count += 1
+        x += seg_len + gap
+
+    mesh = bpy.data.meshes.new("FoamRibbonMesh")
+    mesh.from_pydata(verts, [], faces)
+    mesh.update()
+    foam = bpy.data.objects.new("ShorelineFoam", mesh)
+    bpy.context.collection.objects.link(foam)
+
+    mat = bpy.data.materials.new("Thin shoreline foam")
+    mat.use_nodes = True
+    bsdf = mat.node_tree.nodes.get("Principled BSDF")
+    set_input(bsdf, "Base Color", (0.88, 0.93, 0.91, 1.0))
+    set_input(bsdf, "Roughness", 0.34)
+    set_input(bsdf, "Transmission Weight", 0.14)
+    foam.data.materials.append(mat)
+    return fragment_count
 
 
 def setup_world_and_light(scene: bpy.types.Scene) -> str:
@@ -477,7 +492,7 @@ def main() -> None:
         "ocean": ocean_settings,
         "water_model": {
             "surface": "Principled transmission, IOR 1.333, two-scale procedural normals",
-            "volume": "separate closed absorption + scattering volume below surface",
+            "volume": "disabled in pass 3; depth cue comes from transmissive surface tint and seabed",
         },
         "shore": {
             "wet_sand_material": True,
@@ -487,7 +502,7 @@ def main() -> None:
         "objects": {
             "beach": beach.name,
             "ocean": ocean.name,
-            "water_volume": volume.name,
+            "water_volume": None,
         },
         "sky_model": sky_model,
         "color_management": scene.view_settings.view_transform,

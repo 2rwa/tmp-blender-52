@@ -52,10 +52,10 @@ def main() -> None:
         raise SystemExit("expected one-frame still experiment")
 
     ocean = report.get("ocean", {})
-    if ocean.get("spectrum") != "TEXEL_MARSEN_ARSLOE":
-        raise SystemExit(f"expected TMA shallow-water spectrum: {ocean}")
-    if not (2.0 <= float(ocean.get("wind_velocity_m_s", 99)) <= 6.0):
-        raise SystemExit(f"wind is not resort-calm: {ocean}")
+    if ocean.get("spectrum") != "SHORELINE_GERSTNER_PROXY":
+        raise SystemExit(f"expected shoreline-following water mesh: {ocean}")
+    if ocean.get("shoreline_following") is not True:
+        raise SystemExit(f"water mesh must follow shoreline: {ocean}")
 
     with Image.open(preview) as image:
         image.load()
