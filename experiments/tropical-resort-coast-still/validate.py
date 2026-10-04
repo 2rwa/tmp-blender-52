@@ -76,12 +76,24 @@ def main() -> None:
         lagoon_mean = rgb_mean(lagoon)
         foreground_mean = rgb_mean(foreground)
 
+        # Regression: reject a broad near-black horizontal slab in the upper
+        # water/horizon zone. Pass 2/3 exposed water geometry as a dark band.
+        dark_band_ratio = 0.0
+        y0 = int(h * 0.22)
+        y1 = int(h * 0.42)
+        px = gray.load()
+        for yy in range(y0, y1):
+            dark = sum(1 for xx in range(w) if px[xx, yy] < 55)
+            dark_band_ratio = max(dark_band_ratio, dark / w)
+
     if not 25.0 <= mean <= 235.0:
         raise SystemExit(f"implausible luminance: {mean:.2f}")
     if std < 20.0:
         raise SystemExit(f"image too uniform: {std:.2f}")
     if span < 90:
         raise SystemExit(f"tonal span too small: {span}")
+    if dark_band_ratio > 0.55:
+        raise SystemExit(f"broad dark horizontal band detected: {dark_band_ratio:.3f}")
     if sky_mean[2] <= sky_mean[0] * 1.02:
         raise SystemExit(f"sky is not blue-dominant enough: {sky_mean}")
     if (lagoon_mean[1] + lagoon_mean[2]) * 0.5 <= lagoon_mean[0] * 0.96:
@@ -104,6 +116,7 @@ def main() -> None:
         "mean_luma": round(mean, 3),
         "stddev_luma": round(std, 3),
         "tonal_span": span,
+        "dark_band_ratio": round(dark_band_ratio, 4),
         "sky_rgb_mean": [round(v, 2) for v in sky_mean],
         "lagoon_rgb_mean": [round(v, 2) for v in lagoon_mean],
         "foreground_rgb_mean": [round(v, 2) for v in foreground_mean],

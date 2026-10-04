@@ -55,13 +55,17 @@ def seabed_z(x: float, y: float) -> float:
         z = 0.55 + (-18.0 - yp) * 0.020
     elif yp < 22.0:
         z = 0.55 - (yp + 18.0) * 0.030
+    elif yp < 350.0:
+        z = -0.65 - (yp - 22.0) * 0.0060
+    elif yp < 850.0:
+        z = -2.618 - (yp - 350.0) * 0.0060
     else:
-        z = -0.65 - (yp - 22.0) * 0.021
+        z = -5.618 - (yp - 850.0) * 0.0040
 
-    ripple = 0.035 * math.sin(x * 0.42 + y * 0.11)
-    ripple += 0.020 * math.sin(x * 0.71 - y * 0.19)
-    ripple *= math.exp(-max(0.0, yp) / 110.0)
-    dune = 0.055 * math.sin(x * 0.055 + y * 0.022) * math.exp(-max(0.0, yp) / 160.0)
+    ripple = 0.050 * math.sin(x * 0.42 + y * 0.11)
+    ripple += 0.026 * math.sin(x * 0.71 - y * 0.19)
+    ripple *= math.exp(-max(0.0, yp) / 230.0)
+    dune = 0.075 * math.sin(x * 0.055 + y * 0.022) * math.exp(-max(0.0, yp) / 350.0)
     return z + ripple + dune
 
 
@@ -118,6 +122,53 @@ def make_sand_material(
     return mat
 
 
+def make_underwater_sand_material():
+    mat = bpy.data.materials.new("Underwater pale sand + caustics")
+    mat.use_nodes = True
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+    nodes.clear()
+
+    out = nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nodes.new("ShaderNodeBsdfPrincipled")
+    coord = nodes.new("ShaderNodeTexCoord")
+    mapping = nodes.new("ShaderNodeMapping")
+    vor = nodes.new("ShaderNodeTexVoronoi")
+    ramp = nodes.new("ShaderNodeValToRGB")
+    noise = nodes.new("ShaderNodeTexNoise")
+    bump = nodes.new("ShaderNodeBump")
+
+    mapping.inputs["Scale"].default_value = (72.0, 110.0, 4.0)
+    vor.feature = "DISTANCE_TO_EDGE"
+    vor.distance = "EUCLIDEAN"
+    set_input(vor, "Scale", 1.0)
+
+    ramp.color_ramp.elements[0].position = 0.018
+    ramp.color_ramp.elements[0].color = (1.0, 0.88, 0.55, 1.0)
+    ramp.color_ramp.elements[1].position = 0.085
+    ramp.color_ramp.elements[1].color = (0.38, 0.34, 0.23, 1.0)
+
+    noise.noise_dimensions = "3D"
+    set_input(noise, "Scale", 18.0)
+    set_input(noise, "Detail", 4.0)
+    set_input(noise, "Roughness", 0.62)
+    set_input(bump, "Strength", 0.16)
+    set_input(bump, "Distance", 0.035)
+
+    set_input(bsdf, "Roughness", 0.58)
+    set_input(bsdf, "Metallic", 0.0)
+
+    links.new(coord.outputs["Generated"], mapping.inputs["Vector"])
+    links.new(mapping.outputs["Vector"], vor.inputs["Vector"])
+    links.new(vor.outputs["Distance"], ramp.inputs["Fac"])
+    links.new(ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    links.new(coord.outputs["Generated"], noise.inputs["Vector"])
+    links.new(noise.outputs["Fac"], bump.inputs["Height"])
+    links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
 def create_beach() -> bpy.types.Object:
     nx = 156
     ny = 300
@@ -145,7 +196,7 @@ def create_beach() -> bpy.types.Object:
 
     dry = make_sand_material("Dry white coral sand", (0.68, 0.62, 0.50, 1.0), 0.78, 0.14)
     wet = make_sand_material("Wet compact sand", (0.28, 0.24, 0.18, 1.0), 0.22, 0.08, coat=0.14)
-    underwater = make_sand_material("Underwater pale sand", (0.52, 0.49, 0.36, 1.0), 0.58, 0.13)
+    underwater = make_underwater_sand_material()
     beach.data.materials.append(dry)
     beach.data.materials.append(wet)
     beach.data.materials.append(underwater)
@@ -182,9 +233,9 @@ def create_reef_patches() -> int:
         make_simple_material("Sea grass dark", (0.028, 0.075, 0.055, 1.0), 0.90),
     ]
     count = 0
-    for _ in range(28):
-        x = rng.uniform(-135.0, 135.0)
-        y = rng.uniform(38.0, 260.0)
+    for _ in range(42):
+        x = rng.uniform(-175.0, 175.0)
+        y = rng.uniform(38.0, 650.0)
         if rng.random() < 0.35 and y < 75.0:
             continue
         z = seabed_z(x, y) + 0.035
@@ -216,35 +267,40 @@ def make_water_surface_material():
     bump_a = nodes.new("ShaderNodeBump")
     bump_b = nodes.new("ShaderNodeBump")
 
-    depth_ramp.color_ramp.elements[0].position = 0.02
-    depth_ramp.color_ramp.elements[0].color = (0.16, 0.62, 0.64, 1.0)
-    depth_ramp.color_ramp.elements[1].position = 0.94
-    depth_ramp.color_ramp.elements[1].color = (0.008, 0.095, 0.24, 1.0)
+    cr = depth_ramp.color_ramp
+    cr.elements[0].position = 0.00
+    cr.elements[0].color = (0.22, 0.72, 0.68, 1.0)
+    mid = cr.elements.new(0.54)
+    mid.color = (0.045, 0.48, 0.55, 1.0)
+    cr.elements[1].position = 1.00
+    cr.elements[1].color = (0.025, 0.23, 0.34, 1.0)
 
     transmission.inputs["From Min"].default_value = 0.0
     transmission.inputs["From Max"].default_value = 1.0
-    transmission.inputs["To Min"].default_value = 0.94
-    transmission.inputs["To Max"].default_value = 0.38
+    transmission.inputs["To Min"].default_value = 0.985
+    transmission.inputs["To Max"].default_value = 0.82
     transmission.clamp = True
 
     noise_a.noise_dimensions = "3D"
-    set_input(noise_a, "Scale", 8.0)
+    set_input(noise_a, "Scale", 9.0)
     set_input(noise_a, "Detail", 5.0)
-    set_input(noise_a, "Roughness", 0.63)
+    set_input(noise_a, "Roughness", 0.64)
 
     noise_b.noise_dimensions = "3D"
-    set_input(noise_b, "Scale", 34.0)
+    set_input(noise_b, "Scale", 42.0)
     set_input(noise_b, "Detail", 3.0)
-    set_input(noise_b, "Roughness", 0.58)
+    set_input(noise_b, "Roughness", 0.56)
 
-    set_input(bump_a, "Strength", 0.16)
+    set_input(bump_a, "Strength", 0.20)
     set_input(bump_a, "Distance", 0.10)
-    set_input(bump_b, "Strength", 0.08)
-    set_input(bump_b, "Distance", 0.025)
+    set_input(bump_b, "Strength", 0.10)
+    set_input(bump_b, "Distance", 0.020)
 
-    set_input(bsdf, "Roughness", 0.045)
+    set_input(bsdf, "Roughness", 0.032)
     set_input(bsdf, "IOR", 1.333)
     set_input(bsdf, "Metallic", 0.0)
+    set_input(bsdf, "Coat Weight", 0.03)
+    set_input(bsdf, "Coat Roughness", 0.02)
 
     links.new(coord.outputs["Generated"], separate.inputs["Vector"])
     links.new(separate.outputs["Y"], depth_ramp.inputs["Fac"])
@@ -263,31 +319,27 @@ def make_water_surface_material():
 
 
 def create_ocean() -> tuple[bpy.types.Object, dict]:
-    # Static shoreline-following water mesh. The previous Ocean Modifier
-    # generated an ocean patch whose boundary became a huge dark wedge in this
-    # low-angle beach composition. For a still image, explicit geometry gives
-    # predictable contact with the shore while preserving several wave scales.
-    nx = 168
-    ny = 220
-    xmin, xmax = -260.0, 260.0
-    far_y = 1800.0
+    nx = 180
+    ny = 260
+    xmin, xmax = -280.0, 280.0
+    far_y = 1450.0
 
     verts = []
     faces = []
     for iy in range(ny):
         t = iy / (ny - 1)
-        t_space = t ** 1.22
+        t_space = t ** 1.30
         for ix in range(nx):
             x = xmin + (xmax - xmin) * ix / (nx - 1)
-            shore = shoreline_y(x) + 0.55
+            shore = shoreline_y(x) + 0.45
             y = shore + (far_y - shore) * t_space
 
-            offshore = min(1.0, t * 1.8)
-            amp = 0.008 + 0.095 * offshore
-            long_wave = math.sin(x * 0.055 + y * 0.030)
-            cross_wave = math.sin(-x * 0.028 + y * 0.052 + 1.7)
-            detail = math.sin(x * 0.18 + y * 0.135 + 0.8)
-            z = amp * (0.55 * long_wave + 0.30 * cross_wave + 0.15 * detail)
+            offshore = min(1.0, t * 1.65)
+            amp = 0.010 + 0.135 * offshore
+            long_wave = math.sin(x * 0.044 + y * 0.024)
+            cross_wave = math.sin(-x * 0.031 + y * 0.047 + 1.7)
+            detail = math.sin(x * 0.16 + y * 0.12 + 0.8)
+            z = amp * (0.56 * long_wave + 0.30 * cross_wave + 0.14 * detail)
             verts.append((x, y, z))
 
     for iy in range(ny - 1):
@@ -309,9 +361,10 @@ def create_ocean() -> tuple[bpy.types.Object, dict]:
         "shoreline_following": True,
         "grid": [nx, ny],
         "far_y_m": far_y,
-        "max_wave_amplitude_m": 0.103,
+        "max_wave_amplitude_m": 0.145,
         "ior": 1.333,
-        "depth_tint": "generated-Y shallow-to-deep",
+        "depth_tint": "three-stop generated-Y lagoon gradient",
+        "transmission_range": [0.985, 0.82],
     }
     return ocean, settings
 
@@ -330,29 +383,34 @@ def create_foam() -> int:
     faces = []
     fragment_count = 0
 
-    x = -190.0
-    while x < 190.0:
-        seg_len = rng.uniform(2.0, 6.0)
-        gap = rng.uniform(1.5, 5.5)
-        if rng.random() < 0.58:
-            steps = 7
-            start = x
-            width0 = rng.uniform(0.045, 0.13)
-            base = len(verts)
-            for i in range(steps):
-                u = i / (steps - 1)
-                px = start + seg_len * u
-                py = shoreline_y(px) + 0.7
-                py += 0.18 * math.sin(px * 0.19 + fragment_count * 0.7)
-                width = width0 * (0.65 + 0.35 * math.sin(math.pi * u))
-                z = 0.035
-                verts.append((px, py - width, z))
-                verts.append((px, py + width, z))
-            for i in range(steps - 1):
-                a = base + i * 2
-                faces.append((a, a + 2, a + 3, a + 1))
-            fragment_count += 1
-        x += seg_len + gap
+    bands = (
+        (0.65, 0.72, 0.12, 0.34),
+        (3.4, 0.36, 0.07, 0.20),
+    )
+    for band_index, (offset, chance, width_min, width_max) in enumerate(bands):
+        x = -205.0 + rng.uniform(0.0, 4.0)
+        while x < 205.0:
+            seg_len = rng.uniform(2.2, 7.5)
+            gap = rng.uniform(1.0, 5.0)
+            if rng.random() < chance:
+                steps = 9
+                base = len(verts)
+                width0 = rng.uniform(width_min, width_max)
+                phase = rng.uniform(0.0, math.tau)
+                for i in range(steps):
+                    u = i / (steps - 1)
+                    px = x + seg_len * u
+                    py = shoreline_y(px) + offset
+                    py += 0.26 * math.sin(px * 0.16 + phase)
+                    width = width0 * (0.48 + 0.52 * math.sin(math.pi * u))
+                    z = 0.040 + 0.010 * band_index
+                    verts.append((px, py - width, z))
+                    verts.append((px, py + width, z))
+                for i in range(steps - 1):
+                    a = base + i * 2
+                    faces.append((a, a + 2, a + 3, a + 1))
+                fragment_count += 1
+            x += seg_len + gap
 
     mesh = bpy.data.meshes.new("FoamRibbonMesh")
     mesh.from_pydata(verts, [], faces)
@@ -363,9 +421,9 @@ def create_foam() -> int:
     mat = bpy.data.materials.new("Thin shoreline foam")
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes.get("Principled BSDF")
-    set_input(bsdf, "Base Color", (0.88, 0.93, 0.91, 1.0))
-    set_input(bsdf, "Roughness", 0.34)
-    set_input(bsdf, "Transmission Weight", 0.14)
+    set_input(bsdf, "Base Color", (0.93, 0.97, 0.95, 1.0))
+    set_input(bsdf, "Roughness", 0.30)
+    set_input(bsdf, "Transmission Weight", 0.10)
     foam.data.materials.append(mat)
     return fragment_count
 
@@ -415,14 +473,14 @@ def setup_world_and_light(scene: bpy.types.Scene) -> str:
 
 
 def setup_camera(scene: bpy.types.Scene) -> bpy.types.Object:
-    bpy.ops.object.camera_add(location=(58.0, -120.0, 22.0))
+    bpy.ops.object.camera_add(location=(58.0, -120.0, 18.0))
     camera = bpy.context.object
     camera.name = "ResortCoastCamera"
     camera.data.lens = 50.0
     camera.data.sensor_width = 36.0
     camera.data.clip_start = 0.1
     camera.data.clip_end = 2500.0
-    point_camera(camera, (-18.0, 95.0, -1.5))
+    point_camera(camera, (-18.0, 112.0, -1.2))
     scene.camera = camera
     return camera
 
