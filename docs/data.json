@@ -1,5 +1,48 @@
 [
   {
+    "id": "tropical-resort-coast-still",
+    "title": "Tropical Resort Coast — Cycles Still",
+    "description": "One-frame tropical lagoon study: TMA shallow-water ocean, white sand, depth-colored transmission, reef patches, shoreline foam and wet sand.",
+    "created_at": "2026-10-04T19:07:00+09:00",
+    "preview": "assets/tropical-resort-coast-still/preview.png",
+    "video": null,
+    "validation": {
+      "experiment": "tropical-resort-coast-still",
+      "created_at": "2026-10-04T19:07:00+09:00",
+      "blender_version": "5.2.2 LTS",
+      "engine": "CYCLES",
+      "frame_count": 1,
+      "still_only": true,
+      "resolution": [
+        960,
+        540
+      ],
+      "samples": 32,
+      "spectrum": "TEXEL_MARSEN_ARSLOE",
+      "mean_luma": 211.43,
+      "stddev_luma": 28.244,
+      "tonal_span": 199,
+      "sky_rgb_mean": [
+        193.95,
+        207.99,
+        218.7
+      ],
+      "lagoon_rgb_mean": [
+        196.23,
+        204.38,
+        202.55
+      ],
+      "foreground_rgb_mean": [
+        238.15,
+        232.86,
+        225.64
+      ],
+      "preview_sha256": "f2f4a2e2841c7693ccc1e5cd93bc2bd06669cf49cfc9e5703f0a4158ae56d659",
+      "preview_size_bytes": 428731,
+      "blend_size_bytes": 762798
+    }
+  },
+  {
     "id": "sail-ship-wire-hd",
     "title": "Sail Ship — Workbench Wireframe HD",
     "description": "1280×720 Blender 5.2 Workbench wireframe render of the bridged Sail ship.blend model. The preview is a real still render; the 1-second MP4 repeats that still for gallery compatibility.",
