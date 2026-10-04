@@ -1,0 +1,25 @@
+name: Tropical resort coast still
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/tropical-resort-coast-still/**'
+      - '.github/workflows/tropical-resort-coast-still.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  tropical-still:
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: tropical-resort-coast-still
+      variant: "0"
+    permissions:
+      contents: write
+      pages: write
+      id-token: write

@@ -83,7 +83,10 @@ def collect():
                 break
 
         video = None
-        if copy_if_exists(result_dir / "media.mp4", asset_dir / "media.mp4"):
+        if (
+            not validation.get("still_only")
+            and copy_if_exists(result_dir / "media.mp4", asset_dir / "media.mp4")
+        ):
             video = f"assets/{exp}/media.mp4"
 
         if (result_dir / "validation.json").is_file():
