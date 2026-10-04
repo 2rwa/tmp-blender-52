@@ -19,27 +19,27 @@
       ],
       "samples": 32,
       "spectrum": "TEXEL_MARSEN_ARSLOE",
-      "mean_luma": 211.43,
-      "stddev_luma": 28.244,
-      "tonal_span": 199,
+      "mean_luma": 204.558,
+      "stddev_luma": 48.705,
+      "tonal_span": 225,
       "sky_rgb_mean": [
-        193.95,
-        207.99,
-        218.7
+        186.95,
+        194.87,
+        200.3
       ],
       "lagoon_rgb_mean": [
-        196.23,
-        204.38,
-        202.55
+        200.33,
+        204.3,
+        201.49
       ],
       "foreground_rgb_mean": [
-        238.15,
-        232.86,
-        225.64
+        235.22,
+        230.46,
+        223.79
       ],
-      "preview_sha256": "f2f4a2e2841c7693ccc1e5cd93bc2bd06669cf49cfc9e5703f0a4158ae56d659",
-      "preview_size_bytes": 428731,
-      "blend_size_bytes": 762798
+      "preview_sha256": "96395c8720289e06f04ca6a60d578c22e6dc0de9a524999531f8e27b714066d4",
+      "preview_size_bytes": 420476,
+      "blend_size_bytes": 766898
     }
   },
   {
