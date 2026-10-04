@@ -19,32 +19,30 @@
     "lens_mm": 50.0
   },
   "ocean": {
-    "spectrum": "TEXEL_MARSEN_ARSLOE",
-    "depth_m": 4.0,
-    "wind_velocity_m_s": 3.799999952316284,
-    "wave_scale": 0.2199999988079071,
-    "choppiness": 0.33000001311302185,
-    "alignment": 0.8199999928474426,
-    "spatial_size_m": 350,
-    "repeat": [
-      2,
-      4
+    "spectrum": "SHORELINE_GERSTNER_PROXY",
+    "shoreline_following": true,
+    "grid": [
+      168,
+      220
     ],
-    "resolution": 8
+    "far_y_m": 1800.0,
+    "max_wave_amplitude_m": 0.103,
+    "ior": 1.333,
+    "depth_tint": "generated-Y shallow-to-deep"
   },
   "water_model": {
     "surface": "Principled transmission, IOR 1.333, two-scale procedural normals",
-    "volume": "separate closed absorption + scattering volume below surface"
+    "volume": "disabled in pass 3; depth cue comes from transmissive surface tint and seabed"
   },
   "shore": {
     "wet_sand_material": true,
-    "foam_patch_count": 0,
+    "foam_patch_count": 24,
     "reef_patch_count": 25
   },
   "objects": {
     "beach": "BeachAndSeabed",
-    "ocean": "TMA_Shallow_Lagoon",
-    "water_volume": "LagoonWaterOpticalVolume"
+    "ocean": "ShorelineFollowingWater",
+    "water_volume": null
   },
   "sky_model": "MULTIPLE_SCATTERING",
   "color_management": "AgX"
