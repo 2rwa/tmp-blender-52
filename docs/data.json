@@ -33,7 +33,8 @@
       "blend_size_bytes": 700528,
       "video_size_bytes": 236622,
       "preview_sha256": "5f898371c5a57808db7925dabf1c7ec03bf01769cfc87f67fd3f6c6ddc58628f"
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/chesterfield-workbench/chesterfield-workbench.blend"
   },
   {
     "id": "sail-ship-workbench-hd",
@@ -66,7 +67,8 @@
       "blend_size_bytes": 276963,
       "video_size_bytes": 453647,
       "preview_sha256": "38c58dcf20b928cec8abbb08edee4002d105ac25f472238ac31143cac5555c46"
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/sail-ship-workbench-hd/sail-ship-workbench-hd.blend"
   },
   {
     "id": "timber-waterwheel",
@@ -101,7 +103,8 @@
       "preview_sha256": "f45d1664e94c0a659897a18b47246eb97b71affb1b54edeff5d0b03cd024e4f0",
       "blend_size_bytes": 245475,
       "video_size_bytes": 95433
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/timber-waterwheel/timber-waterwheel.blend"
   },
   {
     "id": "tropical-resort-coast-still",
@@ -145,7 +148,8 @@
       "preview_sha256": "47a5ca5de242ec4344ecf6dce5ca31604c3189d70afb3bbf0f19498429909a39",
       "preview_size_bytes": 424159,
       "blend_size_bytes": 2664764
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/tropical-resort-coast-still/tropical-resort-coast-still.blend"
   },
   {
     "id": "sail-ship-wire-hd",
@@ -174,7 +178,8 @@
       "ffmpeg_full_decode_ok": true,
       "blend_size_bytes": 645876,
       "preview_stddev": 27.069
-    }
+    },
+    "blend": null
   },
   {
     "id": "yokohama-terrain-workbench-wire-4k",
@@ -203,7 +208,8 @@
       "preview_bytes": 9179711,
       "video_size_bytes": 7681118,
       "blend_size_bytes": 371012
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/yokohama-terrain-workbench-wire-4k/yokohama-terrain-workbench-wire-4k.blend"
   },
   {
     "id": "yokohama-terrain-workbench-wire-hd",
@@ -232,7 +238,8 @@
       "preview_bytes": 1378653,
       "video_size_bytes": 2343964,
       "blend_size_bytes": 371099
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/yokohama-terrain-workbench-wire-hd/yokohama-terrain-workbench-wire-hd.blend"
   },
   {
     "id": "yokohama-terrain-workbench-wire",
@@ -261,7 +268,8 @@
       "preview_bytes": 106929,
       "video_size_bytes": 472221,
       "blend_size_bytes": 371093
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/yokohama-terrain-workbench-wire/yokohama-terrain-workbench-wire.blend"
   },
   {
     "id": "yokohama-terrain-workbench-speed",
@@ -287,7 +295,8 @@
       "preview_bytes": 87741,
       "video_size_bytes": 17523,
       "blend_size_bytes": 371500
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/yokohama-terrain-workbench-speed/yokohama-terrain-workbench-speed.blend"
   },
   {
     "id": "yokohama-terrain-rise32",
@@ -316,7 +325,8 @@
       "video_size_bytes": 20564,
       "blend_size_bytes": 374395,
       "preview_stddev": 38.523
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/yokohama-terrain-rise32/yokohama-terrain-rise32.blend"
   },
   {
     "id": "yokohama-terrain",
@@ -343,7 +353,8 @@
       "video_size_bytes": 6535,
       "blend_size_bytes": 374976,
       "preview_stddev": 41.578
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/yokohama-terrain/yokohama-terrain.blend"
   },
   {
     "id": "backrooms-note-repro",
@@ -380,7 +391,8 @@
         "motion_present": true,
         "camera_has_depth": true
       }
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/backrooms-note-repro/backrooms-note-repro.blend"
   },
   {
     "id": "feature52-thin-wall",
@@ -405,7 +417,8 @@
         "thin_wall_enabled": true,
         "transmission_weight": 0.9200000166893005
       }
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/feature52-thin-wall/feature52-thin-wall.blend"
   },
   {
     "id": "feature52-shader-scene-time",
@@ -440,7 +453,8 @@
           "Frame"
         ]
       }
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/feature52-shader-scene-time/feature52-shader-scene-time.blend"
   },
   {
     "id": "feature52-compositor-string-to-image",
@@ -467,7 +481,8 @@
           "Image"
         ]
       }
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/feature52-compositor-string-to-image/feature52-compositor-string-to-image.blend"
   },
   {
     "id": "feature52-compositor-blank-image",
@@ -494,7 +509,8 @@
         ],
         "size_socket_present": true
       }
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/feature52-compositor-blank-image/feature52-compositor-blank-image.blend"
   },
   {
     "id": "feature52-cloth-tearing",
@@ -515,7 +531,8 @@
       "preview_sha256": "531fa368e6447898a4ed4a39747742e68495195e95fde25cc08439a6e091ca22",
       "video_size_bytes": 18553,
       "blend_size_bytes": 288343
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/feature52-cloth-tearing/feature52-cloth-tearing.blend"
   },
   {
     "id": "hello-blender52",
@@ -533,6 +550,7 @@
       "video_size_bytes": 32383,
       "blend_size_bytes": 128947,
       "preview_stddev": 57.864
-    }
+    },
+    "blend": "https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/hello-blender52/hello-blender52.blend"
   }
 ]
