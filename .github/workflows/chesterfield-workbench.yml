@@ -1,0 +1,38 @@
+name: Chesterfield workbench HD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/chesterfield-workbench/**'
+      - '.github/workflows/chesterfield-workbench.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          python3 -m py_compile \
+            experiments/chesterfield-workbench/scene.py \
+            experiments/chesterfield-workbench/geometry.py \
+            experiments/chesterfield-workbench/upholstery.py \
+            experiments/chesterfield-workbench/chair.py \
+            experiments/chesterfield-workbench/validate.py
+  render:
+    needs: preflight
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: chesterfield-workbench
+      variant: "0"
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
