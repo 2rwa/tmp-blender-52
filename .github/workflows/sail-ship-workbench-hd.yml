@@ -1,0 +1,39 @@
+name: Sail ship workbench HD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/sail-ship-workbench-hd/**'
+      - '.github/workflows/sail-ship-workbench-hd.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check all Python modules
+        run: |
+          python3 -m py_compile \
+            experiments/sail-ship-workbench-hd/scene.py \
+            experiments/sail-ship-workbench-hd/geometry.py \
+            experiments/sail-ship-workbench-hd/ship.py \
+            experiments/sail-ship-workbench-hd/validate.py
+
+  render:
+    needs: preflight
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: sail-ship-workbench-hd
+      variant: "0"
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
