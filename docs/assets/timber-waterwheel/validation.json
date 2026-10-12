@@ -1,0 +1,27 @@
+{
+  "experiment": "timber-waterwheel",
+  "status": "validated",
+  "blender_version": "5.2.2 LTS",
+  "frame_count": 48,
+  "resolution": [
+    768,
+    432
+  ],
+  "mesh_objects": 219,
+  "wheel_component_counts": {
+    "axle": 1,
+    "hub": 3,
+    "rim": 48,
+    "paddle": 16,
+    "lip": 16,
+    "bolt": 32,
+    "spoke": 24
+  },
+  "rotation_degrees": 135.0,
+  "preview_contrast": 175,
+  "preview_stddev": 27.939,
+  "frame_1_to_12_rgb_difference": 5.092,
+  "preview_sha256": "f45d1664e94c0a659897a18b47246eb97b71affb1b54edeff5d0b03cd024e4f0",
+  "blend_size_bytes": 245475,
+  "video_size_bytes": 95433
+}
