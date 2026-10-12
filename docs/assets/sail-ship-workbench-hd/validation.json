@@ -1,0 +1,25 @@
+{
+  "experiment": "sail-ship-workbench-hd",
+  "status": "validated",
+  "engine": "BLENDER_WORKBENCH",
+  "blender_version": "5.2.2 LTS",
+  "resolution": [
+    1280,
+    720
+  ],
+  "frame_count": 120,
+  "mesh_object_count": 137,
+  "component_counts": {
+    "masts": 3,
+    "sails": 6,
+    "yards": 5,
+    "rigging_lines": 27,
+    "rail_posts": 24,
+    "portholes": 22
+  },
+  "preview_stddev": 33.494,
+  "motion_difference": 14.404,
+  "blend_size_bytes": 276963,
+  "video_size_bytes": 453647,
+  "preview_sha256": "38c58dcf20b928cec8abbb08edee4002d105ac25f472238ac31143cac5555c46"
+}
