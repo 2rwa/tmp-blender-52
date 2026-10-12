@@ -1,0 +1,627 @@
+{
+  "experiment": "sail-ship-workbench-hd",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    1280,
+    720
+  ],
+  "frame_count": 120,
+  "frame_start": 1,
+  "frame_end": 120,
+  "fps": 24,
+  "duration_seconds": 5.0,
+  "preview_frame": 32,
+  "camera_orbit_degrees": 360,
+  "component_counts": {
+    "masts": 3,
+    "sails": 6,
+    "yards": 5,
+    "rigging_lines": 27,
+    "rail_posts": 24,
+    "portholes": 22
+  },
+  "mesh_object_count": 137,
+  "frame_stats": [
+    {
+      "frame": 1,
+      "camera_angle_deg": 0.0,
+      "height": 0.36
+    },
+    {
+      "frame": 2,
+      "camera_angle_deg": 3.025,
+      "height": 0.3663
+    },
+    {
+      "frame": 3,
+      "camera_angle_deg": 6.05,
+      "height": 0.3726
+    },
+    {
+      "frame": 4,
+      "camera_angle_deg": 9.076,
+      "height": 0.3787
+    },
+    {
+      "frame": 5,
+      "camera_angle_deg": 12.101,
+      "height": 0.3846
+    },
+    {
+      "frame": 6,
+      "camera_angle_deg": 15.126,
+      "height": 0.3902
+    },
+    {
+      "frame": 7,
+      "camera_angle_deg": 18.151,
+      "height": 0.3955
+    },
+    {
+      "frame": 8,
+      "camera_angle_deg": 21.176,
+      "height": 0.4004
+    },
+    {
+      "frame": 9,
+      "camera_angle_deg": 24.202,
+      "height": 0.4049
+    },
+    {
+      "frame": 10,
+      "camera_angle_deg": 27.227,
+      "height": 0.4088
+    },
+    {
+      "frame": 11,
+      "camera_angle_deg": 30.252,
+      "height": 0.4122
+    },
+    {
+      "frame": 12,
+      "camera_angle_deg": 33.277,
+      "height": 0.415
+    },
+    {
+      "frame": 13,
+      "camera_angle_deg": 36.303,
+      "height": 0.4173
+    },
+    {
+      "frame": 14,
+      "camera_angle_deg": 39.328,
+      "height": 0.4188
+    },
+    {
+      "frame": 15,
+      "camera_angle_deg": 42.353,
+      "height": 0.4197
+    },
+    {
+      "frame": 16,
+      "camera_angle_deg": 45.378,
+      "height": 0.42
+    },
+    {
+      "frame": 17,
+      "camera_angle_deg": 48.403,
+      "height": 0.4196
+    },
+    {
+      "frame": 18,
+      "camera_angle_deg": 51.429,
+      "height": 0.4185
+    },
+    {
+      "frame": 19,
+      "camera_angle_deg": 54.454,
+      "height": 0.4168
+    },
+    {
+      "frame": 20,
+      "camera_angle_deg": 57.479,
+      "height": 0.4144
+    },
+    {
+      "frame": 21,
+      "camera_angle_deg": 60.504,
+      "height": 0.4114
+    },
+    {
+      "frame": 22,
+      "camera_angle_deg": 63.529,
+      "height": 0.4079
+    },
+    {
+      "frame": 23,
+      "camera_angle_deg": 66.555,
+      "height": 0.4038
+    },
+    {
+      "frame": 24,
+      "camera_angle_deg": 69.58,
+      "height": 0.3992
+    },
+    {
+      "frame": 25,
+      "camera_angle_deg": 72.605,
+      "height": 0.3942
+    },
+    {
+      "frame": 26,
+      "camera_angle_deg": 75.63,
+      "height": 0.3888
+    },
+    {
+      "frame": 27,
+      "camera_angle_deg": 78.655,
+      "height": 0.3831
+    },
+    {
+      "frame": 28,
+      "camera_angle_deg": 81.681,
+      "height": 0.3772
+    },
+    {
+      "frame": 29,
+      "camera_angle_deg": 84.706,
+      "height": 0.371
+    },
+    {
+      "frame": 30,
+      "camera_angle_deg": 87.731,
+      "height": 0.3647
+    },
+    {
+      "frame": 31,
+      "camera_angle_deg": 90.756,
+      "height": 0.3584
+    },
+    {
+      "frame": 32,
+      "camera_angle_deg": 93.782,
+      "height": 0.3521
+    },
+    {
+      "frame": 33,
+      "camera_angle_deg": 96.807,
+      "height": 0.3459
+    },
+    {
+      "frame": 34,
+      "camera_angle_deg": 99.832,
+      "height": 0.3398
+    },
+    {
+      "frame": 35,
+      "camera_angle_deg": 102.857,
+      "height": 0.334
+    },
+    {
+      "frame": 36,
+      "camera_angle_deg": 105.882,
+      "height": 0.3284
+    },
+    {
+      "frame": 37,
+      "camera_angle_deg": 108.908,
+      "height": 0.3232
+    },
+    {
+      "frame": 38,
+      "camera_angle_deg": 111.933,
+      "height": 0.3184
+    },
+    {
+      "frame": 39,
+      "camera_angle_deg": 114.958,
+      "height": 0.3141
+    },
+    {
+      "frame": 40,
+      "camera_angle_deg": 117.983,
+      "height": 0.3103
+    },
+    {
+      "frame": 41,
+      "camera_angle_deg": 121.008,
+      "height": 0.307
+    },
+    {
+      "frame": 42,
+      "camera_angle_deg": 124.034,
+      "height": 0.3043
+    },
+    {
+      "frame": 43,
+      "camera_angle_deg": 127.059,
+      "height": 0.3023
+    },
+    {
+      "frame": 44,
+      "camera_angle_deg": 130.084,
+      "height": 0.3009
+    },
+    {
+      "frame": 45,
+      "camera_angle_deg": 133.109,
+      "height": 0.3001
+    },
+    {
+      "frame": 46,
+      "camera_angle_deg": 136.134,
+      "height": 0.3
+    },
+    {
+      "frame": 47,
+      "camera_angle_deg": 139.16,
+      "height": 0.3006
+    },
+    {
+      "frame": 48,
+      "camera_angle_deg": 142.185,
+      "height": 0.3019
+    },
+    {
+      "frame": 49,
+      "camera_angle_deg": 145.21,
+      "height": 0.3038
+    },
+    {
+      "frame": 50,
+      "camera_angle_deg": 148.235,
+      "height": 0.3063
+    },
+    {
+      "frame": 51,
+      "camera_angle_deg": 151.261,
+      "height": 0.3094
+    },
+    {
+      "frame": 52,
+      "camera_angle_deg": 154.286,
+      "height": 0.3131
+    },
+    {
+      "frame": 53,
+      "camera_angle_deg": 157.311,
+      "height": 0.3173
+    },
+    {
+      "frame": 54,
+      "camera_angle_deg": 160.336,
+      "height": 0.322
+    },
+    {
+      "frame": 55,
+      "camera_angle_deg": 163.361,
+      "height": 0.3271
+    },
+    {
+      "frame": 56,
+      "camera_angle_deg": 166.387,
+      "height": 0.3325
+    },
+    {
+      "frame": 57,
+      "camera_angle_deg": 169.412,
+      "height": 0.3383
+    },
+    {
+      "frame": 58,
+      "camera_angle_deg": 172.437,
+      "height": 0.3443
+    },
+    {
+      "frame": 59,
+      "camera_angle_deg": 175.462,
+      "height": 0.3505
+    },
+    {
+      "frame": 60,
+      "camera_angle_deg": 178.487,
+      "height": 0.3568
+    },
+    {
+      "frame": 61,
+      "camera_angle_deg": 181.513,
+      "height": 0.3632
+    },
+    {
+      "frame": 62,
+      "camera_angle_deg": 184.538,
+      "height": 0.3695
+    },
+    {
+      "frame": 63,
+      "camera_angle_deg": 187.563,
+      "height": 0.3757
+    },
+    {
+      "frame": 64,
+      "camera_angle_deg": 190.588,
+      "height": 0.3817
+    },
+    {
+      "frame": 65,
+      "camera_angle_deg": 193.613,
+      "height": 0.3875
+    },
+    {
+      "frame": 66,
+      "camera_angle_deg": 196.639,
+      "height": 0.3929
+    },
+    {
+      "frame": 67,
+      "camera_angle_deg": 199.664,
+      "height": 0.398
+    },
+    {
+      "frame": 68,
+      "camera_angle_deg": 202.689,
+      "height": 0.4027
+    },
+    {
+      "frame": 69,
+      "camera_angle_deg": 205.714,
+      "height": 0.4069
+    },
+    {
+      "frame": 70,
+      "camera_angle_deg": 208.739,
+      "height": 0.4106
+    },
+    {
+      "frame": 71,
+      "camera_angle_deg": 211.765,
+      "height": 0.4137
+    },
+    {
+      "frame": 72,
+      "camera_angle_deg": 214.79,
+      "height": 0.4162
+    },
+    {
+      "frame": 73,
+      "camera_angle_deg": 217.815,
+      "height": 0.4181
+    },
+    {
+      "frame": 74,
+      "camera_angle_deg": 220.84,
+      "height": 0.4194
+    },
+    {
+      "frame": 75,
+      "camera_angle_deg": 223.866,
+      "height": 0.42
+    },
+    {
+      "frame": 76,
+      "camera_angle_deg": 226.891,
+      "height": 0.4199
+    },
+    {
+      "frame": 77,
+      "camera_angle_deg": 229.916,
+      "height": 0.4191
+    },
+    {
+      "frame": 78,
+      "camera_angle_deg": 232.941,
+      "height": 0.4177
+    },
+    {
+      "frame": 79,
+      "camera_angle_deg": 235.966,
+      "height": 0.4157
+    },
+    {
+      "frame": 80,
+      "camera_angle_deg": 238.992,
+      "height": 0.413
+    },
+    {
+      "frame": 81,
+      "camera_angle_deg": 242.017,
+      "height": 0.4097
+    },
+    {
+      "frame": 82,
+      "camera_angle_deg": 245.042,
+      "height": 0.4059
+    },
+    {
+      "frame": 83,
+      "camera_angle_deg": 248.067,
+      "height": 0.4016
+    },
+    {
+      "frame": 84,
+      "camera_angle_deg": 251.092,
+      "height": 0.3968
+    },
+    {
+      "frame": 85,
+      "camera_angle_deg": 254.118,
+      "height": 0.3916
+    },
+    {
+      "frame": 86,
+      "camera_angle_deg": 257.143,
+      "height": 0.386
+    },
+    {
+      "frame": 87,
+      "camera_angle_deg": 260.168,
+      "height": 0.3802
+    },
+    {
+      "frame": 88,
+      "camera_angle_deg": 263.193,
+      "height": 0.3741
+    },
+    {
+      "frame": 89,
+      "camera_angle_deg": 266.218,
+      "height": 0.3679
+    },
+    {
+      "frame": 90,
+      "camera_angle_deg": 269.244,
+      "height": 0.3616
+    },
+    {
+      "frame": 91,
+      "camera_angle_deg": 272.269,
+      "height": 0.3553
+    },
+    {
+      "frame": 92,
+      "camera_angle_deg": 275.294,
+      "height": 0.349
+    },
+    {
+      "frame": 93,
+      "camera_angle_deg": 278.319,
+      "height": 0.3428
+    },
+    {
+      "frame": 94,
+      "camera_angle_deg": 281.345,
+      "height": 0.3369
+    },
+    {
+      "frame": 95,
+      "camera_angle_deg": 284.37,
+      "height": 0.3312
+    },
+    {
+      "frame": 96,
+      "camera_angle_deg": 287.395,
+      "height": 0.3258
+    },
+    {
+      "frame": 97,
+      "camera_angle_deg": 290.42,
+      "height": 0.3208
+    },
+    {
+      "frame": 98,
+      "camera_angle_deg": 293.445,
+      "height": 0.3162
+    },
+    {
+      "frame": 99,
+      "camera_angle_deg": 296.471,
+      "height": 0.3121
+    },
+    {
+      "frame": 100,
+      "camera_angle_deg": 299.496,
+      "height": 0.3086
+    },
+    {
+      "frame": 101,
+      "camera_angle_deg": 302.521,
+      "height": 0.3056
+    },
+    {
+      "frame": 102,
+      "camera_angle_deg": 305.546,
+      "height": 0.3032
+    },
+    {
+      "frame": 103,
+      "camera_angle_deg": 308.571,
+      "height": 0.3015
+    },
+    {
+      "frame": 104,
+      "camera_angle_deg": 311.597,
+      "height": 0.3004
+    },
+    {
+      "frame": 105,
+      "camera_angle_deg": 314.622,
+      "height": 0.3
+    },
+    {
+      "frame": 106,
+      "camera_angle_deg": 317.647,
+      "height": 0.3003
+    },
+    {
+      "frame": 107,
+      "camera_angle_deg": 320.672,
+      "height": 0.3012
+    },
+    {
+      "frame": 108,
+      "camera_angle_deg": 323.697,
+      "height": 0.3027
+    },
+    {
+      "frame": 109,
+      "camera_angle_deg": 326.723,
+      "height": 0.305
+    },
+    {
+      "frame": 110,
+      "camera_angle_deg": 329.748,
+      "height": 0.3078
+    },
+    {
+      "frame": 111,
+      "camera_angle_deg": 332.773,
+      "height": 0.3112
+    },
+    {
+      "frame": 112,
+      "camera_angle_deg": 335.798,
+      "height": 0.3151
+    },
+    {
+      "frame": 113,
+      "camera_angle_deg": 338.824,
+      "height": 0.3196
+    },
+    {
+      "frame": 114,
+      "camera_angle_deg": 341.849,
+      "height": 0.3245
+    },
+    {
+      "frame": 115,
+      "camera_angle_deg": 344.874,
+      "height": 0.3298
+    },
+    {
+      "frame": 116,
+      "camera_angle_deg": 347.899,
+      "height": 0.3354
+    },
+    {
+      "frame": 117,
+      "camera_angle_deg": 350.924,
+      "height": 0.3413
+    },
+    {
+      "frame": 118,
+      "camera_angle_deg": 353.95,
+      "height": 0.3474
+    },
+    {
+      "frame": 119,
+      "camera_angle_deg": 356.975,
+      "height": 0.3537
+    },
+    {
+      "frame": 120,
+      "camera_angle_deg": 360.0,
+      "height": 0.36
+    }
+  ]
+}
