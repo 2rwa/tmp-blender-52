@@ -1,0 +1,223 @@
+{
+  "experiment": "timber-waterwheel",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_EEVEE",
+  "resolution": [
+    768,
+    432
+  ],
+  "frame_start": 1,
+  "frame_end": 48,
+  "frame_count": 48,
+  "fps": 24,
+  "preview_frame": 14,
+  "wheel_radius_m": 2.16,
+  "wheel_axis": "Y",
+  "wheel_center_height_m": 2.88,
+  "wheel_component_counts": {
+    "axle": 1,
+    "hub": 3,
+    "rim": 48,
+    "paddle": 16,
+    "lip": 16,
+    "bolt": 32,
+    "spoke": 24
+  },
+  "animation": "keyframed editable rotating assembly",
+  "rotation_degrees": 135.0,
+  "mesh_objects": 219,
+  "frame_stats": [
+    {
+      "frame": 1,
+      "wheel_angle_rad": 0.0
+    },
+    {
+      "frame": 2,
+      "wheel_angle_rad": 0.0501318
+    },
+    {
+      "frame": 3,
+      "wheel_angle_rad": 0.1002636
+    },
+    {
+      "frame": 4,
+      "wheel_angle_rad": 0.1503954
+    },
+    {
+      "frame": 5,
+      "wheel_angle_rad": 0.2005272
+    },
+    {
+      "frame": 6,
+      "wheel_angle_rad": 0.250659
+    },
+    {
+      "frame": 7,
+      "wheel_angle_rad": 0.3007908
+    },
+    {
+      "frame": 8,
+      "wheel_angle_rad": 0.3509226
+    },
+    {
+      "frame": 9,
+      "wheel_angle_rad": 0.4010544
+    },
+    {
+      "frame": 10,
+      "wheel_angle_rad": 0.4511862
+    },
+    {
+      "frame": 11,
+      "wheel_angle_rad": 0.501318
+    },
+    {
+      "frame": 12,
+      "wheel_angle_rad": 0.5514498
+    },
+    {
+      "frame": 13,
+      "wheel_angle_rad": 0.6015816
+    },
+    {
+      "frame": 14,
+      "wheel_angle_rad": 0.6517134
+    },
+    {
+      "frame": 15,
+      "wheel_angle_rad": 0.7018452
+    },
+    {
+      "frame": 16,
+      "wheel_angle_rad": 0.751977
+    },
+    {
+      "frame": 17,
+      "wheel_angle_rad": 0.8021088
+    },
+    {
+      "frame": 18,
+      "wheel_angle_rad": 0.8522406
+    },
+    {
+      "frame": 19,
+      "wheel_angle_rad": 0.9023724
+    },
+    {
+      "frame": 20,
+      "wheel_angle_rad": 0.9525042
+    },
+    {
+      "frame": 21,
+      "wheel_angle_rad": 1.002636
+    },
+    {
+      "frame": 22,
+      "wheel_angle_rad": 1.0527678
+    },
+    {
+      "frame": 23,
+      "wheel_angle_rad": 1.1028995
+    },
+    {
+      "frame": 24,
+      "wheel_angle_rad": 1.1530313
+    },
+    {
+      "frame": 25,
+      "wheel_angle_rad": 1.2031631
+    },
+    {
+      "frame": 26,
+      "wheel_angle_rad": 1.2532949
+    },
+    {
+      "frame": 27,
+      "wheel_angle_rad": 1.3034267
+    },
+    {
+      "frame": 28,
+      "wheel_angle_rad": 1.3535585
+    },
+    {
+      "frame": 29,
+      "wheel_angle_rad": 1.4036903
+    },
+    {
+      "frame": 30,
+      "wheel_angle_rad": 1.4538221
+    },
+    {
+      "frame": 31,
+      "wheel_angle_rad": 1.5039539
+    },
+    {
+      "frame": 32,
+      "wheel_angle_rad": 1.5540857
+    },
+    {
+      "frame": 33,
+      "wheel_angle_rad": 1.6042175
+    },
+    {
+      "frame": 34,
+      "wheel_angle_rad": 1.6543493
+    },
+    {
+      "frame": 35,
+      "wheel_angle_rad": 1.7044811
+    },
+    {
+      "frame": 36,
+      "wheel_angle_rad": 1.7546129
+    },
+    {
+      "frame": 37,
+      "wheel_angle_rad": 1.8047447
+    },
+    {
+      "frame": 38,
+      "wheel_angle_rad": 1.8548765
+    },
+    {
+      "frame": 39,
+      "wheel_angle_rad": 1.9050083
+    },
+    {
+      "frame": 40,
+      "wheel_angle_rad": 1.9551401
+    },
+    {
+      "frame": 41,
+      "wheel_angle_rad": 2.0052719
+    },
+    {
+      "frame": 42,
+      "wheel_angle_rad": 2.0554037
+    },
+    {
+      "frame": 43,
+      "wheel_angle_rad": 2.1055355
+    },
+    {
+      "frame": 44,
+      "wheel_angle_rad": 2.1556673
+    },
+    {
+      "frame": 45,
+      "wheel_angle_rad": 2.2057991
+    },
+    {
+      "frame": 46,
+      "wheel_angle_rad": 2.2559309
+    },
+    {
+      "frame": 47,
+      "wheel_angle_rad": 2.3060627
+    },
+    {
+      "frame": 48,
+      "wheel_angle_rad": 2.3561945
+    }
+  ]
+}
