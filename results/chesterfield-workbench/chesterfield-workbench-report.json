@@ -1,0 +1,411 @@
+{
+  "experiment": "chesterfield-workbench",
+  "title": "Chesterfield Wingback Chair — Workbench HD",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    1280,
+    720
+  ],
+  "frame_count": 96,
+  "fps": 24,
+  "preview_frame": 60,
+  "camera_orbit_degrees": 360,
+  "mesh_object_count": 214,
+  "component_counts": {
+    "tufted_panels": 4,
+    "buttons": 100,
+    "diamond_seams": 142,
+    "wings": 2,
+    "arm_scrolls": 2,
+    "bun_feet": 4,
+    "nailheads": 81,
+    "mesh_objects": 214
+  },
+  "frame_stats": [
+    {
+      "frame": 1,
+      "camera_angle_deg": 0.0
+    },
+    {
+      "frame": 2,
+      "camera_angle_deg": 3.789
+    },
+    {
+      "frame": 3,
+      "camera_angle_deg": 7.579
+    },
+    {
+      "frame": 4,
+      "camera_angle_deg": 11.368
+    },
+    {
+      "frame": 5,
+      "camera_angle_deg": 15.158
+    },
+    {
+      "frame": 6,
+      "camera_angle_deg": 18.947
+    },
+    {
+      "frame": 7,
+      "camera_angle_deg": 22.737
+    },
+    {
+      "frame": 8,
+      "camera_angle_deg": 26.526
+    },
+    {
+      "frame": 9,
+      "camera_angle_deg": 30.316
+    },
+    {
+      "frame": 10,
+      "camera_angle_deg": 34.105
+    },
+    {
+      "frame": 11,
+      "camera_angle_deg": 37.895
+    },
+    {
+      "frame": 12,
+      "camera_angle_deg": 41.684
+    },
+    {
+      "frame": 13,
+      "camera_angle_deg": 45.474
+    },
+    {
+      "frame": 14,
+      "camera_angle_deg": 49.263
+    },
+    {
+      "frame": 15,
+      "camera_angle_deg": 53.053
+    },
+    {
+      "frame": 16,
+      "camera_angle_deg": 56.842
+    },
+    {
+      "frame": 17,
+      "camera_angle_deg": 60.632
+    },
+    {
+      "frame": 18,
+      "camera_angle_deg": 64.421
+    },
+    {
+      "frame": 19,
+      "camera_angle_deg": 68.211
+    },
+    {
+      "frame": 20,
+      "camera_angle_deg": 72.0
+    },
+    {
+      "frame": 21,
+      "camera_angle_deg": 75.789
+    },
+    {
+      "frame": 22,
+      "camera_angle_deg": 79.579
+    },
+    {
+      "frame": 23,
+      "camera_angle_deg": 83.368
+    },
+    {
+      "frame": 24,
+      "camera_angle_deg": 87.158
+    },
+    {
+      "frame": 25,
+      "camera_angle_deg": 90.947
+    },
+    {
+      "frame": 26,
+      "camera_angle_deg": 94.737
+    },
+    {
+      "frame": 27,
+      "camera_angle_deg": 98.526
+    },
+    {
+      "frame": 28,
+      "camera_angle_deg": 102.316
+    },
+    {
+      "frame": 29,
+      "camera_angle_deg": 106.105
+    },
+    {
+      "frame": 30,
+      "camera_angle_deg": 109.895
+    },
+    {
+      "frame": 31,
+      "camera_angle_deg": 113.684
+    },
+    {
+      "frame": 32,
+      "camera_angle_deg": 117.474
+    },
+    {
+      "frame": 33,
+      "camera_angle_deg": 121.263
+    },
+    {
+      "frame": 34,
+      "camera_angle_deg": 125.053
+    },
+    {
+      "frame": 35,
+      "camera_angle_deg": 128.842
+    },
+    {
+      "frame": 36,
+      "camera_angle_deg": 132.632
+    },
+    {
+      "frame": 37,
+      "camera_angle_deg": 136.421
+    },
+    {
+      "frame": 38,
+      "camera_angle_deg": 140.211
+    },
+    {
+      "frame": 39,
+      "camera_angle_deg": 144.0
+    },
+    {
+      "frame": 40,
+      "camera_angle_deg": 147.789
+    },
+    {
+      "frame": 41,
+      "camera_angle_deg": 151.579
+    },
+    {
+      "frame": 42,
+      "camera_angle_deg": 155.368
+    },
+    {
+      "frame": 43,
+      "camera_angle_deg": 159.158
+    },
+    {
+      "frame": 44,
+      "camera_angle_deg": 162.947
+    },
+    {
+      "frame": 45,
+      "camera_angle_deg": 166.737
+    },
+    {
+      "frame": 46,
+      "camera_angle_deg": 170.526
+    },
+    {
+      "frame": 47,
+      "camera_angle_deg": 174.316
+    },
+    {
+      "frame": 48,
+      "camera_angle_deg": 178.105
+    },
+    {
+      "frame": 49,
+      "camera_angle_deg": 181.895
+    },
+    {
+      "frame": 50,
+      "camera_angle_deg": 185.684
+    },
+    {
+      "frame": 51,
+      "camera_angle_deg": 189.474
+    },
+    {
+      "frame": 52,
+      "camera_angle_deg": 193.263
+    },
+    {
+      "frame": 53,
+      "camera_angle_deg": 197.053
+    },
+    {
+      "frame": 54,
+      "camera_angle_deg": 200.842
+    },
+    {
+      "frame": 55,
+      "camera_angle_deg": 204.632
+    },
+    {
+      "frame": 56,
+      "camera_angle_deg": 208.421
+    },
+    {
+      "frame": 57,
+      "camera_angle_deg": 212.211
+    },
+    {
+      "frame": 58,
+      "camera_angle_deg": 216.0
+    },
+    {
+      "frame": 59,
+      "camera_angle_deg": 219.789
+    },
+    {
+      "frame": 60,
+      "camera_angle_deg": 223.579
+    },
+    {
+      "frame": 61,
+      "camera_angle_deg": 227.368
+    },
+    {
+      "frame": 62,
+      "camera_angle_deg": 231.158
+    },
+    {
+      "frame": 63,
+      "camera_angle_deg": 234.947
+    },
+    {
+      "frame": 64,
+      "camera_angle_deg": 238.737
+    },
+    {
+      "frame": 65,
+      "camera_angle_deg": 242.526
+    },
+    {
+      "frame": 66,
+      "camera_angle_deg": 246.316
+    },
+    {
+      "frame": 67,
+      "camera_angle_deg": 250.105
+    },
+    {
+      "frame": 68,
+      "camera_angle_deg": 253.895
+    },
+    {
+      "frame": 69,
+      "camera_angle_deg": 257.684
+    },
+    {
+      "frame": 70,
+      "camera_angle_deg": 261.474
+    },
+    {
+      "frame": 71,
+      "camera_angle_deg": 265.263
+    },
+    {
+      "frame": 72,
+      "camera_angle_deg": 269.053
+    },
+    {
+      "frame": 73,
+      "camera_angle_deg": 272.842
+    },
+    {
+      "frame": 74,
+      "camera_angle_deg": 276.632
+    },
+    {
+      "frame": 75,
+      "camera_angle_deg": 280.421
+    },
+    {
+      "frame": 76,
+      "camera_angle_deg": 284.211
+    },
+    {
+      "frame": 77,
+      "camera_angle_deg": 288.0
+    },
+    {
+      "frame": 78,
+      "camera_angle_deg": 291.789
+    },
+    {
+      "frame": 79,
+      "camera_angle_deg": 295.579
+    },
+    {
+      "frame": 80,
+      "camera_angle_deg": 299.368
+    },
+    {
+      "frame": 81,
+      "camera_angle_deg": 303.158
+    },
+    {
+      "frame": 82,
+      "camera_angle_deg": 306.947
+    },
+    {
+      "frame": 83,
+      "camera_angle_deg": 310.737
+    },
+    {
+      "frame": 84,
+      "camera_angle_deg": 314.526
+    },
+    {
+      "frame": 85,
+      "camera_angle_deg": 318.316
+    },
+    {
+      "frame": 86,
+      "camera_angle_deg": 322.105
+    },
+    {
+      "frame": 87,
+      "camera_angle_deg": 325.895
+    },
+    {
+      "frame": 88,
+      "camera_angle_deg": 329.684
+    },
+    {
+      "frame": 89,
+      "camera_angle_deg": 333.474
+    },
+    {
+      "frame": 90,
+      "camera_angle_deg": 337.263
+    },
+    {
+      "frame": 91,
+      "camera_angle_deg": 341.053
+    },
+    {
+      "frame": 92,
+      "camera_angle_deg": 344.842
+    },
+    {
+      "frame": 93,
+      "camera_angle_deg": 348.632
+    },
+    {
+      "frame": 94,
+      "camera_angle_deg": 352.421
+    },
+    {
+      "frame": 95,
+      "camera_angle_deg": 356.211
+    },
+    {
+      "frame": 96,
+      "camera_angle_deg": 360.0
+    }
+  ]
+}

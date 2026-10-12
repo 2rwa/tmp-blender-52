@@ -1,0 +1,28 @@
+{
+  "experiment": "chesterfield-workbench",
+  "status": "validated",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    1280,
+    720
+  ],
+  "frame_count": 96,
+  "component_counts": {
+    "tufted_panels": 4,
+    "buttons": 100,
+    "diamond_seams": 142,
+    "wings": 2,
+    "arm_scrolls": 2,
+    "bun_feet": 4,
+    "nailheads": 81,
+    "mesh_objects": 214
+  },
+  "mesh_object_count": 214,
+  "preview_contrast": 161,
+  "preview_stddev": 52.615,
+  "frame_1_to_24_difference": 68.184,
+  "blend_size_bytes": 700528,
+  "video_size_bytes": 236622,
+  "preview_sha256": "5f898371c5a57808db7925dabf1c7ec03bf01769cfc87f67fd3f6c6ddc58628f"
+}
