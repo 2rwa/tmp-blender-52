@@ -1,0 +1,25 @@
+name: Timber waterwheel render
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/timber-waterwheel/**'
+      - '.github/workflows/timber-waterwheel.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  waterwheel:
+    uses: ./.github/workflows/blender52-render.yml
+    with:
+      experiment: timber-waterwheel
+      variant: "0"
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
