@@ -37,3 +37,12 @@ For an AI or another developer starting from a clean clone/fork, read [`PROMPT.m
 https://2rwa.github.io/tmp-blender-52/
 
 The gallery uses preview-first cards; clicking a preview loads and plays the MP4. New experiments appear automatically after their validated result is committed.
+
+
+## Download Blender models from Pages
+
+The Pages gallery shows a **Download .blend** link for each experiment that
+has a validated `results/<experiment>/<experiment>.blend` file. The link uses
+GitHub's raw file URL so large models are not duplicated in Pages assets.
+`tools/add_blend_links.py` runs after `tools/build_pages.py` in the Pages
+workflow, and updates both `docs/index.html` and `docs/data.json`.
