@@ -84,11 +84,11 @@ def generate(item,shard):
  bpy.context.view_layer.objects.active=meshes[0]
  bpy.ops.export_scene.gltf(filepath=str(folder/(ident+".glb")),export_format="GLB",use_selection=True)
  sc,cam=setup_render()
- aim(cam,0)
+ aim(cam,-math.pi/2)
  bpy.ops.wm.save_as_mainfile(filepath=str(folder/(ident+".blend")))
  for frame in range(1,FRAMES+1):
   sc.frame_set(frame)
-  aim(cam,math.tau*(frame-1)/FRAMES)
+  aim(cam,-math.pi/2+math.tau*(frame-1)/FRAMES)
   sc.render.filepath=str(temp/f"frame_{frame:04d}.png")
   bpy.ops.render.render(write_still=True)
  shutil.copy2(temp/"frame_0001.png",folder/"preview.png")
