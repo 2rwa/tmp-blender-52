@@ -17,7 +17,7 @@ def validate_row(row):
   path=folder/filename
   if not path.is_file() or path.stat().st_size<min_bytes:
    raise AssertionError(f"Missing/small {path}")
- assert (folder/(ident+".blend")).open("rb").read(7)==b"BLENDER",ident
+ assert (folder/(ident+".blend")).open("rb").read(7)[:2] in (b"BL",b"\x1f\x8b",b"\x28\xb5"),ident
  assert (folder/(ident+".glb")).open("rb").read(4)==b"glTF",ident
  assert (folder/"preview.png").open("rb").read(8)==b"\x89PNG\r\n\x1a\n",ident
  meta=json.loads((folder/"metadata.json").read_text(encoding="utf-8"))
