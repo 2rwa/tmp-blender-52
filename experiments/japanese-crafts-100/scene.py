@@ -60,7 +60,7 @@ def setup_render():
  bpy.ops.object.camera_add(location=(3.2,-4.3,2.8))
  cam=bpy.context.object
  cam.name="Turntable_Camera"
- cam.data.type="ORTHO";cam.data.ortho_scale=3.6;sc.camera=cam
+ cam.data.type="ORTHO";cam.data.ortho_scale=2.45;sc.camera=cam
  return sc,cam
 
 def aim(cam,angle):
@@ -91,7 +91,10 @@ def generate(item,shard):
   aim(cam,-math.pi/2+math.tau*(frame-1)/FRAMES)
   sc.render.filepath=str(temp/f"frame_{frame:04d}.png")
   bpy.ops.render.render(write_still=True)
- shutil.copy2(temp/"frame_0001.png",folder/"preview.png")
+ picker="from PIL import Image,ImageStat;import sys;print(max(sys.argv[1:],key=lambda p:ImageStat.Stat(Image.open(p).convert('L')).stddev[0]))"
+ candidates=[str(temp/f"frame_{frame:04d}.png") for frame in (1,37,73,109)]
+ best=subprocess.check_output(["python3","-c",picker,*candidates],text=True).strip()
+ shutil.copy2(best,folder/"preview.png")
  subprocess.run(["ffmpeg","-hide_banner","-loglevel","error","-y",
   "-framerate",str(FPS),"-start_number","1","-i",str(temp/"frame_%04d.png"),
   "-c:v","libx264","-preset","veryfast","-crf","29","-pix_fmt","yuv420p",
@@ -100,7 +103,7 @@ def generate(item,shard):
  metadata={"id":ident,"title":japanese,"category":group,"variant":variant,
   "blender_version":bpy.app.version_string,"engine":sc.render.engine,
   "resolution":list(SIZE),"fps":FPS,"frames":FRAMES,
-  "mesh_objects":len(meshes),"polygons":sum(len(o.data.polygons) for o in meshes),
+  "preview_frame":int(Path(best).stem.split("_")[-1]),"mesh_objects":len(meshes),"polygons":sum(len(o.data.polygons) for o in meshes),
   "initial_dimensions":span,"fit_scale":scale,"shard":shard}
  (folder/"metadata.json").write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print("CRAFT_COMPLETED",ident,metadata["polygons"],flush=True)
