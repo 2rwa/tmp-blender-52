@@ -1,0 +1,28 @@
+{
+  "id": "craft_mokugyo",
+  "title": "木魚",
+  "category": "craft",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 680,
+  "materials": 4,
+  "dimensions_original": [
+    1.5929967761039734,
+    1.0539999604225159,
+    1.14000004529953
+  ],
+  "normalization_scale": 1.2241079387298932,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.58,
+  "batch": 9
+}

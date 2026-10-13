@@ -1,0 +1,28 @@
+{
+  "id": "folk_hariko_tora",
+  "title": "張子の虎",
+  "category": "folk",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 17,
+  "polygons": 833,
+  "materials": 2,
+  "dimensions_original": [
+    2.104411482810974,
+    0.8109999597072601,
+    1.4500000178813934
+  ],
+  "normalization_scale": 0.9266248620708348,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.36,
+  "batch": 6
+}

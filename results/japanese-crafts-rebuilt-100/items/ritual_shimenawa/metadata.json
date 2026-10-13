@@ -1,0 +1,28 @@
+{
+  "id": "ritual_shimenawa",
+  "title": "注連縄",
+  "category": "ritual",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 363,
+  "polygons": 3624,
+  "materials": 3,
+  "dimensions_original": [
+    1.6413302421569824,
+    0.26142339408397675,
+    1.7886282112449408
+  ],
+  "normalization_scale": 1.090220979262504,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 26.18,
+  "batch": 7
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ritual_shide",
+  "title": "紙垂",
+  "category": "ritual",
+  "variant": 7,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 11,
+  "polygons": 140,
+  "materials": 3,
+  "dimensions_original": [
+    2.240000009536743,
+    0.10242018103599548,
+    0.9899999499320984
+  ],
+  "normalization_scale": 0.8705357105794306,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 25.93,
+  "batch": 7
+}

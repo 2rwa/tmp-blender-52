@@ -1,0 +1,28 @@
+{
+  "id": "home_zabuton",
+  "title": "座布団",
+  "category": "home",
+  "variant": 8,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 572,
+  "materials": 4,
+  "dimensions_original": [
+    1.4072749614715576,
+    1.3599998950958252,
+    0.4150000065565109
+  ],
+  "normalization_scale": 1.3856567148476273,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 14.58,
+  "batch": 3
+}

@@ -1,0 +1,28 @@
+{
+  "id": "bamboo_takekago",
+  "title": "竹籠",
+  "category": "bamboo",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 55,
+  "polygons": 3058,
+  "materials": 4,
+  "dimensions_original": [
+    1.1985929012298584,
+    0.9919999837875366,
+    1.5422241240739822
+  ],
+  "normalization_scale": 1.2644076626481666,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 25.62,
+  "batch": 2
+}

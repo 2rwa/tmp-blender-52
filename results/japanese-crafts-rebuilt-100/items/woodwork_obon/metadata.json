@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_obon",
+  "title": "木盆",
+  "category": "woodwork",
+  "variant": 8,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 33,
+  "polygons": 1322,
+  "materials": 4,
+  "dimensions_original": [
+    1.7200000286102295,
+    1.7200000286102295,
+    0.4278460890054703
+  ],
+  "normalization_scale": 1.1337209113744096,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.77,
+  "batch": 8
+}

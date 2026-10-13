@@ -1,0 +1,28 @@
+{
+  "id": "writing_hanko",
+  "title": "判子",
+  "category": "writing",
+  "variant": 7,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 1406,
+  "materials": 6,
+  "dimensions_original": [
+    0.47999998927116394,
+    0.4949999898672104,
+    1.15526282787323
+  ],
+  "normalization_scale": 1.6879275892480967,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 16.13,
+  "batch": 5
+}

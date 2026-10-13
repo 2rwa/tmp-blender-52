@@ -1,0 +1,28 @@
+{
+  "id": "writing_kakejiku",
+  "title": "掛軸",
+  "category": "writing",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 579,
+  "materials": 7,
+  "dimensions_original": [
+    1.574126958847046,
+    0.15999998897314072,
+    1.95377217233181
+  ],
+  "normalization_scale": 0.9980692875120092,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 23.49,
+  "batch": 5
+}

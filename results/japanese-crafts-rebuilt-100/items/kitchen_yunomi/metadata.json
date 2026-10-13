@@ -1,0 +1,28 @@
+{
+  "id": "kitchen_yunomi",
+  "title": "湯呑",
+  "category": "kitchen",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 6,
+  "polygons": 1214,
+  "materials": 4,
+  "dimensions_original": [
+    0.8199999928474426,
+    0.8199999928474426,
+    0.9271243624389172
+  ],
+  "normalization_scale": 2.103277703619264,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 29.91,
+  "batch": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_kotatsu",
+  "title": "炬燵",
+  "category": "woodwork",
+  "variant": 3,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 20,
+  "polygons": 528,
+  "materials": 4,
+  "dimensions_original": [
+    1.6399999856948853,
+    1.350000023841858,
+    1.1290000677108765
+  ],
+  "normalization_scale": 1.1890244006153234,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 55,
+  "preview_stddev": 23.91,
+  "batch": 8
+}

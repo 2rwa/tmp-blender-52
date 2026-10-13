@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_tsuitate",
+  "title": "衝立",
+  "category": "woodwork",
+  "variant": 5,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 24,
+  "polygons": 514,
+  "materials": 3,
+  "dimensions_original": [
+    1.7950000762939453,
+    0.8700000047683716,
+    1.9480000436306
+  ],
+  "normalization_scale": 1.0010266716245408,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 26.83,
+  "batch": 8
+}

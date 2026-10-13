@@ -1,0 +1,28 @@
+{
+  "id": "bamboo_zaru",
+  "title": "笊",
+  "category": "bamboo",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 50,
+  "polygons": 1922,
+  "materials": 4,
+  "dimensions_original": [
+    1.6019999980926514,
+    1.6019999980926514,
+    0.5322390459477901
+  ],
+  "normalization_scale": 1.2172284658687136,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.88,
+  "batch": 2
+}

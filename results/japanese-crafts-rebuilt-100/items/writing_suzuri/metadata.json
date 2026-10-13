@@ -1,0 +1,28 @@
+{
+  "id": "writing_suzuri",
+  "title": "硯",
+  "category": "writing",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 11,
+  "polygons": 692,
+  "materials": 6,
+  "dimensions_original": [
+    0.9100000262260437,
+    1.4100000262260437,
+    0.44310569018125534
+  ],
+  "normalization_scale": 1.3829786976808087,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 13.25,
+  "batch": 5
+}

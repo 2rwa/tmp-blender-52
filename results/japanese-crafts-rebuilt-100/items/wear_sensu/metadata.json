@@ -1,0 +1,28 @@
+{
+  "id": "wear_sensu",
+  "title": "扇子",
+  "category": "wear",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 65,
+  "polygons": 1168,
+  "materials": 5,
+  "dimensions_original": [
+    2.0398614406585693,
+    0.10940726287662983,
+    1.1004945859313011
+  ],
+  "normalization_scale": 0.9559472820714933,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 17.7,
+  "batch": 4
+}

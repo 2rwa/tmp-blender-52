@@ -1,0 +1,28 @@
+{
+  "id": "ritual_omikuji",
+  "title": "おみくじ",
+  "category": "ritual",
+  "variant": 4,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 19,
+  "polygons": 1004,
+  "materials": 3,
+  "dimensions_original": [
+    0.4000000059604645,
+    0.06199999712407589,
+    1.4099999815225601
+  ],
+  "normalization_scale": 1.3829787415275934,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 23.47,
+  "batch": 7
+}

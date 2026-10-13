@@ -1,0 +1,28 @@
+{
+  "id": "ritual_kagami_mochi",
+  "title": "鏡餅飾り",
+  "category": "ritual",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 7,
+  "polygons": 1202,
+  "materials": 6,
+  "dimensions_original": [
+    1.4600000381469727,
+    1.119999885559082,
+    1.3320000171661377
+  ],
+  "normalization_scale": 1.3356164034590943,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 37.99,
+  "batch": 7
+}

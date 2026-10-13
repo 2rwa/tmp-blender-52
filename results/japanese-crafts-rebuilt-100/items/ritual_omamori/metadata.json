@@ -1,0 +1,28 @@
+{
+  "id": "ritual_omamori",
+  "title": "お守り",
+  "category": "ritual",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 13,
+  "polygons": 329,
+  "materials": 3,
+  "dimensions_original": [
+    0.8199999928474426,
+    0.1469999961555004,
+    1.3844629228115082
+  ],
+  "normalization_scale": 1.4084884238286592,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.09,
+  "batch": 7
+}

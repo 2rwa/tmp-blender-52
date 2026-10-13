@@ -1,0 +1,28 @@
+{
+  "id": "home_furin",
+  "title": "風鈴",
+  "category": "home",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 11,
+  "polygons": 1070,
+  "materials": 6,
+  "dimensions_original": [
+    0.7799999713897705,
+    0.7949999868869781,
+    1.524999976158142
+  ],
+  "normalization_scale": 1.2786885445811873,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.81,
+  "batch": 3
+}

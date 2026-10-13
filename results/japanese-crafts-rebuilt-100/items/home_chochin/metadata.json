@@ -1,0 +1,28 @@
+{
+  "id": "home_chochin",
+  "title": "提灯",
+  "category": "home",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 36,
+  "polygons": 4700,
+  "materials": 5,
+  "dimensions_original": [
+    1.1233997344970703,
+    1.1316998600959778,
+    1.8380000069737434
+  ],
+  "normalization_scale": 1.0609357957569674,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 14.49,
+  "batch": 3
+}

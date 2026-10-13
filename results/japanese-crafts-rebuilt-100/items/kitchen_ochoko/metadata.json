@@ -1,0 +1,28 @@
+{
+  "id": "kitchen_ochoko",
+  "title": "お猪口",
+  "category": "kitchen",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 758,
+  "materials": 2,
+  "dimensions_original": [
+    0.8759999871253967,
+    0.8759999871253967,
+    0.4455884750932455
+  ],
+  "normalization_scale": 2.2260274299762783,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 27.11,
+  "batch": 1
+}

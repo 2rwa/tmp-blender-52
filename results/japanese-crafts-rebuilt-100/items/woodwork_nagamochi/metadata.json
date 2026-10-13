@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_nagamochi",
+  "title": "長持",
+  "category": "woodwork",
+  "variant": 4,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 9,
+  "polygons": 642,
+  "materials": 3,
+  "dimensions_original": [
+    2.0399999618530273,
+    0.9399999976158142,
+    1.199999988079071
+  ],
+  "normalization_scale": 0.9558823708156954,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 55,
+  "preview_stddev": 20.25,
+  "batch": 8
+}

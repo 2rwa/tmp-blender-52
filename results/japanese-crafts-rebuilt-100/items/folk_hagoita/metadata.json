@@ -1,0 +1,28 @@
+{
+  "id": "folk_hagoita",
+  "title": "羽子板",
+  "category": "folk",
+  "variant": 5,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 17,
+  "polygons": 808,
+  "materials": 6,
+  "dimensions_original": [
+    0.8799999952316284,
+    0.21000001579523087,
+    1.6200000643730164
+  ],
+  "normalization_scale": 1.2037036558728178,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.59,
+  "batch": 6
+}

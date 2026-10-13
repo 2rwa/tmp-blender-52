@@ -1,0 +1,28 @@
+{
+  "id": "bamboo_takebue",
+  "title": "篠笛",
+  "category": "bamboo",
+  "variant": 7,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 962,
+  "materials": 3,
+  "dimensions_original": [
+    2.3399999141693115,
+    0.2070000022649765,
+    0.20600001513957977
+  ],
+  "normalization_scale": 0.8333333638998189,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 15.07,
+  "batch": 2
+}

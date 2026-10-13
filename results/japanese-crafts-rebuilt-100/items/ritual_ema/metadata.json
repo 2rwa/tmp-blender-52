@@ -1,0 +1,28 @@
+{
+  "id": "ritual_ema",
+  "title": "絵馬",
+  "category": "ritual",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 9,
+  "polygons": 158,
+  "materials": 3,
+  "dimensions_original": [
+    1.1200000047683716,
+    0.1430000104010105,
+    1.5264620184898376
+  ],
+  "normalization_scale": 1.277463819197531,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 20.98,
+  "batch": 7
+}

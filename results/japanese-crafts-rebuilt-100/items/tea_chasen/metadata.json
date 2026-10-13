@@ -1,0 +1,28 @@
+{
+  "id": "tea_chasen",
+  "title": "茶筅",
+  "category": "tea",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 226,
+  "polygons": 2006,
+  "materials": 2,
+  "dimensions_original": [
+    0.8178609609603882,
+    0.8178609907627106,
+    1.28683340549469
+  ],
+  "normalization_scale": 1.5153476679060665,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 21.6,
+  "batch": 0
+}

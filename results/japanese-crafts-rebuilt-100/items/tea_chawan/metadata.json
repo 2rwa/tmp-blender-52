@@ -1,0 +1,28 @@
+{
+  "id": "tea_chawan",
+  "title": "茶碗",
+  "category": "tea",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 23,
+  "polygons": 1230,
+  "materials": 3,
+  "dimensions_original": [
+    1.340000033378601,
+    1.340000033378601,
+    0.5994448736310005
+  ],
+  "normalization_scale": 1.4552238443482566,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 30.85,
+  "batch": 0
+}

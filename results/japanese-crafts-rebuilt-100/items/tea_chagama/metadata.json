@@ -1,0 +1,28 @@
+{
+  "id": "tea_chagama",
+  "title": "茶釜",
+  "category": "tea",
+  "variant": 6,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 32,
+  "polygons": 1124,
+  "materials": 4,
+  "dimensions_original": [
+    1.694000005722046,
+    1.440000057220459,
+    1.1794439372606575
+  ],
+  "normalization_scale": 1.1511216017787658,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.63,
+  "batch": 0
+}

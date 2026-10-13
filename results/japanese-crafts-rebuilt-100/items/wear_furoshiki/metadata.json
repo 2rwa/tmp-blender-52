@@ -1,0 +1,28 @@
+{
+  "id": "wear_furoshiki",
+  "title": "風呂敷",
+  "category": "wear",
+  "variant": 8,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 10,
+  "polygons": 302,
+  "materials": 3,
+  "dimensions_original": [
+    1.2000000476837158,
+    1.059999942779541,
+    1.465374618768692
+  ],
+  "normalization_scale": 1.3307177393576828,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.72,
+  "batch": 4
+}

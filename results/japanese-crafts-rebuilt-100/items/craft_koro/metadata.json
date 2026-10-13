@@ -1,0 +1,28 @@
+{
+  "id": "craft_koro",
+  "title": "香炉",
+  "category": "craft",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 25,
+  "polygons": 1252,
+  "materials": 3,
+  "dimensions_original": [
+    1.3259999752044678,
+    1.3259999752044678,
+    1.1811416372656822
+  ],
+  "normalization_scale": 1.4705882627933775,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 25.61,
+  "batch": 9
+}

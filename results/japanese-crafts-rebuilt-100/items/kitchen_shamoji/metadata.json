@@ -1,0 +1,28 @@
+{
+  "id": "kitchen_shamoji",
+  "title": "しゃもじ",
+  "category": "kitchen",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 188,
+  "materials": 2,
+  "dimensions_original": [
+    0.6086770296096802,
+    0.14600001275539398,
+    1.4500000700354576
+  ],
+  "normalization_scale": 1.3448275212513028,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 17.3,
+  "batch": 1
+}

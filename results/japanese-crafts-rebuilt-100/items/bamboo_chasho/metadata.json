@@ -1,0 +1,28 @@
+{
+  "id": "bamboo_chasho",
+  "title": "茶筒",
+  "category": "bamboo",
+  "variant": 5,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 13,
+  "polygons": 1314,
+  "materials": 6,
+  "dimensions_original": [
+    0.9800000190734863,
+    0.9800000190734863,
+    1.312583290040493
+  ],
+  "normalization_scale": 1.4856200096375163,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 25.54,
+  "batch": 2
+}

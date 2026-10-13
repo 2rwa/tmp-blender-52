@@ -1,0 +1,28 @@
+{
+  "id": "tea_mizusashi",
+  "title": "水指",
+  "category": "tea",
+  "variant": 7,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 13,
+  "polygons": 1676,
+  "materials": 6,
+  "dimensions_original": [
+    1.2200000286102295,
+    1.2649999856948853,
+    1.1243204791098833
+  ],
+  "normalization_scale": 1.5415019937164924,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 32.35,
+  "batch": 0
+}

@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_tansu",
+  "title": "和箪笥",
+  "category": "woodwork",
+  "variant": 0,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 25,
+  "polygons": 1770,
+  "materials": 4,
+  "dimensions_original": [
+    1.4900000095367432,
+    0.835999995470047,
+    1.6200000643730164
+  ],
+  "normalization_scale": 1.2037036558728178,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.14,
+  "batch": 8
+}

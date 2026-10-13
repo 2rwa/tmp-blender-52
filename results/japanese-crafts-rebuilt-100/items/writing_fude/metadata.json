@@ -1,0 +1,28 @@
+{
+  "id": "writing_fude",
+  "title": "筆",
+  "category": "writing",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 25,
+  "polygons": 613,
+  "materials": 4,
+  "dimensions_original": [
+    0.20000000298023224,
+    0.20000000298023224,
+    1.745000034570694
+  ],
+  "normalization_scale": 1.1174784878899675,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 7.81,
+  "batch": 5
+}

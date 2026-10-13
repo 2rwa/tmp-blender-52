@@ -1,0 +1,28 @@
+{
+  "id": "kitchen_surikogi",
+  "title": "すりこぎ",
+  "category": "kitchen",
+  "variant": 4,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 12,
+  "polygons": 176,
+  "materials": 3,
+  "dimensions_original": [
+    1.0488974452018738,
+    0.2799999713897705,
+    1.561449557542801
+  ],
+  "normalization_scale": 1.2488395738307727,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 127,
+  "preview_stddev": 14.6,
+  "batch": 1
+}

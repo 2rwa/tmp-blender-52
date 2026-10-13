@@ -1,0 +1,28 @@
+{
+  "id": "tea_futaoki",
+  "title": "蓋置",
+  "category": "tea",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 27,
+  "polygons": 1206,
+  "materials": 3,
+  "dimensions_original": [
+    0.8820000290870667,
+    0.8820000290870667,
+    0.4880000166594982
+  ],
+  "normalization_scale": 2.210884280829775,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 30.62,
+  "batch": 0
+}

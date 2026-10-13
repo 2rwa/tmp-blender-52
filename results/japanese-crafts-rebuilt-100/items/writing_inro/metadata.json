@@ -1,0 +1,28 @@
+{
+  "id": "writing_inro",
+  "title": "印籠",
+  "category": "writing",
+  "variant": 8,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 21,
+  "polygons": 1122,
+  "materials": 5,
+  "dimensions_original": [
+    0.8225460648536682,
+    0.5304999798536301,
+    1.4499999582767487
+  ],
+  "normalization_scale": 1.3448276249038489,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.99,
+  "batch": 5
+}

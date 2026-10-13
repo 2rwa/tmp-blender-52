@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_zaisu",
+  "title": "座椅子",
+  "category": "woodwork",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 13,
+  "polygons": 366,
+  "materials": 4,
+  "dimensions_original": [
+    1.190000057220459,
+    1.1840354800224304,
+    1.552339032292366
+  ],
+  "normalization_scale": 1.2561688905808166,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 25.88,
+  "batch": 8
+}

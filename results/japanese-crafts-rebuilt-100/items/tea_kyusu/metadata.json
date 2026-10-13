@@ -1,0 +1,28 @@
+{
+  "id": "tea_kyusu",
+  "title": "急須",
+  "category": "tea",
+  "variant": 5,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 9,
+  "polygons": 956,
+  "materials": 3,
+  "dimensions_original": [
+    1.9721218943595886,
+    1.2200000286102295,
+    0.9599999710917473
+  ],
+  "normalization_scale": 0.9887826942021896,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.11,
+  "batch": 0
+}

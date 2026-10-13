@@ -1,0 +1,28 @@
+{
+  "id": "writing_suzuribako",
+  "title": "硯箱",
+  "category": "writing",
+  "variant": 6,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 18,
+  "polygons": 916,
+  "materials": 4,
+  "dimensions_original": [
+    1.2100000381469727,
+    0.9399999976158142,
+    0.8908845782279968
+  ],
+  "normalization_scale": 1.6115701971268395,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.98,
+  "batch": 5
+}

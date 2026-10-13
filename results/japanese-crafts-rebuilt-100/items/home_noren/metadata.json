@@ -1,0 +1,28 @@
+{
+  "id": "home_noren",
+  "title": "暖簾",
+  "category": "home",
+  "variant": 5,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 50,
+  "polygons": 1558,
+  "materials": 5,
+  "dimensions_original": [
+    2.0799999237060547,
+    0.11569973081350327,
+    1.4425000250339508
+  ],
+  "normalization_scale": 0.9375000343872963,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.19,
+  "batch": 3
+}

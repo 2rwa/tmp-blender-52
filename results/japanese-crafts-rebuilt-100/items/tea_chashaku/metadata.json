@@ -1,0 +1,28 @@
+{
+  "id": "tea_chashaku",
+  "title": "茶杓",
+  "category": "tea",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 12,
+  "polygons": 248,
+  "materials": 3,
+  "dimensions_original": [
+    1.690620481967926,
+    0.31999996304512024,
+    0.2097664289176464
+  ],
+  "normalization_scale": 1.1534226757563883,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 14.35,
+  "batch": 0
+}

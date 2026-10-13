@@ -1,0 +1,28 @@
+{
+  "id": "craft_orin",
+  "title": "おりん",
+  "category": "craft",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 5,
+  "polygons": 652,
+  "materials": 5,
+  "dimensions_original": [
+    1.5167617201805115,
+    1.1799999475479126,
+    0.939999982714653
+  ],
+  "normalization_scale": 1.2856337116471586,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.6,
+  "batch": 9
+}

@@ -1,0 +1,28 @@
+{
+  "id": "wear_kanzashi",
+  "title": "簪",
+  "category": "wear",
+  "variant": 6,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 20,
+  "polygons": 832,
+  "materials": 3,
+  "dimensions_original": [
+    1.6158199906349182,
+    0.21184653043746948,
+    1.7600046545267105
+  ],
+  "normalization_scale": 1.1079516153463707,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.66,
+  "batch": 4
+}

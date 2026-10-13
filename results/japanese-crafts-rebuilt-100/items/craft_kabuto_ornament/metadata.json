@@ -1,0 +1,28 @@
+{
+  "id": "craft_kabuto_ornament",
+  "title": "兜飾り",
+  "category": "craft",
+  "variant": 6,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 11,
+  "polygons": 1246,
+  "materials": 5,
+  "dimensions_original": [
+    1.649999976158142,
+    1.5759999752044678,
+    1.6100000143051147
+  ],
+  "normalization_scale": 1.181818198894995,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 20.57,
+  "batch": 9
+}

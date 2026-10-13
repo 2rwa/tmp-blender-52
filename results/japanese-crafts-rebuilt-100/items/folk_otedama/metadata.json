@@ -1,0 +1,28 @@
+{
+  "id": "folk_otedama",
+  "title": "お手玉",
+  "category": "folk",
+  "variant": 6,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 27,
+  "polygons": 1248,
+  "materials": 4,
+  "dimensions_original": [
+    1.4399999380111694,
+    0.6799999922513962,
+    0.8600000292062759
+  ],
+  "normalization_scale": 1.3541667249605636,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.06,
+  "batch": 6
+}

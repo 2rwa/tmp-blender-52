@@ -1,0 +1,28 @@
+{
+  "id": "kitchen_tokkuri",
+  "title": "徳利",
+  "category": "kitchen",
+  "variant": 1,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 10,
+  "polygons": 1382,
+  "materials": 4,
+  "dimensions_original": [
+    0.9700000286102295,
+    0.9700000286102295,
+    1.2807845696806908
+  ],
+  "normalization_scale": 1.5225042885128992,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 40.39,
+  "batch": 1
+}

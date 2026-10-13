@@ -1,0 +1,28 @@
+{
+  "id": "tea_tetsubin",
+  "title": "鉄瓶",
+  "category": "tea",
+  "variant": 4,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 42,
+  "polygons": 1078,
+  "materials": 4,
+  "dimensions_original": [
+    1.7656365633010864,
+    1.3200000524520874,
+    1.5461490377783775
+  ],
+  "normalization_scale": 1.1044175457910899,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 14.3,
+  "batch": 0
+}

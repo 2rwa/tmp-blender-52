@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_shodana",
+  "title": "書棚",
+  "category": "woodwork",
+  "variant": 6,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 69,
+  "polygons": 3726,
+  "materials": 6,
+  "dimensions_original": [
+    1.5800000429153442,
+    0.5600000023841858,
+    1.9500000476837158
+  ],
+  "normalization_scale": 0.999999975546813,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 25.86,
+  "batch": 8
+}

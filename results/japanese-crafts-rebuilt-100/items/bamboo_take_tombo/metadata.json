@@ -1,0 +1,28 @@
+{
+  "id": "bamboo_take_tombo",
+  "title": "竹とんぼ",
+  "category": "bamboo",
+  "variant": 8,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 4,
+  "polygons": 218,
+  "materials": 3,
+  "dimensions_original": [
+    1.9199999570846558,
+    0.23600000143051147,
+    1.25
+  ],
+  "normalization_scale": 1.0156250227009882,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 11.84,
+  "batch": 2
+}

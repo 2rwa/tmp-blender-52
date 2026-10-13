@@ -1,0 +1,28 @@
+{
+  "id": "wear_wagasa",
+  "title": "和傘",
+  "category": "wear",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 74,
+  "polygons": 956,
+  "materials": 6,
+  "dimensions_original": [
+    2.05151104927063,
+    2.055000066757202,
+    1.8900001049041748
+  ],
+  "normalization_scale": 0.9489050786636262,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.37,
+  "batch": 4
+}

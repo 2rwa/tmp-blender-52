@@ -1,0 +1,28 @@
+{
+  "id": "folk_akabeko",
+  "title": "赤べこ",
+  "category": "folk",
+  "variant": 8,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 1242,
+  "materials": 4,
+  "dimensions_original": [
+    1.7899999618530273,
+    0.7499999701976776,
+    1.3950000703334808
+  ],
+  "normalization_scale": 1.0893854980764015,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 19.05,
+  "batch": 6
+}

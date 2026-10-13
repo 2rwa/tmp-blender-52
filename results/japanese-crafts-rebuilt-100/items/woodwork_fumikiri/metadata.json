@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_fumikiri",
+  "title": "踏み台",
+  "category": "woodwork",
+  "variant": 7,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 11,
+  "polygons": 230,
+  "materials": 3,
+  "dimensions_original": [
+    1.0099999904632568,
+    0.6000000238418579,
+    0.7730000615119934
+  ],
+  "normalization_scale": 1.9306930875371526,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 22.76,
+  "batch": 8
+}

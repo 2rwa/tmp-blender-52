@@ -1,0 +1,28 @@
+{
+  "id": "home_bonbori",
+  "title": "雪洞",
+  "category": "home",
+  "variant": 2,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 9,
+  "polygons": 240,
+  "materials": 3,
+  "dimensions_original": [
+    1.1200000047683716,
+    0.9699484705924988,
+    1.5
+  ],
+  "normalization_scale": 1.3,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 34.04,
+  "batch": 3
+}

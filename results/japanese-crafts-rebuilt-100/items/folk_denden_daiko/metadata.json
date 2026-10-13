@@ -1,0 +1,28 @@
+{
+  "id": "folk_denden_daiko",
+  "title": "でんでん太鼓",
+  "category": "folk",
+  "variant": 7,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 18,
+  "polygons": 1328,
+  "materials": 6,
+  "dimensions_original": [
+    1.7482538223266602,
+    0.3561769276857376,
+    1.4780000448226929
+  ],
+  "normalization_scale": 1.1153986767235242,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 18.97,
+  "batch": 6
+}

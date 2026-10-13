@@ -1,0 +1,28 @@
+{
+  "id": "home_kaya",
+  "title": "蚊帳",
+  "category": "home",
+  "variant": 4,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 41,
+  "polygons": 398,
+  "materials": 3,
+  "dimensions_original": [
+    1.7200000286102295,
+    1.0700000524520874,
+    2.035758137702942
+  ],
+  "normalization_scale": 0.9578741029620996,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 32.48,
+  "batch": 3
+}

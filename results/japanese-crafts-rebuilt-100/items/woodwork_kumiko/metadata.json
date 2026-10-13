@@ -1,0 +1,28 @@
+{
+  "id": "woodwork_kumiko",
+  "title": "組子細工",
+  "category": "woodwork",
+  "variant": 9,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 126,
+  "polygons": 1146,
+  "materials": 4,
+  "dimensions_original": [
+    1.8300000429153442,
+    0.44999998807907104,
+    1.9849998950958252
+  ],
+  "normalization_scale": 0.9823678101030148,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 23.96,
+  "batch": 8
+}

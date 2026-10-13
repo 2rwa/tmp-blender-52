@@ -1,0 +1,28 @@
+{
+  "id": "kitchen_suribachi",
+  "title": "すり鉢",
+  "category": "kitchen",
+  "variant": 3,
+  "generator": "japanese-crafts-rebuilt-100",
+  "detail_level": "precise_lowpoly_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 66,
+  "polygons": 1042,
+  "materials": 3,
+  "dimensions_original": [
+    1.5419999361038208,
+    1.5419999361038208,
+    0.617239098995924
+  ],
+  "normalization_scale": 1.2645914920898602,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.92,
+  "batch": 1
+}
