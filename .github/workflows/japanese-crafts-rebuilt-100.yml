@@ -1,0 +1,183 @@
+name: Japanese Crafts Rebuilt 100
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/japanese-crafts-rebuilt-100/**'
+      - '.github/workflows/japanese-crafts-rebuilt-100.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  pages: write
+  id-token: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python sources and catalog
+        run: |
+          python3 -m compileall -q experiments/japanese-crafts-rebuilt-100
+          PYTHONPATH=experiments/japanese-crafts-rebuilt-100 python3 -c "from catalog import CATALOG; assert len(CATALOG)==100; print([x[0] for x in CATALOG])"
+
+  render:
+    needs: preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        batch: [0,1,2,3,4,5,6,7,8,9]
+    env:
+      BLENDER_VERSION: 5.2.2
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      SDL_AUDIODRIVER: dummy
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore official Blender runtime cache
+        id: cached
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-Linux-x64-5.2.2-v1
+      - name: Download Blender when not cached
+        if: steps.cached.outputs.cache-hit != 'true'
+        run: |
+          set -euxo pipefail
+          mkdir -p .cache/blender52-runtime/blender .cache/blender52-runtime/egl .cache/blender52-runtime/apt
+          archive="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          base="https://download.blender.org/release/Blender5.2"
+          curl -fL --retry 3 "$base/$archive" -o "/tmp/$archive"
+          curl -fsSL "$base/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender52.sha256
+          (cd /tmp && grep "  $archive$" blender52.sha256 | sha256sum -c -)
+          tar -xf "/tmp/$archive" -C .cache/blender52-runtime/blender --strip-components=1
+          (cd .cache/blender52-runtime/apt && apt-get download libegl1)
+          dpkg-deb -x .cache/blender52-runtime/apt/libegl1_*.deb .cache/blender52-runtime/egl
+      - name: Cache new runtime
+        if: steps.cached.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-Linux-x64-5.2.2-v1
+      - name: Install host validation dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg xvfb libgl1-mesa-dri
+          python3 -m pip install --break-system-packages --quiet Pillow==10.2.0
+      - name: Build and render ten independent assets
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          export LD_LIBRARY_PATH="$PWD/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}"
+          BLENDER="$PWD/.cache/blender52-runtime/blender/blender"
+          "$BLENDER" --version
+          xvfb-run -a -s "-screen 0 1280x720x24" "$BLENDER" -b \
+            --python experiments/japanese-crafts-rebuilt-100/scene.py -- --batch "$BATCH" \
+            2>&1 | tee "render-${BATCH}.log"
+          if grep -Fq "Traceback (most recent call last):" "render-${BATCH}.log"; then exit 1; fi
+          python3 experiments/japanese-crafts-rebuilt-100/validate.py --batch "$BATCH"
+      - name: Upload verified individual assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: japanese-crafts-rebuilt-batch-${{ matrix.batch }}
+          path: output52/items/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 1
+
+  collect:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: japanese-crafts-rebuilt-batch-*
+          merge-multiple: true
+          path: output52/items
+      - name: Validate all 100 and organize published results
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python3 -m pip install --break-system-packages --quiet Pillow==10.2.0
+          python3 experiments/japanese-crafts-rebuilt-100/validate.py --all
+          mkdir -p results/japanese-crafts-rebuilt-100
+          rm -rf results/japanese-crafts-rebuilt-100/items
+          cp -a output52/items results/japanese-crafts-rebuilt-100/items
+          cp output52/validation-all.json results/japanese-crafts-rebuilt-100/catalog.json
+          cp output52/items/tea_chawan/preview.png results/japanese-crafts-rebuilt-100/preview.png
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('output52/validation-all.json').read_text())
+          result={'blender_version':'5.2.2','model_count':100,'frame_count':144,
+                  'still_only':True,'detail_level':'precise_lowpoly_v2',
+                  'total_parts':data['total_parts'],
+                  'total_polygons':data['total_polygons']}
+          Path('results/japanese-crafts-rebuilt-100/validation.json').write_text(json.dumps(result,indent=2)+'\n')
+          PY
+      - name: Commit all 100 real Blender files, GLBs, videos and previews
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/japanese-crafts-rebuilt-100
+          if git diff --cached --quiet; then echo "No new result"; exit 0; fi
+          git commit -m "feat: publish 100 verified fully rebuilt Japanese low-poly craft assets [skip ci]"
+          if ! git push origin HEAD:main; then
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Build all Pages including 100 individual previews
+        run: |
+          python3 tools/build_pages.py
+          python3 tools/add_blend_links.py
+          python3 tools/generate_crafts_gallery.py
+          python3 tools/generate_crafts_rebuilt_gallery.py
+      - name: Save generated gallery
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: publish Japanese crafts gallery [skip ci]"
+            if ! git push origin HEAD:main; then
+              git fetch origin main
+              git reset --hard origin/main
+              python3 tools/build_pages.py
+              python3 tools/add_blend_links.py
+              python3 tools/generate_crafts_gallery.py
+          python3 tools/generate_crafts_rebuilt_gallery.py
+              git add docs/
+              git commit -m "chore: rebuild Japanese crafts gallery [skip ci]"
+              git push origin HEAD:main
+            fi
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - uses: actions/deploy-pages@v4
+        id: deployment
