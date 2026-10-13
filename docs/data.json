@@ -1,5 +1,23 @@
 [
   {
+    "id": "japanese-crafts-rebuilt-100",
+    "title": "日本の伝統工芸・生活道具 100種【精密ローポリ全面再制作】",
+    "description": "100 independently re-modeled Japanese craft and household miniatures. Hand-built recognizable silhouettes, joinery, layered materials, fine detail, and 6-second Blender 5.2 Workbench orbit previews.",
+    "created_at": "2026-10-13T13:57:20Z",
+    "preview": "assets/japanese-crafts-rebuilt-100/preview.png",
+    "video": null,
+    "validation": {
+      "blender_version": "5.2.2",
+      "model_count": 100,
+      "frame_count": 144,
+      "still_only": true,
+      "detail_level": "precise_lowpoly_v2",
+      "total_parts": 3566,
+      "total_polygons": 114370
+    },
+    "blend": null
+  },
+  {
     "id": "japanese-crafts-100",
     "title": "日本の伝統工芸・生活道具 100種",
     "description": "Traditional craft and household-object assets generated as individual stylized low-poly Blender and GLB files with 6-second Workbench turntables.",
