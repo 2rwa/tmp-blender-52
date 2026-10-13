@@ -44,6 +44,7 @@ jobs:
           python3 -m unittest discover -s tools -p 'test_blend_links.py'
           python3 tools/build_pages.py
           python3 tools/add_blend_links.py
+          python3 tools/generate_crafts_gallery.py
 
       - name: Persist generated docs
         run: |
@@ -59,6 +60,7 @@ jobs:
               git reset --hard origin/main
               python3 tools/build_pages.py
               python3 tools/add_blend_links.py
+          python3 tools/generate_crafts_gallery.py
               git add docs/
               if ! git diff --cached --quiet; then
                 git commit -m "chore: rebuild Pages gallery [skip ci]"
