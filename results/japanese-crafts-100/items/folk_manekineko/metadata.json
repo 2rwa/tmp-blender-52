@@ -1,0 +1,24 @@
+{
+  "id": "folk_manekineko",
+  "title": "招き猫",
+  "category": "folk",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 8,
+  "polygons": 270,
+  "initial_dimensions": [
+    1.0870522856712341,
+    0.8197723925113678,
+    1.75
+  ],
+  "fit_scale": 0.9714285714285714,
+  "shard": 6
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_takekago",
+  "title": "竹籠",
+  "category": "bamboo",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 9,
+  "polygons": 370,
+  "initial_dimensions": [
+    1.0199999809265137,
+    1.0199999809265137,
+    1.4198212325572968
+  ],
+  "fit_scale": 1.1973338340194153,
+  "shard": 2
+}

@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_jubako",
+  "title": "重箱",
+  "category": "kitchen",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 7,
+  "polygons": 42,
+  "initial_dimensions": [
+    1.0499999523162842,
+    1.0499999523162842,
+    0.9950000047683716
+  ],
+  "fit_scale": 1.6190476925735333,
+  "shard": 1
+}

@@ -1,0 +1,24 @@
+{
+  "id": "home_furin",
+  "title": "風鈴",
+  "category": "home",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 5,
+  "polygons": 170,
+  "initial_dimensions": [
+    0.6657404899597168,
+    0.6999999284744263,
+    1.508070096373558
+  ],
+  "fit_scale": 1.1272685560757247,
+  "shard": 3
+}

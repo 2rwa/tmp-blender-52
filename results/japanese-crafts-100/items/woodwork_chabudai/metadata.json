@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_chabudai",
+  "title": "ちゃぶ台",
+  "category": "woodwork",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 5,
+  "polygons": 42,
+  "initial_dimensions": [
+    1.7599999904632568,
+    1.7599999904632568,
+    0.7099999487400055
+  ],
+  "fit_scale": 0.9659090961429698,
+  "shard": 8
+}

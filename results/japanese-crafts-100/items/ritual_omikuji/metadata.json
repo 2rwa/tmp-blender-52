@@ -1,0 +1,24 @@
+{
+  "id": "ritual_omikuji",
+  "title": "おみくじ",
+  "category": "ritual",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 11,
+  "polygons": 70,
+  "initial_dimensions": [
+    0.6549999713897705,
+    0.09000000357627869,
+    1.2000000476837158
+  ],
+  "fit_scale": 1.4166666103733931,
+  "shard": 7
+}

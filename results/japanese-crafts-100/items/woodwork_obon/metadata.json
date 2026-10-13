@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_obon",
+  "title": "木盆",
+  "category": "woodwork",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 122,
+  "initial_dimensions": [
+    1.788849949836731,
+    1.7012799978256226,
+    2.0
+  ],
+  "fit_scale": 0.85,
+  "shard": 8
+}

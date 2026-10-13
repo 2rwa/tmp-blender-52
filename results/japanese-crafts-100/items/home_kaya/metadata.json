@@ -1,0 +1,24 @@
+{
+  "id": "home_kaya",
+  "title": "蚊帳",
+  "category": "home",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 17,
+  "polygons": 142,
+  "initial_dimensions": [
+    1.4600000381469727,
+    1.0700000524520874,
+    1.6399999856948853
+  ],
+  "fit_scale": 1.0365853748954101,
+  "shard": 3
+}

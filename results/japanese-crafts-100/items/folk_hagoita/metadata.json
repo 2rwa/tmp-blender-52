@@ -1,0 +1,24 @@
+{
+  "id": "folk_hagoita",
+  "title": "羽子板",
+  "category": "folk",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 19,
+  "polygons": 108,
+  "initial_dimensions": [
+    1.788849949836731,
+    1.7012799978256226,
+    2.319999933242798
+  ],
+  "fit_scale": 0.7327586417745331,
+  "shard": 6
+}

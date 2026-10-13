@@ -1,0 +1,24 @@
+{
+  "id": "ritual_masu",
+  "title": "枡",
+  "category": "ritual",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 4,
+  "polygons": 24,
+  "initial_dimensions": [
+    0.8700000047683716,
+    0.8700000047683716,
+    0.7290000021457672
+  ],
+  "fit_scale": 1.9540229777959681,
+  "shard": 7
+}

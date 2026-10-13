@@ -1,0 +1,24 @@
+{
+  "id": "ritual_hamaya",
+  "title": "破魔矢",
+  "category": "ritual",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 4,
+  "polygons": 29,
+  "initial_dimensions": [
+    0.5199999809265137,
+    0.1899999976158142,
+    1.850000023841858
+  ],
+  "fit_scale": 0.9189189070763599,
+  "shard": 7
+}

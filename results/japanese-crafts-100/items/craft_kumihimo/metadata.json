@@ -1,0 +1,24 @@
+{
+  "id": "craft_kumihimo",
+  "title": "組紐",
+  "category": "craft",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 21,
+  "polygons": 240,
+  "initial_dimensions": [
+    1.032729685306549,
+    1.0299999713897705,
+    1.2954354360699654
+  ],
+  "fit_scale": 1.3123000596288956,
+  "shard": 9
+}

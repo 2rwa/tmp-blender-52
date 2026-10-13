@@ -1,0 +1,24 @@
+{
+  "id": "tea_natsume",
+  "title": "棗",
+  "category": "tea",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 168,
+  "initial_dimensions": [
+    1.0,
+    0.9848077297210693,
+    0.8299999833106995
+  ],
+  "fit_scale": 1.7,
+  "shard": 0
+}

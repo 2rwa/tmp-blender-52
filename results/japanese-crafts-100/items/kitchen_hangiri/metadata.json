@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_hangiri",
+  "title": "飯切",
+  "category": "kitchen",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 252,
+  "initial_dimensions": [
+    1.2799999713897705,
+    1.2680000066757202,
+    0.5899999961256981
+  ],
+  "fit_scale": 1.3281250296859077,
+  "shard": 1
+}

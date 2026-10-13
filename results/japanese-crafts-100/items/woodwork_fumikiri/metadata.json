@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_fumikiri",
+  "title": "踏み台",
+  "category": "woodwork",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 4,
+  "polygons": 28,
+  "initial_dimensions": [
+    0.9399999976158142,
+    0.5699999928474426,
+    0.6899999678134918
+  ],
+  "fit_scale": 1.8085106428849205,
+  "shard": 8
+}

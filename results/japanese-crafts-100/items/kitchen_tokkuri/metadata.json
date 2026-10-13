@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_tokkuri",
+  "title": "徳利",
+  "category": "kitchen",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 1,
+  "polygons": 92,
+  "initial_dimensions": [
+    0.8799999952316284,
+    0.8666308522224426,
+    1.0199999623000622
+  ],
+  "fit_scale": 1.6666667282678744,
+  "shard": 1
+}

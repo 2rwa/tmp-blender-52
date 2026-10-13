@@ -1,0 +1,24 @@
+{
+  "id": "writing_washi",
+  "title": "和紙",
+  "category": "writing",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 11,
+  "polygons": 150,
+  "initial_dimensions": [
+    1.7944249510765076,
+    1.8556399941444397,
+    2.0000000596046448
+  ],
+  "fit_scale": 0.8499999746680267,
+  "shard": 5
+}

@@ -1,0 +1,24 @@
+{
+  "id": "writing_kakejiku",
+  "title": "掛軸",
+  "category": "writing",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 5,
+  "polygons": 56,
+  "initial_dimensions": [
+    1.1200000047683716,
+    0.10000008344650269,
+    1.620000034570694
+  ],
+  "fit_scale": 1.0493826936556248,
+  "shard": 5
+}

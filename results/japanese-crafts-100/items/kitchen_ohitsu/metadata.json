@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_ohitsu",
+  "title": "お櫃",
+  "category": "kitchen",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 150,
+  "initial_dimensions": [
+    1.1200000047683716,
+    1.1200000047683716,
+    0.8324999716132879
+  ],
+  "fit_scale": 1.5178571363949045,
+  "shard": 1
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_takeshibuki",
+  "title": "竹水差し",
+  "category": "bamboo",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 102,
+  "initial_dimensions": [
+    0.9749999940395355,
+    0.6899999976158142,
+    1.0685677528381348
+  ],
+  "fit_scale": 1.5909145634282618,
+  "shard": 2
+}

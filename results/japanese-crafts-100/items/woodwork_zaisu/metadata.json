@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_zaisu",
+  "title": "座椅子",
+  "category": "woodwork",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 3,
+  "polygons": 18,
+  "initial_dimensions": [
+    1.059999942779541,
+    1.0099999904632568,
+    1.3600000515580177
+  ],
+  "fit_scale": 1.2499999526121177,
+  "shard": 8
+}

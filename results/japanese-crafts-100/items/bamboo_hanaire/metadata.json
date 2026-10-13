@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_hanaire",
+  "title": "竹花入",
+  "category": "bamboo",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 4,
+  "polygons": 254,
+  "initial_dimensions": [
+    0.6000000238418579,
+    0.6000000238418579,
+    1.1023359298706055
+  ],
+  "fit_scale": 1.5421796150648466,
+  "shard": 2
+}

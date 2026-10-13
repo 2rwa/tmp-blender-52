@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_chasho",
+  "title": "茶筒",
+  "category": "bamboo",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 112,
+  "initial_dimensions": [
+    0.9600000381469727,
+    0.9600000381469727,
+    1.0600000619888306
+  ],
+  "fit_scale": 1.6037734911169403,
+  "shard": 2
+}

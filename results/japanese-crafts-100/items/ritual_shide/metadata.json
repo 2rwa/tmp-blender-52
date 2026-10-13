@@ -1,0 +1,24 @@
+{
+  "id": "ritual_shide",
+  "title": "紙垂",
+  "category": "ritual",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 13,
+  "polygons": 82,
+  "initial_dimensions": [
+    1.3300000429153442,
+    0.07000000029802322,
+    2.0400000512599945
+  ],
+  "fit_scale": 0.8333333123937936,
+  "shard": 7
+}

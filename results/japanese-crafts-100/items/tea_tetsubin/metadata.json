@@ -1,0 +1,24 @@
+{
+  "id": "tea_tetsubin",
+  "title": "鉄瓶",
+  "category": "tea",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 4,
+  "polygons": 228,
+  "initial_dimensions": [
+    1.5059999227523804,
+    1.5059999227523804,
+    0.9700000006705523
+  ],
+  "fit_scale": 1.1288181189897162,
+  "shard": 0
+}

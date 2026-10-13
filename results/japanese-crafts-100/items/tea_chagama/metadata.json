@@ -1,0 +1,24 @@
+{
+  "id": "tea_chagama",
+  "title": "茶釜",
+  "category": "tea",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 5,
+  "polygons": 228,
+  "initial_dimensions": [
+    1.625999927520752,
+    1.3590346574783325,
+    0.9799999706447124
+  ],
+  "fit_scale": 1.0455105017083732,
+  "shard": 0
+}

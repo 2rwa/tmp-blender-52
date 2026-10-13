@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_seiro",
+  "title": "せいろ",
+  "category": "kitchen",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 7,
+  "polygons": 308,
+  "initial_dimensions": [
+    1.2000000476837158,
+    1.2000000476837158,
+    0.7200000062584877
+  ],
+  "fit_scale": 1.4166666103733931,
+  "shard": 1
+}

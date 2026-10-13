@@ -1,0 +1,24 @@
+{
+  "id": "craft_koro",
+  "title": "香炉",
+  "category": "craft",
+  "variant": 0,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 6,
+  "polygons": 150,
+  "initial_dimensions": [
+    1.788849949836731,
+    1.7012799978256226,
+    2.004999987781048
+  ],
+  "fit_scale": 0.8478803044190568,
+  "shard": 9
+}

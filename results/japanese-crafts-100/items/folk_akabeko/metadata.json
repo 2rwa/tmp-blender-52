@@ -1,0 +1,24 @@
+{
+  "id": "folk_akabeko",
+  "title": "赤べこ",
+  "category": "folk",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 9,
+  "polygons": 194,
+  "initial_dimensions": [
+    2.229676067829132,
+    1.7012799978256226,
+    2.0199999660253525
+  ],
+  "fit_scale": 0.762442591786511,
+  "shard": 6
+}

@@ -1,0 +1,24 @@
+{
+  "id": "writing_suzuri",
+  "title": "硯",
+  "category": "writing",
+  "variant": 0,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 109,
+  "mesh_objects": 3,
+  "polygons": 18,
+  "initial_dimensions": [
+    0.8199999928474426,
+    1.2799999713897705,
+    0.32199999690055847
+  ],
+  "fit_scale": 1.3281250296859077,
+  "shard": 5
+}

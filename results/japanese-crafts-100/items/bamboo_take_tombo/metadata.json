@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_take_tombo",
+  "title": "竹とんぼ",
+  "category": "bamboo",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 3,
+  "polygons": 30,
+  "initial_dimensions": [
+    1.3679121136665344,
+    0.2600000202655792,
+    1.4157614707946777
+  ],
+  "fit_scale": 1.200767244390241,
+  "shard": 2
+}

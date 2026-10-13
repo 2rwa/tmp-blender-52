@@ -1,0 +1,806 @@
+{
+  "validated": 100,
+  "total_polygons": 14047,
+  "items": [
+    {
+      "id": "tea_chawan",
+      "title": "茶碗",
+      "category": "tea",
+      "polygons": 110,
+      "preview_stddev": 26.17,
+      "size_bytes": 276572
+    },
+    {
+      "id": "tea_chasen",
+      "title": "茶筅",
+      "category": "tea",
+      "polygons": 238,
+      "preview_stddev": 20.28,
+      "size_bytes": 417650
+    },
+    {
+      "id": "tea_chashaku",
+      "title": "茶杓",
+      "category": "tea",
+      "polygons": 30,
+      "preview_stddev": 24.04,
+      "size_bytes": 269658
+    },
+    {
+      "id": "tea_natsume",
+      "title": "棗",
+      "category": "tea",
+      "polygons": 168,
+      "preview_stddev": 15.85,
+      "size_bytes": 293316
+    },
+    {
+      "id": "tea_tetsubin",
+      "title": "鉄瓶",
+      "category": "tea",
+      "polygons": 228,
+      "preview_stddev": 18.58,
+      "size_bytes": 306396
+    },
+    {
+      "id": "tea_kyusu",
+      "title": "急須",
+      "category": "tea",
+      "polygons": 90,
+      "preview_stddev": 22.21,
+      "size_bytes": 279421
+    },
+    {
+      "id": "tea_chagama",
+      "title": "茶釜",
+      "category": "tea",
+      "polygons": 228,
+      "preview_stddev": 15.26,
+      "size_bytes": 295906
+    },
+    {
+      "id": "tea_mizusashi",
+      "title": "水指",
+      "category": "tea",
+      "polygons": 150,
+      "preview_stddev": 21.31,
+      "size_bytes": 295590
+    },
+    {
+      "id": "tea_hishaku",
+      "title": "柄杓",
+      "category": "tea",
+      "polygons": 38,
+      "preview_stddev": 15.34,
+      "size_bytes": 256372
+    },
+    {
+      "id": "tea_futaoki",
+      "title": "蓋置",
+      "category": "tea",
+      "polygons": 412,
+      "preview_stddev": 27.8,
+      "size_bytes": 366278
+    },
+    {
+      "id": "kitchen_yunomi",
+      "title": "湯呑",
+      "category": "kitchen",
+      "polygons": 110,
+      "preview_stddev": 27.71,
+      "size_bytes": 283532
+    },
+    {
+      "id": "kitchen_tokkuri",
+      "title": "徳利",
+      "category": "kitchen",
+      "polygons": 92,
+      "preview_stddev": 41.45,
+      "size_bytes": 274883
+    },
+    {
+      "id": "kitchen_ochoko",
+      "title": "お猪口",
+      "category": "kitchen",
+      "polygons": 92,
+      "preview_stddev": 25.75,
+      "size_bytes": 283283
+    },
+    {
+      "id": "kitchen_suribachi",
+      "title": "すり鉢",
+      "category": "kitchen",
+      "polygons": 102,
+      "preview_stddev": 29.29,
+      "size_bytes": 277557
+    },
+    {
+      "id": "kitchen_surikogi",
+      "title": "すりこぎ",
+      "category": "kitchen",
+      "polygons": 30,
+      "preview_stddev": 16.81,
+      "size_bytes": 269884
+    },
+    {
+      "id": "kitchen_hangiri",
+      "title": "飯切",
+      "category": "kitchen",
+      "polygons": 252,
+      "preview_stddev": 24.24,
+      "size_bytes": 321692
+    },
+    {
+      "id": "kitchen_ohitsu",
+      "title": "お櫃",
+      "category": "kitchen",
+      "polygons": 150,
+      "preview_stddev": 19.32,
+      "size_bytes": 300046
+    },
+    {
+      "id": "kitchen_seiro",
+      "title": "せいろ",
+      "category": "kitchen",
+      "polygons": 308,
+      "preview_stddev": 24.68,
+      "size_bytes": 342661
+    },
+    {
+      "id": "kitchen_jubako",
+      "title": "重箱",
+      "category": "kitchen",
+      "polygons": 42,
+      "preview_stddev": 17.41,
+      "size_bytes": 317990
+    },
+    {
+      "id": "kitchen_shamoji",
+      "title": "しゃもじ",
+      "category": "kitchen",
+      "polygons": 30,
+      "preview_stddev": 29.32,
+      "size_bytes": 275764
+    },
+    {
+      "id": "bamboo_zaru",
+      "title": "笊",
+      "category": "bamboo",
+      "polygons": 492,
+      "preview_stddev": 31.02,
+      "size_bytes": 331873
+    },
+    {
+      "id": "bamboo_takekago",
+      "title": "竹籠",
+      "category": "bamboo",
+      "polygons": 370,
+      "preview_stddev": 23.71,
+      "size_bytes": 366104
+    },
+    {
+      "id": "bamboo_hanaire",
+      "title": "竹花入",
+      "category": "bamboo",
+      "polygons": 254,
+      "preview_stddev": 22.73,
+      "size_bytes": 311621
+    },
+    {
+      "id": "bamboo_takezaiku_box",
+      "title": "竹細工箱",
+      "category": "bamboo",
+      "polygons": 60,
+      "preview_stddev": 15.2,
+      "size_bytes": 283865
+    },
+    {
+      "id": "bamboo_sudare",
+      "title": "簾",
+      "category": "bamboo",
+      "polygons": 206,
+      "preview_stddev": 15.23,
+      "size_bytes": 335813
+    },
+    {
+      "id": "bamboo_chasho",
+      "title": "茶筒",
+      "category": "bamboo",
+      "polygons": 112,
+      "preview_stddev": 25.45,
+      "size_bytes": 290413
+    },
+    {
+      "id": "bamboo_takeshibuki",
+      "title": "竹水差し",
+      "category": "bamboo",
+      "polygons": 102,
+      "preview_stddev": 22.88,
+      "size_bytes": 289018
+    },
+    {
+      "id": "bamboo_takebue",
+      "title": "篠笛",
+      "category": "bamboo",
+      "polygons": 254,
+      "preview_stddev": 18.26,
+      "size_bytes": 278722
+    },
+    {
+      "id": "bamboo_take_tombo",
+      "title": "竹とんぼ",
+      "category": "bamboo",
+      "polygons": 30,
+      "preview_stddev": 19.45,
+      "size_bytes": 256083
+    },
+    {
+      "id": "bamboo_houki",
+      "title": "箒",
+      "category": "bamboo",
+      "polygons": 265,
+      "preview_stddev": 16.63,
+      "size_bytes": 332085
+    },
+    {
+      "id": "home_andon",
+      "title": "行灯",
+      "category": "home",
+      "polygons": 42,
+      "preview_stddev": 24.75,
+      "size_bytes": 284878
+    },
+    {
+      "id": "home_chochin",
+      "title": "提灯",
+      "category": "home",
+      "polygons": 400,
+      "preview_stddev": 13.54,
+      "size_bytes": 352522
+    },
+    {
+      "id": "home_bonbori",
+      "title": "雪洞",
+      "category": "home",
+      "polygons": 188,
+      "preview_stddev": 34.76,
+      "size_bytes": 312161
+    },
+    {
+      "id": "home_hibachi",
+      "title": "火鉢",
+      "category": "home",
+      "polygons": 52,
+      "preview_stddev": 16.15,
+      "size_bytes": 280462
+    },
+    {
+      "id": "home_kaya",
+      "title": "蚊帳",
+      "category": "home",
+      "polygons": 142,
+      "preview_stddev": 29.62,
+      "size_bytes": 316966
+    },
+    {
+      "id": "home_noren",
+      "title": "暖簾",
+      "category": "home",
+      "polygons": 88,
+      "preview_stddev": 32.9,
+      "size_bytes": 285192
+    },
+    {
+      "id": "home_byobu",
+      "title": "屏風",
+      "category": "home",
+      "polygons": 72,
+      "preview_stddev": 28.36,
+      "size_bytes": 297567
+    },
+    {
+      "id": "home_tatami",
+      "title": "畳",
+      "category": "home",
+      "polygons": 108,
+      "preview_stddev": 19.46,
+      "size_bytes": 300286
+    },
+    {
+      "id": "home_zabuton",
+      "title": "座布団",
+      "category": "home",
+      "polygons": 106,
+      "preview_stddev": 31.23,
+      "size_bytes": 297741
+    },
+    {
+      "id": "home_furin",
+      "title": "風鈴",
+      "category": "home",
+      "polygons": 170,
+      "preview_stddev": 16.47,
+      "size_bytes": 287434
+    },
+    {
+      "id": "wear_sensu",
+      "title": "扇子",
+      "category": "wear",
+      "polygons": 154,
+      "preview_stddev": 18.54,
+      "size_bytes": 339750
+    },
+    {
+      "id": "wear_uchiwa",
+      "title": "団扇",
+      "category": "wear",
+      "polygons": 160,
+      "preview_stddev": 28.19,
+      "size_bytes": 284659
+    },
+    {
+      "id": "wear_wagasa",
+      "title": "和傘",
+      "category": "wear",
+      "polygons": 190,
+      "preview_stddev": 25.7,
+      "size_bytes": 357551
+    },
+    {
+      "id": "wear_geta",
+      "title": "下駄",
+      "category": "wear",
+      "polygons": 68,
+      "preview_stddev": 18.44,
+      "size_bytes": 315356
+    },
+    {
+      "id": "wear_zori",
+      "title": "草履",
+      "category": "wear",
+      "polygons": 192,
+      "preview_stddev": 25.56,
+      "size_bytes": 309523
+    },
+    {
+      "id": "wear_tabi",
+      "title": "足袋",
+      "category": "wear",
+      "polygons": 120,
+      "preview_stddev": 36.93,
+      "size_bytes": 299147
+    },
+    {
+      "id": "wear_kanzashi",
+      "title": "簪",
+      "category": "wear",
+      "polygons": 130,
+      "preview_stddev": 28.73,
+      "size_bytes": 293608
+    },
+    {
+      "id": "wear_kinchaku",
+      "title": "巾着",
+      "category": "wear",
+      "polygons": 192,
+      "preview_stddev": 16.56,
+      "size_bytes": 305611
+    },
+    {
+      "id": "wear_furoshiki",
+      "title": "風呂敷",
+      "category": "wear",
+      "polygons": 50,
+      "preview_stddev": 16.25,
+      "size_bytes": 299378
+    },
+    {
+      "id": "wear_tenugui",
+      "title": "手拭",
+      "category": "wear",
+      "polygons": 46,
+      "preview_stddev": 23.28,
+      "size_bytes": 260750
+    },
+    {
+      "id": "writing_suzuri",
+      "title": "硯",
+      "category": "writing",
+      "polygons": 18,
+      "preview_stddev": 13.48,
+      "size_bytes": 249662
+    },
+    {
+      "id": "writing_fude",
+      "title": "筆",
+      "category": "writing",
+      "polygons": 37,
+      "preview_stddev": 11.01,
+      "size_bytes": 235598
+    },
+    {
+      "id": "writing_sumi",
+      "title": "墨",
+      "category": "writing",
+      "polygons": 12,
+      "preview_stddev": 13.02,
+      "size_bytes": 238884
+    },
+    {
+      "id": "writing_bunchin",
+      "title": "文鎮",
+      "category": "writing",
+      "polygons": 134,
+      "preview_stddev": 12.13,
+      "size_bytes": 256883
+    },
+    {
+      "id": "writing_makimono",
+      "title": "巻物",
+      "category": "writing",
+      "polygons": 64,
+      "preview_stddev": 22.82,
+      "size_bytes": 282738
+    },
+    {
+      "id": "writing_washi",
+      "title": "和紙",
+      "category": "writing",
+      "polygons": 150,
+      "preview_stddev": 28.54,
+      "size_bytes": 306171
+    },
+    {
+      "id": "writing_suzuribako",
+      "title": "硯箱",
+      "category": "writing",
+      "polygons": 32,
+      "preview_stddev": 31.34,
+      "size_bytes": 285281
+    },
+    {
+      "id": "writing_hanko",
+      "title": "判子",
+      "category": "writing",
+      "polygons": 108,
+      "preview_stddev": 19.51,
+      "size_bytes": 275394
+    },
+    {
+      "id": "writing_inro",
+      "title": "印籠",
+      "category": "writing",
+      "polygons": 46,
+      "preview_stddev": 8.5,
+      "size_bytes": 270141
+    },
+    {
+      "id": "writing_kakejiku",
+      "title": "掛軸",
+      "category": "writing",
+      "polygons": 56,
+      "preview_stddev": 25.51,
+      "size_bytes": 269804
+    },
+    {
+      "id": "folk_daruma",
+      "title": "だるま",
+      "category": "folk",
+      "polygons": 200,
+      "preview_stddev": 31.6,
+      "size_bytes": 317155
+    },
+    {
+      "id": "folk_kokeshi",
+      "title": "こけし",
+      "category": "folk",
+      "polygons": 168,
+      "preview_stddev": 31.16,
+      "size_bytes": 313212
+    },
+    {
+      "id": "folk_manekineko",
+      "title": "招き猫",
+      "category": "folk",
+      "polygons": 270,
+      "preview_stddev": 29.28,
+      "size_bytes": 321238
+    },
+    {
+      "id": "folk_kendama",
+      "title": "けん玉",
+      "category": "folk",
+      "polygons": 138,
+      "preview_stddev": 15.3,
+      "size_bytes": 291632
+    },
+    {
+      "id": "folk_koma",
+      "title": "独楽",
+      "category": "folk",
+      "polygons": 124,
+      "preview_stddev": 21.8,
+      "size_bytes": 291752
+    },
+    {
+      "id": "folk_hagoita",
+      "title": "羽子板",
+      "category": "folk",
+      "polygons": 108,
+      "preview_stddev": 28.26,
+      "size_bytes": 309234
+    },
+    {
+      "id": "folk_otedama",
+      "title": "お手玉",
+      "category": "folk",
+      "polygons": 240,
+      "preview_stddev": 33.38,
+      "size_bytes": 311528
+    },
+    {
+      "id": "folk_denden_daiko",
+      "title": "でんでん太鼓",
+      "category": "folk",
+      "polygons": 88,
+      "preview_stddev": 26.77,
+      "size_bytes": 291751
+    },
+    {
+      "id": "folk_akabeko",
+      "title": "赤べこ",
+      "category": "folk",
+      "polygons": 194,
+      "preview_stddev": 35.96,
+      "size_bytes": 315270
+    },
+    {
+      "id": "folk_hariko_tora",
+      "title": "張子の虎",
+      "category": "folk",
+      "polygons": 190,
+      "preview_stddev": 20.06,
+      "size_bytes": 322723
+    },
+    {
+      "id": "ritual_ema",
+      "title": "絵馬",
+      "category": "ritual",
+      "polygons": 36,
+      "preview_stddev": 18.34,
+      "size_bytes": 279732
+    },
+    {
+      "id": "ritual_omamori",
+      "title": "お守り",
+      "category": "ritual",
+      "polygons": 82,
+      "preview_stddev": 11.04,
+      "size_bytes": 263687
+    },
+    {
+      "id": "ritual_shimenawa",
+      "title": "注連縄",
+      "category": "ritual",
+      "polygons": 156,
+      "preview_stddev": 26.17,
+      "size_bytes": 319758
+    },
+    {
+      "id": "ritual_suzu",
+      "title": "神楽鈴",
+      "category": "ritual",
+      "polygons": 310,
+      "preview_stddev": 31.35,
+      "size_bytes": 326585
+    },
+    {
+      "id": "ritual_omikuji",
+      "title": "おみくじ",
+      "category": "ritual",
+      "polygons": 70,
+      "preview_stddev": 23.2,
+      "size_bytes": 269725
+    },
+    {
+      "id": "ritual_gohei",
+      "title": "御幣",
+      "category": "ritual",
+      "polygons": 70,
+      "preview_stddev": 22.71,
+      "size_bytes": 274429
+    },
+    {
+      "id": "ritual_hamaya",
+      "title": "破魔矢",
+      "category": "ritual",
+      "polygons": 29,
+      "preview_stddev": 13.27,
+      "size_bytes": 238564
+    },
+    {
+      "id": "ritual_shide",
+      "title": "紙垂",
+      "category": "ritual",
+      "polygons": 82,
+      "preview_stddev": 23.04,
+      "size_bytes": 273868
+    },
+    {
+      "id": "ritual_masu",
+      "title": "枡",
+      "category": "ritual",
+      "polygons": 24,
+      "preview_stddev": 18.4,
+      "size_bytes": 284373
+    },
+    {
+      "id": "ritual_kagami_mochi",
+      "title": "鏡餅飾り",
+      "category": "ritual",
+      "polygons": 206,
+      "preview_stddev": 36.52,
+      "size_bytes": 325508
+    },
+    {
+      "id": "woodwork_tansu",
+      "title": "和箪笥",
+      "category": "woodwork",
+      "polygons": 242,
+      "preview_stddev": 15.1,
+      "size_bytes": 325887
+    },
+    {
+      "id": "woodwork_chabudai",
+      "title": "ちゃぶ台",
+      "category": "woodwork",
+      "polygons": 42,
+      "preview_stddev": 19.13,
+      "size_bytes": 258664
+    },
+    {
+      "id": "woodwork_zaisu",
+      "title": "座椅子",
+      "category": "woodwork",
+      "polygons": 18,
+      "preview_stddev": 13.51,
+      "size_bytes": 266844
+    },
+    {
+      "id": "woodwork_kotatsu",
+      "title": "炬燵",
+      "category": "woodwork",
+      "polygons": 36,
+      "preview_stddev": 18.29,
+      "size_bytes": 273117
+    },
+    {
+      "id": "woodwork_nagamochi",
+      "title": "長持",
+      "category": "woodwork",
+      "polygons": 144,
+      "preview_stddev": 15.84,
+      "size_bytes": 279366
+    },
+    {
+      "id": "woodwork_tsuitate",
+      "title": "衝立",
+      "category": "woodwork",
+      "polygons": 42,
+      "preview_stddev": 27.4,
+      "size_bytes": 281704
+    },
+    {
+      "id": "woodwork_shodana",
+      "title": "書棚",
+      "category": "woodwork",
+      "polygons": 78,
+      "preview_stddev": 19.69,
+      "size_bytes": 318282
+    },
+    {
+      "id": "woodwork_fumikiri",
+      "title": "踏み台",
+      "category": "woodwork",
+      "polygons": 28,
+      "preview_stddev": 17.81,
+      "size_bytes": 277503
+    },
+    {
+      "id": "woodwork_obon",
+      "title": "木盆",
+      "category": "woodwork",
+      "polygons": 122,
+      "preview_stddev": 31.36,
+      "size_bytes": 304177
+    },
+    {
+      "id": "woodwork_kumiko",
+      "title": "組子細工",
+      "category": "woodwork",
+      "polygons": 148,
+      "preview_stddev": 21.31,
+      "size_bytes": 325560
+    },
+    {
+      "id": "craft_koro",
+      "title": "香炉",
+      "category": "craft",
+      "polygons": 150,
+      "preview_stddev": 31.48,
+      "size_bytes": 311042
+    },
+    {
+      "id": "craft_orin",
+      "title": "おりん",
+      "category": "craft",
+      "polygons": 116,
+      "preview_stddev": 31.66,
+      "size_bytes": 307366
+    },
+    {
+      "id": "craft_mokugyo",
+      "title": "木魚",
+      "category": "craft",
+      "polygons": 130,
+      "preview_stddev": 18.31,
+      "size_bytes": 298591
+    },
+    {
+      "id": "craft_kiriko",
+      "title": "切子グラス",
+      "category": "craft",
+      "polygons": 302,
+      "preview_stddev": 22.09,
+      "size_bytes": 324807
+    },
+    {
+      "id": "craft_shikki_wan",
+      "title": "漆器椀",
+      "category": "craft",
+      "polygons": 186,
+      "preview_stddev": 25.27,
+      "size_bytes": 321781
+    },
+    {
+      "id": "craft_makie_bako",
+      "title": "蒔絵箱",
+      "category": "craft",
+      "polygons": 112,
+      "preview_stddev": 31.33,
+      "size_bytes": 301032
+    },
+    {
+      "id": "craft_kabuto_ornament",
+      "title": "兜飾り",
+      "category": "craft",
+      "polygons": 242,
+      "preview_stddev": 21.53,
+      "size_bytes": 372352
+    },
+    {
+      "id": "craft_kazaridaru",
+      "title": "飾り樽",
+      "category": "craft",
+      "polygons": 364,
+      "preview_stddev": 20.57,
+      "size_bytes": 356302
+    },
+    {
+      "id": "craft_sake_flask",
+      "title": "錫製酒器",
+      "category": "craft",
+      "polygons": 148,
+      "preview_stddev": 28.93,
+      "size_bytes": 300933
+    },
+    {
+      "id": "craft_kumihimo",
+      "title": "組紐",
+      "category": "craft",
+      "polygons": 240,
+      "preview_stddev": 20.87,
+      "size_bytes": 388853
+    }
+  ]
+}

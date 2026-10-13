@@ -1,0 +1,24 @@
+{
+  "id": "home_tatami",
+  "title": "畳",
+  "category": "home",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 18,
+  "polygons": 108,
+  "initial_dimensions": [
+    1.8200000524520874,
+    0.9500000476837158,
+    0.15799999237060547
+  ],
+  "fit_scale": 0.934065907146315,
+  "shard": 3
+}

@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_yunomi",
+  "title": "湯呑",
+  "category": "kitchen",
+  "variant": 0,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 1,
+  "polygons": 110,
+  "initial_dimensions": [
+    0.7799999713897705,
+    0.7681500315666199,
+    0.7800000123679638
+  ],
+  "fit_scale": 2.179487144928438,
+  "shard": 1
+}

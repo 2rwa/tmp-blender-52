@@ -1,0 +1,24 @@
+{
+  "id": "tea_chashaku",
+  "title": "茶杓",
+  "category": "tea",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 2,
+  "polygons": 30,
+  "initial_dimensions": [
+    2.265931725502014,
+    1.7012799978256226,
+    2.0
+  ],
+  "fit_scale": 0.7502432579354822,
+  "shard": 0
+}

@@ -1,0 +1,24 @@
+{
+  "id": "craft_makie_bako",
+  "title": "蒔絵箱",
+  "category": "craft",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 7,
+  "polygons": 112,
+  "initial_dimensions": [
+    1.8244249820709229,
+    1.7012799978256226,
+    2.0
+  ],
+  "fit_scale": 0.85,
+  "shard": 9
+}

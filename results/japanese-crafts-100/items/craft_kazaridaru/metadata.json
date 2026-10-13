@@ -1,0 +1,24 @@
+{
+  "id": "craft_kazaridaru",
+  "title": "飾り樽",
+  "category": "craft",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 7,
+  "polygons": 364,
+  "initial_dimensions": [
+    1.788849949836731,
+    2.076639950275421,
+    2.0
+  ],
+  "fit_scale": 0.8186301143703472,
+  "shard": 9
+}

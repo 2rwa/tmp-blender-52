@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_shodana",
+  "title": "書棚",
+  "category": "woodwork",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 13,
+  "polygons": 78,
+  "initial_dimensions": [
+    1.4700000286102295,
+    0.4699999988079071,
+    1.8399999141693115
+  ],
+  "fit_scale": 0.9239130865761392,
+  "shard": 8
+}

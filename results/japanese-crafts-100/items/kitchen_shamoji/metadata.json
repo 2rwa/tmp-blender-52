@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_shamoji",
+  "title": "しゃもじ",
+  "category": "kitchen",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 2,
+  "polygons": 30,
+  "initial_dimensions": [
+    1.788849949836731,
+    1.7012799978256226,
+    2.0599998831748962
+  ],
+  "fit_scale": 0.8252427652471221,
+  "shard": 1
+}

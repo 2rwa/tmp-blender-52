@@ -1,0 +1,24 @@
+{
+  "id": "craft_sake_flask",
+  "title": "錫製酒器",
+  "category": "craft",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 148,
+  "initial_dimensions": [
+    0.9661049842834473,
+    0.8774351477622986,
+    1.1215496882796288
+  ],
+  "fit_scale": 1.515759861346553,
+  "shard": 9
+}

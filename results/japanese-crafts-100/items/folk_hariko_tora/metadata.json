@@ -1,0 +1,24 @@
+{
+  "id": "folk_hariko_tora",
+  "title": "張子の虎",
+  "category": "folk",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 11,
+  "polygons": 190,
+  "initial_dimensions": [
+    1.6743832230567932,
+    0.60999995470047,
+    1.2312705218791962
+  ],
+  "fit_scale": 1.0152992317352776,
+  "shard": 6
+}

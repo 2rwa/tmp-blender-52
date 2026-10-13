@@ -1,0 +1,24 @@
+{
+  "id": "ritual_omamori",
+  "title": "お守り",
+  "category": "ritual",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 3,
+  "polygons": 82,
+  "initial_dimensions": [
+    0.6899999976158142,
+    0.1810000017285347,
+    1.3180635571479797
+  ],
+  "fit_scale": 1.289770884553134,
+  "shard": 7
+}

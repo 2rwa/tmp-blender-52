@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_sudare",
+  "title": "簾",
+  "category": "bamboo",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 25,
+  "polygons": 206,
+  "initial_dimensions": [
+    2.0799999237060547,
+    0.11900008469820023,
+    2.140000104904175
+  ],
+  "fit_scale": 0.794392484422856,
+  "shard": 2
+}

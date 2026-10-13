@@ -1,0 +1,24 @@
+{
+  "id": "craft_kabuto_ornament",
+  "title": "兜飾り",
+  "category": "craft",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 28,
+  "polygons": 242,
+  "initial_dimensions": [
+    1.2799999713897705,
+    1.0800000429153442,
+    1.394999973475933
+  ],
+  "fit_scale": 1.2186380160023198,
+  "shard": 9
+}

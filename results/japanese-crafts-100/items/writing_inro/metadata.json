@@ -1,0 +1,24 @@
+{
+  "id": "writing_inro",
+  "title": "印籠",
+  "category": "writing",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 7,
+  "polygons": 46,
+  "initial_dimensions": [
+    0.699999988079071,
+    0.4675000011920929,
+    1.2064331844449043
+  ],
+  "fit_scale": 1.4091124331781308,
+  "shard": 5
+}

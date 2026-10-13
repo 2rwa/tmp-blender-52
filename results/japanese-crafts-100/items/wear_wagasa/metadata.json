@@ -1,0 +1,24 @@
+{
+  "id": "wear_wagasa",
+  "title": "和傘",
+  "category": "wear",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 33,
+  "polygons": 190,
+  "initial_dimensions": [
+    1.8715243935585022,
+    1.8715243339538574,
+    1.96522057056427
+  ],
+  "fit_scale": 0.865042848351563,
+  "shard": 4
+}

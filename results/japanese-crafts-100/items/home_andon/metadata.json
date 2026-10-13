@@ -1,0 +1,24 @@
+{
+  "id": "home_andon",
+  "title": "行灯",
+  "category": "home",
+  "variant": 0,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 7,
+  "polygons": 42,
+  "initial_dimensions": [
+    0.9100000262260437,
+    0.800000011920929,
+    1.4600000381469727
+  ],
+  "fit_scale": 1.164383531220749,
+  "shard": 3
+}

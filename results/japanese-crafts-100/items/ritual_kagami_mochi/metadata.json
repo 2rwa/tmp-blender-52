@@ -1,0 +1,24 @@
+{
+  "id": "ritual_kagami_mochi",
+  "title": "鏡餅飾り",
+  "category": "ritual",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 5,
+  "polygons": 206,
+  "initial_dimensions": [
+    1.2300000190734863,
+    1.0399998426437378,
+    1.1399999856948853
+  ],
+  "fit_scale": 1.3821137997059116,
+  "shard": 7
+}

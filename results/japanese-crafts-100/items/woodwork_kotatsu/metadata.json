@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_kotatsu",
+  "title": "炬燵",
+  "category": "woodwork",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 73,
+  "mesh_objects": 6,
+  "polygons": 36,
+  "initial_dimensions": [
+    1.5499999523162842,
+    1.2999999523162842,
+    0.9099999666213989
+  ],
+  "fit_scale": 1.0967742272892067,
+  "shard": 8
+}

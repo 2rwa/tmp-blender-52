@@ -1,0 +1,24 @@
+{
+  "id": "ritual_gohei",
+  "title": "御幣",
+  "category": "ritual",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 11,
+  "polygons": 70,
+  "initial_dimensions": [
+    0.8100000023841858,
+    0.14000001549720764,
+    1.4399999380111694
+  ],
+  "fit_scale": 1.180555606375876,
+  "shard": 7
+}

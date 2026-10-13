@@ -1,0 +1,24 @@
+{
+  "id": "home_hibachi",
+  "title": "火鉢",
+  "category": "home",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 4,
+  "polygons": 52,
+  "initial_dimensions": [
+    1.7888498902320862,
+    1.7012799978256226,
+    2.0
+  ],
+  "fit_scale": 0.85,
+  "shard": 3
+}

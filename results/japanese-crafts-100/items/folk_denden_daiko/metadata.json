@@ -1,0 +1,24 @@
+{
+  "id": "folk_denden_daiko",
+  "title": "でんでん太鼓",
+  "category": "folk",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 6,
+  "polygons": 88,
+  "initial_dimensions": [
+    2.4838674068450928,
+    1.7012799978256226,
+    1.9999999403953552
+  ],
+  "fit_scale": 0.6844165656005249,
+  "shard": 6
+}

@@ -1,0 +1,24 @@
+{
+  "id": "wear_kanzashi",
+  "title": "簪",
+  "category": "wear",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 7,
+  "polygons": 130,
+  "initial_dimensions": [
+    2.188876152038574,
+    1.7012799978256226,
+    2.2650428861379623
+  ],
+  "fit_scale": 0.7505376654914488,
+  "shard": 4
+}

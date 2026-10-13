@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_houki",
+  "title": "箒",
+  "category": "bamboo",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 27,
+  "polygons": 265,
+  "initial_dimensions": [
+    0.7482042610645294,
+    0.7496835291385651,
+    1.5986221004277468
+  ],
+  "fit_scale": 1.0634158001100618,
+  "shard": 2
+}

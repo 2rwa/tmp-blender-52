@@ -1,0 +1,24 @@
+{
+  "id": "craft_shikki_wan",
+  "title": "漆器椀",
+  "category": "craft",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 186,
+  "initial_dimensions": [
+    1.246000051498413,
+    1.246000051498413,
+    0.5918743014335632
+  ],
+  "fit_scale": 1.3643659147169507,
+  "shard": 9
+}

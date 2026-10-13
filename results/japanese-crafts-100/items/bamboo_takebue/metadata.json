@@ -1,0 +1,24 @@
+{
+  "id": "bamboo_takebue",
+  "title": "篠笛",
+  "category": "bamboo",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 10,
+  "polygons": 254,
+  "initial_dimensions": [
+    2.0299999713897705,
+    0.23113957792520523,
+    0.24000002443790436
+  ],
+  "fit_scale": 0.8374384354479338,
+  "shard": 2
+}

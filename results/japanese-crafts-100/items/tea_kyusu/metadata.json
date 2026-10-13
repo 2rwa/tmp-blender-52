@@ -1,0 +1,24 @@
+{
+  "id": "tea_kyusu",
+  "title": "急須",
+  "category": "tea",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 4,
+  "polygons": 90,
+  "initial_dimensions": [
+    1.6568996906280518,
+    1.1226807832717896,
+    0.7750000171363354
+  ],
+  "fit_scale": 1.0260126244308796,
+  "shard": 0
+}

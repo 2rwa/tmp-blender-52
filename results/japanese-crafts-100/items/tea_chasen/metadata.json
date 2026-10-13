@@ -1,0 +1,24 @@
+{
+  "id": "tea_chasen",
+  "title": "茶筅",
+  "category": "tea",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 29,
+  "polygons": 238,
+  "initial_dimensions": [
+    0.776099681854248,
+    0.7760997116565704,
+    0.9318691492080688
+  ],
+  "fit_scale": 1.8242904612141226,
+  "shard": 0
+}

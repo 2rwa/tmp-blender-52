@@ -1,0 +1,24 @@
+{
+  "id": "tea_mizusashi",
+  "title": "水指",
+  "category": "tea",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 150,
+  "initial_dimensions": [
+    1.1399999856948853,
+    1.1226807832717896,
+    0.9524999856948853
+  ],
+  "fit_scale": 1.491228088887885,
+  "shard": 0
+}

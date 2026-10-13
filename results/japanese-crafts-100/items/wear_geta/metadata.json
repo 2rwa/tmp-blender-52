@@ -1,0 +1,24 @@
+{
+  "id": "wear_geta",
+  "title": "下駄",
+  "category": "wear",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 10,
+  "polygons": 68,
+  "initial_dimensions": [
+    1.2200000286102295,
+    1.0199999809265137,
+    0.6812101006507874
+  ],
+  "fit_scale": 1.3934425902731866,
+  "shard": 4
+}

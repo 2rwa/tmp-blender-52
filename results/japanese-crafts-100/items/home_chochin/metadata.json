@@ -1,0 +1,24 @@
+{
+  "id": "home_chochin",
+  "title": "提灯",
+  "category": "home",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 12,
+  "polygons": 400,
+  "initial_dimensions": [
+    0.9651116132736206,
+    0.9800000190734863,
+    1.4442102164030075
+  ],
+  "fit_scale": 1.177113955220501,
+  "shard": 3
+}

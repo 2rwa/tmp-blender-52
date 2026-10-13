@@ -1,0 +1,24 @@
+{
+  "id": "home_byobu",
+  "title": "屏風",
+  "category": "home",
+  "variant": 6,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 12,
+  "polygons": 72,
+  "initial_dimensions": [
+    2.0199999809265137,
+    0.1614999957382679,
+    1.4500000476837158
+  ],
+  "fit_scale": 0.8415841663623486,
+  "shard": 3
+}

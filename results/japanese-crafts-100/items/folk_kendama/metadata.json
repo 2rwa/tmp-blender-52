@@ -1,0 +1,24 @@
+{
+  "id": "folk_kendama",
+  "title": "けん玉",
+  "category": "folk",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 6,
+  "polygons": 138,
+  "initial_dimensions": [
+    1.5082538723945618,
+    0.47999995946884155,
+    1.1100000143051147
+  ],
+  "fit_scale": 1.1271312019249218,
+  "shard": 6
+}

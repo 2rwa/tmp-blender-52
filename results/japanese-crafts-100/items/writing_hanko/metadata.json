@@ -1,0 +1,24 @@
+{
+  "id": "writing_hanko",
+  "title": "判子",
+  "category": "writing",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 108,
+  "initial_dimensions": [
+    0.46000000834465027,
+    0.46000000834465027,
+    0.8050000108778477
+  ],
+  "fit_scale": 2.1118012136995628,
+  "shard": 5
+}

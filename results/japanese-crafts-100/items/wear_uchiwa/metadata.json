@@ -1,0 +1,24 @@
+{
+  "id": "wear_uchiwa",
+  "title": "団扇",
+  "category": "wear",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 9,
+  "polygons": 160,
+  "initial_dimensions": [
+    1.2363752126693726,
+    0.11000001430511475,
+    1.5600000023841858
+  ],
+  "fit_scale": 1.0897435880781081,
+  "shard": 4
+}

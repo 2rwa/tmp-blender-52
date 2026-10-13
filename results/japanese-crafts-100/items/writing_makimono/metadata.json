@@ -1,0 +1,24 @@
+{
+  "id": "writing_makimono",
+  "title": "巻物",
+  "category": "writing",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 8,
+  "polygons": 64,
+  "initial_dimensions": [
+    1.440000057220459,
+    0.9900000691413879,
+    0.22000031918287277
+  ],
+  "fit_scale": 1.1805555086444943,
+  "shard": 5
+}

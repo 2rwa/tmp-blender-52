@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_kumiko",
+  "title": "組子細工",
+  "category": "woodwork",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 19,
+  "polygons": 148,
+  "initial_dimensions": [
+    1.5800000429153442,
+    0.16300000250339508,
+    2.0299999713897705
+  ],
+  "fit_scale": 0.8374384354479338,
+  "shard": 8
+}

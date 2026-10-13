@@ -1,0 +1,24 @@
+{
+  "id": "tea_chawan",
+  "title": "茶碗",
+  "category": "tea",
+  "variant": 0,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 1,
+  "polygons": 110,
+  "initial_dimensions": [
+    1.2400000095367432,
+    1.2211616039276123,
+    0.4799999911338091
+  ],
+  "fit_scale": 1.370967731391478,
+  "shard": 0
+}

@@ -1,0 +1,24 @@
+{
+  "id": "wear_tabi",
+  "title": "足袋",
+  "category": "wear",
+  "variant": 5,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 6,
+  "polygons": 120,
+  "initial_dimensions": [
+    1.788849949836731,
+    1.7012799680233002,
+    2.0
+  ],
+  "fit_scale": 0.85,
+  "shard": 4
+}

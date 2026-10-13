@@ -1,0 +1,24 @@
+{
+  "id": "wear_furoshiki",
+  "title": "風呂敷",
+  "category": "wear",
+  "variant": 8,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 7,
+  "polygons": 50,
+  "initial_dimensions": [
+    0.9700000286102295,
+    0.8999999761581421,
+    1.0926098823547363
+  ],
+  "fit_scale": 1.5559075818866364,
+  "shard": 4
+}

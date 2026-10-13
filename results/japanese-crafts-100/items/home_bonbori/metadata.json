@@ -1,0 +1,24 @@
+{
+  "id": "home_bonbori",
+  "title": "雪洞",
+  "category": "home",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 4,
+  "polygons": 188,
+  "initial_dimensions": [
+    1.179311752319336,
+    1.2399998903274536,
+    1.514999981969595
+  ],
+  "fit_scale": 1.1221122245756685,
+  "shard": 3
+}

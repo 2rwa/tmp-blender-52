@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_suribachi",
+  "title": "すり鉢",
+  "category": "kitchen",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 2,
+  "polygons": 102,
+  "initial_dimensions": [
+    1.3799999952316284,
+    1.3590346574783325,
+    0.49999999068677425
+  ],
+  "fit_scale": 1.2318840622275948,
+  "shard": 1
+}

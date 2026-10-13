@@ -1,0 +1,24 @@
+{
+  "id": "writing_bunchin",
+  "title": "文鎮",
+  "category": "writing",
+  "variant": 3,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 3,
+  "polygons": 134,
+  "initial_dimensions": [
+    1.6399999856948853,
+    0.2619999945163727,
+    0.26199999544769526
+  ],
+  "fit_scale": 1.0365853748954101,
+  "shard": 5
+}

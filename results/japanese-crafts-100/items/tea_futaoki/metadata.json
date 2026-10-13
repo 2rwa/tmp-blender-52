@@ -1,0 +1,24 @@
+{
+  "id": "tea_futaoki",
+  "title": "蓋置",
+  "category": "tea",
+  "variant": 9,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 5,
+  "polygons": 412,
+  "initial_dimensions": [
+    0.7239999771118164,
+    0.7239999771118164,
+    0.399999987334013
+  ],
+  "fit_scale": 2.348066372573169,
+  "shard": 0
+}

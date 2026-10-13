@@ -1,0 +1,24 @@
+{
+  "id": "craft_orin",
+  "title": "おりん",
+  "category": "craft",
+  "variant": 1,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 3,
+  "polygons": 116,
+  "initial_dimensions": [
+    1.1650000214576721,
+    1.083288550376892,
+    0.6549999788403511
+  ],
+  "fit_scale": 1.4592274409342283,
+  "shard": 9
+}

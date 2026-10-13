@@ -1,0 +1,24 @@
+{
+  "id": "wear_kinchaku",
+  "title": "巾着",
+  "category": "wear",
+  "variant": 7,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 6,
+  "polygons": 192,
+  "initial_dimensions": [
+    1.0271425247192383,
+    0.85999995470047,
+    1.5546257495880127
+  ],
+  "fit_scale": 1.0935107696823576,
+  "shard": 4
+}

@@ -1,0 +1,24 @@
+{
+  "id": "kitchen_ochoko",
+  "title": "お猪口",
+  "category": "kitchen",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 37,
+  "mesh_objects": 1,
+  "polygons": 92,
+  "initial_dimensions": [
+    0.7799999713897705,
+    0.7681500315666199,
+    0.4400000087916851
+  ],
+  "fit_scale": 2.179487259430296,
+  "shard": 1
+}

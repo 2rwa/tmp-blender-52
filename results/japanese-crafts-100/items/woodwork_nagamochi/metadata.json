@@ -1,0 +1,24 @@
+{
+  "id": "woodwork_nagamochi",
+  "title": "長持",
+  "category": "woodwork",
+  "variant": 4,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 73,
+  "mesh_objects": 6,
+  "polygons": 144,
+  "initial_dimensions": [
+    1.8300000429153442,
+    0.8600000143051147,
+    0.9200000166893005
+  ],
+  "fit_scale": 0.9289617268487911,
+  "shard": 8
+}

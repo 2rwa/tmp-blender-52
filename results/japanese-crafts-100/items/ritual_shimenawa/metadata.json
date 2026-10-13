@@ -1,0 +1,24 @@
+{
+  "id": "ritual_shimenawa",
+  "title": "注連縄",
+  "category": "ritual",
+  "variant": 2,
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "resolution": [
+    400,
+    300
+  ],
+  "fps": 24,
+  "frames": 144,
+  "preview_frame": 1,
+  "mesh_objects": 7,
+  "polygons": 156,
+  "initial_dimensions": [
+    1.6800000667572021,
+    0.2853170335292816,
+    1.6800001338124275
+  ],
+  "fit_scale": 1.0119046813062964,
+  "shard": 7
+}
