@@ -21,6 +21,8 @@ jobs:
       - name: Validate Python sources and catalog
         run: |
           python3 -m compileall -q experiments/japanese-crafts-rebuilt-100
+          python3 -m pip install --break-system-packages --quiet Pillow==10.2.0
+          PYTHONPATH=experiments/japanese-crafts-rebuilt-100 python3 -m unittest discover -s experiments/japanese-crafts-rebuilt-100 -p 'test_validation.py' -v
           PYTHONPATH=experiments/japanese-crafts-rebuilt-100 python3 -c "from catalog import CATALOG; assert len(CATALOG)==100; print([x[0] for x in CATALOG])"
 
   render:

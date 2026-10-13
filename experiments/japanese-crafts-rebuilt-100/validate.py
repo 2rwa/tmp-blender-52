@@ -8,6 +8,17 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from catalog import CATALOG
 OUT=Path("output52")
 EXPECTED=(500,400)
+def validate_silhouette(bbox, colored_pixels):
+ """Aspect-ratio-aware test: long thin tools must remain visible, not fill both axes.
+ Synthetic mask regression cases live in test_validation.py.
+ """
+ if bbox is None:raise AssertionError("Completely blank preview")
+ w,h=bbox[2]-bbox[0],bbox[3]-bbox[1]
+ if max(w,h)<110:raise AssertionError(f"Too small on screen: {w}x{h}")
+ if min(w,h)<12:raise AssertionError(f"Edge-on/near-invisible preview: {w}x{h}")
+ if colored_pixels<350:raise AssertionError(f"Insufficient visible surface: {colored_pixels} px")
+ return w,h
+
 def check(row):
  ident,title,category,_=row
  folder=OUT/"items"/ident
@@ -40,9 +51,9 @@ def check(row):
   diff=ImageChops.difference(im.convert("RGB"),background).convert("L")
   visible=diff.point(lambda n:255 if n>14 else 0).getbbox()
   if visible is None:raise AssertionError("Blank asset "+ident)
-  bbox_width=visible[2]-visible[0]
-  bbox_height=visible[3]-visible[1]
-  if bbox_width<40 or bbox_height<40:raise AssertionError(f"Tiny silhouette {ident} {visible}")
+  coverage=diff.point(lambda n:255 if n>14 else 0).histogram()[255]
+  try:bbox_width,bbox_height=validate_silhouette(visible,coverage)
+  except AssertionError as err:raise AssertionError(f"{ident}: {err}") from err
   if contrast<7:raise AssertionError(f"Very low contrast {ident}: {contrast:.2f}")
  probe=subprocess.check_output(["ffprobe","-v","error","-select_streams","v:0",
   "-show_entries","stream=nb_frames,width,height","-of","json",
@@ -53,7 +64,7 @@ def check(row):
  return {"id":ident,"title":title,"category":category,
   "mesh_objects":meta["mesh_objects"],"polygons":meta["polygons"],
   "preview_stddev":round(contrast,2),"preview_frame":meta["preview_frame"],
-  "image_bbox":[bbox_width,bbox_height],
+  "image_bbox":[bbox_width,bbox_height],"visible_pixels":coverage,
   "bytes":sum((folder/name).stat().st_size for name in files)}
 def main():
  args=sys.argv[1:]
