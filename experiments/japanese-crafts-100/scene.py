@@ -49,7 +49,8 @@ def setup_render():
  sc.display.shading.show_shadows=True
  sc.display.shading.show_cavity=True
  sc.display.shading.cavity_type="BOTH"
- sc.display.shading.background_type="WORLD"
+ sc.display.shading.background_type="VIEWPORT"
+ sc.display.shading.background_color=(0.035,0.055,0.080)
  sc.render.film_transparent=False
  sc.render.resolution_x,sc.render.resolution_y=SIZE
  sc.render.resolution_percentage=100
