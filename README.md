@@ -46,3 +46,7 @@ has a validated `results/<experiment>/<experiment>.blend` file. The link uses
 GitHub's raw file URL so large models are not duplicated in Pages assets.
 `tools/add_blend_links.py` runs after `tools/build_pages.py` in the Pages
 workflow, and updates both `docs/index.html` and `docs/data.json`.
+
+## Reproduction prompt: Japanese festival and performing arts (100 assets)
+
+The public-safe, self-contained Japanese prompt for recreating or improving this dataset is in [prompts/japanese-festival-performing-arts-100.md](./prompts/japanese-festival-performing-arts-100.md). It describes the actual catalog, Blender build pipeline, outputs, quality checks, and known failure modes. It is a reconstruction from public source and validated results, **not** a transcript of any private conversation.
