@@ -1,0 +1,9 @@
+{
+  "blender_version": "5.2.2",
+  "model_count": 5,
+  "frame_count": 144,
+  "still_only": true,
+  "detail_level": "gemini_flash38_low_trial_v1",
+  "total_parts": 669,
+  "total_polygons": 21465
+}

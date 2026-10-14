@@ -1,0 +1,56 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>祭礼・芸能5種／Gemini Flash Low | Blender 5.2検証済みモデリング</title>
+<style>
+:root{font-family:system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:#10151b;color:#f0eee6}
+header{padding:22px;position:sticky;top:0;background:#10151bf0;z-index:2;border-bottom:1px solid #353b44}
+h1{font-size:clamp(1.2rem,3vw,2rem);margin:0 0 5px}p{color:#adb7c2;margin:8px 0}
+nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+input,select{background:#242e38;color:#fff;border:1px solid #58616a;border-radius:8px;padding:11px;min-width:175px}
+input{flex:1}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:16px;padding:18px;max-width:1500px;margin:auto}
+.card{background:#1c252f;border:1px solid #394351;border-radius:12px;overflow:hidden}
+.card img,.card video{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#27323f}
+.info{padding:14px;display:grid;gap:6px}.info small{color:#aab9c9;overflow-wrap:anywhere}
+.links{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}.links a,.links button{background:#3b5164;border:1px solid #637991;border-radius:7px;color:#fff;padding:7px 10px;font:inherit;text-decoration:none;cursor:pointer}
+.back{color:#d3e3fc}#count{font-weight:bold}
+</style></head><body><header><a class="back" href="../">← 全実験へ</a>　<a class="back" href="../crafts/">既存100種と比較 →</a>
+<h1>祭礼・芸能 — Gemini 3.8 Flash Low 生成比較5件</h1>
+<p>Gemini 3.8 Flash Lowが生成したBlenderコードを検証した実験 / 6秒・24fps Workbench</p>
+<nav><input type="search" id="filter" placeholder="作品名・IDで検索"><select id="category"><option value="">全カテゴリー (5)</option><option value="matsuri">matsuri (1)</option><option value="gakki">gakki (1)</option><option value="kabuki">kabuki (1)</option><option value="local">local (1)</option><option value="stage">stage (1)</option></select><span id="count">5件</span></nav>
+</header><main class="grid" id="grid"><article class="card" data-category="matsuri" data-search="matsuri_mikoshi 神輿">
+   <img loading="lazy" width="400" height="300" src="previews/matsuri_mikoshi.png" alt="神輿">
+   <div class="info"><b>神輿</b><small>matsuri_mikoshi · 3050 faces</small>
+   <div class="links"><a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/matsuri_mikoshi/matsuri_mikoshi.blend">.blend</a>
+   <a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/matsuri_mikoshi/matsuri_mikoshi.glb">.glb</a><button data-video="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/matsuri_mikoshi/turntable.mp4">▶ 回転</button></div></div></article>
+<article class="card" data-category="gakki" data-search="gakki_ryuteki 龍笛">
+   <img loading="lazy" width="400" height="300" src="previews/gakki_ryuteki.png" alt="龍笛">
+   <div class="info"><b>龍笛</b><small>gakki_ryuteki · 9404 faces</small>
+   <div class="links"><a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/gakki_ryuteki/gakki_ryuteki.blend">.blend</a>
+   <a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/gakki_ryuteki/gakki_ryuteki.glb">.glb</a><button data-video="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/gakki_ryuteki/turntable.mp4">▶ 回転</button></div></div></article>
+<article class="card" data-category="kabuki" data-search="kabuki_kiseru_prop 煙管">
+   <img loading="lazy" width="400" height="300" src="previews/kabuki_kiseru_prop.png" alt="煙管">
+   <div class="info"><b>煙管</b><small>kabuki_kiseru_prop · 5980 faces</small>
+   <div class="links"><a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/kabuki_kiseru_prop/kabuki_kiseru_prop.blend">.blend</a>
+   <a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/kabuki_kiseru_prop/kabuki_kiseru_prop.glb">.glb</a><button data-video="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/kabuki_kiseru_prop/turntable.mp4">▶ 回転</button></div></div></article>
+<article class="card" data-category="local" data-search="local_dengaku_hoe_prop 田楽の鍬小道具">
+   <img loading="lazy" width="400" height="300" src="previews/local_dengaku_hoe_prop.png" alt="田楽の鍬小道具">
+   <div class="info"><b>田楽の鍬小道具</b><small>local_dengaku_hoe_prop · 787 faces</small>
+   <div class="links"><a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/local_dengaku_hoe_prop/local_dengaku_hoe_prop.blend">.blend</a>
+   <a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/local_dengaku_hoe_prop/local_dengaku_hoe_prop.glb">.glb</a><button data-video="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/local_dengaku_hoe_prop/turntable.mp4">▶ 回転</button></div></div></article>
+<article class="card" data-category="stage" data-search="stage_yagura_tower 祭礼の櫓">
+   <img loading="lazy" width="400" height="300" src="previews/stage_yagura_tower.png" alt="祭礼の櫓">
+   <div class="info"><b>祭礼の櫓</b><small>stage_yagura_tower · 2244 faces</small>
+   <div class="links"><a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/stage_yagura_tower/stage_yagura_tower.blend">.blend</a>
+   <a download href="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/stage_yagura_tower/stage_yagura_tower.glb">.glb</a><button data-video="https://raw.githubusercontent.com/2rwa/tmp-blender-52/main/results/japanese-festival-flash38-test-5/items/stage_yagura_tower/turntable.mp4">▶ 回転</button></div></div></article></main>
+<script>
+const q=document.querySelector('#filter'),cat=document.querySelector('#category');
+function update(){let n=0;document.querySelectorAll('.card').forEach(el=>{
+const ok=(!cat.value||el.dataset.category===cat.value)&&el.dataset.search.toLowerCase().includes(q.value.trim().toLowerCase());
+el.hidden=!ok;if(ok)n++;});document.querySelector('#count').textContent=n+'件';}
+q.addEventListener('input',update);cat.addEventListener('change',update);
+document.addEventListener('click',e=>{const button=e.target.closest('button[data-video]');if(!button)return;
+const card=button.closest('.card'),img=card.querySelector('img');if(img){const v=document.createElement('video');
+v.src=button.dataset.video;v.controls=true;v.autoplay=true;v.loop=true;v.playsInline=true;img.replaceWith(v);}
+button.disabled=true;});
+</script></body></html>

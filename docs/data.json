@@ -1,5 +1,23 @@
 [
   {
+    "id": "japanese-festival-flash38-test-5",
+    "title": "祭礼・芸能 — Gemini 3.8 Flash Low造形比較5件",
+    "description": "Five independent AI-generated procedural Blender modeling scripts subject to automated safety and render gates.",
+    "created_at": "2026-10-14T03:49:43Z",
+    "preview": "assets/japanese-festival-flash38-test-5/preview.png",
+    "video": null,
+    "validation": {
+      "blender_version": "5.2.2",
+      "model_count": 5,
+      "frame_count": 144,
+      "still_only": true,
+      "detail_level": "gemini_flash38_low_trial_v1",
+      "total_parts": 669,
+      "total_polygons": 21465
+    },
+    "blend": null
+  },
+  {
     "id": "japanese-festival-performing-arts-100",
     "title": "祭礼・芸能100種（精密ローポリ）",
     "description": "100 standalone modeled Japanese festival and performing arts items. Intricate festival floats, shrine furnishings, theatre masks, musical instruments, dance costumes and regional festival props.",
