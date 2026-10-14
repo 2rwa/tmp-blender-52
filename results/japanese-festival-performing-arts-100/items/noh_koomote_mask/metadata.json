@@ -1,0 +1,28 @@
+{
+  "id": "noh_koomote_mask",
+  "title": "小面",
+  "category": "noh",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 22,
+  "polygons": 1892,
+  "materials": 7,
+  "dimensions_original": [
+    0.9399999678134918,
+    0.7899999767541885,
+    1.3199999928474426
+  ],
+  "normalization_scale": 1.4772727352774833,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 39.49,
+  "batch": 4
+}

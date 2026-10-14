@@ -1,0 +1,28 @@
+{
+  "id": "buyo_folk_shishimai_cloth",
+  "title": "獅子舞胴幕",
+  "category": "buyo_folk",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 247,
+  "polygons": 15512,
+  "materials": 5,
+  "dimensions_original": [
+    2.059999942779541,
+    0.3999999985098839,
+    1.4007208496332169
+  ],
+  "normalization_scale": 0.9466019680412616,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 17.28,
+  "batch": 6
+}

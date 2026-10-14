@@ -1,0 +1,28 @@
+{
+  "id": "local_hyakumangoku_helmet",
+  "title": "郷土祭礼兜",
+  "category": "local",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 22,
+  "polygons": 2946,
+  "materials": 5,
+  "dimensions_original": [
+    1.6299999952316284,
+    1.5460000038146973,
+    1.9149999618530273
+  ],
+  "normalization_scale": 1.018276782686254,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 18.81,
+  "batch": 9
+}

@@ -1,0 +1,28 @@
+{
+  "id": "costume_bell_anklet",
+  "title": "鈴脚絆",
+  "category": "costume",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 38,
+  "polygons": 3372,
+  "materials": 3,
+  "dimensions_original": [
+    1.571190357208252,
+    0.800000011920929,
+    0.19384677708148956
+  ],
+  "normalization_scale": 1.2410972299147958,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 17.21,
+  "batch": 7
+}

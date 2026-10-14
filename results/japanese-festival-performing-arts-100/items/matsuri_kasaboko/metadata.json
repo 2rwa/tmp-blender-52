@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_kasaboko",
+  "title": "笠鉾",
+  "category": "matsuri",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 480,
+  "polygons": 22298,
+  "materials": 7,
+  "dimensions_original": [
+    2.559999942779541,
+    1.5199946165084839,
+    3.0627691745758057
+  ],
+  "normalization_scale": 0.6366787338030707,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 17.29,
+  "batch": 0
+}

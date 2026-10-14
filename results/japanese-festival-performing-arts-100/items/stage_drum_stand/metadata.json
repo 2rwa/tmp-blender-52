@@ -1,0 +1,28 @@
+{
+  "id": "stage_drum_stand",
+  "title": "太鼓台",
+  "category": "stage",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 16,
+  "polygons": 234,
+  "materials": 3,
+  "dimensions_original": [
+    1.5199999809265137,
+    0.8399999737739563,
+    1.0065932385623455
+  ],
+  "normalization_scale": 1.2828947529403127,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 16.74,
+  "batch": 8
+}

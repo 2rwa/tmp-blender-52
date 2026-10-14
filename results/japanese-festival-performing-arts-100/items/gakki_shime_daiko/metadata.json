@@ -1,0 +1,28 @@
+{
+  "id": "gakki_shime_daiko",
+  "title": "締太鼓",
+  "category": "gakki",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 159,
+  "polygons": 2738,
+  "materials": 6,
+  "dimensions_original": [
+    1.2291436195373535,
+    0.47753895819187164,
+    1.4634939134120941
+  ],
+  "normalization_scale": 1.332427816835692,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 30.49,
+  "batch": 3
+}

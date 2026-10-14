@@ -1,0 +1,28 @@
+{
+  "id": "costume_yamabushi_tokin",
+  "title": "頭襟",
+  "category": "costume",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 646,
+  "materials": 3,
+  "dimensions_original": [
+    1.000632107257843,
+    1.0572154819965363,
+    0.7149450816214085
+  ],
+  "normalization_scale": 1.8444678811527173,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 13.42,
+  "batch": 7
+}

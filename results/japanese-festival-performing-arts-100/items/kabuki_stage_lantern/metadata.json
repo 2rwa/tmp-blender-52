@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_stage_lantern",
+  "title": "芝居提灯",
+  "category": "kabuki",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 41,
+  "polygons": 2082,
+  "materials": 5,
+  "dimensions_original": [
+    0.8901199698448181,
+    0.9055199921131134,
+    1.8593573570251465
+  ],
+  "normalization_scale": 1.048749447023931,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.23,
+  "batch": 5
+}

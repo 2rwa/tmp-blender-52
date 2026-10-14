@@ -1,0 +1,28 @@
+{
+  "id": "stage_bonbori",
+  "title": "雪洞",
+  "category": "stage",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 12,
+  "polygons": 458,
+  "materials": 4,
+  "dimensions_original": [
+    1.2200000286102295,
+    1.0565509796142578,
+    1.544196605682373
+  ],
+  "normalization_scale": 1.2627925698219653,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 33.85,
+  "batch": 8
+}

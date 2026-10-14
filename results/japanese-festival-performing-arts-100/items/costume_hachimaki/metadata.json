@@ -1,0 +1,28 @@
+{
+  "id": "costume_hachimaki",
+  "title": "鉢巻",
+  "category": "costume",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 27,
+  "polygons": 452,
+  "materials": 2,
+  "dimensions_original": [
+    1.059999942779541,
+    1.075276494026184,
+    0.8816585838794708
+  ],
+  "normalization_scale": 1.8134870527101055,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 28.57,
+  "batch": 7
+}

@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_mikoshi",
+  "title": "神輿",
+  "category": "matsuri",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 386,
+  "polygons": 15987,
+  "materials": 10,
+  "dimensions_original": [
+    1.968000054359436,
+    1.2950220108032227,
+    2.330000087618828
+  ],
+  "normalization_scale": 0.836909839772936,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 21.62,
+  "batch": 0
+}

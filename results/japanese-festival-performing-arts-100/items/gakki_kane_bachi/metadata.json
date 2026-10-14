@@ -1,0 +1,28 @@
+{
+  "id": "gakki_kane_bachi",
+  "title": "鉦と撞木",
+  "category": "gakki",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 30,
+  "polygons": 1006,
+  "materials": 6,
+  "dimensions_original": [
+    1.8351321816444397,
+    1.1399999856948853,
+    1.3865345772355795
+  ],
+  "normalization_scale": 1.0625937572805402,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 18.71,
+  "batch": 3
+}

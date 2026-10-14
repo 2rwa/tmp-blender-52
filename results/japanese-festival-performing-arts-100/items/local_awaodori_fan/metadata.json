@@ -1,0 +1,28 @@
+{
+  "id": "local_awaodori_fan",
+  "title": "阿波踊り団扇",
+  "category": "local",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 120,
+  "polygons": 4704,
+  "materials": 5,
+  "dimensions_original": [
+    2.424304246902466,
+    0.14816906116902828,
+    1.330095298588276
+  ],
+  "normalization_scale": 0.8043544874747117,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 14.5,
+  "batch": 9
+}

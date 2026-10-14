@@ -1,0 +1,28 @@
+{
+  "id": "ritual_saisen_box",
+  "title": "賽銭箱",
+  "category": "ritual",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 25,
+  "polygons": 942,
+  "materials": 5,
+  "dimensions_original": [
+    1.5700000524520874,
+    1.077551007270813,
+    1.2443619966506958
+  ],
+  "normalization_scale": 1.2420381750652898,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 28.41,
+  "batch": 1
+}

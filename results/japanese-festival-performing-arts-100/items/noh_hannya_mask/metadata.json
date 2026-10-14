@@ -1,0 +1,28 @@
+{
+  "id": "noh_hannya_mask",
+  "title": "般若面",
+  "category": "noh",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 24,
+  "polygons": 1508,
+  "materials": 4,
+  "dimensions_original": [
+    1.0675989389419556,
+    0.7899999767541885,
+    1.6746647953987122
+  ],
+  "normalization_scale": 1.1644121291364071,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 33.14,
+  "batch": 4
+}

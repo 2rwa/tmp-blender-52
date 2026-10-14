@@ -1,0 +1,28 @@
+{
+  "id": "gakki_uchiwa_daiko",
+  "title": "団扇太鼓",
+  "category": "gakki",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 83,
+  "polygons": 2478,
+  "materials": 5,
+  "dimensions_original": [
+    1.120400071144104,
+    0.24264104664325714,
+    1.80020010471344
+  ],
+  "normalization_scale": 1.083212913327991,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 21.94,
+  "batch": 3
+}

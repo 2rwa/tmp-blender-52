@@ -1,0 +1,28 @@
+{
+  "id": "noh_okina_mask",
+  "title": "翁面",
+  "category": "noh",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 37,
+  "polygons": 2352,
+  "materials": 7,
+  "dimensions_original": [
+    0.9399999678134918,
+    0.7899999767541885,
+    1.661136731505394
+  ],
+  "normalization_scale": 1.1738949377350927,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 34.24,
+  "batch": 4
+}

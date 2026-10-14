@@ -1,0 +1,28 @@
+{
+  "id": "shinji_houbei_tray",
+  "title": "奉幣盆",
+  "category": "shinji",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 13,
+  "polygons": 910,
+  "materials": 4,
+  "dimensions_original": [
+    1.4500000476837158,
+    1.0399999618530273,
+    0.7269913554191589
+  ],
+  "normalization_scale": 1.3448275419818108,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 12.8,
+  "batch": 2
+}

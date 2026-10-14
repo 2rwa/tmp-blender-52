@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_onnagata_kanzashi",
+  "title": "女形簪",
+  "category": "kabuki",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 51,
+  "polygons": 2406,
+  "materials": 3,
+  "dimensions_original": [
+    0.9721692800521851,
+    0.210999995470047,
+    1.7117069214582443
+  ],
+  "normalization_scale": 1.1392137144241656,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 21.29,
+  "batch": 5
+}

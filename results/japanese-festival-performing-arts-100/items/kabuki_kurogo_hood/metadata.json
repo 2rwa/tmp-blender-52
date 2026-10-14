@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_kurogo_hood",
+  "title": "黒衣頭巾",
+  "category": "kabuki",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 16,
+  "polygons": 390,
+  "materials": 3,
+  "dimensions_original": [
+    0.8999999761581421,
+    1.0722082555294037,
+    1.4799999594688416
+  ],
+  "normalization_scale": 1.3175676036503656,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 91,
+  "preview_stddev": 12.68,
+  "batch": 5
+}

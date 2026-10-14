@@ -1,0 +1,28 @@
+{
+  "id": "stage_torii_prop",
+  "title": "鳥居小道具",
+  "category": "stage",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 1042,
+  "materials": 3,
+  "dimensions_original": [
+    2.185190439224243,
+    0.32499998807907104,
+    2.4099998474121094
+  ],
+  "normalization_scale": 0.8091286819349538,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 13.72,
+  "batch": 8
+}

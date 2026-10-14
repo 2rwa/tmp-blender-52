@@ -1,0 +1,28 @@
+{
+  "id": "ritual_festival_lantern",
+  "title": "祭礼灯籠",
+  "category": "ritual",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 53,
+  "polygons": 1006,
+  "materials": 4,
+  "dimensions_original": [
+    1.0787999629974365,
+    1.0987934470176697,
+    1.9800000190734863
+  ],
+  "normalization_scale": 0.9848484753613667,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 18.64,
+  "batch": 1
+}

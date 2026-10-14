@@ -1,0 +1,28 @@
+{
+  "id": "gakki_atarigane",
+  "title": "当り鉦",
+  "category": "gakki",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 28,
+  "polygons": 982,
+  "materials": 5,
+  "dimensions_original": [
+    1.5431481003761292,
+    1.1399999856948853,
+    1.3865345772355795
+  ],
+  "normalization_scale": 1.2636505851413122,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 20.0,
+  "batch": 3
+}

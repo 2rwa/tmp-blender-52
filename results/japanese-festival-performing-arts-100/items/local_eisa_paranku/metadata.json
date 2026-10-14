@@ -1,0 +1,28 @@
+{
+  "id": "local_eisa_paranku",
+  "title": "エイサー・パーランクー",
+  "category": "local",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 74,
+  "polygons": 2362,
+  "materials": 5,
+  "dimensions_original": [
+    1.3893076181411743,
+    0.3046410456299782,
+    1.392437882721424
+  ],
+  "normalization_scale": 1.4004215370734234,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 26.35,
+  "batch": 9
+}

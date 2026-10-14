@@ -1,0 +1,28 @@
+{
+  "id": "costume_geta_festival",
+  "title": "祭下駄",
+  "category": "costume",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 26,
+  "polygons": 556,
+  "materials": 3,
+  "dimensions_original": [
+    1.2799999713897705,
+    1.0299999713897705,
+    0.7891348153352737
+  ],
+  "normalization_scale": 1.5234375340514823,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 21.43,
+  "batch": 7
+}

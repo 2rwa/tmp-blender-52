@@ -1,0 +1,28 @@
+{
+  "id": "ritual_ema_stand",
+  "title": "絵馬掛け",
+  "category": "ritual",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 36,
+  "polygons": 1204,
+  "materials": 5,
+  "dimensions_original": [
+    1.761190414428711,
+    0.3349999785423279,
+    2.109999895095825
+  ],
+  "normalization_scale": 0.9241706620613084,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 21.65,
+  "batch": 1
+}

@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_kiseru_prop",
+  "title": "煙管小道具",
+  "category": "kabuki",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 30,
+  "polygons": 2068,
+  "materials": 5,
+  "dimensions_original": [
+    2.269911050796509,
+    0.2540000081062317,
+    0.5768781006336212
+  ],
+  "normalization_scale": 0.8590644991642944,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 11.85,
+  "batch": 5
+}

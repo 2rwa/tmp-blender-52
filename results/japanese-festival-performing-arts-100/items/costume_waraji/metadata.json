@@ -1,0 +1,28 @@
+{
+  "id": "costume_waraji",
+  "title": "草鞋",
+  "category": "costume",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 48,
+  "polygons": 1100,
+  "materials": 2,
+  "dimensions_original": [
+    1.5162290334701538,
+    1.1599998474121094,
+    0.7464853748679161
+  ],
+  "normalization_scale": 1.2860853848294185,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 28.73,
+  "batch": 7
+}

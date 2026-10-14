@@ -1,0 +1,28 @@
+{
+  "id": "stage_kouhaku_curtain",
+  "title": "紅白幕",
+  "category": "stage",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 189,
+  "polygons": 3488,
+  "materials": 4,
+  "dimensions_original": [
+    2.5799999237060547,
+    0.09891007840633392,
+    2.0251574218273163
+  ],
+  "normalization_scale": 0.7558139758387713,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 26.8,
+  "batch": 8
+}

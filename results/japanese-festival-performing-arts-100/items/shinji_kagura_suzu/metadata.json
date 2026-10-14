@@ -1,0 +1,28 @@
+{
+  "id": "shinji_kagura_suzu",
+  "title": "神楽鈴",
+  "category": "shinji",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 58,
+  "polygons": 5418,
+  "materials": 4,
+  "dimensions_original": [
+    0.8745604157447815,
+    0.901948094367981,
+    1.4500000476837158
+  ],
+  "normalization_scale": 1.3448275419818108,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 24.61,
+  "batch": 2
+}

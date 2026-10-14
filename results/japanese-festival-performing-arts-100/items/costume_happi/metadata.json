@@ -1,0 +1,28 @@
+{
+  "id": "costume_happi",
+  "title": "法被",
+  "category": "costume",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 123,
+  "polygons": 5312,
+  "materials": 5,
+  "dimensions_original": [
+    2.059999942779541,
+    0.4599999934434891,
+    1.3987208753824234
+  ],
+  "normalization_scale": 0.9466019680412616,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.84,
+  "batch": 7
+}

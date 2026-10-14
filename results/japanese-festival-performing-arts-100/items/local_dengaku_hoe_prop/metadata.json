@@ -1,0 +1,28 @@
+{
+  "id": "local_dengaku_hoe_prop",
+  "title": "田楽鍬小道具",
+  "category": "local",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 29,
+  "polygons": 860,
+  "materials": 5,
+  "dimensions_original": [
+    1.1399999856948853,
+    0.25189129263162613,
+    1.9251729361712933
+  ],
+  "normalization_scale": 1.0128960174757504,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 13.71,
+  "batch": 9
+}

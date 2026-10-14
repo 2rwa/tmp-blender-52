@@ -1,0 +1,28 @@
+{
+  "id": "ritual_shide_bundle",
+  "title": "紙垂束",
+  "category": "ritual",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 14,
+  "polygons": 158,
+  "materials": 2,
+  "dimensions_original": [
+    0.9430000185966492,
+    0.1184999980032444,
+    1.0849999785423279
+  ],
+  "normalization_scale": 1.7972350585847747,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 34.45,
+  "batch": 1
+}

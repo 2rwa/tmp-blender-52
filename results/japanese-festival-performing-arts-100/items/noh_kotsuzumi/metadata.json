@@ -1,0 +1,28 @@
+{
+  "id": "noh_kotsuzumi",
+  "title": "小鼓",
+  "category": "noh",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 155,
+  "polygons": 2878,
+  "materials": 5,
+  "dimensions_original": [
+    0.7714269161224365,
+    0.9775698781013489,
+    0.7777272760868073
+  ],
+  "normalization_scale": 1.994742313242425,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 27.61,
+  "batch": 4
+}

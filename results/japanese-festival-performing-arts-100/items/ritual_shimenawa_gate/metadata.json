@@ -1,0 +1,28 @@
+{
+  "id": "ritual_shimenawa_gate",
+  "title": "注連縄飾り",
+  "category": "ritual",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 240,
+  "polygons": 3286,
+  "materials": 5,
+  "dimensions_original": [
+    2.079190492630005,
+    0.4153629094362259,
+    2.2099997997283936
+  ],
+  "normalization_scale": 0.8823530211358629,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 19.48,
+  "batch": 1
+}

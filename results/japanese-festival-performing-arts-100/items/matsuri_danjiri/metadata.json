@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_danjiri",
+  "title": "だんじり",
+  "category": "matsuri",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 562,
+  "polygons": 18205,
+  "materials": 11,
+  "dimensions_original": [
+    2.559999942779541,
+    1.6547999382019043,
+    2.8070000410079956
+  ],
+  "normalization_scale": 0.6946918316751266,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 21.77,
+  "batch": 0
+}

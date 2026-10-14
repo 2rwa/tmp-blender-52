@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_mie_fan",
+  "title": "見得扇",
+  "category": "kabuki",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 129,
+  "polygons": 4156,
+  "materials": 4,
+  "dimensions_original": [
+    2.424304246902466,
+    0.13823352567851543,
+    1.330095298588276
+  ],
+  "normalization_scale": 0.8043544874747117,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.36,
+  "batch": 5
+}

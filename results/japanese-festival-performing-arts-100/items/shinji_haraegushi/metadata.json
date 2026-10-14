@@ -1,0 +1,28 @@
+{
+  "id": "shinji_haraegushi",
+  "title": "祓串",
+  "category": "shinji",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 88,
+  "polygons": 1146,
+  "materials": 3,
+  "dimensions_original": [
+    0.5491794943809509,
+    0.5498858094215393,
+    1.850000023841858
+  ],
+  "normalization_scale": 1.0540540404699423,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 20.69,
+  "batch": 2
+}

@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_taikodai",
+  "title": "太鼓台",
+  "category": "matsuri",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 294,
+  "polygons": 7704,
+  "materials": 10,
+  "dimensions_original": [
+    2.559999942779541,
+    1.5921620726585388,
+    2.720400020480156
+  ],
+  "normalization_scale": 0.7168063466106801,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.95,
+  "batch": 0
+}

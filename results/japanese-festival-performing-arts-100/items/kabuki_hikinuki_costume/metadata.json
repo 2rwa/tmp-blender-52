@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_hikinuki_costume",
+  "title": "引抜衣装",
+  "category": "kabuki",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 131,
+  "polygons": 4984,
+  "materials": 4,
+  "dimensions_original": [
+    2.059999942779541,
+    0.4144335836172104,
+    1.746498003602028
+  ],
+  "normalization_scale": 0.9466019680412616,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 22.24,
+  "batch": 5
+}

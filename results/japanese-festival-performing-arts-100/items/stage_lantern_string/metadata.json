@@ -1,0 +1,28 @@
+{
+  "id": "stage_lantern_string",
+  "title": "提灯列",
+  "category": "stage",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 253,
+  "polygons": 12696,
+  "materials": 6,
+  "dimensions_original": [
+    3.1349599361419678,
+    0.3763199895620346,
+    1.1477575898170471
+  ],
+  "normalization_scale": 0.6220175184757747,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.37,
+  "batch": 8
+}

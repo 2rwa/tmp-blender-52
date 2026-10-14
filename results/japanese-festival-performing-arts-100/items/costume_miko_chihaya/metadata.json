@@ -1,0 +1,28 @@
+{
+  "id": "costume_miko_chihaya",
+  "title": "千早",
+  "category": "costume",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 125,
+  "polygons": 5612,
+  "materials": 4,
+  "dimensions_original": [
+    2.059999942779541,
+    0.3999999985098839,
+    1.4138095527887344
+  ],
+  "normalization_scale": 0.9466019680412616,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 27.94,
+  "batch": 7
+}

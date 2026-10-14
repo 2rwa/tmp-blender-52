@@ -1,0 +1,28 @@
+{
+  "id": "costume_miko_hakama",
+  "title": "緋袴",
+  "category": "costume",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 62,
+  "polygons": 708,
+  "materials": 3,
+  "dimensions_original": [
+    1.0299999713897705,
+    0.4350000023841858,
+    1.4181574583053589
+  ],
+  "normalization_scale": 1.3750236185551437,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 21.87,
+  "batch": 7
+}

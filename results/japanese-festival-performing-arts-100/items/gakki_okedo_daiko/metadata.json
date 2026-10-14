@@ -1,0 +1,28 @@
+{
+  "id": "gakki_okedo_daiko",
+  "title": "桶胴太鼓",
+  "category": "gakki",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 147,
+  "polygons": 3014,
+  "materials": 7,
+  "dimensions_original": [
+    1.4199999570846558,
+    1.2760255336761475,
+    1.4200000166893005
+  ],
+  "normalization_scale": 1.3732394204799963,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 34.39,
+  "batch": 3
+}

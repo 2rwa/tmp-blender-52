@@ -1,0 +1,28 @@
+{
+  "id": "stage_kagamiita_panel",
+  "title": "鏡板パネル",
+  "category": "stage",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 44,
+  "polygons": 3188,
+  "materials": 3,
+  "dimensions_original": [
+    1.8700000047683716,
+    0.320000059902668,
+    1.8899999260902405
+  ],
+  "normalization_scale": 1.0317460720931768,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 32.24,
+  "batch": 8
+}

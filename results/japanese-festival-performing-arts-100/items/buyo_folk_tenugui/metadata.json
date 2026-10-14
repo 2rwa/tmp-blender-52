@@ -1,0 +1,28 @@
+{
+  "id": "buyo_folk_tenugui",
+  "title": "手拭",
+  "category": "buyo_folk",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 46,
+  "polygons": 422,
+  "materials": 3,
+  "dimensions_original": [
+    1.3799999952316284,
+    0.0860000029206276,
+    1.6299999356269836
+  ],
+  "normalization_scale": 1.1963190656507159,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 27.33,
+  "batch": 6
+}

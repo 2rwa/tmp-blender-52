@@ -1,0 +1,28 @@
+{
+  "id": "shinji_ritual_fan",
+  "title": "神事扇",
+  "category": "shinji",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 127,
+  "polygons": 4144,
+  "materials": 4,
+  "dimensions_original": [
+    2.424304246902466,
+    0.15900002419948578,
+    1.330095298588276
+  ],
+  "normalization_scale": 0.8043544874747117,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 18.16,
+  "batch": 2
+}

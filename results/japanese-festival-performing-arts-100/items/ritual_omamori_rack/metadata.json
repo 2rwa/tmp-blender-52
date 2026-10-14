@@ -1,0 +1,28 @@
+{
+  "id": "ritual_omamori_rack",
+  "title": "御守掛け",
+  "category": "ritual",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 36,
+  "polygons": 1204,
+  "materials": 6,
+  "dimensions_original": [
+    1.761190414428711,
+    0.3519999831914902,
+    2.1299998946487904
+  ],
+  "normalization_scale": 0.9154930030273687,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 13.21,
+  "batch": 1
+}

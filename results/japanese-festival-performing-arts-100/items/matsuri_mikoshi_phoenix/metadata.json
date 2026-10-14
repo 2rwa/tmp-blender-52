@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_mikoshi_phoenix",
+  "title": "鳳凰付き神輿",
+  "category": "matsuri",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 370,
+  "polygons": 14707,
+  "materials": 10,
+  "dimensions_original": [
+    1.968000054359436,
+    1.2950220108032227,
+    2.6500000208616257
+  ],
+  "normalization_scale": 0.7358490508109405,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 20.3,
+  "batch": 0
+}

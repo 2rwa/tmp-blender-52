@@ -1,0 +1,28 @@
+{
+  "id": "buyo_folk_kasa",
+  "title": "舞傘",
+  "category": "buyo_folk",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 90,
+  "polygons": 1102,
+  "materials": 4,
+  "dimensions_original": [
+    2.03940749168396,
+    2.0399999618530273,
+    2.200000047683716
+  ],
+  "normalization_scale": 0.8863636171522223,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 20.16,
+  "batch": 6
+}

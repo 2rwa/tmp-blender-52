@@ -1,0 +1,28 @@
+{
+  "id": "ritual_takachochin_pole",
+  "title": "高張提灯",
+  "category": "ritual",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 52,
+  "polygons": 2238,
+  "materials": 5,
+  "dimensions_original": [
+    0.6358000040054321,
+    0.6468000113964081,
+    3.184000015258789
+  ],
+  "normalization_scale": 0.6124371829946451,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 7.51,
+  "batch": 1
+}

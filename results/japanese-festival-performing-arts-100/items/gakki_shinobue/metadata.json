@@ -1,0 +1,28 @@
+{
+  "id": "gakki_shinobue",
+  "title": "篠笛",
+  "category": "gakki",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 1350,
+  "materials": 3,
+  "dimensions_original": [
+    2.4600000381469727,
+    0.19600000977516174,
+    0.19600002467632294
+  ],
+  "normalization_scale": 0.7926829145372141,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 15.55,
+  "batch": 3
+}

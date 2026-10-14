@@ -1,0 +1,28 @@
+{
+  "id": "shinji_shaku",
+  "title": "笏",
+  "category": "shinji",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 176,
+  "materials": 2,
+  "dimensions_original": [
+    0.3799999952316284,
+    0.08315740525722504,
+    1.6300000585615635
+  ],
+  "normalization_scale": 1.19631897542435,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 23.42,
+  "batch": 2
+}

@@ -1,0 +1,28 @@
+{
+  "id": "stage_yagura_tower",
+  "title": "櫓",
+  "category": "stage",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 344,
+  "polygons": 11120,
+  "materials": 10,
+  "dimensions_original": [
+    2.4800000190734863,
+    2.5301483869552612,
+    3.329999804496765
+  ],
+  "normalization_scale": 0.58558561996513,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 19.87,
+  "batch": 8
+}

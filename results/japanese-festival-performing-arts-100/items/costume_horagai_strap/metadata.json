@@ -1,0 +1,28 @@
+{
+  "id": "costume_horagai_strap",
+  "title": "法螺貝紐",
+  "category": "costume",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 23,
+  "polygons": 1438,
+  "materials": 4,
+  "dimensions_original": [
+    1.3199999928474426,
+    0.9939999580383301,
+    1.4017765522003174
+  ],
+  "normalization_scale": 1.3910918947382565,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 31.99,
+  "batch": 7
+}

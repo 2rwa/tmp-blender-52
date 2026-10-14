@@ -1,0 +1,28 @@
+{
+  "id": "local_kasaodori_hat",
+  "title": "笠踊り笠",
+  "category": "local",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 54,
+  "polygons": 746,
+  "materials": 3,
+  "dimensions_original": [
+    2.2206008434295654,
+    2.1955472230911255,
+    0.9851321280002594
+  ],
+  "normalization_scale": 0.878140709425454,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 33.6,
+  "batch": 9
+}

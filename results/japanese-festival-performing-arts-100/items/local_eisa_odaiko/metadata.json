@@ -1,0 +1,28 @@
+{
+  "id": "local_eisa_odaiko",
+  "title": "エイサー大太鼓",
+  "category": "local",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 121,
+  "polygons": 2830,
+  "materials": 6,
+  "dimensions_original": [
+    1.548799991607666,
+    1.3634127974510193,
+    1.5578587055206299
+  ],
+  "normalization_scale": 1.251718139193065,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 36.58,
+  "batch": 9
+}

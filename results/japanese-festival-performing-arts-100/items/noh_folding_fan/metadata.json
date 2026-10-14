@@ -1,0 +1,28 @@
+{
+  "id": "noh_folding_fan",
+  "title": "能扇",
+  "category": "noh",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 107,
+  "polygons": 3952,
+  "materials": 4,
+  "dimensions_original": [
+    2.424304246902466,
+    0.13810382969677448,
+    1.330095298588276
+  ],
+  "normalization_scale": 0.8043544874747117,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 18.4,
+  "batch": 4
+}

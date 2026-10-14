@@ -1,0 +1,28 @@
+{
+  "id": "buyo_folk_suzu",
+  "title": "舞鈴",
+  "category": "buyo_folk",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 58,
+  "polygons": 1896,
+  "materials": 3,
+  "dimensions_original": [
+    0.880661129951477,
+    0.8821653127670288,
+    1.2200000286102295
+  ],
+  "normalization_scale": 1.5983606182545376,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.59,
+  "batch": 6
+}

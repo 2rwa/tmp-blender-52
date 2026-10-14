@@ -1,0 +1,28 @@
+{
+  "id": "ritual_temizuya_ladle",
+  "title": "手水舎の柄杓",
+  "category": "ritual",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 4,
+  "polygons": 442,
+  "materials": 3,
+  "dimensions_original": [
+    1.9686434864997864,
+    0.6000000238418579,
+    0.7374716512858868
+  ],
+  "normalization_scale": 0.9905297802128031,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 16.66,
+  "batch": 1
+}

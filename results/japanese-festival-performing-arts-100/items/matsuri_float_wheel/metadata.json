@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_float_wheel",
+  "title": "山車車輪",
+  "category": "matsuri",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 167,
+  "polygons": 3598,
+  "materials": 5,
+  "dimensions_original": [
+    1.694000005722046,
+    0.5,
+    1.6940000671893358
+  ],
+  "normalization_scale": 1.1511215600099804,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.77,
+  "batch": 0
+}

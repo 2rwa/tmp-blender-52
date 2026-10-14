@@ -1,0 +1,28 @@
+{
+  "id": "shinji_sakaki_stand",
+  "title": "榊立て",
+  "category": "shinji",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 50,
+  "polygons": 2546,
+  "materials": 4,
+  "dimensions_original": [
+    1.5374866724014282,
+    1.2842138409614563,
+    1.7100000102072954
+  ],
+  "normalization_scale": 1.1403508703860243,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 22.42,
+  "batch": 2
+}

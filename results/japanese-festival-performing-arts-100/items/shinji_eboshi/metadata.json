@@ -1,0 +1,28 @@
+{
+  "id": "shinji_eboshi",
+  "title": "烏帽子",
+  "category": "shinji",
+  "variant": 3,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 20,
+  "polygons": 288,
+  "materials": 3,
+  "dimensions_original": [
+    0.8760147094726562,
+    0.8600000143051147,
+    1.431000079959631
+  ],
+  "normalization_scale": 1.3626833620128171,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 91,
+  "preview_stddev": 12.35,
+  "batch": 2
+}

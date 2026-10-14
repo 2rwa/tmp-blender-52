@@ -1,0 +1,28 @@
+{
+  "id": "gakki_nagadou_taiko",
+  "title": "長胴太鼓",
+  "category": "gakki",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 71,
+  "polygons": 1794,
+  "materials": 6,
+  "dimensions_original": [
+    1.7214984893798828,
+    0.96282559633255,
+    1.650995770469308
+  ],
+  "normalization_scale": 1.1327340755915667,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 32.05,
+  "batch": 3
+}

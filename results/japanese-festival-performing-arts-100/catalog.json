@@ -1,0 +1,1508 @@
+{
+  "validated": 100,
+  "total_polygons": 403083,
+  "total_parts": 10655,
+  "lowest_contrast": 7.51,
+  "items": [
+    {
+      "id": "matsuri_mikoshi",
+      "title": "神輿",
+      "category": "matsuri",
+      "mesh_objects": 386,
+      "polygons": 15987,
+      "preview_stddev": 21.62,
+      "preview_frame": 19,
+      "image_bbox": [
+        290,
+        341
+      ],
+      "visible_pixels": 41414,
+      "bytes": 2906942
+    },
+    {
+      "id": "matsuri_mikoshi_phoenix",
+      "title": "鳳凰付き神輿",
+      "category": "matsuri",
+      "mesh_objects": 370,
+      "polygons": 14707,
+      "preview_stddev": 20.3,
+      "preview_frame": 19,
+      "image_bbox": [
+        255,
+        336
+      ],
+      "visible_pixels": 33186,
+      "bytes": 2734322
+    },
+    {
+      "id": "matsuri_danjiri",
+      "title": "だんじり",
+      "category": "matsuri",
+      "mesh_objects": 562,
+      "polygons": 18205,
+      "preview_stddev": 21.77,
+      "preview_frame": 19,
+      "image_bbox": [
+        307,
+        348
+      ],
+      "visible_pixels": 45385,
+      "bytes": 3553809
+    },
+    {
+      "id": "matsuri_hikiyama",
+      "title": "曳山",
+      "category": "matsuri",
+      "mesh_objects": 521,
+      "polygons": 18718,
+      "preview_stddev": 22.22,
+      "preview_frame": 19,
+      "image_bbox": [
+        334,
+        354
+      ],
+      "visible_pixels": 50419,
+      "bytes": 3545155
+    },
+    {
+      "id": "matsuri_yatai_float",
+      "title": "屋台山車",
+      "category": "matsuri",
+      "mesh_objects": 529,
+      "polygons": 18734,
+      "preview_stddev": 21.67,
+      "preview_frame": 19,
+      "image_bbox": [
+        334,
+        354
+      ],
+      "visible_pixels": 50316,
+      "bytes": 3587226
+    },
+    {
+      "id": "matsuri_hoko_float",
+      "title": "鉾",
+      "category": "matsuri",
+      "mesh_objects": 430,
+      "polygons": 11903,
+      "preview_stddev": 16.2,
+      "preview_frame": 19,
+      "image_bbox": [
+        205,
+        330
+      ],
+      "visible_pixels": 24291,
+      "bytes": 2440343
+    },
+    {
+      "id": "matsuri_taikodai",
+      "title": "太鼓台",
+      "category": "matsuri",
+      "mesh_objects": 294,
+      "polygons": 7704,
+      "preview_stddev": 23.95,
+      "preview_frame": 19,
+      "image_bbox": [
+        316,
+        354
+      ],
+      "visible_pixels": 51538,
+      "bytes": 1880221
+    },
+    {
+      "id": "matsuri_kasaboko",
+      "title": "笠鉾",
+      "category": "matsuri",
+      "mesh_objects": 480,
+      "polygons": 22298,
+      "preview_stddev": 17.29,
+      "preview_frame": 19,
+      "image_bbox": [
+        253,
+        329
+      ],
+      "visible_pixels": 37825,
+      "bytes": 3890680
+    },
+    {
+      "id": "matsuri_lantern_tower",
+      "title": "祭礼提灯台",
+      "category": "matsuri",
+      "mesh_objects": 452,
+      "polygons": 21768,
+      "preview_stddev": 14.59,
+      "preview_frame": 19,
+      "image_bbox": [
+        183,
+        336
+      ],
+      "visible_pixels": 22701,
+      "bytes": 3668963
+    },
+    {
+      "id": "matsuri_float_wheel",
+      "title": "山車車輪",
+      "category": "matsuri",
+      "mesh_objects": 167,
+      "polygons": 3598,
+      "preview_stddev": 23.77,
+      "preview_frame": 19,
+      "image_bbox": [
+        263,
+        322
+      ],
+      "visible_pixels": 49856,
+      "bytes": 1185192
+    },
+    {
+      "id": "ritual_chochin",
+      "title": "提灯",
+      "category": "ritual",
+      "mesh_objects": 38,
+      "polygons": 2196,
+      "preview_stddev": 16.48,
+      "preview_frame": 19,
+      "image_bbox": [
+        156,
+        315
+      ],
+      "visible_pixels": 28134,
+      "bytes": 683259
+    },
+    {
+      "id": "ritual_takachochin_pole",
+      "title": "高張提灯",
+      "category": "ritual",
+      "mesh_objects": 52,
+      "polygons": 2238,
+      "preview_stddev": 7.51,
+      "preview_frame": 19,
+      "image_bbox": [
+        64,
+        303
+      ],
+      "visible_pixels": 6822,
+      "bytes": 659740
+    },
+    {
+      "id": "ritual_shimenawa_gate",
+      "title": "注連縄飾り",
+      "category": "ritual",
+      "mesh_objects": 240,
+      "polygons": 3286,
+      "preview_stddev": 19.48,
+      "preview_frame": 1,
+      "image_bbox": [
+        305,
+        307
+      ],
+      "visible_pixels": 27200,
+      "bytes": 1191060
+    },
+    {
+      "id": "ritual_shide_bundle",
+      "title": "紙垂束",
+      "category": "ritual",
+      "mesh_objects": 14,
+      "polygons": 158,
+      "preview_stddev": 34.45,
+      "preview_frame": 1,
+      "image_bbox": [
+        284,
+        311
+      ],
+      "visible_pixels": 67120,
+      "bytes": 440374
+    },
+    {
+      "id": "ritual_sakaki_branch",
+      "title": "榊",
+      "category": "ritual",
+      "mesh_objects": 69,
+      "polygons": 3442,
+      "preview_stddev": 15.39,
+      "preview_frame": 19,
+      "image_bbox": [
+        156,
+        318
+      ],
+      "visible_pixels": 17537,
+      "bytes": 877352
+    },
+    {
+      "id": "ritual_ema_stand",
+      "title": "絵馬掛け",
+      "category": "ritual",
+      "mesh_objects": 36,
+      "polygons": 1204,
+      "preview_stddev": 21.65,
+      "preview_frame": 1,
+      "image_bbox": [
+        271,
+        307
+      ],
+      "visible_pixels": 43813,
+      "bytes": 606324
+    },
+    {
+      "id": "ritual_omamori_rack",
+      "title": "御守掛け",
+      "category": "ritual",
+      "mesh_objects": 36,
+      "polygons": 1204,
+      "preview_stddev": 13.21,
+      "preview_frame": 19,
+      "image_bbox": [
+        210,
+        362
+      ],
+      "visible_pixels": 30636,
+      "bytes": 618410
+    },
+    {
+      "id": "ritual_saisen_box",
+      "title": "賽銭箱",
+      "category": "ritual",
+      "mesh_objects": 25,
+      "polygons": 942,
+      "preview_stddev": 28.41,
+      "preview_frame": 37,
+      "image_bbox": [
+        223,
+        348
+      ],
+      "visible_pixels": 64279,
+      "bytes": 588126
+    },
+    {
+      "id": "ritual_temizuya_ladle",
+      "title": "手水舎の柄杓",
+      "category": "ritual",
+      "mesh_objects": 4,
+      "polygons": 442,
+      "preview_stddev": 16.66,
+      "preview_frame": 1,
+      "image_bbox": [
+        324,
+        128
+      ],
+      "visible_pixels": 13553,
+      "bytes": 376920
+    },
+    {
+      "id": "ritual_festival_lantern",
+      "title": "祭礼灯籠",
+      "category": "ritual",
+      "mesh_objects": 53,
+      "polygons": 1006,
+      "preview_stddev": 18.64,
+      "preview_frame": 19,
+      "image_bbox": [
+        248,
+        352
+      ],
+      "visible_pixels": 36236,
+      "bytes": 622890
+    },
+    {
+      "id": "shinji_gohei",
+      "title": "御幣",
+      "category": "shinji",
+      "mesh_objects": 16,
+      "polygons": 402,
+      "preview_stddev": 29.74,
+      "preview_frame": 1,
+      "image_bbox": [
+        226,
+        307
+      ],
+      "visible_pixels": 43067,
+      "bytes": 418309
+    },
+    {
+      "id": "shinji_kagura_suzu",
+      "title": "神楽鈴",
+      "category": "shinji",
+      "mesh_objects": 58,
+      "polygons": 5418,
+      "preview_stddev": 24.61,
+      "preview_frame": 19,
+      "image_bbox": [
+        201,
+        324
+      ],
+      "visible_pixels": 27280,
+      "bytes": 1101142
+    },
+    {
+      "id": "shinji_haraegushi",
+      "title": "祓串",
+      "category": "shinji",
+      "mesh_objects": 88,
+      "polygons": 1146,
+      "preview_stddev": 20.69,
+      "preview_frame": 19,
+      "image_bbox": [
+        97,
+        307
+      ],
+      "visible_pixels": 12464,
+      "bytes": 598003
+    },
+    {
+      "id": "shinji_eboshi",
+      "title": "烏帽子",
+      "category": "shinji",
+      "mesh_objects": 20,
+      "polygons": 288,
+      "preview_stddev": 12.35,
+      "preview_frame": 91,
+      "image_bbox": [
+        196,
+        334
+      ],
+      "visible_pixels": 43671,
+      "bytes": 379911
+    },
+    {
+      "id": "shinji_shaku",
+      "title": "笏",
+      "category": "shinji",
+      "mesh_objects": 15,
+      "polygons": 176,
+      "preview_stddev": 23.42,
+      "preview_frame": 1,
+      "image_bbox": [
+        78,
+        305
+      ],
+      "visible_pixels": 19395,
+      "bytes": 360485
+    },
+    {
+      "id": "shinji_houbei_tray",
+      "title": "奉幣盆",
+      "category": "shinji",
+      "mesh_objects": 13,
+      "polygons": 910,
+      "preview_stddev": 12.8,
+      "preview_frame": 37,
+      "image_bbox": [
+        233,
+        210
+      ],
+      "visible_pixels": 31877,
+      "bytes": 464465
+    },
+    {
+      "id": "shinji_sanbo",
+      "title": "三方",
+      "category": "shinji",
+      "mesh_objects": 6,
+      "polygons": 324,
+      "preview_stddev": 28.62,
+      "preview_frame": 55,
+      "image_bbox": [
+        411,
+        368
+      ],
+      "visible_pixels": 83886,
+      "bytes": 425147
+    },
+    {
+      "id": "shinji_ritual_drum",
+      "title": "神事太鼓",
+      "category": "shinji",
+      "mesh_objects": 121,
+      "polygons": 2838,
+      "preview_stddev": 29.61,
+      "preview_frame": 19,
+      "image_bbox": [
+        277,
+        371
+      ],
+      "visible_pixels": 61102,
+      "bytes": 965613
+    },
+    {
+      "id": "shinji_ritual_fan",
+      "title": "神事扇",
+      "category": "shinji",
+      "mesh_objects": 127,
+      "polygons": 4144,
+      "preview_stddev": 18.16,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        167
+      ],
+      "visible_pixels": 33374,
+      "bytes": 979825
+    },
+    {
+      "id": "shinji_sakaki_stand",
+      "title": "榊立て",
+      "category": "shinji",
+      "mesh_objects": 50,
+      "polygons": 2546,
+      "preview_stddev": 22.42,
+      "preview_frame": 19,
+      "image_bbox": [
+        274,
+        356
+      ],
+      "visible_pixels": 47303,
+      "bytes": 785177
+    },
+    {
+      "id": "gakki_nagadou_taiko",
+      "title": "長胴太鼓",
+      "category": "gakki",
+      "mesh_objects": 71,
+      "polygons": 1794,
+      "preview_stddev": 32.05,
+      "preview_frame": 19,
+      "image_bbox": [
+        329,
+        363
+      ],
+      "visible_pixels": 73014,
+      "bytes": 760249
+    },
+    {
+      "id": "gakki_shime_daiko",
+      "title": "締太鼓",
+      "category": "gakki",
+      "mesh_objects": 159,
+      "polygons": 2738,
+      "preview_stddev": 30.49,
+      "preview_frame": 19,
+      "image_bbox": [
+        249,
+        354
+      ],
+      "visible_pixels": 56617,
+      "bytes": 1003503
+    },
+    {
+      "id": "gakki_okedo_daiko",
+      "title": "桶胴太鼓",
+      "category": "gakki",
+      "mesh_objects": 147,
+      "polygons": 3014,
+      "preview_stddev": 34.39,
+      "preview_frame": 19,
+      "image_bbox": [
+        422,
+        373
+      ],
+      "visible_pixels": 110957,
+      "bytes": 1196576
+    },
+    {
+      "id": "gakki_uchiwa_daiko",
+      "title": "団扇太鼓",
+      "category": "gakki",
+      "mesh_objects": 83,
+      "polygons": 2478,
+      "preview_stddev": 21.94,
+      "preview_frame": 1,
+      "image_bbox": [
+        201,
+        306
+      ],
+      "visible_pixels": 27838,
+      "bytes": 738048
+    },
+    {
+      "id": "gakki_atarigane",
+      "title": "当り鉦",
+      "category": "gakki",
+      "mesh_objects": 28,
+      "polygons": 982,
+      "preview_stddev": 20.0,
+      "preview_frame": 19,
+      "image_bbox": [
+        271,
+        266
+      ],
+      "visible_pixels": 28325,
+      "bytes": 504947
+    },
+    {
+      "id": "gakki_kane_bachi",
+      "title": "鉦と撞木",
+      "category": "gakki",
+      "mesh_objects": 30,
+      "polygons": 1006,
+      "preview_stddev": 18.71,
+      "preview_frame": 19,
+      "image_bbox": [
+        267,
+        232
+      ],
+      "visible_pixels": 22448,
+      "bytes": 521635
+    },
+    {
+      "id": "gakki_shinobue",
+      "title": "篠笛",
+      "category": "gakki",
+      "mesh_objects": 15,
+      "polygons": 1350,
+      "preview_stddev": 15.55,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        26
+      ],
+      "visible_pixels": 7667,
+      "bytes": 462415
+    },
+    {
+      "id": "gakki_ryuteki",
+      "title": "龍笛",
+      "category": "gakki",
+      "mesh_objects": 49,
+      "polygons": 5814,
+      "preview_stddev": 15.0,
+      "preview_frame": 19,
+      "image_bbox": [
+        252,
+        122
+      ],
+      "visible_pixels": 7457,
+      "bytes": 1040867
+    },
+    {
+      "id": "gakki_horagai",
+      "title": "法螺貝",
+      "category": "gakki",
+      "mesh_objects": 21,
+      "polygons": 2294,
+      "preview_stddev": 31.13,
+      "preview_frame": 19,
+      "image_bbox": [
+        277,
+        217
+      ],
+      "visible_pixels": 32475,
+      "bytes": 705320
+    },
+    {
+      "id": "gakki_sasara",
+      "title": "簓",
+      "category": "gakki",
+      "mesh_objects": 107,
+      "polygons": 2838,
+      "preview_stddev": 22.32,
+      "preview_frame": 1,
+      "image_bbox": [
+        325,
+        272
+      ],
+      "visible_pixels": 60695,
+      "bytes": 948849
+    },
+    {
+      "id": "noh_koomote_mask",
+      "title": "小面",
+      "category": "noh",
+      "mesh_objects": 22,
+      "polygons": 1892,
+      "preview_stddev": 39.49,
+      "preview_frame": 19,
+      "image_bbox": [
+        225,
+        306
+      ],
+      "visible_pixels": 46027,
+      "bytes": 653161
+    },
+    {
+      "id": "noh_hannya_mask",
+      "title": "般若面",
+      "category": "noh",
+      "mesh_objects": 24,
+      "polygons": 1508,
+      "preview_stddev": 33.14,
+      "preview_frame": 19,
+      "image_bbox": [
+        193,
+        318
+      ],
+      "visible_pixels": 33287,
+      "bytes": 605606
+    },
+    {
+      "id": "noh_okina_mask",
+      "title": "翁面",
+      "category": "noh",
+      "mesh_objects": 37,
+      "polygons": 2352,
+      "preview_stddev": 34.24,
+      "preview_frame": 19,
+      "image_bbox": [
+        179,
+        337
+      ],
+      "visible_pixels": 36965,
+      "bytes": 705133
+    },
+    {
+      "id": "noh_tengu_mask",
+      "title": "天狗面",
+      "category": "noh",
+      "mesh_objects": 15,
+      "polygons": 1410,
+      "preview_stddev": 21.8,
+      "preview_frame": 19,
+      "image_bbox": [
+        303,
+        304
+      ],
+      "visible_pixels": 53279,
+      "bytes": 595223
+    },
+    {
+      "id": "noh_folding_fan",
+      "title": "能扇",
+      "category": "noh",
+      "mesh_objects": 107,
+      "polygons": 3952,
+      "preview_stddev": 18.4,
+      "preview_frame": 1,
+      "image_bbox": [
+        325,
+        166
+      ],
+      "visible_pixels": 33415,
+      "bytes": 914025
+    },
+    {
+      "id": "noh_kotsuzumi",
+      "title": "小鼓",
+      "category": "noh",
+      "mesh_objects": 155,
+      "polygons": 2878,
+      "preview_stddev": 27.61,
+      "preview_frame": 19,
+      "image_bbox": [
+        387,
+        309
+      ],
+      "visible_pixels": 75091,
+      "bytes": 1178908
+    },
+    {
+      "id": "noh_otsuzumi",
+      "title": "大鼓",
+      "category": "noh",
+      "mesh_objects": 155,
+      "polygons": 2878,
+      "preview_stddev": 36.19,
+      "preview_frame": 19,
+      "image_bbox": [
+        435,
+        374
+      ],
+      "visible_pixels": 110583,
+      "bytes": 1225677
+    },
+    {
+      "id": "noh_nokan",
+      "title": "能管",
+      "category": "noh",
+      "mesh_objects": 27,
+      "polygons": 2826,
+      "preview_stddev": 7.62,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        27
+      ],
+      "visible_pixels": 6653,
+      "bytes": 658131
+    },
+    {
+      "id": "noh_costume_karaori",
+      "title": "唐織",
+      "category": "noh",
+      "mesh_objects": 387,
+      "polygons": 24192,
+      "preview_stddev": 20.28,
+      "preview_frame": 19,
+      "image_bbox": [
+        240,
+        258
+      ],
+      "visible_pixels": 44843,
+      "bytes": 3309891
+    },
+    {
+      "id": "noh_stage_pine_panel",
+      "title": "鏡板",
+      "category": "noh",
+      "mesh_objects": 123,
+      "polygons": 2394,
+      "preview_stddev": 28.14,
+      "preview_frame": 1,
+      "image_bbox": [
+        284,
+        313
+      ],
+      "visible_pixels": 73305,
+      "bytes": 838832
+    },
+    {
+      "id": "kabuki_kumadori_mask",
+      "title": "隈取面",
+      "category": "kabuki",
+      "mesh_objects": 46,
+      "polygons": 2170,
+      "preview_stddev": 31.82,
+      "preview_frame": 19,
+      "image_bbox": [
+        184,
+        311
+      ],
+      "visible_pixels": 33529,
+      "bytes": 735918
+    },
+    {
+      "id": "kabuki_mie_fan",
+      "title": "見得扇",
+      "category": "kabuki",
+      "mesh_objects": 129,
+      "polygons": 4156,
+      "preview_stddev": 15.36,
+      "preview_frame": 19,
+      "image_bbox": [
+        233,
+        172
+      ],
+      "visible_pixels": 24336,
+      "bytes": 978039
+    },
+    {
+      "id": "kabuki_hikinuki_costume",
+      "title": "引抜衣装",
+      "category": "kabuki",
+      "mesh_objects": 131,
+      "polygons": 4984,
+      "preview_stddev": 22.24,
+      "preview_frame": 19,
+      "image_bbox": [
+        241,
+        300
+      ],
+      "visible_pixels": 43665,
+      "bytes": 1129465
+    },
+    {
+      "id": "kabuki_kasa_hat",
+      "title": "歌舞伎笠",
+      "category": "kabuki",
+      "mesh_objects": 35,
+      "polygons": 728,
+      "preview_stddev": 20.15,
+      "preview_frame": 19,
+      "image_bbox": [
+        325,
+        182
+      ],
+      "visible_pixels": 35304,
+      "bytes": 548267
+    },
+    {
+      "id": "kabuki_hyoshigi",
+      "title": "拍子木",
+      "category": "kabuki",
+      "mesh_objects": 24,
+      "polygons": 368,
+      "preview_stddev": 16.73,
+      "preview_frame": 19,
+      "image_bbox": [
+        115,
+        318
+      ],
+      "visible_pixels": 26311,
+      "bytes": 435167
+    },
+    {
+      "id": "kabuki_tsukeita",
+      "title": "附け板",
+      "category": "kabuki",
+      "mesh_objects": 7,
+      "polygons": 294,
+      "preview_stddev": 15.06,
+      "preview_frame": 19,
+      "image_bbox": [
+        357,
+        288
+      ],
+      "visible_pixels": 39884,
+      "bytes": 425132
+    },
+    {
+      "id": "kabuki_kurogo_hood",
+      "title": "黒衣頭巾",
+      "category": "kabuki",
+      "mesh_objects": 16,
+      "polygons": 390,
+      "preview_stddev": 12.68,
+      "preview_frame": 91,
+      "image_bbox": [
+        213,
+        321
+      ],
+      "visible_pixels": 48768,
+      "bytes": 396222
+    },
+    {
+      "id": "kabuki_stage_lantern",
+      "title": "芝居提灯",
+      "category": "kabuki",
+      "mesh_objects": 41,
+      "polygons": 2082,
+      "preview_stddev": 15.23,
+      "preview_frame": 19,
+      "image_bbox": [
+        155,
+        307
+      ],
+      "visible_pixels": 26487,
+      "bytes": 677954
+    },
+    {
+      "id": "kabuki_onnagata_kanzashi",
+      "title": "女形簪",
+      "category": "kabuki",
+      "mesh_objects": 51,
+      "polygons": 2406,
+      "preview_stddev": 21.29,
+      "preview_frame": 19,
+      "image_bbox": [
+        134,
+        327
+      ],
+      "visible_pixels": 20854,
+      "bytes": 671829
+    },
+    {
+      "id": "kabuki_kiseru_prop",
+      "title": "煙管小道具",
+      "category": "kabuki",
+      "mesh_objects": 30,
+      "polygons": 2068,
+      "preview_stddev": 11.85,
+      "preview_frame": 1,
+      "image_bbox": [
+        325,
+        80
+      ],
+      "visible_pixels": 5282,
+      "bytes": 597280
+    },
+    {
+      "id": "buyo_folk_sensu",
+      "title": "舞扇",
+      "category": "buyo_folk",
+      "mesh_objects": 107,
+      "polygons": 3952,
+      "preview_stddev": 18.4,
+      "preview_frame": 1,
+      "image_bbox": [
+        325,
+        166
+      ],
+      "visible_pixels": 33415,
+      "bytes": 914566
+    },
+    {
+      "id": "buyo_folk_suzu",
+      "title": "舞鈴",
+      "category": "buyo_folk",
+      "mesh_objects": 58,
+      "polygons": 1896,
+      "preview_stddev": 23.59,
+      "preview_frame": 19,
+      "image_bbox": [
+        235,
+        335
+      ],
+      "visible_pixels": 28406,
+      "bytes": 692710
+    },
+    {
+      "id": "buyo_folk_kasa",
+      "title": "舞傘",
+      "category": "buyo_folk",
+      "mesh_objects": 90,
+      "polygons": 1102,
+      "preview_stddev": 20.16,
+      "preview_frame": 19,
+      "image_bbox": [
+        302,
+        305
+      ],
+      "visible_pixels": 35749,
+      "bytes": 731093
+    },
+    {
+      "id": "buyo_folk_tenugui",
+      "title": "手拭",
+      "category": "buyo_folk",
+      "mesh_objects": 46,
+      "polygons": 422,
+      "preview_stddev": 27.33,
+      "preview_frame": 1,
+      "image_bbox": [
+        275,
+        301
+      ],
+      "visible_pixels": 55867,
+      "bytes": 499137
+    },
+    {
+      "id": "buyo_folk_mai_ogi",
+      "title": "舞用扇",
+      "category": "buyo_folk",
+      "mesh_objects": 223,
+      "polygons": 11792,
+      "preview_stddev": 16.45,
+      "preview_frame": 19,
+      "image_bbox": [
+        233,
+        173
+      ],
+      "visible_pixels": 24356,
+      "bytes": 1820223
+    },
+    {
+      "id": "buyo_folk_shishimai_head",
+      "title": "獅子頭",
+      "category": "buyo_folk",
+      "mesh_objects": 36,
+      "polygons": 1596,
+      "preview_stddev": 29.22,
+      "preview_frame": 19,
+      "image_bbox": [
+        288,
+        327
+      ],
+      "visible_pixels": 64542,
+      "bytes": 684022
+    },
+    {
+      "id": "buyo_folk_shishimai_cloth",
+      "title": "獅子舞胴幕",
+      "category": "buyo_folk",
+      "mesh_objects": 247,
+      "polygons": 15512,
+      "preview_stddev": 17.28,
+      "preview_frame": 19,
+      "image_bbox": [
+        240,
+        273
+      ],
+      "visible_pixels": 34255,
+      "bytes": 2303571
+    },
+    {
+      "id": "buyo_folk_kitsune_mask",
+      "title": "狐面",
+      "category": "buyo_folk",
+      "mesh_objects": 24,
+      "polygons": 1488,
+      "preview_stddev": 32.49,
+      "preview_frame": 19,
+      "image_bbox": [
+        185,
+        311
+      ],
+      "visible_pixels": 33576,
+      "bytes": 603571
+    },
+    {
+      "id": "buyo_folk_oni_mask",
+      "title": "鬼面",
+      "category": "buyo_folk",
+      "mesh_objects": 29,
+      "polygons": 2058,
+      "preview_stddev": 18.59,
+      "preview_frame": 19,
+      "image_bbox": [
+        180,
+        313
+      ],
+      "visible_pixels": 32042,
+      "bytes": 662595
+    },
+    {
+      "id": "buyo_folk_binzasara",
+      "title": "びんざさら",
+      "category": "buyo_folk",
+      "mesh_objects": 182,
+      "polygons": 4848,
+      "preview_stddev": 23.84,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        255
+      ],
+      "visible_pixels": 67926,
+      "bytes": 1225571
+    },
+    {
+      "id": "costume_happi",
+      "title": "法被",
+      "category": "costume",
+      "mesh_objects": 123,
+      "polygons": 5312,
+      "preview_stddev": 23.84,
+      "preview_frame": 19,
+      "image_bbox": [
+        239,
+        254
+      ],
+      "visible_pixels": 22410,
+      "bytes": 1128271
+    },
+    {
+      "id": "costume_hachimaki",
+      "title": "鉢巻",
+      "category": "costume",
+      "mesh_objects": 27,
+      "polygons": 452,
+      "preview_stddev": 28.57,
+      "preview_frame": 19,
+      "image_bbox": [
+        320,
+        356
+      ],
+      "visible_pixels": 46286,
+      "bytes": 551130
+    },
+    {
+      "id": "costume_tabi",
+      "title": "足袋",
+      "category": "costume",
+      "mesh_objects": 22,
+      "polygons": 1880,
+      "preview_stddev": 45.07,
+      "preview_frame": 19,
+      "image_bbox": [
+        383,
+        346
+      ],
+      "visible_pixels": 65368,
+      "bytes": 664145
+    },
+    {
+      "id": "costume_waraji",
+      "title": "草鞋",
+      "category": "costume",
+      "mesh_objects": 48,
+      "polygons": 1100,
+      "preview_stddev": 28.73,
+      "preview_frame": 19,
+      "image_bbox": [
+        344,
+        241
+      ],
+      "visible_pixels": 33800,
+      "bytes": 644018
+    },
+    {
+      "id": "costume_geta_festival",
+      "title": "祭下駄",
+      "category": "costume",
+      "mesh_objects": 26,
+      "polygons": 556,
+      "preview_stddev": 21.43,
+      "preview_frame": 37,
+      "image_bbox": [
+        261,
+        281
+      ],
+      "visible_pixels": 48618,
+      "bytes": 565852
+    },
+    {
+      "id": "costume_bell_anklet",
+      "title": "鈴脚絆",
+      "category": "costume",
+      "mesh_objects": 38,
+      "polygons": 3372,
+      "preview_stddev": 17.21,
+      "preview_frame": 19,
+      "image_bbox": [
+        279,
+        135
+      ],
+      "visible_pixels": 13600,
+      "bytes": 754862
+    },
+    {
+      "id": "costume_miko_chihaya",
+      "title": "千早",
+      "category": "costume",
+      "mesh_objects": 125,
+      "polygons": 5612,
+      "preview_stddev": 27.94,
+      "preview_frame": 19,
+      "image_bbox": [
+        240,
+        259
+      ],
+      "visible_pixels": 43507,
+      "bytes": 1160759
+    },
+    {
+      "id": "costume_miko_hakama",
+      "title": "緋袴",
+      "category": "costume",
+      "mesh_objects": 62,
+      "polygons": 708,
+      "preview_stddev": 21.87,
+      "preview_frame": 19,
+      "image_bbox": [
+        221,
+        358
+      ],
+      "visible_pixels": 57371,
+      "bytes": 576487
+    },
+    {
+      "id": "costume_yamabushi_tokin",
+      "title": "頭襟",
+      "category": "costume",
+      "mesh_objects": 15,
+      "polygons": 646,
+      "preview_stddev": 13.42,
+      "preview_frame": 37,
+      "image_bbox": [
+        325,
+        289
+      ],
+      "visible_pixels": 40246,
+      "bytes": 473866
+    },
+    {
+      "id": "costume_horagai_strap",
+      "title": "法螺貝紐",
+      "category": "costume",
+      "mesh_objects": 23,
+      "polygons": 1438,
+      "preview_stddev": 31.99,
+      "preview_frame": 19,
+      "image_bbox": [
+        306,
+        342
+      ],
+      "visible_pixels": 45217,
+      "bytes": 713057
+    },
+    {
+      "id": "stage_torii_prop",
+      "title": "鳥居小道具",
+      "category": "stage",
+      "mesh_objects": 15,
+      "polygons": 1042,
+      "preview_stddev": 13.72,
+      "preview_frame": 19,
+      "image_bbox": [
+        227,
+        365
+      ],
+      "visible_pixels": 20115,
+      "bytes": 508267
+    },
+    {
+      "id": "stage_kagamiita_panel",
+      "title": "鏡板パネル",
+      "category": "stage",
+      "mesh_objects": 44,
+      "polygons": 3188,
+      "preview_stddev": 32.24,
+      "preview_frame": 1,
+      "image_bbox": [
+        320,
+        301
+      ],
+      "visible_pixels": 85606,
+      "bytes": 765364
+    },
+    {
+      "id": "stage_byobu_gold",
+      "title": "金屏風",
+      "category": "stage",
+      "mesh_objects": 48,
+      "polygons": 3060,
+      "preview_stddev": 26.32,
+      "preview_frame": 19,
+      "image_bbox": [
+        237,
+        327
+      ],
+      "visible_pixels": 50879,
+      "bytes": 799891
+    },
+    {
+      "id": "stage_bonbori",
+      "title": "雪洞",
+      "category": "stage",
+      "mesh_objects": 12,
+      "polygons": 458,
+      "preview_stddev": 33.85,
+      "preview_frame": 19,
+      "image_bbox": [
+        240,
+        364
+      ],
+      "visible_pixels": 35073,
+      "bytes": 452419
+    },
+    {
+      "id": "stage_andon",
+      "title": "行灯",
+      "category": "stage",
+      "mesh_objects": 15,
+      "polygons": 810,
+      "preview_stddev": 27.69,
+      "preview_frame": 37,
+      "image_bbox": [
+        154,
+        367
+      ],
+      "visible_pixels": 47823,
+      "bytes": 506280
+    },
+    {
+      "id": "stage_noren_festival",
+      "title": "祭暖簾",
+      "category": "stage",
+      "mesh_objects": 93,
+      "polygons": 3526,
+      "preview_stddev": 24.75,
+      "preview_frame": 19,
+      "image_bbox": [
+        241,
+        301
+      ],
+      "visible_pixels": 43776,
+      "bytes": 910251
+    },
+    {
+      "id": "stage_yagura_tower",
+      "title": "櫓",
+      "category": "stage",
+      "mesh_objects": 344,
+      "polygons": 11120,
+      "preview_stddev": 19.87,
+      "preview_frame": 37,
+      "image_bbox": [
+        247,
+        363
+      ],
+      "visible_pixels": 56107,
+      "bytes": 2469329
+    },
+    {
+      "id": "stage_lantern_string",
+      "title": "提灯列",
+      "category": "stage",
+      "mesh_objects": 253,
+      "polygons": 12696,
+      "preview_stddev": 15.37,
+      "preview_frame": 19,
+      "image_bbox": [
+        241,
+        194
+      ],
+      "visible_pixels": 12633,
+      "bytes": 2266921
+    },
+    {
+      "id": "stage_kouhaku_curtain",
+      "title": "紅白幕",
+      "category": "stage",
+      "mesh_objects": 189,
+      "polygons": 3488,
+      "preview_stddev": 26.8,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        237
+      ],
+      "visible_pixels": 67940,
+      "bytes": 1058787
+    },
+    {
+      "id": "stage_drum_stand",
+      "title": "太鼓台",
+      "category": "stage",
+      "mesh_objects": 16,
+      "polygons": 234,
+      "preview_stddev": 16.74,
+      "preview_frame": 37,
+      "image_bbox": [
+        180,
+        303
+      ],
+      "visible_pixels": 35647,
+      "bytes": 467569
+    },
+    {
+      "id": "local_namahage_mask",
+      "title": "なまはげ面",
+      "category": "local",
+      "mesh_objects": 40,
+      "polygons": 2112,
+      "preview_stddev": 23.1,
+      "preview_frame": 19,
+      "image_bbox": [
+        206,
+        316
+      ],
+      "visible_pixels": 35588,
+      "bytes": 714634
+    },
+    {
+      "id": "local_namahage_knife_prop",
+      "title": "なまはげ包丁小道具",
+      "category": "local",
+      "mesh_objects": 5,
+      "polygons": 265,
+      "preview_stddev": 16.58,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        124
+      ],
+      "visible_pixels": 21318,
+      "bytes": 363074
+    },
+    {
+      "id": "local_dekonnbo_mask",
+      "title": "デコンボ面",
+      "category": "local",
+      "mesh_objects": 23,
+      "polygons": 1558,
+      "preview_stddev": 21.54,
+      "preview_frame": 19,
+      "image_bbox": [
+        218,
+        323
+      ],
+      "visible_pixels": 39400,
+      "bytes": 613965
+    },
+    {
+      "id": "local_hyakumangoku_helmet",
+      "title": "郷土祭礼兜",
+      "category": "local",
+      "mesh_objects": 22,
+      "polygons": 2946,
+      "preview_stddev": 18.81,
+      "preview_frame": 19,
+      "image_bbox": [
+        315,
+        391
+      ],
+      "visible_pixels": 40140,
+      "bytes": 775781
+    },
+    {
+      "id": "local_awaodori_fan",
+      "title": "阿波踊り団扇",
+      "category": "local",
+      "mesh_objects": 120,
+      "polygons": 4704,
+      "preview_stddev": 14.5,
+      "preview_frame": 19,
+      "image_bbox": [
+        233,
+        173
+      ],
+      "visible_pixels": 23538,
+      "bytes": 1010797
+    },
+    {
+      "id": "local_awaodori_amigasa",
+      "title": "阿波踊り編笠",
+      "category": "local",
+      "mesh_objects": 43,
+      "polygons": 1168,
+      "preview_stddev": 36.53,
+      "preview_frame": 19,
+      "image_bbox": [
+        324,
+        271
+      ],
+      "visible_pixels": 51976,
+      "bytes": 596039
+    },
+    {
+      "id": "local_eisa_paranku",
+      "title": "エイサー・パーランクー",
+      "category": "local",
+      "mesh_objects": 74,
+      "polygons": 2362,
+      "preview_stddev": 26.35,
+      "preview_frame": 19,
+      "image_bbox": [
+        269,
+        269
+      ],
+      "visible_pixels": 36532,
+      "bytes": 740545
+    },
+    {
+      "id": "local_eisa_odaiko",
+      "title": "エイサー大太鼓",
+      "category": "local",
+      "mesh_objects": 121,
+      "polygons": 2830,
+      "preview_stddev": 36.58,
+      "preview_frame": 19,
+      "image_bbox": [
+        407,
+        367
+      ],
+      "visible_pixels": 105461,
+      "bytes": 1112338
+    },
+    {
+      "id": "local_kasaodori_hat",
+      "title": "笠踊り笠",
+      "category": "local",
+      "mesh_objects": 54,
+      "polygons": 746,
+      "preview_stddev": 33.6,
+      "preview_frame": 19,
+      "image_bbox": [
+        324,
+        199
+      ],
+      "visible_pixels": 37923,
+      "bytes": 545691
+    },
+    {
+      "id": "local_dengaku_hoe_prop",
+      "title": "田楽鍬小道具",
+      "category": "local",
+      "mesh_objects": 29,
+      "polygons": 860,
+      "preview_stddev": 13.71,
+      "preview_frame": 1,
+      "image_bbox": [
+        194,
+        305
+      ],
+      "visible_pixels": 18962,
+      "bytes": 459101
+    }
+  ]
+}

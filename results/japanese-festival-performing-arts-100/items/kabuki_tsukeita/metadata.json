@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_tsukeita",
+  "title": "附け板",
+  "category": "kabuki",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 7,
+  "polygons": 294,
+  "materials": 3,
+  "dimensions_original": [
+    1.6399999856948853,
+    0.9399999976158142,
+    1.2113575264811516
+  ],
+  "normalization_scale": 1.1890244006153234,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.06,
+  "batch": 5
+}

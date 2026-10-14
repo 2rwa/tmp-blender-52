@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_hyoshigi",
+  "title": "拍子木",
+  "category": "kabuki",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 24,
+  "polygons": 368,
+  "materials": 3,
+  "dimensions_original": [
+    0.5899999737739563,
+    0.333559513092041,
+    1.756440818309784
+  ],
+  "normalization_scale": 1.1101996603998745,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.73,
+  "batch": 5
+}

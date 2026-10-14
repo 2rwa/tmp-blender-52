@@ -1,0 +1,28 @@
+{
+  "id": "shinji_gohei",
+  "title": "御幣",
+  "category": "shinji",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 16,
+  "polygons": 402,
+  "materials": 3,
+  "dimensions_original": [
+    1.2799999713897705,
+    0.1420000046491623,
+    1.850000023841858
+  ],
+  "normalization_scale": 1.0540540404699423,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 29.74,
+  "batch": 2
+}

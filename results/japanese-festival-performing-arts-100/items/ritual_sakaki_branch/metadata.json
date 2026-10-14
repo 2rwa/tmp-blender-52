@@ -1,0 +1,28 @@
+{
+  "id": "ritual_sakaki_branch",
+  "title": "榊",
+  "category": "ritual",
+  "variant": 4,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 69,
+  "polygons": 3442,
+  "materials": 5,
+  "dimensions_original": [
+    0.9669768810272217,
+    0.8582232892513275,
+    1.9129999876022339
+  ],
+  "normalization_scale": 1.0193413552731603,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 15.39,
+  "batch": 1
+}

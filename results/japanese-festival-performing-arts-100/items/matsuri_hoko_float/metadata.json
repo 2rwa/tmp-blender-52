@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_hoko_float",
+  "title": "鉾",
+  "category": "matsuri",
+  "variant": 5,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 430,
+  "polygons": 11903,
+  "materials": 9,
+  "dimensions_original": [
+    2.559999942779541,
+    1.6547999382019043,
+    4.196999907493591
+  ],
+  "normalization_scale": 0.4646175942292364,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 16.2,
+  "batch": 0
+}

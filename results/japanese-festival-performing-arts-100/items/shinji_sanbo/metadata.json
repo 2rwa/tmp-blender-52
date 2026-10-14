@@ -1,0 +1,28 @@
+{
+  "id": "shinji_sanbo",
+  "title": "三方",
+  "category": "shinji",
+  "variant": 6,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 6,
+  "polygons": 324,
+  "materials": 3,
+  "dimensions_original": [
+    1.3200000524520874,
+    1.100000023841858,
+    1.1100001335144043
+  ],
+  "normalization_scale": 1.4772726685711854,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 55,
+  "preview_stddev": 28.62,
+  "batch": 2
+}

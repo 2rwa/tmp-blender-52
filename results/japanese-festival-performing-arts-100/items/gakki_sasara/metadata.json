@@ -1,0 +1,28 @@
+{
+  "id": "gakki_sasara",
+  "title": "簓",
+  "category": "gakki",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 107,
+  "polygons": 2838,
+  "materials": 3,
+  "dimensions_original": [
+    1.5800000429153442,
+    0.3400000035762787,
+    1.3100000023841858
+  ],
+  "normalization_scale": 1.2341771816676337,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 22.32,
+  "batch": 3
+}

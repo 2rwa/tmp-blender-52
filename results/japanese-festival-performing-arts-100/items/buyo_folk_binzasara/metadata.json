@@ -1,0 +1,28 @@
+{
+  "id": "buyo_folk_binzasara",
+  "title": "びんざさら",
+  "category": "buyo_folk",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 182,
+  "polygons": 4848,
+  "materials": 2,
+  "dimensions_original": [
+    1.6399999856948853,
+    0.31105831265449524,
+    1.2799999713897705
+  ],
+  "normalization_scale": 1.1890244006153234,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 23.84,
+  "batch": 6
+}

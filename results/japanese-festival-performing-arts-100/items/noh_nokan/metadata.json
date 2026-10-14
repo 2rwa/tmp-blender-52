@@ -1,0 +1,28 @@
+{
+  "id": "noh_nokan",
+  "title": "能管",
+  "category": "noh",
+  "variant": 7,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 27,
+  "polygons": 2826,
+  "materials": 3,
+  "dimensions_original": [
+    2.5,
+    0.21599999070167542,
+    0.2160000056028366
+  ],
+  "normalization_scale": 0.78,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 7.62,
+  "batch": 4
+}

@@ -1,0 +1,28 @@
+{
+  "id": "buyo_folk_oni_mask",
+  "title": "鬼面",
+  "category": "buyo_folk",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 29,
+  "polygons": 2058,
+  "materials": 5,
+  "dimensions_original": [
+    0.9640124440193176,
+    0.7899999767541885,
+    1.659687101840973
+  ],
+  "normalization_scale": 1.1749202592687522,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 18.59,
+  "batch": 6
+}

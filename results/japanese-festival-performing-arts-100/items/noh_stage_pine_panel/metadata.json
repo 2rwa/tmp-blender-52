@@ -1,0 +1,28 @@
+{
+  "id": "noh_stage_pine_panel",
+  "title": "鏡板",
+  "category": "noh",
+  "variant": 9,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 123,
+  "polygons": 2394,
+  "materials": 4,
+  "dimensions_original": [
+    1.7200000286102295,
+    0.5978890955448151,
+    1.9600000381469727
+  ],
+  "normalization_scale": 0.9948979398202323,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 28.14,
+  "batch": 4
+}

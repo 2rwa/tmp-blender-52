@@ -1,0 +1,28 @@
+{
+  "id": "local_namahage_mask",
+  "title": "なまはげ面",
+  "category": "local",
+  "variant": 0,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 40,
+  "polygons": 2112,
+  "materials": 6,
+  "dimensions_original": [
+    1.5368882417678833,
+    0.7899999767541885,
+    1.7775807976722717
+  ],
+  "normalization_scale": 1.0969965486539401,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 23.1,
+  "batch": 9
+}

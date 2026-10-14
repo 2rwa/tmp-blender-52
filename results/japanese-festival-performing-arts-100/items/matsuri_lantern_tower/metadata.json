@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_lantern_tower",
+  "title": "祭礼提灯台",
+  "category": "matsuri",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 452,
+  "polygons": 21768,
+  "materials": 7,
+  "dimensions_original": [
+    1.968000054359436,
+    0.9899999797344208,
+    3.309600278735161
+  ],
+  "normalization_scale": 0.5891950192683804,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 14.59,
+  "batch": 0
+}

@@ -1,0 +1,28 @@
+{
+  "id": "local_dekonnbo_mask",
+  "title": "デコンボ面",
+  "category": "local",
+  "variant": 2,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 23,
+  "polygons": 1558,
+  "materials": 5,
+  "dimensions_original": [
+    1.5214054584503174,
+    0.7999999672174454,
+    1.659687101840973
+  ],
+  "normalization_scale": 1.1749202592687522,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 21.54,
+  "batch": 9
+}

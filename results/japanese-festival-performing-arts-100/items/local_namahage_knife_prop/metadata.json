@@ -1,0 +1,28 @@
+{
+  "id": "local_namahage_knife_prop",
+  "title": "なまはげ包丁小道具",
+  "category": "local",
+  "variant": 1,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 5,
+  "polygons": 265,
+  "materials": 4,
+  "dimensions_original": [
+    1.7926821112632751,
+    0.28999999165534973,
+    0.7100000381469727
+  ],
+  "normalization_scale": 1.0877555969060602,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 16.58,
+  "batch": 9
+}

@@ -1,0 +1,28 @@
+{
+  "id": "gakki_horagai",
+  "title": "法螺貝",
+  "category": "gakki",
+  "variant": 8,
+  "generator": "japanese-festival-performing-arts-100",
+  "detail_level": "festival_precision_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 21,
+  "polygons": 2294,
+  "materials": 3,
+  "dimensions_original": [
+    1.773481845855713,
+    0.7591486573219299,
+    1.3089334964752197
+  ],
+  "normalization_scale": 1.0995319769169198,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 31.13,
+  "batch": 3
+}
