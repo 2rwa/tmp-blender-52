@@ -1,0 +1,28 @@
+{
+  "id": "ritual_suzu",
+  "title": "神楽鈴",
+  "category": "ritual",
+  "variant": 4,
+  "generator": "japanese-festival-sonnet55-color-5",
+  "detail_level": "claude_sonnet55_medium_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 243,
+  "polygons": 11920,
+  "materials": 10,
+  "dimensions_original": [
+    0.6848000288009644,
+    0.6022891402244568,
+    1.8000000715255737
+  ],
+  "normalization_scale": 1.083333290285536,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 10.64,
+  "batch": 0
+}

@@ -1,0 +1,28 @@
+{
+  "id": "gakki_tsuzumi",
+  "title": "鼓",
+  "category": "gakki",
+  "variant": 3,
+  "generator": "japanese-festival-sonnet55-color-5",
+  "detail_level": "claude_sonnet55_medium_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 72,
+  "polygons": 10160,
+  "materials": 7,
+  "dimensions_original": [
+    0.23600000143051147,
+    0.23600000143051147,
+    0.2840000092983246
+  ],
+  "normalization_scale": 6.8661969582953235,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 25.56,
+  "batch": 0
+}

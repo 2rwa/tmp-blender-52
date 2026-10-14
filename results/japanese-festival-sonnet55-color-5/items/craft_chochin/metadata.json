@@ -1,0 +1,28 @@
+{
+  "id": "craft_chochin",
+  "title": "提灯",
+  "category": "craft",
+  "variant": 1,
+  "generator": "japanese-festival-sonnet55-color-5",
+  "detail_level": "claude_sonnet55_medium_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 78,
+  "polygons": 4706,
+  "materials": 5,
+  "dimensions_original": [
+    1.1237437725067139,
+    1.1319999694824219,
+    2.8149999380111694
+  ],
+  "normalization_scale": 0.6927175996237136,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 18.89,
+  "batch": 0
+}

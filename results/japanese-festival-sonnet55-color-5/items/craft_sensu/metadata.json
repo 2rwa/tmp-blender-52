@@ -1,0 +1,28 @@
+{
+  "id": "craft_sensu",
+  "title": "扇子",
+  "category": "craft",
+  "variant": 2,
+  "generator": "japanese-festival-sonnet55-color-5",
+  "detail_level": "claude_sonnet55_medium_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 5,
+  "polygons": 1444,
+  "materials": 7,
+  "dimensions_original": [
+    1.9832446575164795,
+    0.09199999645352364,
+    1.4095500707626343
+  ],
+  "normalization_scale": 0.9832372383354305,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 73,
+  "preview_stddev": 17.99,
+  "batch": 0
+}

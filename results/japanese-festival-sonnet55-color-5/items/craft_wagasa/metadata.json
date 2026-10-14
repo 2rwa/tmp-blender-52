@@ -1,0 +1,28 @@
+{
+  "id": "craft_wagasa",
+  "title": "和傘",
+  "category": "craft",
+  "variant": 0,
+  "generator": "japanese-festival-sonnet55-color-5",
+  "detail_level": "claude_sonnet55_medium_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 10,
+  "polygons": 4734,
+  "materials": 7,
+  "dimensions_original": [
+    2.0163822174072266,
+    2.0163822174072266,
+    2.099999964237213
+  ],
+  "normalization_scale": 0.928571444384906,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 31.31,
+  "batch": 0
+}
