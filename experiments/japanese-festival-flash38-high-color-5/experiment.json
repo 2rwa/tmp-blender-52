@@ -1,0 +1,19 @@
+{
+  "id": "japanese-festival-flash38-high-color-5",
+  "model": "gemini-3.8-flash-high",
+  "subjects": [
+    "craft_wagasa",
+    "craft_chochin",
+    "craft_sensu",
+    "gakki_tsuzumi",
+    "ritual_suzu"
+  ],
+  "frames": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "color_contract": "material.diffuse_color == Principled BSDF Base Color",
+  "based_on": "sonnet55-color-5 standalone test framework"
+}

@@ -9,6 +9,7 @@ on:
       - 'tools/generate_festival_flash38_gallery.py'
       - 'tools/generate_festival_flash38_color_gallery.py'
       - 'tools/generate_sonnet55_color_gallery.py'
+      - 'tools/generate_flash38_high_color_gallery.py'
       - '.github/workflows/pages.yml'
   workflow_run:
     workflows: ["Blender 5.2 feature showcase", "Sail Ship Wireframe HD", "Sail ship workbench HD", "Chesterfield workbench HD"]
@@ -53,6 +54,7 @@ jobs:
           python3 tools/generate_festival_flash38_gallery.py
           python3 tools/generate_festival_flash38_color_gallery.py
           python3 tools/generate_sonnet55_color_gallery.py
+          python3 tools/generate_flash38_high_color_gallery.py
 
       - name: Persist generated docs
         run: |
@@ -74,6 +76,7 @@ jobs:
               python3 tools/generate_festival_flash38_gallery.py
               python3 tools/generate_festival_flash38_color_gallery.py
               python3 tools/generate_sonnet55_color_gallery.py
+          python3 tools/generate_flash38_high_color_gallery.py
               git add docs/
               if ! git diff --cached --quiet; then
                 git commit -m "chore: rebuild Pages gallery [skip ci]"
