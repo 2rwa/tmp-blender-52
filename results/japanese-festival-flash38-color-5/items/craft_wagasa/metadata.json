@@ -1,0 +1,28 @@
+{
+  "id": "craft_wagasa",
+  "title": "和傘",
+  "category": "craft",
+  "variant": 0,
+  "generator": "japanese-festival-flash38-color-5",
+  "detail_level": "gemini_flash38_workbench_color_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 82,
+  "polygons": 1164,
+  "materials": 6,
+  "dimensions_original": [
+    2.3631606101989746,
+    3.0224478244781494,
+    2.461937189102173
+  ],
+  "normalization_scale": 0.6451724275295583,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 30.41,
+  "batch": 0
+}

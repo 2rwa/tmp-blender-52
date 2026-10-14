@@ -1,0 +1,28 @@
+{
+  "id": "craft_sensu",
+  "title": "扇子",
+  "category": "craft",
+  "variant": 2,
+  "generator": "japanese-festival-flash38-color-5",
+  "detail_level": "gemini_flash38_workbench_color_v2",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 22,
+  "polygons": 746,
+  "materials": 8,
+  "dimensions_original": [
+    0.5441795587539673,
+    0.32591353356838226,
+    0.11960067227482796
+  ],
+  "normalization_scale": 3.5833760541557345,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 27.56,
+  "batch": 0
+}
