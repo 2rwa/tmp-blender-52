@@ -1,0 +1,20 @@
+{
+  "id": "japanese-festival-sonnet55-color-5",
+  "title": "Claude Sonnet 5.5 Medium - Workbench color test",
+  "model": "claude-sonnet-5-5-medium",
+  "subject_ids": [
+    "craft_wagasa",
+    "craft_chochin",
+    "craft_sensu",
+    "gakki_tsuzumi",
+    "ritual_suzu"
+  ],
+  "color_contract": "Material.diffuse_color == Principled BSDF Base Color",
+  "render_engine": "BLENDER_WORKBENCH",
+  "frames": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ]
+}

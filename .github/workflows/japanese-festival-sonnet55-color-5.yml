@@ -1,0 +1,196 @@
+name: Claude Sonnet 5.5 Medium - Workbench color test five
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/japanese-festival-sonnet55-color-5/generated/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  pages: write
+  id-token: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python sources and catalog
+        run: |
+          python3 -m compileall -q experiments/japanese-festival-sonnet55-color-5
+          python3 -m pip install --break-system-packages --quiet Pillow==10.2.0
+          PYTHONPATH=experiments/japanese-festival-sonnet55-color-5 python3 -m unittest discover -s experiments/japanese-festival-sonnet55-color-5 -p 'test_validation.py' -v
+          PYTHONPATH=experiments/japanese-festival-sonnet55-color-5 python3 -c "from catalog import CATALOG; assert len(CATALOG)==5; print([x[0] for x in CATALOG])"
+
+  render:
+    needs: preflight
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        batch: [0]
+    env:
+      BLENDER_VERSION: 5.2.2
+      LIBGL_ALWAYS_SOFTWARE: '1'
+      SDL_AUDIODRIVER: dummy
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore official Blender runtime cache
+        id: cached
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-Linux-x64-5.2.2-v1
+      - name: Download Blender when not cached
+        if: steps.cached.outputs.cache-hit != 'true'
+        run: |
+          set -euxo pipefail
+          mkdir -p .cache/blender52-runtime/blender .cache/blender52-runtime/egl .cache/blender52-runtime/apt
+          archive="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          base="https://download.blender.org/release/Blender5.2"
+          curl -fL --retry 3 "$base/$archive" -o "/tmp/$archive"
+          curl -fsSL "$base/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender52.sha256
+          (cd /tmp && grep "  $archive$" blender52.sha256 | sha256sum -c -)
+          tar -xf "/tmp/$archive" -C .cache/blender52-runtime/blender --strip-components=1
+          (cd .cache/blender52-runtime/apt && apt-get download libegl1)
+          dpkg-deb -x .cache/blender52-runtime/apt/libegl1_*.deb .cache/blender52-runtime/egl
+      - name: Cache new runtime
+        if: steps.cached.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/blender52-runtime
+          key: blender-runtime-Linux-x64-5.2.2-v1
+      - name: Install host validation dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg xvfb libgl1-mesa-dri
+          python3 -m pip install --break-system-packages --quiet Pillow==10.2.0
+      - name: Build and render five independent assets
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          export LD_LIBRARY_PATH="$PWD/.cache/blender52-runtime/egl/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}"
+          BLENDER="$PWD/.cache/blender52-runtime/blender/blender"
+          "$BLENDER" --version
+          xvfb-run -a -s "-screen 0 1280x720x24" "$BLENDER" -b \
+            --python experiments/japanese-festival-sonnet55-color-5/scene.py -- --batch "$BATCH" \
+            2>&1 | tee "render-${BATCH}.log"
+          if grep -Fq "Traceback (most recent call last):" "render-${BATCH}.log"; then exit 1; fi
+          python3 experiments/japanese-festival-sonnet55-color-5/validate.py --batch "$BATCH"
+      - name: Upload verified individual assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: japanese-festival-sonnet55-color-5-batch-${{ matrix.batch }}
+          path: output52/items/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 1
+
+  collect:
+    needs: render
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: japanese-festival-sonnet55-color-5-batch-*
+          merge-multiple: true
+          path: output52/items
+      - name: Validate all five and organize published results
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python3 -m pip install --break-system-packages --quiet Pillow==10.2.0
+          python3 experiments/japanese-festival-sonnet55-color-5/validate.py --all
+          mkdir -p results/japanese-festival-sonnet55-color-5
+          rm -rf results/japanese-festival-sonnet55-color-5/items
+          cp -a output52/items results/japanese-festival-sonnet55-color-5/items
+          cp output52/validation-all.json results/japanese-festival-sonnet55-color-5/catalog.json
+          cp output52/items/craft_wagasa/preview.png results/japanese-festival-sonnet55-color-5/preview.png
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('output52/validation-all.json').read_text())
+          result={'blender_version':'5.2.2','model_count':5,'frame_count':144,
+                  'still_only':True,'detail_level':'claude_sonnet55_medium_workbench_color_v1',
+                  'total_parts':data['total_parts'],
+                  'total_polygons':data['total_polygons']}
+          Path('results/japanese-festival-sonnet55-color-5/validation.json').write_text(json.dumps(result,indent=2)+'\n')
+          PY
+      - name: Commit all 5 real Blender files, GLBs, videos and previews
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/japanese-festival-sonnet55-color-5
+          if git diff --cached --quiet; then echo "No new result"; exit 0; fi
+          git commit -m "feat: publish 5 validated Claude Sonnet 5.5 Medium color model tests [skip ci]"
+          if ! git push origin HEAD:main; then
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Build all Pages including 5 independent Gemini-generated model previews
+        run: |
+          python3 tools/build_pages.py
+          python3 tools/add_blend_links.py
+          python3 tools/generate_crafts_gallery.py
+          python3 tools/generate_festival_arts_gallery.py
+          python3 tools/generate_festival_flash38_gallery.py
+          python3 tools/generate_festival_flash38_color_gallery.py
+          python3 tools/generate_sonnet55_color_gallery.py
+      - name: Save generated gallery
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: publish Japanese crafts gallery [skip ci]"
+            if ! git push origin HEAD:main; then
+              git fetch origin main
+              git reset --hard origin/main
+              python3 tools/build_pages.py
+              python3 tools/add_blend_links.py
+              python3 tools/generate_crafts_gallery.py
+              python3 tools/generate_festival_arts_gallery.py
+              python3 tools/generate_festival_flash38_gallery.py
+              python3 tools/generate_festival_flash38_color_gallery.py
+              python3 tools/generate_sonnet55_color_gallery.py
+              git add docs/
+              if ! git diff --cached --quiet; then
+                git commit -m "chore: rebuild Sonnet color gallery [skip ci]"
+                git push origin HEAD:main
+              fi
+            fi
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - uses: actions/deploy-pages@v4
+        id: deployment
