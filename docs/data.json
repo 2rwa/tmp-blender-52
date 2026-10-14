@@ -1,5 +1,23 @@
 [
   {
+    "id": "japanese-festival-flash38-color-5",
+    "title": "Workbench color study: five Japanese objects",
+    "description": "",
+    "created_at": "2026-10-14T04:48:58Z",
+    "preview": "assets/japanese-festival-flash38-color-5/preview.png",
+    "video": null,
+    "validation": {
+      "blender_version": "5.2.2",
+      "model_count": 5,
+      "frame_count": 144,
+      "still_only": true,
+      "detail_level": "gemini_flash38_workbench_color_v2",
+      "total_parts": 240,
+      "total_polygons": 17100
+    },
+    "blend": null
+  },
+  {
     "id": "japanese-festival-flash38-test-5",
     "title": "祭礼・芸能 — Gemini 3.8 Flash Low造形比較5件",
     "description": "Five independent AI-generated procedural Blender modeling scripts subject to automated safety and render gates.",
