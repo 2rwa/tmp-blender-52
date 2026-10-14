@@ -1,0 +1,20 @@
+{
+  "id": "japanese-festival-flash38-color-5",
+  "title": "Workbench color study: five Japanese objects",
+  "subject_ids": [
+    "craft_wagasa",
+    "craft_chochin",
+    "craft_sensu",
+    "gakki_tsuzumi",
+    "ritual_suzu"
+  ],
+  "model": "gemini-3.8-flash-low",
+  "blender": "5.2.2",
+  "color_contract": "Material.diffuse_color == Principled BSDF Base Color",
+  "render": "BLENDER_WORKBENCH MATERIAL",
+  "frames": 144,
+  "resolution": [
+    500,
+    400
+  ]
+}
