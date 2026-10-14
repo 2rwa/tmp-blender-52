@@ -1,0 +1,14 @@
+{
+  "id": "japanese-festival-performing-arts-100",
+  "title": "祭礼・芸能100種（精密ローポリ）",
+  "description": "100 standalone modeled Japanese festival and performing arts items. Intricate festival floats, shrine furnishings, theatre masks, musical instruments, dance costumes and regional festival props.",
+  "count": 100,
+  "version": "festival_precision_v1",
+  "resolution": [
+    500,
+    400
+  ],
+  "frames": 144,
+  "fps": 24,
+  "high_detail": true
+}
