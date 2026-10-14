@@ -6,6 +6,7 @@ on:
     paths:
       - 'results/**'
       - 'tools/build_pages.py'
+      - 'tools/generate_festival_flash38_gallery.py'
       - '.github/workflows/pages.yml'
   workflow_run:
     workflows: ["Blender 5.2 feature showcase", "Sail Ship Wireframe HD", "Sail ship workbench HD", "Chesterfield workbench HD"]

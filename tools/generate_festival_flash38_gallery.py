@@ -1,4 +1,4 @@
-"""Generate a 100-item gallery using validated GitHub-stored Blender results."""
+"""Generate a five-item gallery using validated GitHub-stored Blender results."""
 import html
 import json
 import os
@@ -11,11 +11,11 @@ DEST=DOCS/"festival-flash38-test-5"
 def main():
  catalog=BASE/"catalog.json"
  if not catalog.exists():
-  print("Craft assets not yet rendered; skipping gallery.")
+  print("Flash model test assets not yet rendered; skipping gallery.")
   return
  raw=json.loads(catalog.read_text(encoding="utf-8"))
  items=raw["items"]
- assert len(items)==5 and len({x["id"] for x in items})==100
+ assert len(items)==5 and len({x["id"] for x in items})==5
  repo=os.environ.get("GITHUB_REPOSITORY","2rwa/tmp-blender-52")
  assert len(repo.split("/"))==2
  DEST.mkdir(parents=True,exist_ok=True)
@@ -40,7 +40,7 @@ def main():
  options=''.join(f'<option value="{k}">{k} ({v})</option>' for k,v in groups.items())
  page="""<!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日本の伝統工芸・生活道具 祭礼・芸能5種／Gemini Flash Low | 精密モデリング</title>
+<title>祭礼・芸能5種／Gemini Flash Low | Blender 5.2検証済みモデリング</title>
 <style>
 :root{font-family:system-ui,sans-serif;color-scheme:dark}
 *{box-sizing:border-box}body{margin:0;background:#10151b;color:#f0eee6}
