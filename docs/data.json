@@ -1,5 +1,23 @@
 [
   {
+    "id": "japanese-festival-flash38-high-color-5",
+    "title": "japanese-festival-flash38-high-color-5",
+    "description": "",
+    "created_at": "2026-10-14T05:55:14Z",
+    "preview": "assets/japanese-festival-flash38-high-color-5/preview.png",
+    "video": null,
+    "validation": {
+      "blender_version": "5.2.2",
+      "model_count": 5,
+      "frame_count": 144,
+      "still_only": true,
+      "detail_level": "gemini_flash38_high_workbench_color_v1",
+      "total_parts": 194,
+      "total_polygons": 68819
+    },
+    "blend": null
+  },
+  {
     "id": "japanese-festival-sonnet55-color-5",
     "title": "Claude Sonnet 5.5 Medium - Workbench color test",
     "description": "",
