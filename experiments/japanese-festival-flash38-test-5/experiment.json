@@ -1,0 +1,16 @@
+{
+  "id": "japanese-festival-flash38-test-5",
+  "title": "祭礼・芸能 — Gemini 3.8 Flash Low造形比較5件",
+  "description": "Five independent AI-generated procedural Blender modeling scripts subject to automated safety and render gates.",
+  "count": 5,
+  "model": "gemini-3.8-flash-low",
+  "generation_runner": "isolated",
+  "generated_sources": "generated/",
+  "render_resolution": [
+    500,
+    400
+  ],
+  "frames": 144,
+  "fps": 24,
+  "original_source": "standalone prompt, no repository context"
+}

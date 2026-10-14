@@ -47,6 +47,7 @@ jobs:
           python3 tools/generate_crafts_gallery.py
           python3 tools/generate_crafts_rebuilt_gallery.py
           python3 tools/generate_festival_arts_gallery.py
+          python3 tools/generate_festival_flash38_gallery.py
 
       - name: Persist generated docs
         run: |
@@ -65,6 +66,7 @@ jobs:
               python3 tools/generate_crafts_gallery.py
               python3 tools/generate_crafts_rebuilt_gallery.py
               python3 tools/generate_festival_arts_gallery.py
+              python3 tools/generate_festival_flash38_gallery.py
               git add docs/
               if ! git diff --cached --quiet; then
                 git commit -m "chore: rebuild Pages gallery [skip ci]"
