@@ -1,0 +1,83 @@
+{
+  "validated": 5,
+  "total_polygons": 68819,
+  "total_parts": 194,
+  "lowest_contrast": 10.78,
+  "items": [
+    {
+      "id": "craft_wagasa",
+      "title": "和傘",
+      "category": "craft",
+      "mesh_objects": 23,
+      "polygons": 7456,
+      "preview_stddev": 24.69,
+      "preview_frame": 19,
+      "image_bbox": [
+        320,
+        299
+      ],
+      "visible_pixels": 30939,
+      "bytes": 1256409
+    },
+    {
+      "id": "craft_chochin",
+      "title": "提灯",
+      "category": "craft",
+      "mesh_objects": 34,
+      "polygons": 31104,
+      "preview_stddev": 19.04,
+      "preview_frame": 37,
+      "image_bbox": [
+        119,
+        302
+      ],
+      "visible_pixels": 16168,
+      "bytes": 2158343
+    },
+    {
+      "id": "craft_sensu",
+      "title": "扇子",
+      "category": "craft",
+      "mesh_objects": 12,
+      "polygons": 1819,
+      "preview_stddev": 13.29,
+      "preview_frame": 37,
+      "image_bbox": [
+        215,
+        130
+      ],
+      "visible_pixels": 10485,
+      "bytes": 525922
+    },
+    {
+      "id": "gakki_tsuzumi",
+      "title": "鼓",
+      "category": "gakki",
+      "mesh_objects": 105,
+      "polygons": 15540,
+      "preview_stddev": 22.76,
+      "preview_frame": 19,
+      "image_bbox": [
+        266,
+        380
+      ],
+      "visible_pixels": 59383,
+      "bytes": 1281096
+    },
+    {
+      "id": "ritual_suzu",
+      "title": "神楽鈴",
+      "category": "ritual",
+      "mesh_objects": 20,
+      "polygons": 12900,
+      "preview_stddev": 10.78,
+      "preview_frame": 19,
+      "image_bbox": [
+        76,
+        302
+      ],
+      "visible_pixels": 4972,
+      "bytes": 1010247
+    }
+  ]
+}

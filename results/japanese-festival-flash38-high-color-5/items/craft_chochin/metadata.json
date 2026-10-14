@@ -1,0 +1,28 @@
+{
+  "id": "craft_chochin",
+  "title": "提灯",
+  "category": "craft",
+  "variant": 1,
+  "generator": "japanese-festival-flash38-high-color-5",
+  "detail_level": "gemini_flash38_high_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 34,
+  "polygons": 31104,
+  "materials": 7,
+  "dimensions_original": [
+    0.5568000078201294,
+    0.5627999901771545,
+    1.5368000268936157
+  ],
+  "normalization_scale": 1.2688703578054972,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 19.04,
+  "batch": 0
+}

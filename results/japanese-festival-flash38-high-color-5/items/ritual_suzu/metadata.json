@@ -1,0 +1,28 @@
+{
+  "id": "ritual_suzu",
+  "title": "神楽鈴",
+  "category": "ritual",
+  "variant": 4,
+  "generator": "japanese-festival-flash38-high-color-5",
+  "detail_level": "gemini_flash38_high_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 20,
+  "polygons": 12900,
+  "materials": 10,
+  "dimensions_original": [
+    0.19491945207118988,
+    0.19892817735671997,
+    0.8376645147800446
+  ],
+  "normalization_scale": 2.32790092643716,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 10.78,
+  "batch": 0
+}

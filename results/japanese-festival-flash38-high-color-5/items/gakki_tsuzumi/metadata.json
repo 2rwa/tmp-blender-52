@@ -1,0 +1,28 @@
+{
+  "id": "gakki_tsuzumi",
+  "title": "鼓",
+  "category": "gakki",
+  "variant": 3,
+  "generator": "japanese-festival-flash38-high-color-5",
+  "detail_level": "gemini_flash38_high_workbench_color_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 105,
+  "polygons": 15540,
+  "materials": 8,
+  "dimensions_original": [
+    2.119999885559082,
+    2.119999885559082,
+    2.5799999237060547
+  ],
+  "normalization_scale": 0.7558139758387713,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 19,
+  "preview_stddev": 22.76,
+  "batch": 0
+}
