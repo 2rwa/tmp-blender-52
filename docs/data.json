@@ -1,5 +1,23 @@
 [
   {
+    "id": "japanese-festival-performing-arts-100",
+    "title": "祭礼・芸能100種（精密ローポリ）",
+    "description": "100 standalone modeled Japanese festival and performing arts items. Intricate festival floats, shrine furnishings, theatre masks, musical instruments, dance costumes and regional festival props.",
+    "created_at": "2026-10-14T00:46:21Z",
+    "preview": "assets/japanese-festival-performing-arts-100/preview.png",
+    "video": null,
+    "validation": {
+      "blender_version": "5.2.2",
+      "model_count": 100,
+      "frame_count": 144,
+      "still_only": true,
+      "detail_level": "festival_precision_v1",
+      "total_parts": 10655,
+      "total_polygons": 403083
+    },
+    "blend": null
+  },
+  {
     "id": "japanese-crafts-rebuilt-100",
     "title": "日本の伝統工芸・生活道具 100種【精密ローポリ全面再制作】",
     "description": "100 independently re-modeled Japanese craft and household miniatures. Hand-built recognizable silhouettes, joinery, layered materials, fine detail, and 6-second Blender 5.2 Workbench orbit previews.",

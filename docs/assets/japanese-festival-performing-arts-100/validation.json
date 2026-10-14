@@ -1,0 +1,9 @@
+{
+  "blender_version": "5.2.2",
+  "model_count": 100,
+  "frame_count": 144,
+  "still_only": true,
+  "detail_level": "festival_precision_v1",
+  "total_parts": 10655,
+  "total_polygons": 403083
+}
