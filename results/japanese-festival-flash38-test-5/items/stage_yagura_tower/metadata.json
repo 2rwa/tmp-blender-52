@@ -1,0 +1,28 @@
+{
+  "id": "stage_yagura_tower",
+  "title": "祭礼の櫓",
+  "category": "stage",
+  "variant": 4,
+  "generator": "japanese-festival-flash38-test-5",
+  "detail_level": "gemini_flash38_low_trial_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 220,
+  "polygons": 2244,
+  "materials": 10,
+  "dimensions_original": [
+    6.063199996948242,
+    6.022104978561401,
+    7.7122949957847595
+  ],
+  "normalization_scale": 0.2528430254633406,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 36.91,
+  "batch": 0
+}

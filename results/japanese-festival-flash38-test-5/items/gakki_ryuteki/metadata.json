@@ -1,0 +1,28 @@
+{
+  "id": "gakki_ryuteki",
+  "title": "龍笛",
+  "category": "gakki",
+  "variant": 1,
+  "generator": "japanese-festival-flash38-test-5",
+  "detail_level": "gemini_flash38_low_trial_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 38,
+  "polygons": 9404,
+  "materials": 8,
+  "dimensions_original": [
+    0.4244000017642975,
+    0.03999999910593033,
+    0.0905181672424078
+  ],
+  "normalization_scale": 4.594721941313722,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 1,
+  "preview_stddev": 18.95,
+  "batch": 0
+}

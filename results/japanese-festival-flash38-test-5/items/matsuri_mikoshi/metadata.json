@@ -1,0 +1,28 @@
+{
+  "id": "matsuri_mikoshi",
+  "title": "神輿",
+  "category": "matsuri",
+  "variant": 0,
+  "generator": "japanese-festival-flash38-test-5",
+  "detail_level": "gemini_flash38_low_trial_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 363,
+  "polygons": 3050,
+  "materials": 6,
+  "dimensions_original": [
+    2.0,
+    3.81000018119812,
+    2.4045127630233765
+  ],
+  "normalization_scale": 0.5118109992810522,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 27.24,
+  "batch": 0
+}

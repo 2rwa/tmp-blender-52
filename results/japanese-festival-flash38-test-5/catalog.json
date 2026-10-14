@@ -1,0 +1,83 @@
+{
+  "validated": 5,
+  "total_polygons": 21465,
+  "total_parts": 669,
+  "lowest_contrast": 13.12,
+  "items": [
+    {
+      "id": "matsuri_mikoshi",
+      "title": "神輿",
+      "category": "matsuri",
+      "mesh_objects": 363,
+      "polygons": 3050,
+      "preview_stddev": 27.24,
+      "preview_frame": 37,
+      "image_bbox": [
+        326,
+        231
+      ],
+      "visible_pixels": 30075,
+      "bytes": 1164378
+    },
+    {
+      "id": "gakki_ryuteki",
+      "title": "龍笛",
+      "category": "gakki",
+      "mesh_objects": 38,
+      "polygons": 9404,
+      "preview_stddev": 18.95,
+      "preview_frame": 1,
+      "image_bbox": [
+        326,
+        54
+      ],
+      "visible_pixels": 8894,
+      "bytes": 1128210
+    },
+    {
+      "id": "kabuki_kiseru_prop",
+      "title": "煙管",
+      "category": "kabuki",
+      "mesh_objects": 15,
+      "polygons": 5980,
+      "preview_stddev": 13.12,
+      "preview_frame": 37,
+      "image_bbox": [
+        325,
+        38
+      ],
+      "visible_pixels": 3013,
+      "bytes": 641633
+    },
+    {
+      "id": "local_dengaku_hoe_prop",
+      "title": "田楽の鍬小道具",
+      "category": "local",
+      "mesh_objects": 33,
+      "polygons": 787,
+      "preview_stddev": 13.23,
+      "preview_frame": 1,
+      "image_bbox": [
+        40,
+        310
+      ],
+      "visible_pixels": 3751,
+      "bytes": 388715
+    },
+    {
+      "id": "stage_yagura_tower",
+      "title": "祭礼の櫓",
+      "category": "stage",
+      "mesh_objects": 220,
+      "polygons": 2244,
+      "preview_stddev": 36.91,
+      "preview_frame": 1,
+      "image_bbox": [
+        256,
+        349
+      ],
+      "visible_pixels": 59966,
+      "bytes": 1178753
+    }
+  ]
+}

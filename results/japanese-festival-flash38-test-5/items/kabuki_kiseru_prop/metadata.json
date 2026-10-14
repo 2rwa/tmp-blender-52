@@ -1,0 +1,28 @@
+{
+  "id": "kabuki_kiseru_prop",
+  "title": "煙管",
+  "category": "kabuki",
+  "variant": 2,
+  "generator": "japanese-festival-flash38-test-5",
+  "detail_level": "gemini_flash38_low_trial_v1",
+  "blender_version": "5.2.2 LTS",
+  "engine": "BLENDER_WORKBENCH",
+  "mesh_objects": 15,
+  "polygons": 5980,
+  "materials": 5,
+  "dimensions_original": [
+    11.899999618530273,
+    253.64999389648438,
+    29.875296115875244
+  ],
+  "normalization_scale": 0.007687758907637913,
+  "frame_count": 144,
+  "fps": 24,
+  "resolution": [
+    500,
+    400
+  ],
+  "preview_frame": 37,
+  "preview_stddev": 13.12,
+  "batch": 0
+}
