@@ -72,3 +72,14 @@ def make(i):
   cyl("Silver kiseru stem ferrule",(-.90,0,.31),.055,.16,"steel",16).rotation_euler.y=math.pi/2
   rod("Cast copper smoking bowl",(.85,0,.41),(1.05,0,.67),.10,"bronze",16)
   revolve("Kiseru tiny open bowl",[(.02,.0),(.09,.03),(.12,.12),(.09,.16)],"bronze",20).location=(1.05,0,.67)
+  for j in range(14):
+   x=-.82+j*.11
+   z=.30+(x+1.09)*(.13/2.05)
+   hoop("Inlaid engraved silver and gold grip rings",(x,0,z),.051,.013,
+        "gold" if j%2 else "steel",20,"X")
+  for j in range(11):
+   x=-.65+j*.14
+   z=.30+(x+1.09)*(.13/2.05)
+   rod("Delicate lacquered bamboo grain", (x,-.045,z-.03),
+        (x+.075,-.044,z+.02),.007,"wooddark",8)
+  hoop("Polished bronze kiseru bowl collar",(1.05,0,.72),.102,.025,"gold",28)

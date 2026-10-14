@@ -41,7 +41,16 @@ def make(i):
   if i==5:
    for s in (-1,1):rod("Added crossed wooden kane-bachi",(s*.82,-.25,.08),(s*.55,-.28,.91),.04,"hinoki")
  elif i in (6,7):
-  rod("Bamboo horizontal shinobue or ryuteki",(-1.23,0,.19),(1.23,0,.19),.083,"bamboo" if i==6 else "wooddark",22)
+  rod("Bamboo horizontal shinobue or ryuteki",(-1.23,0,.19),(1.23,0,.19),.095,"bamboo" if i==6 else "bronze",28)
+  if i==7:
+   # Lacquer-bound Ryuteki: visible lustrous silk on an otherwise dark long flute.
+   for j in range(26):
+    x=-1.16+j*.089
+    if 0.02<abs(x)<.96:
+     hoop("Ryuteki exposed ornate light silk binding",(x,0,.19),.096,.026,
+          "ivory" if j%3 else "gold",22,"X")
+   for x in (-1.21,-1.12,1.12,1.21):
+    hoop("Ryuteki bright metal end-ferrule",(x,0,.19),.098,.035,"gold",26,"X")
   for j in range(8):
    x=-.76+j*.18
    ellipsoid("Finger hole", (x,-.084,.20),(.044,.011,.040),"black")

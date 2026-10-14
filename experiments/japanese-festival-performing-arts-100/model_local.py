@@ -61,7 +61,11 @@ def make(i):
      (1.09*math.cos(a),1.09*math.sin(a),.56)],"red",.025)
  elif i==9:
   rod("Dengaku hoe carved wooden handle",(-.12,0,.07),(.08,0,1.9),.073,"cedar",18)
-  polygon("Lightweight festival ritual hoe prop",[(-.46,0,1.58),(.49,0,1.58),(.59,0,1.90),(-.47,0,1.91)],"wooddark",.10)
+  polygon("Lightweight festival ritual hoe prop",[(-.50,0,1.54),(.53,0,1.54),(.63,0,1.96),(-.51,0,1.97)],"hinoki",.14)
+  polygon("Bright wooden dancing hoe inset crest",[(-.36,-.085,1.62),(.38,-.085,1.62),(.42,-.085,1.86),(-.36,-.085,1.86)],"ivory",.019)
+  for x in (-.43,.44):
+   rod("Gilded ritual hoe reinforced rim",(x,-.09,1.60),(x,-.09,1.92),.029,"gold",10)
+  rod("Red and gold top ornament",(-.48,-.09,1.96),(.61,-.09,1.96),.027,"red",12)
   for j in range(15):
    x=-.44+j*.067
    strand("Dengaku ceremonial binding",[(x,-.06,1.63),(x,-.06,1.89)],"gold",.008)
